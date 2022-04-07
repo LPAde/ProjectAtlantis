@@ -1,18 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+namespace PlayerScripts
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerController : MonoBehaviour
     {
-        
-    }
+        private void Update()
+        {
+            CheckInputs();
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void FixedUpdate()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void CheckInputs()
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                print(GameManager.Instance.RhythmManager.CheckTiming());
+            }
+        }
     }
 }
