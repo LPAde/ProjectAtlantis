@@ -7,25 +7,34 @@ namespace PlayerScripts
     public class RhythmManager : MonoBehaviour
     {
         [SerializeField] private Song currentSong;
-        [SerializeField] private float currentTimer;
         [SerializeField] private List<float> leeway;
-        [SerializeField] private Slider slider;
+        [SerializeField] private List<Slider> sliders;
+        [SerializeField] private List<float> currentTimers;
 
         private void Start()
         {
-            currentTimer = currentSong.beat;
-
-            slider.maxValue = currentSong.beat;
-            slider.minValue = 0;
+            currentTimers[0] = currentSong.beat;
+            currentTimers[1] = currentSong.beat*2;
+            currentTimers[2] = currentSong.beat*3;
+            
+            foreach (var slider in sliders)
+            {
+                slider.maxValue = currentSong.beat * 4; 
+                slider.minValue = 0;
+            }
         }
 
         private void Update()
         {
-            if (currentTimer < 0)
-                currentTimer = currentSong.beat;
-            
-            currentTimer -= Time.deltaTime;
-            slider.value = currentTimer;
+            if (currentTimers[0] < 0)
+                HandleTimers();
+
+            for (int i = 0; i < currentTimers.Count; i++)
+            {
+                currentTimers[i] -= Time.deltaTime;
+                
+                sliders[i].value = currentTimers[i];
+            }
         }
 
         /// <summary>
@@ -34,19 +43,50 @@ namespace PlayerScripts
         /// <returns> How close to the timing we currently are. </returns>
         public Timing CheckTiming()
         {
-            if (currentTimer < leeway[0])
+            if (currentTimers[0] < leeway[0])
+            {
+                HandleTimers();
                 return Timing.Perfect;
-            if (currentTimer < leeway[1])
+            }
+            if (currentTimers[0] < leeway[1])
+            {
+                HandleTimers();
                 return Timing.Amazing;
-            return currentTimer < leeway[2] ? Timing.Good : Timing.Bad;
+            }
+
+            if (currentTimers[0] < leeway[2])
+            {
+                HandleTimers();
+                return Timing.Good;
+            }
+            
+            return Timing.Bad;
         }
 
+        /// <summary>
+        /// Updates the current song to a new one.
+        /// </summary>
+        /// <param name="newSong"> The new one that shall be played and played with. </param>
         public void UpdateSong(Song newSong)
         {
             currentSong = newSong;
             
-            slider.maxValue = currentSong.beat;
-            slider.minValue = 0;
+            foreach (var slider in sliders)
+            {
+                slider.maxValue = currentSong.beat * 4; 
+                slider.minValue = 0;
+            }
+            
+            currentTimers[0] = currentSong.beat;
+            currentTimers[1] = currentSong.beat*2;
+            currentTimers[2] = currentSong.beat*3;
+        }
+
+        private void HandleTimers()
+        {
+            currentTimers[0] = currentTimers[1];
+            currentTimers[1] = currentTimers[2];
+            currentTimers[2] += currentSong.beat;
         }
     }
 }

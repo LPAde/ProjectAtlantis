@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace PlayerScripts
@@ -12,7 +11,7 @@ namespace PlayerScripts
 
         private void FixedUpdate()
         {
-            throw new NotImplementedException();
+            
         }
 
         private void CheckInputs()
