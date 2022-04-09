@@ -10,16 +10,22 @@ namespace PlayerScripts
         [SerializeField] private List<float> leeway;
         [SerializeField] private List<Slider> sliders;
         [SerializeField] private List<float> currentTimers;
+        [SerializeField] private float currentBeat;
 
         private void Start()
         {
-            currentTimers[0] = currentSong.beat;
-            currentTimers[1] = currentSong.beat*2;
-            currentTimers[2] = currentSong.beat*3;
+            currentBeat = 60 / currentSong.BPM;
+            currentTimers[0] = currentBeat;
+            currentTimers[1] = currentBeat*2;
+            currentTimers[2] = currentBeat*3;
+            
+            currentTimers[3] = currentBeat;
+            currentTimers[4] = currentBeat*2;
+            currentTimers[5] = currentBeat*3;
             
             foreach (var slider in sliders)
             {
-                slider.maxValue = currentSong.beat * 4; 
+                slider.maxValue = currentBeat * 4; 
                 slider.minValue = 0;
             }
         }
@@ -70,23 +76,28 @@ namespace PlayerScripts
         public void UpdateSong(Song newSong)
         {
             currentSong = newSong;
+            currentBeat = 60 / currentSong.BPM;
             
             foreach (var slider in sliders)
             {
-                slider.maxValue = currentSong.beat * 4; 
+                slider.maxValue = currentBeat * 4; 
                 slider.minValue = 0;
             }
             
-            currentTimers[0] = currentSong.beat;
-            currentTimers[1] = currentSong.beat*2;
-            currentTimers[2] = currentSong.beat*3;
+            currentTimers[0] = currentBeat;
+            currentTimers[1] = currentBeat*2;
+            currentTimers[2] = currentBeat*3;
         }
 
         private void HandleTimers()
         {
             currentTimers[0] = currentTimers[1];
             currentTimers[1] = currentTimers[2];
-            currentTimers[2] += currentSong.beat;
+            currentTimers[2] += currentBeat;
+            
+            currentTimers[3] = currentTimers[4];
+            currentTimers[4] = currentTimers[5];
+            currentTimers[5] += currentBeat;
         }
     }
 }
