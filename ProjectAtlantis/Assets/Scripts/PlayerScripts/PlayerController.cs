@@ -30,7 +30,7 @@ namespace PlayerScripts
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                var projectile = Instantiate(player.PlayerAttack, transform.position + Vector3.forward*8, quaternion.identity, GameManager.Instance.transform).GetComponent<PlayerProjectile>();
+                var projectile = Instantiate(player.PlayerAttack, player.ProjectileSpawnPosition.position, quaternion.identity, player.transform).GetComponent<PlayerProjectile>();
                 projectile.Initialize(GameManager.Instance.RhythmManager.CheckTiming(), Vector3.forward);
             }
 

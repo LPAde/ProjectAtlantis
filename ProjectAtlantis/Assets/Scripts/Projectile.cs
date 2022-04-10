@@ -2,9 +2,9 @@ using UnityEngine;
 
 public abstract class Projectile : MonoBehaviour
 {
-    [SerializeField] private float damage;
-    [SerializeField] private float projectileSpeed;
-    [SerializeField] private Vector3 movementVector;
+    [SerializeField] protected float damage;
+    [SerializeField] protected float projectileSpeed;
+    [SerializeField] protected Vector3 movementVector;
 
     private void FixedUpdate()
     {

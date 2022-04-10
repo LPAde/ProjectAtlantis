@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerProjectile : Projectile
 {
+    [SerializeField] private float[] scalings;
     public void Initialize(Timing timing, Vector3 newMovementVector)
     {
         Initialize(newMovementVector);
@@ -10,21 +11,27 @@ public class PlayerProjectile : Projectile
         switch (timing)
         {
             case Timing.Bad:
-                transform.localScale *= 0.5f;
+                Destroy(gameObject);
                 break;
             case Timing.Good:
+                transform.localScale *= scalings[0];
                 break;
             case Timing.Amazing:
-                transform.localScale *= 1.5f;
+                transform.localScale *= scalings[1];
                 break;
             case Timing.Perfect:
-                transform.localScale *= 2f;
+                transform.localScale *= scalings[2];
                 break;
         }
     }
 
     protected override void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Enemy"))
+        {
+            
+        }
+        
         base.OnTriggerEnter(other);
     }
 }
