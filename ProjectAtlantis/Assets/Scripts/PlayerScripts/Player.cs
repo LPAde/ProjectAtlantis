@@ -15,6 +15,8 @@ namespace PlayerScripts
         [SerializeField] private GameObject playerAttack;
         [SerializeField] private Transform projectileSpawnPosition;
 
+        [SerializeField] private float difficultyModifier = 1;
+        
         #endregion
         
 
@@ -29,7 +31,12 @@ namespace PlayerScripts
         /// <param name="damage"> How much damage is dealt. </param>
         public void TakeDamage(float damage)
         {
-            stats.Health -= damage - stats.Defense;
+            float takenDamage = damage - stats.Defense;
+            
+            if(takenDamage <= 0)
+                return;
+            
+            stats.Health -= takenDamage * difficultyModifier;
             
             if(stats.Health <= 0)
                 OnPlayerDeath.Invoke();
@@ -45,16 +52,16 @@ namespace PlayerScripts
         [SerializeField] private float strength;
         [SerializeField] private float defense;
 
-        internal float MAXHealth
+        public float MAXHealth
         {
             get => maxHealth;
-            set => maxHealth = value;
+            internal set => maxHealth = value;
         }
 
-        internal float Health
+        public float Health
         {
             get => health;
-            set
+            internal set
             {
                 health = value;
 
@@ -63,17 +70,16 @@ namespace PlayerScripts
             }
         }
 
-        internal float Strength
+        public float Strength
         {
             get => strength;
-            set => strength = value;
+            internal set => strength = value;
         }
 
-        internal float Defense
+        public float Defense
         {
             get => defense;
-            set => defense = value;
+            internal set => defense = value;
         }
-
     }
 }
