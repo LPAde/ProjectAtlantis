@@ -1308,7 +1308,7 @@ GameObject:
   - component: {fileID: 921949915}
   m_Layer: 0
   m_Name: Player Model
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3273,7 +3273,7 @@ GameObject:
   - component: {fileID: 2120613332}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3307,8 +3307,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 921949914}
+  stats:
+    maxHealth: 0
+    health: 0
+    strength: 0
+    defense: 0
   playerAttack: {fileID: 6074599445876254602, guid: cfb2f1ec42a00b046b8bd71db6a378cc, type: 3}
   projectileSpawnPosition: {fileID: 320739662}
+  difficultyModifier: 1
 --- !u!1 &2133527756
 GameObject:
   m_ObjectHideFlags: 0
