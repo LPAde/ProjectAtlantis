@@ -21,6 +21,8 @@ namespace PlayerScripts
         
 
         public Action OnPlayerDeath;
+
+        public PlayerStats PlayerStats => stats; 
         
         public GameObject PlayerAttack => playerAttack;
         public Transform ProjectileSpawnPosition => projectileSpawnPosition;
@@ -80,6 +82,14 @@ namespace PlayerScripts
         {
             get => defense;
             internal set => defense = value;
+        }
+
+        public void UpdateStats(PlayerStats addedStats)
+        {
+            maxHealth += addedStats.maxHealth;
+            health += addedStats.maxHealth;
+            strength += addedStats.strength;
+            defense += addedStats.defense;
         }
     }
 }

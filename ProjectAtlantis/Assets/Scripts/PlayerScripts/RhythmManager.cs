@@ -87,8 +87,15 @@ namespace PlayerScripts
             currentTimers[0] = currentBeat;
             currentTimers[1] = currentBeat*2;
             currentTimers[2] = currentBeat*3;
+            
+            currentTimers[3] = currentBeat;
+            currentTimers[4] = currentBeat*2;
+            currentTimers[5] = currentBeat*3;
         }
 
+        /// <summary>
+        /// Places the timers at the correct spot.
+        /// </summary>
         private void HandleTimers()
         {
             currentTimers[0] = currentTimers[1];
