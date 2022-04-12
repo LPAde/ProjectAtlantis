@@ -1,3 +1,4 @@
+using Combat;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AI;
@@ -13,27 +14,44 @@ namespace PlayerScripts
         [SerializeField] private Vector3 movePos;
         [SerializeField] private float speed;
 
+        public float Speed
+        {
+            get => speed;
+            private set
+            {
+                speed = value;
+
+                navMeshAgent.speed = Speed;
+            }
+        }
+
+        #region Unity Methods
+
         private void Start()
         {
             movePos = transform.position;
+            navMeshAgent.speed = Speed;
         }
-
+        
         private void Update()
         {
             CheckInputs();
         }
-
+        
         private void FixedUpdate()
         {
             Move();
         }
+
+        #endregion
+        
 
         private void CheckInputs()
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 var projectile = Instantiate(player.PlayerAttack, player.ProjectileSpawnPosition.position, quaternion.identity, player.transform).GetComponent<PlayerProjectile>();
-                projectile.Initialize(GameManager.Instance.RhythmManager.CheckTiming(), Vector3.forward);
+                projectile.Initialize(GameManager.Instance.RhythmManager.CheckTiming(), player.ProjectileSpawnPosition.forward);
             }
 
             if (Input.GetMouseButton(0))

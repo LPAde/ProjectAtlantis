@@ -1,31 +1,15 @@
 using System;
 using UnityEngine;
 
-namespace PlayerScripts
+namespace Enemies
 {
-    public class Player : MonoBehaviour
+    public class BaseEnemy : MonoBehaviour
     {
-        #region Private Fields
-
-        [SerializeField] private PlayerController playerController;
+        [SerializeField] private EnemyStats stats;
         
-        [SerializeField] private PlayerStats stats;
-        
-        [Header("Attack Related Stuff")]
-        [SerializeField] private GameObject playerAttack;
-        [SerializeField] private Transform projectileSpawnPosition;
-
         [SerializeField] private float difficultyModifier = 1;
+        [SerializeField] private GameObject attack;
         
-        #endregion
-        
-        public Action OnPlayerDeath;
-
-        public PlayerStats PlayerStats => stats; 
-        
-        public GameObject PlayerAttack => playerAttack;
-        public Transform ProjectileSpawnPosition => projectileSpawnPosition;
-
         /// <summary>
         /// Deals damage to the player.
         /// </summary>
@@ -40,13 +24,14 @@ namespace PlayerScripts
             stats.Health -= takenDamage * difficultyModifier;
             
             if(stats.Health <= 0)
-                OnPlayerDeath.Invoke();
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
-
     [Serializable]
-    public struct PlayerStats
+    internal struct EnemyStats
     {
         [SerializeField] private float maxHealth;
         [SerializeField] private float health;
@@ -82,13 +67,5 @@ namespace PlayerScripts
             get => defense;
             internal set => defense = value;
         }
-
-        public void UpdateStats(PlayerStats addedStats)
-        {
-            maxHealth += addedStats.maxHealth;
-            health += addedStats.maxHealth;
-            strength += addedStats.strength;
-            defense += addedStats.defense;
-        }
-    }
+    } 
 }
