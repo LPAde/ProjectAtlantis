@@ -4,16 +4,23 @@ namespace Enemies.AI
 {
     public class FiniteStateMachine
     {
-        // Start is called before the first frame update
-        void Start()
+        protected BaseEnemy owner;
+        private State currentState;
+
+        protected FiniteStateMachine (BaseEnemy newOwner)
         {
-        
+            owner = newOwner;
         }
 
-        // Update is called once per frame
-        void Update()
+        /// <summary>
+        /// Changes State and makes the states do their respective onexit and onenter.
+        /// </summary>
+        /// <param name="newState"> The state you want to transition to. </param>
+        public void Transition(State newState)
         {
-        
+            currentState.OnExit();
+            currentState = newState;
+            currentState.OnEnter();
         }
     }
 }

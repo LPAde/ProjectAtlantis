@@ -1,8 +1,13 @@
 namespace Enemies.AI
 {
-    public abstract class State 
+    public abstract class State
     {
-        
+        protected readonly FiniteStateMachine fsm;
+
+        protected State(FiniteStateMachine newFSM)
+        {
+            fsm = newFSM;
+        }
         
         public abstract void CheckTransition();
 
