@@ -27,6 +27,11 @@ namespace Enemies
             FiniteStateMachine.Initialize(FiniteStateMachine.IdleState);
         }
 
+        private void Update()
+        {
+            FiniteStateMachine.Update();
+        }
+
         /// <summary>
         /// Deals damage to the player.
         /// </summary>
@@ -51,7 +56,16 @@ namespace Enemies
         /// </summary>
         public virtual void WalkToPlayer()
         {
-            agent.SetDestination(GameManager.Instance.Player.transform.position);
+            agent.isStopped = false;
+            agent.SetDestination(GameManager.Instance.Player.PlayerController.transform.position);
+        }
+
+        /// <summary>
+        /// Stops the enemy.
+        /// </summary>
+        public void Stop()
+        {
+            agent.isStopped = true;
         }
 
         /// <summary>
@@ -59,7 +73,7 @@ namespace Enemies
         /// </summary>
         public virtual void Attack()
         {
-            if (stats.AttackCooldown < 0)
+            if (stats.AttackCooldown > 0)
             {
                 stats.AttackCooldown -= Time.deltaTime;
             }
@@ -68,7 +82,7 @@ namespace Enemies
                 var projectile =
                     Instantiate(attack, projectileSpawnPosition.position, quaternion.identity,
                         GameManager.Instance.transform).GetComponent<EnemyProjectile>();
-                projectile.Initialize(projectileSpawnPosition.forward);
+                projectile.Initialize(GameManager.Instance.Player.PlayerController.transform.position - projectileSpawnPosition.position);
 
                 stats.AttackCooldown = stats.AttackMaxCooldown;
             }

@@ -11,7 +11,7 @@ namespace Enemies.AI
         
         public override void CheckTransition()
         {
-            float distance = fsm.Owner.transform.position.sqrMagnitude - GameManager.Instance.Player.transform.position.sqrMagnitude;
+            float distance = (fsm.Owner.transform.position - GameManager.Instance.Player.PlayerController.transform.position).sqrMagnitude;
 
             if(distance > _attackRange)
                 fsm.Transition(fsm.WalkState);
@@ -19,7 +19,6 @@ namespace Enemies.AI
 
         public override void OnEnter()
         {
-            throw new System.NotImplementedException();
         }
 
         public override void Update()
@@ -29,7 +28,6 @@ namespace Enemies.AI
 
         public override void OnExit()
         {
-            throw new System.NotImplementedException();
         }
     }
 }

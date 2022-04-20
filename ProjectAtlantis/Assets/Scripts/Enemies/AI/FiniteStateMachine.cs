@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Enemies.AI
 {
     public class FiniteStateMachine
@@ -14,6 +16,7 @@ namespace Enemies.AI
         public FiniteStateMachine (BaseEnemy newOwner)
         {
             owner = newOwner;
+            IdleState = new IdleState(this);
             FightState = new FightState(this);
             WalkState = new WalkToPlayerState(this);
         }

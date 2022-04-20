@@ -21,8 +21,9 @@ namespace PlayerScripts
         
         public Action OnPlayerDeath;
 
-        public PlayerStats PlayerStats => stats; 
-        
+
+        public PlayerController PlayerController => playerController;
+        public PlayerStats PlayerStats => stats;
         public GameObject PlayerAttack => playerAttack;
         public Transform ProjectileSpawnPosition => projectileSpawnPosition;
 

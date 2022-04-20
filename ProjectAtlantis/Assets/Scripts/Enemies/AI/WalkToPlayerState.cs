@@ -11,7 +11,7 @@ namespace Enemies.AI
 
         public override void CheckTransition()
         {
-            float distance = fsm.Owner.transform.position.sqrMagnitude - GameManager.Instance.Player.transform.position.sqrMagnitude;
+            float distance = (fsm.Owner.transform.position - GameManager.Instance.Player.PlayerController.transform.position).sqrMagnitude;
 
             if(distance < _attackRange)
                 fsm.Transition(fsm.FightState);
@@ -28,6 +28,7 @@ namespace Enemies.AI
 
         public override void OnExit()
         {
+            fsm.Owner.Stop();
         }
     }
 }
