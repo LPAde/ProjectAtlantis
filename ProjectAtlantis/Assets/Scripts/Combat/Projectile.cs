@@ -15,6 +15,9 @@ namespace Combat
 
         protected virtual void OnTriggerEnter(Collider other)
         {
+            if(other.CompareTag("Projectile"))
+                return;
+        
             Destroy(gameObject);
         }
 
