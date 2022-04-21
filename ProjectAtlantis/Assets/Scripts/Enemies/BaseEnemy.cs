@@ -79,6 +79,9 @@ namespace Enemies
             }
             else
             {
+                if(GameManager.Instance.RhythmManager.CheckTiming() != Timing.Perfect)
+                    return;
+                
                 var projectile =
                     Instantiate(attack, projectileSpawnPosition.position, quaternion.identity,
                         GameManager.Instance.transform).GetComponent<EnemyProjectile>();
