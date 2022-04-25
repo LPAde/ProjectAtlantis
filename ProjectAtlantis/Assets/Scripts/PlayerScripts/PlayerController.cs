@@ -10,27 +10,13 @@ namespace PlayerScripts
         [SerializeField] private Player player;
 
         [Header("Movement")] 
-        [SerializeField] private NavMeshAgent navMeshAgent;
         [SerializeField] private Vector3 movePos;
-        [SerializeField] private float speed;
-
-        public float Speed
-        {
-            get => speed;
-            private set
-            {
-                speed = value;
-
-                navMeshAgent.speed = Speed;
-            }
-        }
-
+        
         #region Unity Methods
 
         private void Start()
         {
             movePos = transform.position;
-            navMeshAgent.speed = Speed;
         }
         
         private void Update()
@@ -41,6 +27,7 @@ namespace PlayerScripts
         private void FixedUpdate()
         {
             Move();
+            Look();
         }
 
         #endregion
@@ -54,13 +41,15 @@ namespace PlayerScripts
                 projectile.Initialize(GameManager.Instance.RhythmManager.CheckTiming(), player.ProjectileSpawnPosition.forward);
             }
 
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(1))
             {
                 RaycastHit hit;
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                Ray ray = GameManager.Instance.MainCam.ScreenPointToRay(Input.mousePosition);
 
-                if (Physics.Raycast(ray, out hit)) {
-                    movePos = new Vector3(hit.point.x, transform.position.y, hit.point.z);
+                if (Physics.Raycast(ray, out hit))
+                {
+                    var position = transform.position;
+                    movePos = new Vector3(hit.point.x, position.y, hit.point.z);
                 }
             }
         }
@@ -70,7 +59,19 @@ namespace PlayerScripts
         /// </summary>
         private void Move()
         {
-            navMeshAgent.SetDestination(movePos);
+            transform.position = Vector3.Lerp(transform.position, movePos, player.PlayerStats.Speed * Time.deltaTime);
+        }
+
+        /// <summary>
+        /// Makes the player look into the direction of their mouse all the time.
+        /// </summary>
+        private void Look()
+        {
+            var lookAtPos = Input.mousePosition;
+            lookAtPos.z = GameManager.Instance.MainCam.transform.position.y - transform.position.y;
+            lookAtPos = GameManager.Instance.MainCam.ScreenToWorldPoint(lookAtPos);
+            var transform1 = transform;
+            transform1.forward = lookAtPos - transform1.position;
         }
     }
 }

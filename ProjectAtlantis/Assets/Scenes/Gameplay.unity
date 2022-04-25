@@ -3383,6 +3383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rhythmManager: {fileID: 995343680}
   player: {fileID: 2120613332}
+  mainCam: {fileID: 139947791}
 --- !u!4 &2012971437
 Transform:
   m_ObjectHideFlags: 0
@@ -3602,6 +3603,7 @@ MonoBehaviour:
     health: 0
     strength: 0
     defense: 0
+    speed: 1
   playerAttack: {fileID: 6074599445876254602, guid: cfb2f1ec42a00b046b8bd71db6a378cc, type: 3}
   projectileSpawnPosition: {fileID: 320739662}
   difficultyModifier: 1

@@ -9,11 +9,14 @@ public class GameManager : MonoBehaviour
     
     [SerializeField] private RhythmManager rhythmManager;
     [SerializeField] private Player player;
+    [SerializeField] private Camera mainCam;
+    
 
     #endregion
 
     public RhythmManager RhythmManager => rhythmManager;
     public Player Player => player;
+    public Camera MainCam => mainCam;
 
     private void Awake()
     {

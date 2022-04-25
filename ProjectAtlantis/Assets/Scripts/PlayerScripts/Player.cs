@@ -53,6 +53,7 @@ namespace PlayerScripts
         [SerializeField] private float health;
         [SerializeField] private float strength;
         [SerializeField] private float defense;
+        [SerializeField] private float speed;
 
         public float MAXHealth
         {
@@ -82,6 +83,12 @@ namespace PlayerScripts
         {
             get => defense;
             internal set => defense = value;
+        }
+
+        public float Speed
+        {
+            get => speed;
+            internal set => speed = value;
         }
 
         public void UpdateStats(PlayerStats addedStats)
