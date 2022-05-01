@@ -1,7 +1,6 @@
 using Combat;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace PlayerScripts
 {
@@ -59,7 +58,7 @@ namespace PlayerScripts
         /// </summary>
         private void Move()
         {
-            transform.position = Vector3.Lerp(transform.position, movePos, player.PlayerStats.Speed * Time.deltaTime);
+              transform.position = Vector3.MoveTowards(transform.position, movePos, player.PlayerStats.Speed * Time.deltaTime);
         }
 
         /// <summary>

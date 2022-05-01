@@ -8,7 +8,6 @@ namespace PlayerScripts
         #region Private Fields
 
         [SerializeField] private PlayerController playerController;
-        
         [SerializeField] private PlayerStats stats;
         
         [Header("Attack Related Stuff")]
