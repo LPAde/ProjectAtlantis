@@ -36,16 +36,14 @@ namespace PlayerScripts
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                var projectile = Instantiate(player.PlayerAttack, player.ProjectileSpawnPosition.position, quaternion.identity, player.transform).GetComponent<PlayerProjectile>();
-                projectile.Initialize(GameManager.Instance.RhythmManager.CheckTiming(), player.ProjectileSpawnPosition.forward);
+                Cast(KeyCode.Return);
             }
 
             if (Input.GetMouseButton(1))
             {
-                RaycastHit hit;
                 Ray ray = GameManager.Instance.MainCam.ScreenPointToRay(Input.mousePosition);
 
-                if (Physics.Raycast(ray, out hit))
+                if (Physics.Raycast(ray, out var hit))
                 {
                     var position = transform.position;
                     movePos = new Vector3(hit.point.x, position.y, hit.point.z);
@@ -58,7 +56,8 @@ namespace PlayerScripts
         /// </summary>
         private void Move()
         {
-              transform.position = Vector3.MoveTowards(transform.position, movePos, player.PlayerStats.Speed * Time.deltaTime);
+            if(transform.position != movePos) 
+                transform.position = Vector3.MoveTowards(transform.position, movePos, player.PlayerStats.Speed * Time.deltaTime);
         }
 
         /// <summary>
@@ -71,6 +70,21 @@ namespace PlayerScripts
             lookAtPos = GameManager.Instance.MainCam.ScreenToWorldPoint(lookAtPos);
             var transform1 = transform;
             transform1.forward = lookAtPos - transform1.position;
+        }
+
+        /// <summary>
+        /// Casts a spell based on the input.
+        /// </summary>
+        /// <param name="code"></param>
+        private void Cast(KeyCode code)
+        {
+            switch (code)
+            {
+                case KeyCode.Return:
+                    var projectile = Instantiate(player.PlayerAttack, player.ProjectileSpawnPosition.position, quaternion.identity, player.transform).GetComponent<PlayerProjectile>();
+                    projectile.Initialize(GameManager.Instance.RhythmManager.CheckTiming(), player.ProjectileSpawnPosition.forward);
+                    break;
+            }
         }
     }
 }

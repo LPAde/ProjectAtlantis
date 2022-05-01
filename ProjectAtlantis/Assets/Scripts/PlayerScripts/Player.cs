@@ -14,13 +14,13 @@ namespace PlayerScripts
         [SerializeField] private GameObject playerAttack;
         [SerializeField] private Transform projectileSpawnPosition;
 
+        // In case we want to add some simple difficulty modes.
         [SerializeField] private float difficultyModifier = 1;
         
         #endregion
         
         public Action OnPlayerDeath;
-
-
+        
         public PlayerController PlayerController => playerController;
         public PlayerStats PlayerStats => stats;
         public GameObject PlayerAttack => playerAttack;
@@ -41,6 +41,18 @@ namespace PlayerScripts
             
             if(stats.Health <= 0)
                 OnPlayerDeath.Invoke();
+        }
+
+        /// <summary>
+        /// Heals the player.
+        /// </summary>
+        /// <param name="value"> How much should be healed. </param>
+        public void Heal(float value)
+        {
+            stats.Health += value * difficultyModifier;
+            
+            if (stats.Health > stats.MAXHealth)
+                stats.Health = stats.MAXHealth;
         }
     }
 
