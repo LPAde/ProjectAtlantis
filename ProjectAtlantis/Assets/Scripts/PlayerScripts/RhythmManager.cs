@@ -12,6 +12,7 @@ namespace PlayerScripts
         [SerializeField] private List<Slider> sliders;
         [SerializeField] private List<float> currentTimers;
         [SerializeField] private float currentBeat;
+        [SerializeField] private bool playerActed;
 
         public Action HitPerfect;
         
@@ -31,6 +32,8 @@ namespace PlayerScripts
                 slider.maxValue = currentBeat * 4; 
                 slider.minValue = 0;
             }
+
+            HitPerfect += ResetPlayerAction;
         }
 
         private void Update()
@@ -55,20 +58,22 @@ namespace PlayerScripts
         /// <returns> How close to the timing we currently are. </returns>
         public Timing CheckTiming()
         {
+            if (playerActed)
+                return Timing.Bad;
+            
+            playerActed = true;
+            
             if (currentTimers[0] < leeway[0])
             {
-                HandleTimers();
                 return Timing.Perfect;
             }
             if (currentTimers[0] < leeway[1])
             {
-                HandleTimers();
                 return Timing.Amazing;
             }
 
             if (currentTimers[0] < leeway[2])
             {
-                HandleTimers();
                 return Timing.Good;
             }
             
@@ -111,6 +116,11 @@ namespace PlayerScripts
             currentTimers[3] = currentTimers[4];
             currentTimers[4] = currentTimers[5];
             currentTimers[5] += currentBeat;
+        }
+
+        private void ResetPlayerAction()
+        {
+            playerActed = false;
         }
     }
 }

@@ -8,6 +8,7 @@ namespace PlayerScripts
         #region Private Fields
 
         [SerializeField] private PlayerController playerController;
+        [SerializeField] private CharacterController characterController;
         [SerializeField] private PlayerStats stats;
         
         [Header("Attack Related Stuff")]
@@ -22,6 +23,7 @@ namespace PlayerScripts
         public Action OnPlayerDeath;
         
         public PlayerController PlayerController => playerController;
+        public CharacterController CharacterController => characterController;
         public PlayerStats PlayerStats => stats;
         public GameObject PlayerAttack => playerAttack;
         public Transform ProjectileSpawnPosition => projectileSpawnPosition;

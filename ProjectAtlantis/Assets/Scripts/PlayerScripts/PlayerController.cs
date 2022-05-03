@@ -56,8 +56,20 @@ namespace PlayerScripts
         /// </summary>
         private void Move()
         {
-            if(transform.position != movePos) 
-                transform.position = Vector3.MoveTowards(transform.position, movePos, player.PlayerStats.Speed * Time.deltaTime);
+            if (transform.position != movePos)
+            {
+                // Find the target position relative to the player.
+                var dir = movePos - transform.position;
+                
+                // Calculate movement at the desired speed.
+                var movement = dir.normalized * (player.PlayerStats.Speed * Time.deltaTime);
+                
+                // Limit movement to never pass the target position.
+                if (movement.magnitude > dir.magnitude) movement = dir;
+                
+                // Move the character.
+                player.CharacterController.Move(movement);
+            }
         }
 
         /// <summary>
@@ -65,11 +77,16 @@ namespace PlayerScripts
         /// </summary>
         private void Look()
         {
+            // Converting the mouse position into a Vector the player can look to.
             var lookAtPos = Input.mousePosition;
             lookAtPos.z = GameManager.Instance.MainCam.transform.position.y - transform.position.y;
             lookAtPos = GameManager.Instance.MainCam.ScreenToWorldPoint(lookAtPos);
             var transform1 = transform;
-            transform1.forward = lookAtPos - transform1.position;
+            var position = transform1.position;
+            lookAtPos.y = position.y;
+            
+            // Actually looking to the position.
+            transform1.forward = lookAtPos - position;
         }
 
         /// <summary>
