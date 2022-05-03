@@ -15,10 +15,18 @@ namespace Enemies
         [SerializeField] private GameObject attack;
         [SerializeField] private Transform projectileSpawnPosition;
         [SerializeField] private NavMeshAgent agent;
+
+        private bool mayAttack;
         
         public FiniteStateMachine FiniteStateMachine { get; private set; }
 
         public EnemyStats Stats => stats;
+
+        private void OnEnable()
+        {
+            print(GameManager.Instance.RhythmManager);
+            GameManager.Instance.RhythmManager.HitPerfect += MayAttack;
+        }
 
         private void Start()
         {
@@ -30,6 +38,11 @@ namespace Enemies
         private void Update()
         {
             FiniteStateMachine.Update();
+        }
+
+        private void OnDisable()
+        {
+            GameManager.Instance.RhythmManager.HitPerfect -= MayAttack;
         }
 
         /// <summary>
@@ -79,7 +92,7 @@ namespace Enemies
             }
             else
             {
-                if(GameManager.Instance.RhythmManager.CheckTiming() != Timing.Perfect)
+                if(!mayAttack)
                     return;
                 
                 var projectile =
@@ -89,6 +102,11 @@ namespace Enemies
 
                 stats.AttackCooldown = stats.AttackMaxCooldown;
             }
+        }
+        
+        private void MayAttack()
+        {
+            mayAttack = true;
         }
     }
 

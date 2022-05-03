@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,8 @@ namespace PlayerScripts
         [SerializeField] private List<float> currentTimers;
         [SerializeField] private float currentBeat;
 
+        public Action HitPerfect;
+        
         private void Start()
         {
             currentBeat = 60 / currentSong.BPM;
@@ -33,7 +36,10 @@ namespace PlayerScripts
         private void Update()
         {
             if (currentTimers[0] < 0)
+            {
+                HitPerfect.Invoke();
                 HandleTimers();
+            }
 
             for (int i = 0; i < currentTimers.Count; i++)
             {
