@@ -15,7 +15,11 @@ namespace Enemies
         [SerializeField] private GameObject attack;
         [SerializeField] private Transform projectileSpawnPosition;
         [SerializeField] private NavMeshAgent agent;
+        [SerializeField] private Rigidbody rb;
 
+        [SerializeField] private float desiredSeparation;
+        [SerializeField] private float maxForce;
+        
         private bool mayAttack;
         
         public FiniteStateMachine FiniteStateMachine { get; private set; }
@@ -24,8 +28,8 @@ namespace Enemies
 
         private void OnEnable()
         {
-            print(GameManager.Instance.RhythmManager);
             GameManager.Instance.RhythmManager.HitPerfect += MayAttack;
+            GameManager.Instance.EnemyManager.AddEnemy(this);
         }
 
         private void Start()
@@ -43,6 +47,7 @@ namespace Enemies
         private void OnDisable()
         {
             GameManager.Instance.RhythmManager.HitPerfect -= MayAttack;
+            GameManager.Instance.EnemyManager.RemoveEnemy(this);
         }
 
         /// <summary>
@@ -71,6 +76,7 @@ namespace Enemies
         {
             agent.isStopped = false;
             agent.SetDestination(GameManager.Instance.Player.PlayerController.transform.position);
+            //rb.AddForce(CalculateSeparation());
         }
 
         /// <summary>
@@ -108,6 +114,42 @@ namespace Enemies
         {
             mayAttack = true;
         }
+
+        private Vector3 CalculateSeparation()
+        {
+            Vector3 totalSeparation = Vector3.zero;
+            int neighbourCount = 0;
+
+            var enManager = GameManager.Instance.EnemyManager;
+            for (int i = 0; i < enManager.Enemies.Count; i++)
+            {
+                var en = enManager.Enemies[i];
+                Vector3 separation = transform.position - en.transform.position;
+                float distance = separation.magnitude;
+
+                if (distance > 0 && distance < desiredSeparation)
+                {
+                    separation.Normalize();
+                    separation /= distance;
+                    totalSeparation += separation;
+                    neighbourCount++;
+                }
+            }
+
+            if (neighbourCount > 0)
+            {
+                Vector3 averageSeparation = totalSeparation / neighbourCount;
+                averageSeparation = averageSeparation.normalized * stats.Speed;
+                Vector3 separationForce = averageSeparation - rb.velocity;
+
+                if (separationForce.magnitude > maxForce)
+                    separationForce = separationForce.normalized * maxForce;
+
+                return separationForce;
+            }
+            
+            return Vector3.zero;
+        }
     }
 
     [Serializable]
@@ -117,6 +159,7 @@ namespace Enemies
         [SerializeField] private float health;
         [SerializeField] private float strength;
         [SerializeField] private float defense;
+        [SerializeField] private float speed;
         [SerializeField] private float attackRange;
         [SerializeField] private float attackMaxCooldown;
         [SerializeField] private float attackCooldown;
@@ -150,6 +193,12 @@ namespace Enemies
         {
             get => defense;
             internal set => defense = value;
+        }
+        
+        public float Speed
+        {
+            get => speed;
+            internal set => speed = value;
         }
 
         public float AttackRange

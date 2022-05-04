@@ -1,3 +1,4 @@
+using Enemies;
 using PlayerScripts;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour
     #region Private Fields
     
     [SerializeField] private RhythmManager rhythmManager;
+    [SerializeField] private EnemyManager enemyManager;
     [SerializeField] private Player player;
     [SerializeField] private Camera mainCam;
     
@@ -16,6 +18,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     public RhythmManager RhythmManager => rhythmManager;
+    public EnemyManager EnemyManager => enemyManager;
     public Player Player => player;
     public Camera MainCam => mainCam;
 
