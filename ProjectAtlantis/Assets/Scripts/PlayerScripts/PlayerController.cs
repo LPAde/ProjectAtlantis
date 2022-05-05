@@ -34,9 +34,21 @@ namespace PlayerScripts
 
         private void CheckInputs()
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
-                Cast(KeyCode.Return);
+                Cast(KeyCode.Q);
+            }
+            else if (Input.GetKeyDown(KeyCode.W))
+            {
+                Cast(KeyCode.W);
+            }
+            else if (Input.GetKeyDown(KeyCode.E))
+            {
+                Cast(KeyCode.E);
+            }
+            else if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Cast(KeyCode.Space);
             }
 
             if (Input.GetMouseButton(1))
@@ -97,9 +109,18 @@ namespace PlayerScripts
         {
             switch (code)
             {
-                case KeyCode.Return:
+                case KeyCode.Q:
                     var projectile = Instantiate(player.PlayerAttack, player.ProjectileSpawnPosition.position, quaternion.identity, player.transform).GetComponent<PlayerProjectile>();
                     projectile.Initialize(GameManager.Instance.RhythmManager.CheckTiming(), player.ProjectileSpawnPosition.forward);
+                    break;
+                
+                case KeyCode.W:
+                    break;
+                
+                case KeyCode.E:
+                    break;
+                
+                case KeyCode.Space: 
                     break;
             }
         }

@@ -1,5 +1,6 @@
 using Enemies;
 using PlayerScripts;
+using UI;
 using UnityEngine;
 
 [DefaultExecutionOrder(-100)]
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
     
     [SerializeField] private RhythmManager rhythmManager;
     [SerializeField] private EnemyManager enemyManager;
+    [SerializeField] private HudManager hudManager;
     [SerializeField] private Player player;
     [SerializeField] private Camera mainCam;
     
@@ -19,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     public RhythmManager RhythmManager => rhythmManager;
     public EnemyManager EnemyManager => enemyManager;
+    public HudManager HudManager => hudManager;
     public Player Player => player;
     public Camera MainCam => mainCam;
 

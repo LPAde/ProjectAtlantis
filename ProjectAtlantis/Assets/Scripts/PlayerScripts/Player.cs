@@ -34,12 +34,15 @@ namespace PlayerScripts
         /// <param name="damage"> How much damage is dealt. </param>
         public void TakeDamage(float damage)
         {
+            print(damage);
             float takenDamage = damage - stats.Defense;
             
             if(takenDamage <= 0)
                 return;
             
             stats.Health -= takenDamage * difficultyModifier;
+            
+            GameManager.Instance.HudManager.UpdateHealth(stats.Health);
             
             if(stats.Health <= 0)
                 OnPlayerDeath.Invoke();
@@ -52,6 +55,8 @@ namespace PlayerScripts
         public void Heal(float value)
         {
             stats.Health += value * difficultyModifier;
+            
+            GameManager.Instance.HudManager.UpdateHealth(stats.Health);
             
             if (stats.Health > stats.MAXHealth)
                 stats.Health = stats.MAXHealth;
