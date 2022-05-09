@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c14e4c27cd40f4885456fceaf74904, type: 3}
+  m_Name: Green Ball
+  m_EditorClassIdentifier: 
+  owner: {fileID: 0}
+  maxCoolDown: 5
+  currentCoolDown: 5
+  damageValue: 10
+  projectile: {fileID: 6074599445876254602, guid: cfb2f1ec42a00b046b8bd71db6a378cc, type: 3}

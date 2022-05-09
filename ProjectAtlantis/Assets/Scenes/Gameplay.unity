@@ -4510,8 +4510,10 @@ MonoBehaviour:
     strength: 0
     defense: 0
     speed: 7
-  playerAttack: {fileID: 6074599445876254602, guid: cfb2f1ec42a00b046b8bd71db6a378cc, type: 3}
   projectileSpawnPosition: {fileID: 320739662}
+  combatSpells:
+  - {fileID: 11400000, guid: a92cefc61c38c8f409b42e3162117284, type: 2}
+  movementSpell: {fileID: 0}
   difficultyModifier: 1
 --- !u!1 &2133527756
 GameObject:

@@ -110,17 +110,19 @@ namespace PlayerScripts
             switch (code)
             {
                 case KeyCode.Q:
-                    var projectile = Instantiate(player.PlayerAttack, player.ProjectileSpawnPosition.position, quaternion.identity, player.transform).GetComponent<PlayerProjectile>();
-                    projectile.Initialize(GameManager.Instance.RhythmManager.CheckTiming(), player.ProjectileSpawnPosition.forward);
+                    player.CombatSpells[0].Cast();
                     break;
                 
                 case KeyCode.W:
+                    player.CombatSpells[1].Cast();
                     break;
                 
                 case KeyCode.E:
+                    player.CombatSpells[2].Cast();
                     break;
                 
                 case KeyCode.Space: 
+                    player.MovementSpell.Cast();
                     break;
             }
         }

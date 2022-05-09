@@ -7,7 +7,7 @@ using UnityEngine.AI;
 
 namespace Enemies
 {
-    public class BaseEnemy : MonoBehaviour
+    public class BaseEnemy : Character
     {
         [SerializeField] private EnemyStats stats;
         
@@ -26,6 +26,7 @@ namespace Enemies
 
         public EnemyStats Stats => stats;
 
+        public Transform ProjectileSpawnPosition => projectileSpawnPosition;
         private void OnEnable()
         {
             GameManager.Instance.RhythmManager.HitPerfect += MayAttack;
@@ -112,6 +113,8 @@ namespace Enemies
         
         private void MayAttack()
         {
+            if(stats.AttackCooldown > 0)
+                return;
             mayAttack = true;
         }
 

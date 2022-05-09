@@ -1,9 +1,10 @@
 using System;
+using Combat.Spells;
 using UnityEngine;
 
 namespace PlayerScripts
 {
-    public class Player : MonoBehaviour
+    public class Player : Character
     {
         #region Private Fields
 
@@ -12,8 +13,9 @@ namespace PlayerScripts
         [SerializeField] private PlayerStats stats;
         
         [Header("Attack Related Stuff")]
-        [SerializeField] private GameObject playerAttack;
         [SerializeField] private Transform projectileSpawnPosition;
+        [SerializeField] private CombatSpell[] combatSpells;
+        [SerializeField] private MovementSpell movementSpell;
 
         // In case we want to add some simple difficulty modes.
         [SerializeField] private float difficultyModifier = 1;
@@ -21,12 +23,37 @@ namespace PlayerScripts
         #endregion
         
         public Action OnPlayerDeath;
-        
+
+        #region Properties
+
         public PlayerController PlayerController => playerController;
         public CharacterController CharacterController => characterController;
         public PlayerStats PlayerStats => stats;
-        public GameObject PlayerAttack => playerAttack;
+        public CombatSpell[] CombatSpells => combatSpells;
+        public MovementSpell MovementSpell => movementSpell;
         public Transform ProjectileSpawnPosition => projectileSpawnPosition;
+
+        #endregion
+
+        private void Awake()
+        {
+            foreach (var spell in combatSpells)
+            {
+                spell.SetOwner(this);
+            }
+            
+            movementSpell.SetOwner(this);
+        }
+
+        private void LateUpdate()
+        {
+            foreach (var spell in combatSpells)
+            {
+                spell.TickDownCooldown();
+            }
+            
+            movementSpell.TickDownCooldown();
+        }
 
         /// <summary>
         /// Deals damage to the player.
