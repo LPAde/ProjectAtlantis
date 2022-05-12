@@ -1,5 +1,3 @@
-using Combat;
-using Unity.Mathematics;
 using UnityEngine;
 
 namespace PlayerScripts
@@ -57,8 +55,11 @@ namespace PlayerScripts
 
                 if (Physics.Raycast(ray, out var hit))
                 {
+                    if(!hit.transform.CompareTag("Ground"))
+                        return;
+
                     var position = transform.position;
-                    movePos = new Vector3(hit.point.x, position.y, hit.point.z);
+                    movePos = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                 }
             }
         }
