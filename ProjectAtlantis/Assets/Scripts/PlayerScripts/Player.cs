@@ -1,5 +1,5 @@
 using System;
-using Combat.Spells;
+using Gameplay.Combat.Spells;
 using UnityEngine;
 
 namespace PlayerScripts

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Combat.Spells
+namespace Gameplay.Combat.Spells
 {
     public abstract class BaseSpell : ScriptableObject
     {
@@ -15,18 +15,11 @@ namespace Combat.Spells
         public void SetOwner(Character newOwner)
         {
             owner = newOwner;
-            currentCoolDown = maxCoolDown;
+            currentCoolDown = 0;
         }
         
         public virtual void Cast()
         {
-            // Stops when the spell is still on cooldown.
-            if (currentCoolDown > 0)
-            {
-                return;
-            }
-
-            currentCoolDown = maxCoolDown;
         }
 
         public void TickDownCooldown()

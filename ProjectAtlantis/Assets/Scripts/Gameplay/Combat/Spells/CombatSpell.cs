@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Combat.Spells
+namespace Gameplay.Combat.Spells
 {
     public abstract class CombatSpell : BaseSpell
     {

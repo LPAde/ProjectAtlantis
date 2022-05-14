@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a55009ae26b2a49a18e3482d731a07, type: 3}
-  m_Name: TestSong
+  m_Script: {fileID: 11500000, guid: fabea63d580739940bbb25f97df66b3a, type: 3}
+  m_Name: Simple Dash
   m_EditorClassIdentifier: 
-  song: {fileID: 8300000, guid: 11757151115b34f44a1c03b1c38510eb, type: 3}
-  initialBpm: 125
+  owner: {fileID: 0}
+  maxCoolDown: 5
+  currentCoolDown: 5
+  travelDistance: 3

@@ -28,7 +28,8 @@ namespace PlayerScripts
         }
 
         #endregion
-        
+
+        #region Private Methods
 
         private void CheckInputs()
         {
@@ -126,6 +127,13 @@ namespace PlayerScripts
                     player.MovementSpell.Cast();
                     break;
             }
+        }
+
+        #endregion
+
+        public void UpdateMovePos(Vector3 addedMovePos)
+        {
+            movePos += addedMovePos;
         }
     }
 }

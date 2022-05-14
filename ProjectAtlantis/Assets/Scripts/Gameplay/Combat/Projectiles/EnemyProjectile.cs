@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Combat
+namespace Gameplay.Combat.Projectiles
 {
     public class EnemyProjectile : Projectile
     {

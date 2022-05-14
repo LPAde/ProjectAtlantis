@@ -1,9 +1,10 @@
 using Enemies;
+using Gameplay.Combat.Projectiles;
 using PlayerScripts;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace Combat.Spells
+namespace Gameplay.Combat.Spells
 {
     [CreateAssetMenu(fileName = "Projectile Spell",menuName = "Spells/Combat Spell/Projectile Spawning Spell", order = 0)]
     public class ProjectileSpawningSpell : CombatSpell
@@ -12,7 +13,14 @@ namespace Combat.Spells
 
         public override void Cast()
         {
-            base.Cast();
+            // Stops when the spell is still on cooldown.
+            if (currentCoolDown > 0)
+            {
+                Debug.Log("retunr");
+                return;
+            }
+            
+            currentCoolDown = maxCoolDown;
 
             // Check who is owner.
             if (owner is BaseEnemy owningEnemy)

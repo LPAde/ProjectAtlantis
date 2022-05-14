@@ -1,7 +1,7 @@
 using Enemies;
 using UnityEngine;
 
-namespace Combat
+namespace Gameplay.Combat.Projectiles
 {
     public class PlayerProjectile : Projectile
     {

@@ -1322,7 +1322,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
+  m_AnchoredPosition: {x: -4.9999695, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &562589432
@@ -1867,7 +1867,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
+  m_AnchoredPosition: {x: -4.9999695, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &758213584
@@ -2446,11 +2446,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f07f5ec959a96a4485d3997b9ec0718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSong: {fileID: 11400000, guid: 9334469a12178f341b0417675f02174f, type: 2}
-  leeway:
-  - 0.3
-  - 0.6
-  - 1
   sliders:
   - {fileID: 1132459165}
   - {fileID: 709860315}
@@ -2458,6 +2453,10 @@ MonoBehaviour:
   - {fileID: 1454589123}
   - {fileID: 1510069735}
   - {fileID: 1704931603}
+  leeway:
+  - 0.3
+  - 0.6
+  - 1
   currentTimers:
   - 0
   - 0
@@ -2465,8 +2464,13 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  currentBeat: 0
   playerActed: 0
+  currentSong: {fileID: 11400000, guid: 9334469a12178f341b0417675f02174f, type: 2}
+  currentBeat: 0
+  beatCounts: 
+  followingBeats: []
+  isComplex: 0
+  currentIndex: 0
 --- !u!4 &995343681
 Transform:
   m_ObjectHideFlags: 0
@@ -3004,7 +3008,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
+  m_AnchoredPosition: {x: -4.9999695, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1313947722
@@ -4513,7 +4517,7 @@ MonoBehaviour:
   projectileSpawnPosition: {fileID: 320739662}
   combatSpells:
   - {fileID: 11400000, guid: a92cefc61c38c8f409b42e3162117284, type: 2}
-  movementSpell: {fileID: 0}
+  movementSpell: {fileID: 11400000, guid: be3d99900a91c2b4ab58a02ac6abe49b, type: 2}
   difficultyModifier: 1
 --- !u!1 &2133527756
 GameObject:

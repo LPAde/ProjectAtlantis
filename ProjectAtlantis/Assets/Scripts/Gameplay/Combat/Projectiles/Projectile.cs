@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Combat
+namespace Gameplay.Combat.Projectiles
 {
     public abstract class Projectile : MonoBehaviour
     {
@@ -15,7 +15,7 @@ namespace Combat
 
         protected virtual void OnTriggerEnter(Collider other)
         {
-            if(other.CompareTag("Projectile"))
+            if(other.CompareTag("Ground") || other.CompareTag("Projectile"))
                 return;
         
             Destroy(gameObject);
