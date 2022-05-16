@@ -15,7 +15,6 @@ namespace Enemies
         [SerializeField] private GameObject attack;
         [SerializeField] private Transform projectileSpawnPosition;
         [SerializeField] private NavMeshAgent agent;
-        [SerializeField] private Rigidbody rb;
 
         [SerializeField] private float desiredSeparation;
         [SerializeField] private float maxForce;
@@ -119,15 +118,20 @@ namespace Enemies
             mayAttack = true;
         }
 
+        /// <summary>
+        /// Does the flocking behaviour.
+        /// </summary>
+        /// <returns> How much the Enemy has to change their movement. </returns>
         private Vector3 CalculateSeparation()
         {
+            // Setup.
             Vector3 totalSeparation = Vector3.zero;
             int neighbourCount = 0;
-
             var enManager = GameManager.Instance.EnemyManager;
-            for (int i = 0; i < enManager.Enemies.Count; i++)
+            
+            // Checks how many other enemies are close.
+            foreach (var en in enManager.Enemies)
             {
-                var en = enManager.Enemies[i];
                 Vector3 separation = transform.position - en.transform.position;
                 float distance = separation.magnitude;
 
@@ -140,16 +144,17 @@ namespace Enemies
                 }
             }
 
+            // Sets the separation vector.
             if (neighbourCount > 0)
             {
                 Vector3 averageSeparation = totalSeparation / neighbourCount;
                 averageSeparation = averageSeparation.normalized * stats.Speed;
-                Vector3 separationForce = averageSeparation - agent.velocity;
+                Vector3 separationVector = averageSeparation - agent.velocity;
 
-                if (separationForce.magnitude > maxForce)
-                    separationForce = separationForce.normalized * maxForce;
+                if (separationVector.magnitude > maxForce)
+                    separationVector = separationVector.normalized * maxForce;
 
-                return separationForce;
+                return separationVector;
             }
             
             return Vector3.zero;
