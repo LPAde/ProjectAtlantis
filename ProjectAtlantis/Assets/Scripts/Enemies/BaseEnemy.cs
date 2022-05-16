@@ -27,6 +27,7 @@ namespace Enemies
         public EnemyStats Stats => stats;
 
         public Transform ProjectileSpawnPosition => projectileSpawnPosition;
+        
         private void OnEnable()
         {
             GameManager.Instance.RhythmManager.HitPerfect += MayAttack;
@@ -76,7 +77,7 @@ namespace Enemies
         public virtual void WalkToPlayer()
         {
             agent.isStopped = false;
-            agent.SetDestination(GameManager.Instance.Player.PlayerController.transform.position);
+            agent.SetDestination(GameManager.Instance.Player.PlayerController.transform.position + CalculateSeparation());
             //rb.AddForce(CalculateSeparation());
         }
 
@@ -143,7 +144,7 @@ namespace Enemies
             {
                 Vector3 averageSeparation = totalSeparation / neighbourCount;
                 averageSeparation = averageSeparation.normalized * stats.Speed;
-                Vector3 separationForce = averageSeparation - rb.velocity;
+                Vector3 separationForce = averageSeparation - agent.velocity;
 
                 if (separationForce.magnitude > maxForce)
                     separationForce = separationForce.normalized * maxForce;
