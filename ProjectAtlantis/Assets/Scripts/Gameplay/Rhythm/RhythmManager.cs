@@ -103,7 +103,6 @@ namespace Gameplay.Rhythm
 
                 for (int i = 0; i < followingBeats.Count; i++)
                 {
-                    
                     followingBeats[i] = 60 / cSong.followingBpms[i];
                 }
                 

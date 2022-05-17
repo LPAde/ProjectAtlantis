@@ -115,6 +115,7 @@ namespace Enemies
         {
             if(stats.AttackCooldown > 0)
                 return;
+            
             mayAttack = true;
         }
 
