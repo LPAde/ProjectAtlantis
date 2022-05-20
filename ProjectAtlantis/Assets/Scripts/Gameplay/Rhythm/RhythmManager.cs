@@ -16,32 +16,24 @@ namespace Gameplay.Rhythm
         [Header("Song Related Stuff")]
         [SerializeField] private Song currentSong;
         [SerializeField] private float currentBeat;
-        
-        [Header("Complex Song Related Stuff")]
-        [SerializeField] private List<int> beatCounts;
-        [SerializeField] private List<float> followingBeats;
-        [SerializeField] private bool isComplex;
-        [SerializeField] private int currentIndex;
 
+        public Action<Song> OnTrackChange;
         public Action HitPerfect;
         
-        private void Start()
+        private void Awake()
         {
             HitPerfect += ResetPlayerAction;
-            
-            UpdateSong(currentSong);
+            OnTrackChange += ChangeSong;
+        }
+
+        private void Start()
+        {
+            OnTrackChange.Invoke(currentSong);
         }
 
         private void Update()
         {
-            if (isComplex)
-            {
-                ComplexUpdate();
-            }
-            else
-            {
-                SimpleUpdate();   
-            }
+            SimpleUpdate();
         }
 
         #region Public Methods
@@ -78,7 +70,7 @@ namespace Gameplay.Rhythm
         /// Updates the current song to a new one.
         /// </summary>
         /// <param name="newSong"> The new one that shall be played and played with. </param>
-        public void UpdateSong(Song newSong)
+        private void ChangeSong(Song newSong)
         {
             currentSong = newSong;
             currentBeat = 60 / currentSong.initialBpm;
@@ -96,22 +88,6 @@ namespace Gameplay.Rhythm
             currentTimers[3] = currentBeat;
             currentTimers[4] = currentBeat*2;
             currentTimers[5] = currentBeat*3;
-
-            if (currentSong is ComplexSong cSong)
-            {
-                beatCounts = cSong.beatCounts;
-
-                for (int i = 0; i < followingBeats.Count; i++)
-                {
-                    followingBeats[i] = 60 / cSong.followingBpms[i];
-                }
-                
-                isComplex = true;
-            }
-            else
-            {
-                isComplex = false;
-            }
         }
 
         #endregion
@@ -134,24 +110,6 @@ namespace Gameplay.Rhythm
                 sliders[i].value = currentTimers[i];
             }
         }
-
-        /// <summary>
-        /// The update used for a complex song.
-        /// </summary>
-        private void ComplexUpdate()
-        {
-            if (currentTimers[0] < 0)
-            {
-                HitPerfect.Invoke();
-            }
-            
-            for (int i = 0; i < currentTimers.Count; i++)
-            {
-                currentTimers[i] -= Time.deltaTime;
-                
-                sliders[i].value = currentTimers[i];
-            }
-        }
         
         /// <summary>
         /// Places the timers at the correct spot.
@@ -166,15 +124,7 @@ namespace Gameplay.Rhythm
             currentTimers[4] = currentTimers[5];
             currentTimers[5] += currentBeat;
         }
-
-        /// <summary>
-        /// Does wild shit yknow.
-        /// </summary>
-        private void HandleComplexTimers()
-        {
-            
-        }
-
+        
         private void ResetPlayerAction()
         {
             playerActed = false;

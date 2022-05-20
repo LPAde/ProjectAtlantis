@@ -11,21 +11,29 @@ public class GameManager : MonoBehaviour
 
     #region Private Fields
     
+    [SerializeField] private Player player;
+    [SerializeField] private Camera mainCam;
+    
+    [Header("Managers")]
     [SerializeField] private RhythmManager rhythmManager;
     [SerializeField] private EnemyManager enemyManager;
     [SerializeField] private HudManager hudManager;
-    [SerializeField] private Player player;
-    [SerializeField] private Camera mainCam;
+    [SerializeField] private AudioManager audioManager;
     
 
     #endregion
 
-    public RhythmManager RhythmManager => rhythmManager;
-    public EnemyManager EnemyManager => enemyManager;
-    public HudManager HudManager => hudManager;
-    public Player Player => player;
-    public Camera MainCam => mainCam;
+    #region Properties
 
+     public Player Player => player;
+     public Camera MainCam => mainCam;
+     public RhythmManager RhythmManager => rhythmManager;
+     public EnemyManager EnemyManager => enemyManager;
+     public HudManager HudManager => hudManager;
+     public AudioManager AudioManager => audioManager;
+
+    #endregion
+    
     private void Awake()
     {
         if(Instance != null)
