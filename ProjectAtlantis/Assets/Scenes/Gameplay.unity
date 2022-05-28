@@ -432,7 +432,7 @@ MonoBehaviour:
     attackCooldown: 2
     triggerRange: 8
   difficultyModifier: 1
-  combatValue: 0
+  combatScore: 0
   agent: {fileID: 100850474}
   desiredSeparation: 10
   maxForce: 100
@@ -695,7 +695,7 @@ MonoBehaviour:
     attackCooldown: 2
     triggerRange: 8
   difficultyModifier: 1
-  combatValue: 0
+  combatScore: 0
   agent: {fileID: 143590719}
   desiredSeparation: 10
   maxForce: 100
@@ -2299,7 +2299,7 @@ MonoBehaviour:
     attackCooldown: 2
     triggerRange: 8
   difficultyModifier: 1
-  combatValue: 0
+  combatScore: 0
   agent: {fileID: 852048570}
   desiredSeparation: 10
   maxForce: 100
@@ -3050,6 +3050,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arenaEnemies: []
+  heightChecks: []
+  difficultyModifiers: []
+  isInArena: 0
 --- !u!1 &1092321090
 GameObject:
   m_ObjectHideFlags: 0
@@ -4093,6 +4096,7 @@ MonoBehaviour:
   hardcodedWaves: 
   hardcodedEnemies:
   - enemies: []
+    enemyAmount: 
 --- !u!1 &1760180903
 GameObject:
   m_ObjectHideFlags: 0
@@ -4919,9 +4923,9 @@ MonoBehaviour:
   enemyManager: {fileID: 758213586}
   hudManager: {fileID: 1771511856}
   audioManager: {fileID: 225608402}
-  arenaManager: {fileID: 0}
-  enemySpawner: {fileID: 0}
-  waveManager: {fileID: 0}
+  arenaManager: {fileID: 1086497784}
+  enemySpawner: {fileID: 1641598934}
+  waveManager: {fileID: 1733173620}
 --- !u!4 &2012971437
 Transform:
   m_ObjectHideFlags: 0

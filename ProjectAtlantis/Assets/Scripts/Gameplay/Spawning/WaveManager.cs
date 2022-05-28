@@ -39,6 +39,7 @@ namespace Gameplay.Spawning
             // Adding enemies to the new list till the new combat score is bigger, then the former combat score.
             while (newCombatScore < formerCombatScore)
             {
+                // TODO: adding enemies to the new wave and updating that waves combat score.
                 formerCombatScore++;
             }
 
