@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace PlayerScripts
@@ -8,6 +9,12 @@ namespace PlayerScripts
 
         [Header("Movement")] 
         [SerializeField] private Vector3 movePos;
+
+        [Header("Dashes")]
+        [SerializeField] private Vector3 dashVector;
+        [SerializeField] private bool isDashing;
+        [SerializeField] private float dashDuration;
+        [SerializeField] private float dashSpeed;
         
         #region Unity Methods
 
@@ -20,11 +27,18 @@ namespace PlayerScripts
         {
             CheckInputs();
         }
-        
+
         private void FixedUpdate()
         {
-            Move();
-            Look();
+            if (!isDashing)
+            {
+                Move();
+                Look(); 
+            }
+            else
+            {
+                Dash();
+            }
         }
 
         #endregion
@@ -59,7 +73,6 @@ namespace PlayerScripts
                     if(!hit.transform.CompareTag("Ground"))
                         return;
 
-                    var position = transform.position;
                     movePos = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                 }
             }
@@ -79,7 +92,8 @@ namespace PlayerScripts
                 var movement = dir.normalized * (player.PlayerStats.Speed * Time.deltaTime);
                 
                 // Limit movement to never pass the target position.
-                if (movement.magnitude > dir.magnitude) movement = dir;
+                if (movement.magnitude > dir.magnitude) 
+                    movement = dir;
                 
                 // Move the character.
                 player.CharacterController.Move(movement);
@@ -103,10 +117,31 @@ namespace PlayerScripts
             transform1.forward = lookAtPos - position;
         }
 
+        private void Dash()
+        {
+            // Calculate movement at the desired speed.
+            var movement = dashVector.normalized * (Time.deltaTime * dashSpeed);
+                
+            // Limit movement to never pass the target position.
+            if (movement.magnitude > dashVector.magnitude)
+                movement = dashVector;
+                
+            // Move the character.
+            player.CharacterController.Move(movement);
+
+            dashDuration -= Time.deltaTime;
+            
+            if (dashDuration > 0)
+                return;
+
+            movePos = transform.position;
+            isDashing = false;
+        }
+
         /// <summary>
         /// Casts a spell based on the input.
         /// </summary>
-        /// <param name="code"></param>
+        /// <param name="code"> The Input that should be worked with. </param>
         private void Cast(KeyCode code)
         {
             switch (code)
@@ -131,9 +166,12 @@ namespace PlayerScripts
 
         #endregion
 
-        public void UpdateMovePos(Vector3 addedMovePos)
+        public void InitializeDash(Vector3 newDashVector, float newDashDuration, float newDashSpeed)
         {
-            movePos += addedMovePos;
+            dashVector = newDashVector;
+            dashDuration = newDashDuration;
+            dashSpeed = newDashSpeed;
+            isDashing = true;
         }
     }
 }
