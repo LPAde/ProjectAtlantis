@@ -1,5 +1,6 @@
 using Enemies;
 using Gameplay.Rhythm;
+using Gameplay.Spawning;
 using PlayerScripts;
 using UI;
 using UnityEngine;
@@ -14,12 +15,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private Camera mainCam;
     
-    [Header("Managers")]
+    [Header("Base Managers")]
     [SerializeField] private RhythmManager rhythmManager;
     [SerializeField] private EnemyManager enemyManager;
     [SerializeField] private HudManager hudManager;
     [SerializeField] private AudioManager audioManager;
-    
+
+    [Header("Arena Related Managers")] 
+    [SerializeField] private ArenaManager arenaManager;
+    [SerializeField] private EnemySpawner enemySpawner;
+    [SerializeField] private WaveManager waveManager;
 
     #endregion
 
@@ -31,6 +36,9 @@ public class GameManager : MonoBehaviour
      public EnemyManager EnemyManager => enemyManager;
      public HudManager HudManager => hudManager;
      public AudioManager AudioManager => audioManager;
+     public ArenaManager ArenaManager => arenaManager;
+     public EnemySpawner EnemySpawner => enemySpawner;
+     public WaveManager WaveManager => waveManager;
 
     #endregion
     

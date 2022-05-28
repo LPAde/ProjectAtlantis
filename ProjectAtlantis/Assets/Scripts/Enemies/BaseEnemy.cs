@@ -12,7 +12,7 @@ namespace Enemies
         [SerializeField] private EnemyStats stats;
         
         [SerializeField] private float difficultyModifier = 1;
-        [SerializeField] private float combatValue;
+        [SerializeField] private float combatScore;
         [SerializeField] private NavMeshAgent agent;
 
         [Header("Flocking related values")]
@@ -28,7 +28,7 @@ namespace Enemies
 
         public EnemyStats Stats => stats;
 
-        public float CombatValue => combatValue;
+        public float CombatScore => combatScore;
         
         public Transform ProjectileSpawnPosition => projectileSpawnPosition;
         
