@@ -1735,7 +1735,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 127
   m_IsActive: 1
 --- !u!64 &675963873
 MeshCollider:
@@ -4184,6 +4184,7 @@ MonoBehaviour:
   dashVector: {x: 0, y: 0, z: 0}
   isDashing: 0
   dashDuration: 0
+  dashSpeed: 0
 --- !u!65 &1780075054
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4774,7 +4775,7 @@ MonoBehaviour:
   rhythmManager: {fileID: 995343680}
   enemyManager: {fileID: 758213586}
   hudManager: {fileID: 1771511856}
-  audioManager: {fileID: 0}
+  audioManager: {fileID: 225608402}
 --- !u!4 &2012971437
 Transform:
   m_ObjectHideFlags: 0

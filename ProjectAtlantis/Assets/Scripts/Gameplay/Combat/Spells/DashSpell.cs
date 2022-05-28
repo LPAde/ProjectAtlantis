@@ -20,24 +20,15 @@ namespace Gameplay.Combat.Spells
             
             currentCoolDown = maxCoolDown;
             
-            // Check who is owner.
-            if (owner is BaseEnemy owningEnemy)
-            {
-                // Enemy Spell.
-                
-            }
-            else
-            {
-                // Player Spell.
-                Player owningPlayer = (Player) owner;
+            // Player Spell.
+            Player owningPlayer = (Player) owner;
 
-                // Calculates own Vector.
-                var travelVector = travelDistance *
-                                   owningPlayer.ProjectileSpawnPosition.forward;
-                
-                // Tells player to dash.
-                owningPlayer.PlayerController.InitializeDash(travelVector, dashDuration, dashSpeed);
-            }
+            // Calculates own Vector.
+            var travelVector = travelDistance *
+                               owningPlayer.ProjectileSpawnPosition.forward;
+            
+            // Tells player to dash.
+            owningPlayer.PlayerController.InitializeDash(travelVector, dashDuration, dashSpeed);
         }
     }
 }

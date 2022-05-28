@@ -12,19 +12,24 @@ namespace Enemies
         [SerializeField] private EnemyStats stats;
         
         [SerializeField] private float difficultyModifier = 1;
-        [SerializeField] private GameObject attack;
-        [SerializeField] private Transform projectileSpawnPosition;
+        [SerializeField] private float combatValue;
         [SerializeField] private NavMeshAgent agent;
 
+        [Header("Flocking related values")]
         [SerializeField] private float desiredSeparation;
         [SerializeField] private float maxForce;
         
-        private bool mayAttack;
+        [Header("Attack related values")]
+        [SerializeField] private GameObject attack;
+        [SerializeField] private Transform projectileSpawnPosition;
+        private bool _mayAttack;
         
         public FiniteStateMachine FiniteStateMachine { get; private set; }
 
         public EnemyStats Stats => stats;
 
+        public float CombatValue => combatValue;
+        
         public Transform ProjectileSpawnPosition => projectileSpawnPosition;
         
         private void OnEnable()
@@ -99,13 +104,14 @@ namespace Enemies
             }
             else
             {
-                if(!mayAttack)
+                if(!_mayAttack)
                     return;
-                
+
+                var position = projectileSpawnPosition.position;
                 var projectile =
-                    Instantiate(attack, projectileSpawnPosition.position, quaternion.identity,
+                    Instantiate(attack, position, quaternion.identity,
                         GameManager.Instance.transform).GetComponent<EnemyProjectile>();
-                projectile.Initialize(GameManager.Instance.Player.PlayerController.transform.position - projectileSpawnPosition.position);
+                projectile.Initialize(GameManager.Instance.Player.PlayerController.transform.position - position);
 
                 stats.AttackCooldown = stats.AttackMaxCooldown;
             }
@@ -116,7 +122,7 @@ namespace Enemies
             if(stats.AttackCooldown > 0)
                 return;
             
-            mayAttack = true;
+            _mayAttack = true;
         }
 
         /// <summary>
