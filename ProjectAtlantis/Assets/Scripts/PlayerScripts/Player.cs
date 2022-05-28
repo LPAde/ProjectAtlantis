@@ -61,7 +61,6 @@ namespace PlayerScripts
         /// <param name="damage"> How much damage is dealt. </param>
         public void TakeDamage(float damage)
         {
-            print(damage);
             float takenDamage = damage - stats.Defense;
             
             if(takenDamage <= 0)
@@ -87,6 +86,19 @@ namespace PlayerScripts
             
             if (stats.Health > stats.MAXHealth)
                 stats.Health = stats.MAXHealth;
+        }
+        
+        /// <summary>
+        /// Upgrades the stats of the player.
+        /// </summary>
+        /// <param name="addedStats"> The stats to be added. </param>
+        public void UpgradeStats(PlayerStats addedStats)
+        {
+            stats.MAXHealth += addedStats.MAXHealth;
+            stats.Health += addedStats.MAXHealth;
+            stats.Strength += addedStats.Strength;
+            stats.Defense += addedStats.Defense;
+            stats.Speed += addedStats.Speed;
         }
     }
 
@@ -134,14 +146,6 @@ namespace PlayerScripts
         {
             get => speed;
             internal set => speed = value;
-        }
-
-        public void UpdateStats(PlayerStats addedStats)
-        {
-            maxHealth += addedStats.maxHealth;
-            health += addedStats.maxHealth;
-            strength += addedStats.strength;
-            defense += addedStats.defense;
         }
     }
 }

@@ -14,7 +14,6 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        print(backgroundMusic.isPlaying);
         // Starts a new song when the current one ends.
         if(!backgroundMusic.isPlaying)
             GameManager.Instance.RhythmManager.OnTrackChange.Invoke(currentSong);

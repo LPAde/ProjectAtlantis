@@ -8,10 +8,13 @@ namespace Gameplay.Rhythm
     public class RhythmManager : MonoBehaviour
     {
         [Header("Player Related Stuff")]
-        [SerializeField] private List<Slider> sliders;
         [SerializeField] private List<float> leeway;
-        [SerializeField] private List<float> currentTimers;
+        [SerializeField] private List<float> leewayPercentages;
         [SerializeField] private bool playerActed;
+        
+        [Header("Visual Stuff")]
+        [SerializeField] private List<Slider> sliders;
+        [SerializeField] private List<float> currentTimers;
         
         [Header("Song Related Stuff")]
         [SerializeField] private Song currentSong;
@@ -19,6 +22,8 @@ namespace Gameplay.Rhythm
 
         public Action<Song> OnTrackChange;
         public Action HitPerfect;
+
+        public Song CurrentSong => currentSong;
         
         private void Awake()
         {
@@ -88,6 +93,10 @@ namespace Gameplay.Rhythm
             currentTimers[3] = currentBeat;
             currentTimers[4] = currentBeat*2;
             currentTimers[5] = currentBeat*3;
+
+            leeway[0] = currentBeat * leewayPercentages[0];
+            leeway[1] = currentBeat * leewayPercentages[1];
+            leeway[2] = currentBeat * leewayPercentages[2];
         }
 
         #endregion
