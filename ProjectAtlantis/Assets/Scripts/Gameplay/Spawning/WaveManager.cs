@@ -21,7 +21,7 @@ namespace Gameplay.Spawning
             {
                 if (currentWave == hardcodedWaves[i])
                 {
-                    return hardcodedEnemies[i].Enemies;
+                    return hardcodedEnemies[i].CreateEnemyList();
                 }
                 else
                 {
@@ -50,7 +50,27 @@ namespace Gameplay.Spawning
     public struct Wave
     {
         [SerializeField] private List<BaseEnemy> enemies;
+        [SerializeField] private List<int> enemyAmount;
 
-        public List<BaseEnemy> Enemies => enemies;
+        /// <summary>
+        /// Creates a list of base enemies based on the input of the wave.
+        /// </summary>
+        /// <returns> The newly created list. </returns>
+        public List<BaseEnemy> CreateEnemyList()
+        {
+            List<BaseEnemy> newBaseEnemies = new List<BaseEnemy>();
+
+            // Do something for every enemy.
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                // Do it the amount of predetermined types.
+                for (int j = 0; j < enemyAmount[i]; j++)
+                {
+                    newBaseEnemies.Add(enemies[i]);
+                }
+            }
+
+            return newBaseEnemies;
+        }
     }
 }

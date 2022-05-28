@@ -10,8 +10,12 @@ namespace Gameplay.Spawning
         [SerializeField] private List<float> heightChecks;
         [SerializeField] private List<float> difficultyModifiers;
 
+        [SerializeField] private bool isInArena;
+
         private bool spawningFinished;
 
+        public bool IsInArena => isInArena;
+        
         private void Awake()
         {
             GameManager.Instance.EnemySpawner.OnFinishedSpawning += FinishSpawning;
@@ -52,6 +56,8 @@ namespace Gameplay.Spawning
             
             if(!spawningFinished)
                 return;
+
+            GameManager.Instance.EnemySpawner.StartSpawning();
         }
     }
 }

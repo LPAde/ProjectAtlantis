@@ -53,7 +53,14 @@ namespace Enemies
         private void OnDisable()
         {
             GameManager.Instance.RhythmManager.HitPerfect -= MayAttack;
+        }
+
+        private void OnDestroy()
+        {
             GameManager.Instance.EnemyManager.RemoveEnemy(this);
+            
+            if(GameManager.Instance.ArenaManager.IsInArena)
+                GameManager.Instance.ArenaManager.RemoveArenaEnemy(this);
         }
 
         /// <summary>
@@ -82,7 +89,6 @@ namespace Enemies
         {
             agent.isStopped = false;
             agent.SetDestination(GameManager.Instance.Player.PlayerController.transform.position + CalculateSeparation());
-            //rb.AddForce(CalculateSeparation());
         }
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Gameplay.Spawning
         /// <summary>
         /// Starts spawning the currently saved enemies.
         /// </summary>
-        private void StartSpawning()
+        public void StartSpawning()
         {
             StartCoroutine(SpawnEnemies());
         }

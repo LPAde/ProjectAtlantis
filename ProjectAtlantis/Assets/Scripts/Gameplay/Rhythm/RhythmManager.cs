@@ -62,7 +62,6 @@ namespace Gameplay.Rhythm
             {
                 return Timing.Amazing;
             }
-
             if (currentTimers[0] < leeway[2])
             {
                 return Timing.Good;
