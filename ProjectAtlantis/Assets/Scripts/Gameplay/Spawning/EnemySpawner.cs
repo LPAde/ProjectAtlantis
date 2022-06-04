@@ -14,17 +14,18 @@ namespace Gameplay.Spawning
         [SerializeField] private float enemySpawnDelay;
         private int _currentSpawnPosition;
 
-        public Action OnFinishedSpawning;
+        public Action<int> OnWaveStart;
 
         private void Awake()
         {
-            OnFinishedSpawning += UpdateWave;
+            OnWaveStart += UpdateWave;
+            OnWaveStart += StartSpawning;
         }
 
         /// <summary>
         /// Starts spawning the currently saved enemies.
         /// </summary>
-        public void StartSpawning()
+        private void StartSpawning(int wave)
         {
             StartCoroutine(SpawnEnemies());
         }
@@ -43,9 +44,11 @@ namespace Gameplay.Spawning
                 _currentSpawnPosition = 0;
         }
 
-        private void UpdateWave()
+        private void UpdateWave(int wave)
         {
+            print("here");
             enemies = GameManager.Instance.WaveManager.GenerateNextWave(enemies);
+            print(enemies);
         }
 
         /// <summary>
@@ -54,8 +57,11 @@ namespace Gameplay.Spawning
         /// <returns></returns>
         private IEnumerator SpawnEnemies()
         {
+            print("spawning");
             foreach (var enemy in enemies)
             {
+                print("Spawning: " + enemy);
+                
                 UpdateSpawnPoints();
                 var en = Instantiate(enemy,spawnPositions[_currentSpawnPosition].position,quaternion.identity,transform);
                 
@@ -63,8 +69,6 @@ namespace Gameplay.Spawning
                 
                 yield return new WaitForSeconds(enemySpawnDelay);
             }
-            
-            OnFinishedSpawning.Invoke();
         }
     }
 }

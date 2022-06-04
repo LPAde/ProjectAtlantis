@@ -3,46 +3,62 @@ using System.Collections.Generic;
 using System.Linq;
 using Enemies;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Gameplay.Spawning
 {
     public class WaveManager : MonoBehaviour
     {
         [SerializeField] private int currentWave;
-        [SerializeField] private List<int> hardcodedWaves;
-        [SerializeField] private List<Wave> hardcodedEnemies;
+        [SerializeField] private List<int> hardcodedWavesIndicator;
+        [SerializeField] private List<Wave> hardcodedWaves;
 
+        public int CurrentWave => currentWave;
+        
         public List<BaseEnemy> GenerateNextWave(List<BaseEnemy> lastWave)
         {
             currentWave++;
             
             // Checks if we are in a hardcoded Wave.
-            for (int i = 0; i < hardcodedWaves.Count; i++)
+            for (int i = 0; i < hardcodedWavesIndicator.Count; i++)
             {
-                if (currentWave == hardcodedWaves[i])
+                if (currentWave == hardcodedWavesIndicator[i])
                 {
-                    return hardcodedEnemies[i].CreateEnemyList();
+                    return hardcodedWaves[i].CreateEnemyList();
                 }
                 else
                 {
-                    if (hardcodedWaves[i] > currentWave)
+                    if (hardcodedWavesIndicator[i] > currentWave)
                         break;
                 }
             }
             
             // Setting up the spawning.
             float formerCombatScore = lastWave.Sum(enemy => enemy.CombatScore);
-            formerCombatScore *= GameManager.Instance.ArenaManager.GetDifficultyModifier();
+            //formerCombatScore *= GameManager.Instance.ArenaManager.GetDifficultyModifier();
             float newCombatScore = 0;
             List<BaseEnemy> newWave = new List<BaseEnemy>();
-            
+            List<BaseEnemy> possibleEnemies = GameManager.Instance.ArenaManager.GetPossibleEnemies(currentWave);
+
             // Adding enemies to the new list till the new combat score is bigger, then the former combat score.
             while (newCombatScore < formerCombatScore)
             {
-                // TODO: adding enemies to the new wave and updating that waves combat score.
+                // Filling the upper 25% with popcorn.
+                if (formerCombatScore * .75f <= newCombatScore)
+                {
+                    newWave.Add(possibleEnemies[0]);
+                    newCombatScore += possibleEnemies[0].CombatScore;
+                }
+                else
+                {
+                    // Adding random enemies from the generated 100 enemy list.
+                    int random = Random.Range(0, 101);
+                    newWave.Add(possibleEnemies[random]);
+                    newCombatScore += possibleEnemies[random].CombatScore;
+                }
                 formerCombatScore++;
             }
-
+            
             return newWave;
         }
     }

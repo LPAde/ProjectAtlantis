@@ -6,25 +6,44 @@ namespace Gameplay.Spawning
 {
     public class ArenaManager : MonoBehaviour
     {
-        [SerializeField] private List<BaseEnemy> arenaEnemies;
+        [Header("Player related Stuff")]
         [SerializeField] private List<float> heightChecks;
         [SerializeField] private List<float> difficultyModifiers;
-
         [SerializeField] private bool isInArena;
-
-        private bool spawningFinished;
-
-        public bool IsInArena => isInArena;
         
+        [Header("Enemy related Stuff")]
+        [SerializeField] private List<BaseEnemy> allEnemies;
+        [SerializeField] private List<BaseEnemy> arenaEnemies;
+        [SerializeField] private List<int> spawnRates;
+        [SerializeField] private int spawnChangeIndicator;
+
+        [Header("Misc")] 
+        [SerializeField] private float currentDuration;
+        [SerializeField] private float baseDuration;
+        [SerializeField] private float durationIncrease;
+        
+        public bool IsInArena => isInArena;
+
+        #region Unity Methods
+
         private void Awake()
         {
-            GameManager.Instance.EnemySpawner.OnFinishedSpawning += FinishSpawning;
+            GameManager.Instance.EnemySpawner.OnWaveStart += FixDuration;
+            GameManager.Instance.EnemySpawner.OnWaveStart += FixSpawnRates;
         }
-        
-        private void FinishSpawning()
+
+        private void Update()
         {
-            spawningFinished = true;
+            currentDuration -= Time.deltaTime;
+
+            if (currentDuration <= 0)
+            {
+                GameManager.Instance.EnemySpawner.OnWaveStart.Invoke(GameManager.Instance.WaveManager.CurrentWave);
+            }
         }
+
+        #endregion
+        
 
         /// <summary>
         /// Identifies the correct difficulty modifier based on the player height.
@@ -41,6 +60,114 @@ namespace Gameplay.Spawning
             
             return difficultyModifiers[2];
         }
+
+        /// <summary>
+        /// Creates a list with all the possible enemies.
+        /// </summary>
+        /// <param name="currentWave"> The wave to determine the list. </param>
+        /// <returns> A list with 100 enemies that a wave can be generated from. </returns>
+        public List<BaseEnemy> GetPossibleEnemies(int currentWave)
+        {
+            // Set-up
+            List<BaseEnemy> possibleEnemies = new List<BaseEnemy>();
+            float playerHeight = GameManager.Instance.Player.PlayerController.transform.position.y;
+            possibleEnemies.Add(allEnemies[0]);
+            
+            /*
+             * 0 = Popcorn
+             * 1 = Shooters
+             * 2 = Piranha
+             * 3 = Serpent
+             * 4 = Shotguncrab
+             * 5 = Boss
+             */
+            if (playerHeight > heightChecks[0])
+            {
+                for (int i = 0; i < spawnRates.Count; i++)
+                {
+                    // Preventing mistakes.
+                    if(spawnRates[i] <= 0)
+                        continue;
+                    
+                    for (int j = 0; j < spawnRates[i]; j++)
+                    {
+                        switch (i)
+                        {
+                           case 0:
+                               possibleEnemies.Add(allEnemies[0]);
+                               break;
+                           case 1:
+                               possibleEnemies.Add(allEnemies[1]);
+                               break;
+                            case 2:
+                                possibleEnemies.Add(allEnemies[2]);
+                                break;
+                            case 3:
+                                possibleEnemies.Add(allEnemies[3]);
+                                break;
+                        }
+                    }
+                }
+            }
+            else if (playerHeight > heightChecks[1])
+            {
+                for (int i = 0; i < spawnRates.Count; i++)
+                {
+                    // Preventing mistakes.
+                    if(spawnRates[i] <= 0)
+                        continue;
+
+                    for (int j = 0; j < spawnRates[i]; j++)
+                    {
+                        switch (i)
+                        {
+                            case 0:
+                                possibleEnemies.Add(allEnemies[0]);
+                                break;
+                            case 1:
+                                possibleEnemies.Add(allEnemies[1]);
+                                break;
+                            case 2:
+                                possibleEnemies.Add(allEnemies[3]);
+                                break;
+                            case 3:
+                                possibleEnemies.Add(allEnemies[4]);
+                                break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < spawnRates.Count; i++)
+                {
+                    // Preventing mistakes.
+                    if(spawnRates[i] <= 0)
+                        continue;
+
+                    for (int j = 0; j < spawnRates[i]; j++)
+                    {
+                        switch (i)
+                        {
+                            case 0:
+                                possibleEnemies.Add(allEnemies[0]);
+                                break;
+                            case 1:
+                                possibleEnemies.Add(allEnemies[1]);
+                                break;
+                            case 2:
+                                possibleEnemies.Add(allEnemies[4]);
+                                break;
+                            case 3:
+                                possibleEnemies.Add(allEnemies[5]);
+                                break;
+                        }
+                    }
+                }
+            }
+            
+            return possibleEnemies;
+        }
         
         public void AddArenaEnemy(BaseEnemy newArenaEnemy)
         {
@@ -50,14 +177,33 @@ namespace Gameplay.Spawning
         public void RemoveArenaEnemy(BaseEnemy formerArenaEnemy)
         {
             arenaEnemies.Remove(formerArenaEnemy);
+        }
 
-            if (arenaEnemies.Count > 0) 
-                return;
-            
-            if(!spawningFinished)
-                return;
+        private void FixDuration(int currentWave)
+        {
+            currentDuration = baseDuration + durationIncrease * currentWave;
+        }
 
-            GameManager.Instance.EnemySpawner.StartSpawning();
+        private void FixSpawnRates(int currentWave)
+        {
+            // Only fixes them every tenth wave.
+            if (currentWave % spawnChangeIndicator == 0)
+            {
+                spawnRates[0] -= 10;
+                spawnRates[1] += 5;
+                spawnRates[2] += 10;
+                spawnRates[3] += 5;
+
+                // Fixing wrong spawn-rates by adding or removing popcorn.
+                if (spawnRates[0] + spawnRates[1] + spawnRates[2] + spawnRates[3] < 100)
+                {
+                    spawnRates[0] += 100 - (spawnRates[0] + spawnRates[1] + spawnRates[2] + spawnRates[3]);
+                }
+
+                // Removing the method after it reached it's low. 
+                if (spawnRates[0] == 10)
+                    GameManager.Instance.EnemySpawner.OnWaveStart -= FixSpawnRates;
+            }
         }
     }
 }
