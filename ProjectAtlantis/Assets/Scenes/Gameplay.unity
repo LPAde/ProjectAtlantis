@@ -3484,7 +3484,7 @@ MonoBehaviour:
   - {fileID: 1478235745316608609, guid: dc09b80c462e1c4498941f2231b29159, type: 3}
   spawnPositions:
   - {fileID: 187695550}
-  enemySpawnDelay: 0
+  enemySpawnDelay: 2
 --- !u!1 &1704931601
 GameObject:
   m_ObjectHideFlags: 0
@@ -4414,6 +4414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2120613332}
   mainCam: {fileID: 139947791}
+  dialogBox: {fileID: 0}
   rhythmManager: {fileID: 995343680}
   enemyManager: {fileID: 758213586}
   hudManager: {fileID: 1771511856}
