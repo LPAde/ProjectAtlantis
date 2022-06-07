@@ -1,23 +1,22 @@
-namespace Enemies.AI
+using Enemies.AI.FiniteStateMachines;
+
+namespace Enemies.AI.States
 {
-    public class FightState : State
+    public class WalkToPlayerState : State
     {
-        private AttackingEnemy owner;
         private readonly float _attackRange;
         
-        public FightState(FiniteStateMachine newFSM) : base(newFSM)
+        public WalkToPlayerState(FiniteStateMachine newFSM) : base(newFSM)
         {
             _attackRange = fsm.Owner.Stats.AttackRange * fsm.Owner.Stats.AttackRange;
-           if(owner is AttackingEnemy)
-               owner = (AttackingEnemy)newFSM.Owner;
         }
-        
+
         public override void CheckTransition()
         {
             float distance = (fsm.Owner.transform.position - GameManager.Instance.Player.PlayerController.transform.position).sqrMagnitude;
 
-            if(distance > _attackRange)
-                fsm.Transition(fsm.WalkState);
+            if(distance < _attackRange)
+                fsm.Transition(fsm.FightState);
         }
 
         public override void OnEnter()
@@ -26,11 +25,12 @@ namespace Enemies.AI
 
         public override void Update()
         {
-            owner.Attack();
+            fsm.Owner.WalkToPlayer();
         }
 
         public override void OnExit()
         {
+            fsm.Owner.Stop();
         }
     }
 }

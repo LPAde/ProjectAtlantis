@@ -1,4 +1,6 @@
-namespace Enemies.AI
+using Enemies.AI.FiniteStateMachines;
+
+namespace Enemies.AI.States
 {
     public abstract class State
     {

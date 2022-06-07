@@ -1,6 +1,6 @@
-using UnityEngine;
+using Enemies.AI.States;
 
-namespace Enemies.AI
+namespace Enemies.AI.FiniteStateMachines
 {
     public class FiniteStateMachine
     {
@@ -17,7 +17,6 @@ namespace Enemies.AI
         {
             owner = newOwner;
             IdleState = new IdleState(this);
-            FightState = new FightState(this);
             WalkState = new WalkToPlayerState(this);
         }
         

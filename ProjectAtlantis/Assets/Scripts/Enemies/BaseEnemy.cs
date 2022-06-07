@@ -1,5 +1,6 @@
 using System;
 using Enemies.AI;
+using Enemies.AI.FiniteStateMachines;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -79,7 +80,8 @@ namespace Enemies
         public virtual void WalkToPlayer()
         {
             agent.isStopped = false;
-            agent.SetDestination(GameManager.Instance.Player.PlayerController.transform.position + CalculateSeparation());
+            KnockBack(CalculateSeparation());
+            agent.SetDestination(GameManager.Instance.Player.PlayerController.transform.position);
         }
 
         /// <summary>
