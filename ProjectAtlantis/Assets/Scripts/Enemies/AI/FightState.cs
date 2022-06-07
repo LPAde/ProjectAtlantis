@@ -8,7 +8,8 @@ namespace Enemies.AI
         public FightState(FiniteStateMachine newFSM) : base(newFSM)
         {
             _attackRange = fsm.Owner.Stats.AttackRange * fsm.Owner.Stats.AttackRange;
-            owner = (AttackingEnemy)newFSM.Owner;
+           if(owner is AttackingEnemy)
+               owner = (AttackingEnemy)newFSM.Owner;
         }
         
         public override void CheckTransition()

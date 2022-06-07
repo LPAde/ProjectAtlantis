@@ -12,6 +12,7 @@ namespace Enemies
         [SerializeField] private float difficultyModifier = 1;
         [SerializeField] private float combatScore;
         [SerializeField] private NavMeshAgent agent;
+        [SerializeField] private Rigidbody rb;
 
         [Header("Flocking related values")]
         [SerializeField] private float desiredSeparation;
@@ -88,10 +89,16 @@ namespace Enemies
         {
             agent.isStopped = true;
         }
-
+        
+        /// <summary>
+        /// Knocks the enemy in a direction once.
+        /// </summary>
+        /// <param name="knockBackVector"> The direction you want them to be knocked to. </param>
         public void KnockBack(Vector3 knockBackVector)
         {
-            
+            agent.updatePosition = false;
+            rb.AddForce(knockBackVector);
+            agent.updatePosition = true;
         }
 
         /// <summary>
