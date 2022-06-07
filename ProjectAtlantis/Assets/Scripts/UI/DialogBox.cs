@@ -7,7 +7,7 @@ namespace UI
 {
     public class DialogBox : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI textBoxText;
+        [SerializeField] private TextMeshProUGUI dialogBoxText;
         [SerializeField] private List<string> currentText;
         [SerializeField] private string currentTalker;
         [SerializeField] private int index;
@@ -27,8 +27,7 @@ namespace UI
             gameObject.SetActive(true);
             currentTalker = newTalker;
             currentText = newText;
-            index = 0;
-            textBoxText.text = string.Concat(currentTalker, ": ", currentText[index]);
+            index = -1;
         }
 
         private void Inputs()
@@ -44,7 +43,7 @@ namespace UI
             }
             else
             {
-                textBoxText.text = string.Concat(currentTalker, ": ", currentText[index]);
+                dialogBoxText.text = string.Concat(currentTalker, ": ", currentText[index]);
             }
         }
     }
