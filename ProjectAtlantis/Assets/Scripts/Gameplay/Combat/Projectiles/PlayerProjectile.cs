@@ -6,7 +6,7 @@ namespace Gameplay.Combat.Projectiles
     public class PlayerProjectile : Projectile
     {
         [SerializeField] private float[] scalings;
-        public void Initialize(Timing timing, Vector3 newMovementVector)
+        public virtual void Initialize(Timing timing, Vector3 newMovementVector)
         {
             Initialize(newMovementVector);
         
