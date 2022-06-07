@@ -1,6 +1,6 @@
 using System;
 using Enemies.AI;
-using Gameplay.Combat.Projectiles;
+using Gameplay.Combat.Projectiles.EnemyProjectiles;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AI;
@@ -97,6 +97,11 @@ namespace Enemies
         public void Stop()
         {
             agent.isStopped = true;
+        }
+
+        public void KnockBack(Vector3 knockBackVector)
+        {
+            
         }
 
         /// <summary>
