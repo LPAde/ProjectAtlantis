@@ -2,11 +2,13 @@ namespace Enemies.AI
 {
     public class FightState : State
     {
+        private AttackingEnemy owner;
         private readonly float _attackRange;
         
         public FightState(FiniteStateMachine newFSM) : base(newFSM)
         {
             _attackRange = fsm.Owner.Stats.AttackRange * fsm.Owner.Stats.AttackRange;
+            owner = (AttackingEnemy)newFSM.Owner;
         }
         
         public override void CheckTransition()
@@ -23,7 +25,7 @@ namespace Enemies.AI
 
         public override void Update()
         {
-            fsm.Owner.Attack();
+            owner.Attack();
         }
 
         public override void OnExit()

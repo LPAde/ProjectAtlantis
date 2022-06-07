@@ -25,7 +25,7 @@ namespace Gameplay.Combat.Spells
             currentCoolDown = maxCoolDown;
 
             // Check who is owner.
-            if (owner is BaseEnemy owningEnemy)
+            if (owner is AttackingEnemy owningEnemy)
             {
                 // Enemy Spell.
                 var position = owningEnemy.ProjectileSpawnPosition.position;

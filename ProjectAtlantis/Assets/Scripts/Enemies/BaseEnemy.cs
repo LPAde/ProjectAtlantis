@@ -1,7 +1,5 @@
 using System;
 using Enemies.AI;
-using Gameplay.Combat.Projectiles.EnemyProjectiles;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,7 +7,7 @@ namespace Enemies
 {
     public class BaseEnemy : Character
     {
-        [SerializeField] private EnemyStats stats;
+        [SerializeField] protected EnemyStats stats;
         
         [SerializeField] private float difficultyModifier = 1;
         [SerializeField] private float combatScore;
@@ -18,24 +16,29 @@ namespace Enemies
         [Header("Flocking related values")]
         [SerializeField] private float desiredSeparation;
         [SerializeField] private float maxForce;
-        
-        [Header("Attack related values")]
-        [SerializeField] private GameObject attack;
-        [SerializeField] private Transform projectileSpawnPosition;
-        private bool _mayAttack;
-        
+
         public FiniteStateMachine FiniteStateMachine { get; private set; }
 
         public EnemyStats Stats => stats;
 
         public float CombatScore => combatScore;
         
-        public Transform ProjectileSpawnPosition => projectileSpawnPosition;
         
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
-            GameManager.Instance.RhythmManager.HitPerfect += MayAttack;
             GameManager.Instance.EnemyManager.AddEnemy(this);
+            
+            if(GameManager.Instance.ArenaManager.IsInArena)
+                GameManager.Instance.ArenaManager.AddArenaEnemy(this);
+        }
+
+        protected virtual void OnDisable()
+        {
+            
+            GameManager.Instance.EnemyManager.RemoveEnemy(this);
+            
+            if(GameManager.Instance.ArenaManager.IsInArena)
+                GameManager.Instance.ArenaManager.RemoveArenaEnemy(this);
         }
 
         private void Start()
@@ -48,19 +51,6 @@ namespace Enemies
         private void Update()
         {
             FiniteStateMachine.Update();
-        }
-
-        private void OnDisable()
-        {
-            GameManager.Instance.RhythmManager.HitPerfect -= MayAttack;
-        }
-
-        private void OnDestroy()
-        {
-            GameManager.Instance.EnemyManager.RemoveEnemy(this);
-            
-            if(GameManager.Instance.ArenaManager.IsInArena)
-                GameManager.Instance.ArenaManager.RemoveArenaEnemy(this);
         }
 
         /// <summary>
@@ -102,38 +92,6 @@ namespace Enemies
         public void KnockBack(Vector3 knockBackVector)
         {
             
-        }
-
-        /// <summary>
-        /// Checks cooldown and attacks when it should.
-        /// </summary>
-        public virtual void Attack()
-        {
-            if (stats.AttackCooldown > 0)
-            {
-                stats.AttackCooldown -= Time.deltaTime;
-            }
-            else
-            {
-                if(!_mayAttack)
-                    return;
-
-                var position = projectileSpawnPosition.position;
-                var projectile =
-                    Instantiate(attack, position, quaternion.identity,
-                        GameManager.Instance.transform).GetComponent<EnemyProjectile>();
-                projectile.Initialize(GameManager.Instance.Player.PlayerController.transform.position - position);
-
-                stats.AttackCooldown = stats.AttackMaxCooldown;
-            }
-        }
-        
-        private void MayAttack()
-        {
-            if(stats.AttackCooldown > 0)
-                return;
-            
-            _mayAttack = true;
         }
 
         /// <summary>

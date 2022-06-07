@@ -23,13 +23,13 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
             if (other.CompareTag("Enemy"))
             {
                 var enemy = other.gameObject.GetComponent<BaseEnemy>();
+                movementVector = CalculateNextFlyDirection(enemy);
                 enemy.TakeDamage(damage);
                 
                 // Checks if
                 if(!isHopping)
                     Destroy(gameObject);
                 
-                movementVector = CalculateNextFlyDirection(transform.position);
                 isHopping = false;
             }
             else
@@ -43,7 +43,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
         /// </summary>
         /// <param name="lastTarget"> Where the projectile was before the collision. </param>
         /// <returns> Where the projectile should fly to. </returns>
-        private Vector3 CalculateNextFlyDirection(Vector3 lastTarget)
+        private Vector3 CalculateNextFlyDirection(BaseEnemy lastTarget)
         {
            var en = GameManager.Instance.EnemyManager.GetClosestEnemy(lastTarget);
            
@@ -51,7 +51,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
            if(en == null)
                return Vector3.down;
 
-           return lastTarget - en.transform.position;
+           return lastTarget.transform.position - en.transform.position;
         }
     }
 }
