@@ -1,7 +1,6 @@
 using System;
 using Enemies.AI;
-using Gameplay.Combat.Projectiles;
-using Unity.Mathematics;
+using Enemies.AI.FiniteStateMachines;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,28 +8,39 @@ namespace Enemies
 {
     public class BaseEnemy : Character
     {
-        [SerializeField] private EnemyStats stats;
+        [SerializeField] protected EnemyStats stats;
         
         [SerializeField] private float difficultyModifier = 1;
-        [SerializeField] private GameObject attack;
-        [SerializeField] private Transform projectileSpawnPosition;
+        [SerializeField] private float combatScore;
         [SerializeField] private NavMeshAgent agent;
+        [SerializeField] private Rigidbody rb;
 
+        [Header("Flocking related values")]
         [SerializeField] private float desiredSeparation;
         [SerializeField] private float maxForce;
-        
-        private bool mayAttack;
-        
+
         public FiniteStateMachine FiniteStateMachine { get; private set; }
 
         public EnemyStats Stats => stats;
 
-        public Transform ProjectileSpawnPosition => projectileSpawnPosition;
+        public float CombatScore => combatScore;
         
-        private void OnEnable()
+        
+        protected virtual void OnEnable()
         {
-            GameManager.Instance.RhythmManager.HitPerfect += MayAttack;
             GameManager.Instance.EnemyManager.AddEnemy(this);
+            
+            if(GameManager.Instance.ArenaManager.IsInArena)
+                GameManager.Instance.ArenaManager.AddArenaEnemy(this);
+        }
+
+        protected virtual void OnDisable()
+        {
+            
+            GameManager.Instance.EnemyManager.RemoveEnemy(this);
+            
+            if(GameManager.Instance.ArenaManager.IsInArena)
+                GameManager.Instance.ArenaManager.RemoveArenaEnemy(this);
         }
 
         private void Start()
@@ -43,12 +53,6 @@ namespace Enemies
         private void Update()
         {
             FiniteStateMachine.Update();
-        }
-
-        private void OnDisable()
-        {
-            GameManager.Instance.RhythmManager.HitPerfect -= MayAttack;
-            GameManager.Instance.EnemyManager.RemoveEnemy(this);
         }
 
         /// <summary>
@@ -76,8 +80,8 @@ namespace Enemies
         public virtual void WalkToPlayer()
         {
             agent.isStopped = false;
-            agent.SetDestination(GameManager.Instance.Player.PlayerController.transform.position + CalculateSeparation());
-            //rb.AddForce(CalculateSeparation());
+            KnockBack(CalculateSeparation());
+            agent.SetDestination(GameManager.Instance.Player.PlayerController.transform.position);
         }
 
         /// <summary>
@@ -87,35 +91,16 @@ namespace Enemies
         {
             agent.isStopped = true;
         }
-
-        /// <summary>
-        /// Checks cooldown and attacks when it should.
-        /// </summary>
-        public virtual void Attack()
-        {
-            if (stats.AttackCooldown > 0)
-            {
-                stats.AttackCooldown -= Time.deltaTime;
-            }
-            else
-            {
-                if(!mayAttack)
-                    return;
-                
-                var projectile =
-                    Instantiate(attack, projectileSpawnPosition.position, quaternion.identity,
-                        GameManager.Instance.transform).GetComponent<EnemyProjectile>();
-                projectile.Initialize(GameManager.Instance.Player.PlayerController.transform.position - projectileSpawnPosition.position);
-
-                stats.AttackCooldown = stats.AttackMaxCooldown;
-            }
-        }
         
-        private void MayAttack()
+        /// <summary>
+        /// Knocks the enemy in a direction once.
+        /// </summary>
+        /// <param name="knockBackVector"> The direction you want them to be knocked to. </param>
+        public void KnockBack(Vector3 knockBackVector)
         {
-            if(stats.AttackCooldown > 0)
-                return;
-            mayAttack = true;
+            agent.updatePosition = false;
+            rb.AddForce(knockBackVector);
+            agent.updatePosition = true;
         }
 
         /// <summary>

@@ -1,5 +1,7 @@
 using Enemies;
 using Gameplay.Combat.Projectiles;
+using Gameplay.Combat.Projectiles.EnemyProjectiles;
+using Gameplay.Combat.Projectiles.PlayerProjectiles;
 using PlayerScripts;
 using Unity.Mathematics;
 using UnityEngine;
@@ -23,7 +25,7 @@ namespace Gameplay.Combat.Spells
             currentCoolDown = maxCoolDown;
 
             // Check who is owner.
-            if (owner is BaseEnemy owningEnemy)
+            if (owner is AttackingEnemy owningEnemy)
             {
                 // Enemy Spell.
                 var position = owningEnemy.ProjectileSpawnPosition.position;

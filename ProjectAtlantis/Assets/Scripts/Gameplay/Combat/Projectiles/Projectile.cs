@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Gameplay.Combat.Projectiles
@@ -6,9 +7,18 @@ namespace Gameplay.Combat.Projectiles
     {
         [SerializeField] protected float damage;
         [SerializeField] protected float projectileSpeed;
+        [SerializeField] protected float lifeTime;
         [SerializeField] protected Vector3 movementVector;
 
-        private void FixedUpdate()
+        private void Update()
+        {
+            lifeTime -= Time.deltaTime;
+            
+            if(lifeTime < 0)
+                Destroy(gameObject);
+        }
+
+        protected virtual void FixedUpdate()
         {
             transform.position += movementVector;
         }
