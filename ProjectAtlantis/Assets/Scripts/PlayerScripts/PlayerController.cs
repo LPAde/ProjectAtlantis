@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace PlayerScripts
@@ -47,7 +46,7 @@ namespace PlayerScripts
 
         private void CheckInputs()
         {
-            // TODO: Check if you can get the key easier.
+            // Not the most attractive solution, but a simple one that works.
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 Cast(KeyCode.Q);
