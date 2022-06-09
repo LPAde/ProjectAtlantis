@@ -47,6 +47,7 @@ namespace PlayerScripts
 
         private void CheckInputs()
         {
+            // TODO: Check if you can get the key easier.
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 Cast(KeyCode.Q);

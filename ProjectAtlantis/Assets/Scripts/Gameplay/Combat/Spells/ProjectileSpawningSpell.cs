@@ -40,7 +40,7 @@ namespace Gameplay.Combat.Spells
                 Player owningPlayer = (Player) owner;
                 
                 var proj = Instantiate(projectile, owningPlayer.ProjectileSpawnPosition.position, quaternion.identity, owningPlayer.transform).GetComponent<PlayerProjectile>();
-                                    proj.Initialize(GameManager.Instance.RhythmManager.CheckTiming(), owningPlayer.ProjectileSpawnPosition.forward);
+                proj.Initialize(GameManager.Instance.RhythmManager.CheckTiming(), owningPlayer.ProjectileSpawnPosition.forward);
             }
         }
     }

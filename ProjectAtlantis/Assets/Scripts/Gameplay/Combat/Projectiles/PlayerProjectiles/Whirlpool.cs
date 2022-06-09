@@ -7,14 +7,14 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
     public class Whirlpool : Projectile
     {
         [SerializeField] private List<BaseEnemy> enemies;
-        [SerializeField] private float maxActiveTime;
-        [SerializeField] private float activeTime;
+        [SerializeField] private float maxIntervalTime;
+        [SerializeField] private float intervalTime;
         protected override void FixedUpdate()
         {
             // Deals damage and knocks back once every few frames.
-            activeTime -= Time.deltaTime;
+            intervalTime -= Time.deltaTime;
             
-            if(activeTime > 0)
+            if(intervalTime > 0)
                 return;
             
             foreach (var enemy in enemies)
@@ -22,7 +22,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
                 enemy.TakeDamage(damage, enemy.transform.position - transform.position);
             }
 
-            activeTime = maxActiveTime;
+            intervalTime = maxIntervalTime;
         }
 
         protected override void OnTriggerEnter(Collider other)
