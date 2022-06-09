@@ -187,23 +187,23 @@ namespace Gameplay.Spawning
         private void FixSpawnRates(int currentWave)
         {
             // Only fixes them every tenth wave.
-            if (currentWave % spawnChangeIndicator == 0)
+            if (currentWave % spawnChangeIndicator != 0)
+                return;
+            
+            spawnRates[0] -= 10;
+            spawnRates[1] += 5;
+            spawnRates[2] += 10;
+            spawnRates[3] += 5;
+
+            // Fixing wrong spawn-rates by adding or removing popcorn.
+            if (spawnRates[0] + spawnRates[1] + spawnRates[2] + spawnRates[3] < 100)
             {
-                spawnRates[0] -= 10;
-                spawnRates[1] += 5;
-                spawnRates[2] += 10;
-                spawnRates[3] += 5;
-
-                // Fixing wrong spawn-rates by adding or removing popcorn.
-                if (spawnRates[0] + spawnRates[1] + spawnRates[2] + spawnRates[3] < 100)
-                {
-                    spawnRates[0] += 100 - (spawnRates[0] + spawnRates[1] + spawnRates[2] + spawnRates[3]);
-                }
-
-                // Removing the method after it reached it's low. 
-                if (spawnRates[0] == 10)
-                    GameManager.Instance.EnemySpawner.OnWaveStart -= FixSpawnRates;
+                spawnRates[0] += 100 - (spawnRates[0] + spawnRates[1] + spawnRates[2] + spawnRates[3]);
             }
+
+            // Removing the method after it reached it's low. 
+            if (spawnRates[0] == 10)
+                GameManager.Instance.EnemySpawner.OnWaveStart -= FixSpawnRates;
         }
     }
 }
