@@ -56,7 +56,7 @@ namespace Enemies
         }
 
         /// <summary>
-        /// Deals damage to the player.
+        /// Deals damage to the enemy.
         /// </summary>
         /// <param name="damage"> How much damage is dealt. </param>
         public void TakeDamage(float damage)
@@ -72,6 +72,27 @@ namespace Enemies
             {
                 Destroy(gameObject);
             }
+        }
+
+        /// <summary>
+        /// Deals damage to the enemy and knocks it back.
+        /// </summary>
+        /// <param name="damage"> How much damage is dealt. </param>
+        /// <param name="knockBack"> How much the enemy is knocked back. </param>
+        public void TakeDamage(float damage, Vector3 knockBack)
+        {
+            TakeDamage(damage);
+            KnockBack(knockBack);
+        }
+
+        /// <summary>
+        /// Deals damage to the enemy and stuns it.
+        /// </summary>
+        /// <param name="damage"> How much damage is dealt. </param>
+        /// <param name="duration"> How long the enemy is stunned for. </param>
+        public void TakeDamage(float damage, float duration)
+        {
+            TakeDamage(damage);
         }
 
         /// <summary>
@@ -96,11 +117,19 @@ namespace Enemies
         /// Knocks the enemy in a direction once.
         /// </summary>
         /// <param name="knockBackVector"> The direction you want them to be knocked to. </param>
-        public void KnockBack(Vector3 knockBackVector)
+        private void KnockBack(Vector3 knockBackVector)
         {
             agent.updatePosition = false;
             rb.AddForce(knockBackVector);
             agent.updatePosition = true;
+        }
+
+        /// <summary>
+        /// Stuns the enemy for a set amount of time.
+        /// </summary>
+        private void Stun(float stunDuration)
+        {
+            // TODO: Implement Stun.
         }
 
         /// <summary>

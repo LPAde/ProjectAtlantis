@@ -11,7 +11,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
         [SerializeField] private float activeTime;
         protected override void FixedUpdate()
         {
-            // Deals damage and knock back once every few frames.
+            // Deals damage and knocks back once every few frames.
             activeTime -= Time.deltaTime;
             
             if(activeTime > 0)
@@ -19,8 +19,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
             
             foreach (var enemy in enemies)
             {
-                enemy.KnockBack(enemy.transform.position - transform.position);
-                enemy.TakeDamage(damage);
+                enemy.TakeDamage(damage, enemy.transform.position - transform.position);
             }
 
             activeTime = maxActiveTime;
