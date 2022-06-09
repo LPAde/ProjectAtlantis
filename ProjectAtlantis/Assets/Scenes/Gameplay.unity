@@ -2721,7 +2721,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  currentSong: {fileID: 11400000, guid: 9334469a12178f341b0417675f02174f, type: 2}
+  currentSong: {fileID: 11400000, guid: 6d1efdb1023c4456f881f8b6155fe6fc, type: 2}
   currentBeat: 0
 --- !u!4 &995343681
 Transform:
@@ -4074,6 +4074,7 @@ MonoBehaviour:
   addedStats:
     maxHealth: 0
     health: 0
+    healthRegen: 0
     strength: 5
     defense: 0
     speed: 0
@@ -5046,6 +5047,7 @@ MonoBehaviour:
   stats:
     maxHealth: 10
     health: 10
+    healthRegen: 0
     strength: 0
     defense: 0
     speed: 7

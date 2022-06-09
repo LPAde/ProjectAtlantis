@@ -18,7 +18,7 @@ namespace Gameplay.Combat.Spells
             // Stops when the spell is still on cooldown.
             if (currentCoolDown > 0)
             {
-                Debug.Log("retunr");
+                Debug.Log("ON CD");
                 return;
             }
             
@@ -37,7 +37,7 @@ namespace Gameplay.Combat.Spells
             else
             {
                 // Player Spell.
-                Player owningPlayer = (Player) owner;
+                var owningPlayer = (Player) owner;
                 
                 var proj = Instantiate(projectile, owningPlayer.ProjectileSpawnPosition.position, quaternion.identity, owningPlayer.transform).GetComponent<PlayerProjectile>();
                 proj.Initialize(GameManager.Instance.RhythmManager.CheckTiming(), owningPlayer.ProjectileSpawnPosition.forward);

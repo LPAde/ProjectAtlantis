@@ -47,12 +47,15 @@ namespace PlayerScripts
 
         private void LateUpdate()
         {
+            // Reducing spell cooldown.
             foreach (var spell in combatSpells)
             {
                 spell.TickDownCooldown();
             }
-            
             movementSpell.TickDownCooldown();
+            
+            // Health regeneration. 
+            Heal(stats.HealthRegen);
         }
 
         /// <summary>
@@ -96,6 +99,7 @@ namespace PlayerScripts
         {
             stats.MAXHealth += addedStats.MAXHealth;
             stats.Health += addedStats.MAXHealth;
+            stats.HealthRegen += addedStats.HealthRegen;
             stats.Strength += addedStats.Strength;
             stats.Defense += addedStats.Defense;
             stats.Speed += addedStats.Speed;
@@ -108,6 +112,7 @@ namespace PlayerScripts
     {
         [SerializeField] private float maxHealth;
         [SerializeField] private float health;
+        [SerializeField] private float healthRegen;
         [SerializeField] private float strength;
         [SerializeField] private float defense;
         [SerializeField] private float speed;
@@ -130,6 +135,13 @@ namespace PlayerScripts
             }
         }
 
+        public float HealthRegen
+        {
+            get => healthRegen;
+            internal set => healthRegen = value;
+            
+        }
+        
         public float Strength
         {
             get => strength;
