@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 837823a2a596e144aa2ab73d128a01c6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   projectileSpeed: 0
-  lifeTime: 0
+  lifeTime: 2
   movementVector: {x: 0, y: 0, z: 0}
   scalings: []
   stunDuration: 0

@@ -19,6 +19,8 @@ namespace Enemies
         [SerializeField] private float desiredSeparation;
         [SerializeField] private float maxForce;
 
+        private bool wasSharked;
+        
         public FiniteStateMachine FiniteStateMachine { get; private set; }
 
         public EnemyStats Stats => stats;
@@ -71,6 +73,32 @@ namespace Enemies
             if(stats.Health <= 0)
             {
                 Destroy(gameObject);
+            }
+        }
+
+        /// <summary>
+        /// Deals damage and applies special spell effect.
+        /// </summary>
+        /// <param name="damage"> How much damage is dealt. </param>
+        /// <param name="ability"> The special effect of the spell. </param>
+        public void TakeDamage(float damage, SpellAbility ability)
+        {
+            switch (ability)
+            {
+                case SpellAbility.Shark:
+
+                    if (!wasSharked)
+                    {
+                        wasSharked = true;
+                        TakeDamage(damage);
+                    }
+                    else
+                    {
+                        damage *= 3;
+                        TakeDamage(damage);
+                    }
+                    
+                    break;
             }
         }
 
@@ -247,5 +275,10 @@ namespace Enemies
             get => triggerRange;
             internal set => triggerRange = value;
         }
-    } 
+    }
+
+    public enum SpellAbility
+    {
+        Shark,
+    }
 }

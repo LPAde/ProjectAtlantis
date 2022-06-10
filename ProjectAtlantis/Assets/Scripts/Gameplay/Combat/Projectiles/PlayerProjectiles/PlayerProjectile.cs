@@ -15,16 +15,16 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
             switch (timing)
             {
                 case Timing.Bad:
-                    Destroy(gameObject);
+                    damage *= scalings[0];
                     break;
                 case Timing.Good:
-                    transform.localScale *= scalings[0];
+                    damage *= scalings[1];
                     break;
                 case Timing.Amazing:
-                    transform.localScale *= scalings[1];
+                    damage *= scalings[2];
                     break;
                 case Timing.Perfect:
-                    transform.localScale *= scalings[2];
+                    damage *= scalings[3];
                     break;
             }
         }

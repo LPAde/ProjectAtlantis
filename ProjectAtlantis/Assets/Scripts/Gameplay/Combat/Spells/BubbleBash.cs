@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace Gameplay.Combat.Spells
 {
+    [CreateAssetMenu(fileName = "Bubble Bash", menuName = "Spells/Movement Spell/Bubble Bash", order = 1)]
     public class BubbleBash : DashSpell
     {
         [SerializeField] private List<GameObject> projectiles;

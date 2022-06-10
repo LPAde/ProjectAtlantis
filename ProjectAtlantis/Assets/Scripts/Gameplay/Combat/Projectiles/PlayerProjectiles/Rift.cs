@@ -9,19 +9,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
     {
         [SerializeField] private List<BaseEnemy> enemies;
         [SerializeField] private List<BaseEnemy> enemiesInCollider;
-        [SerializeField] private float timer;
         
-        protected override void FixedUpdate()
-        {
-            // Maybe do all that shit through animator.
-            timer -= Time.deltaTime;
-
-            if (timer <= 0)
-            {
-                Explode();
-            }
-        }
-
         protected override void OnTriggerEnter(Collider other)
         {
             // Checks if the object is an enemy and if it was hit already.
@@ -45,6 +33,11 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
 
             var en = other.GetComponent<BaseEnemy>();
             enemiesInCollider.Remove(en);
+        }
+
+        private void OnDestroy()
+        {
+            Explode();
         }
 
         /// <summary>
