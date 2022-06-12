@@ -1,3 +1,4 @@
+using Gameplay.Combat.Projectiles;
 using UnityEngine;
 
 namespace PlayerScripts
@@ -33,6 +34,7 @@ namespace PlayerScripts
             {
                 Move();
                 Look(); 
+                print(player.CharacterController.isGrounded);
             }
             else
             {

@@ -14,6 +14,14 @@ namespace Gameplay.Combat.Spells
 
         public override void Cast()
         {
+            // Stops when the spell is still on cooldown.
+            if (currentCoolDown > 0)
+            {
+                return;
+            }
+            
+            currentCoolDown = maxCoolDown;
+            
             base.Cast();
 
             Player owningPlayer = (Player)owner;
