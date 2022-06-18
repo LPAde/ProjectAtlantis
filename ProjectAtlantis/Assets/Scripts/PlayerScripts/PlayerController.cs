@@ -33,7 +33,6 @@ namespace PlayerScripts
             {
                 Move();
                 Look(); 
-                print(player.CharacterController.isGrounded);
             }
             else
             {
@@ -85,17 +84,17 @@ namespace PlayerScripts
         private void Move()
         {
             // Find the target position relative to the player.
-                var dir = movePos - transform.position;
-                
-                // Calculate movement at the desired speed.
-                var movement = dir.normalized * (player.PlayerStats.Speed * Time.deltaTime);
-                
-                // Limit movement to never pass the target position.
-                if (movement.magnitude > dir.magnitude) 
-                    movement = dir;
-                
-                // Move the character.
-                player.CharacterController.Move(movement);
+            var dir = movePos - transform.position;
+            
+            // Calculate movement at the desired speed.
+            var movement = dir.normalized * (player.PlayerStats.Speed * Time.deltaTime);
+            
+            // Limit movement to never pass the target position.
+            if (movement.magnitude > dir.magnitude) 
+                movement = dir;
+            
+            // Move the character.
+            player.CharacterController.Move(movement);
         }
 
         /// <summary>
