@@ -13,7 +13,10 @@ namespace Enemies.AI.States
         
         public override void CheckTransition()
         {
+            float distance = (fsm.Owner.transform.position - GameManager.Instance.Player.PlayerController.transform.position).sqrMagnitude;
             
+            if(distance < _triggerRange)
+                fsm.Transition(fsm.WalkState);
         }
 
         public override void OnEnter()

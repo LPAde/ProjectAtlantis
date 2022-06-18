@@ -1,5 +1,6 @@
 using System;
 using Enemies.AI.FiniteStateMachines;
+using Gameplay.Combat.Projectiles;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -57,6 +58,14 @@ namespace Enemies
             FiniteStateMachine.Update();
         }
 
+        private void FixedUpdate()
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                KnockBack(Vector3.left * 100, 2);
+            }
+        }
+
         /// <summary>
         /// Deals damage to the enemy.
         /// </summary>
@@ -107,10 +116,11 @@ namespace Enemies
         /// </summary>
         /// <param name="damage"> How much damage is dealt. </param>
         /// <param name="knockBack"> How much the enemy is knocked back. </param>
-        public void TakeDamage(float damage, Vector3 knockBack)
+        /// <param name="knockBackTime"> How long the knock back will last. </param>
+        public void TakeDamage(float damage, Vector3 knockBack, float knockBackTime)
         {
             TakeDamage(damage);
-            KnockBack(knockBack);
+            KnockBack(knockBack, knockBackTime);
         }
 
         /// <summary>
@@ -140,6 +150,11 @@ namespace Enemies
         {
             agent.isStopped = true;
         }
+
+        public void ResetVelocity()
+        {
+            rb.velocity = Vector3.zero;
+        }
         
         /// <summary>
         /// Stuns the enemy for a set amount of time.
@@ -154,11 +169,10 @@ namespace Enemies
         /// Knocks the enemy in a direction once.
         /// </summary>
         /// <param name="knockBackVector"> The direction you want them to be knocked to. </param>
-        private void KnockBack(Vector3 knockBackVector)
+        private void KnockBack(Vector3 knockBackVector, float knockbackTime)
         {
-            agent.updatePosition = false;
             rb.AddForce(knockBackVector);
-            agent.updatePosition = true;
+            Stun(stunTime = knockbackTime);
         }
 
         protected virtual void Stun(float duration)

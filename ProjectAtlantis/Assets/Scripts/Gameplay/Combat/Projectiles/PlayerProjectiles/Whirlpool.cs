@@ -19,7 +19,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
             
             foreach (var enemy in enemies)
             {
-                enemy.TakeDamage(damage, enemy.transform.position - transform.position);
+                enemy.TakeDamage(damage, enemy.transform.position - transform.position, intervalTime);
             }
 
             intervalTime = maxIntervalTime;

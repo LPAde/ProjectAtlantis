@@ -14,7 +14,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
 
             var en = other.GetComponent<BaseEnemy>();
             
-            en.TakeDamage(damage, knockBackVector);
+            en.TakeDamage(damage, knockBackVector, 1);
         }
     }
 }

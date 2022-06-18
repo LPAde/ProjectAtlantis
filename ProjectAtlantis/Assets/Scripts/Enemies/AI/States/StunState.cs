@@ -1,4 +1,5 @@
 using Enemies.AI.FiniteStateMachines;
+using UnityEngine;
 
 namespace Enemies.AI.States
 {
@@ -14,6 +15,7 @@ namespace Enemies.AI.States
 
         public override void OnEnter()
         {
+            stunTime = fsm.Owner.EndureStun();
         }
 
         public override void Update()
@@ -23,6 +25,7 @@ namespace Enemies.AI.States
 
         public override void OnExit()
         {
+            fsm.Owner.ResetVelocity();
         }
 
         public StunState(FiniteStateMachine newFSM) : base(newFSM)

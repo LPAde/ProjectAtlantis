@@ -44,10 +44,10 @@ namespace Enemies
         {
             base.WalkToPlayer();
 
-            float distance = (FiniteStateMachine.Owner.transform.position - GameManager.Instance.Player.PlayerController.transform.position).sqrMagnitude;
+            float distance = (FiniteAttackerStateMachine.Owner.transform.position - GameManager.Instance.Player.PlayerController.transform.position).sqrMagnitude;
 
             if(distance < stats.AttackRange*stats.AttackRange)
-                FiniteStateMachine.Transition(FiniteAttackerStateMachine.FightState);
+                FiniteAttackerStateMachine.Transition(FiniteAttackerStateMachine.FightState);
         }
 
         /// <summary>

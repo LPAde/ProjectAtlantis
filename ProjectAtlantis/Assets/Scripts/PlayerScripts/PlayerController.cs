@@ -1,4 +1,3 @@
-using Gameplay.Combat.Projectiles;
 using UnityEngine;
 
 namespace PlayerScripts
@@ -85,9 +84,7 @@ namespace PlayerScripts
         /// </summary>
         private void Move()
         {
-            if (transform.position != movePos)
-            {
-                // Find the target position relative to the player.
+            // Find the target position relative to the player.
                 var dir = movePos - transform.position;
                 
                 // Calculate movement at the desired speed.
@@ -99,7 +96,6 @@ namespace PlayerScripts
                 
                 // Move the character.
                 player.CharacterController.Move(movement);
-            }
         }
 
         /// <summary>

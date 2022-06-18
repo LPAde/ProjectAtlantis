@@ -11,6 +11,8 @@ namespace Enemies.AI.FiniteStateMachines
         public AttackerFsm(AttackingEnemy newOwner) : base(newOwner)
         {
             attackingOwner = newOwner;
+
+            FightState = new FightState(this);
         }
     }
 }
