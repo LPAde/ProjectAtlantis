@@ -27,14 +27,17 @@ namespace Enemies
         public EnemyStats Stats => stats;
 
         public float CombatScore => combatScore;
-        
+        public bool IsArenaEnemy { get; private set; }
         
         protected virtual void OnEnable()
         {
             GameManager.Instance.EnemyManager.AddEnemy(this);
+
+            if (!GameManager.Instance.ArenaManager.IsInArena)
+                return;
             
-            if(GameManager.Instance.ArenaManager.IsInArena)
-                GameManager.Instance.ArenaManager.AddArenaEnemy(this);
+            IsArenaEnemy = true;
+            GameManager.Instance.ArenaManager.AddArenaEnemy(this);
         }
 
         protected virtual void OnDisable()
@@ -162,6 +165,10 @@ namespace Enemies
         public float EndureStun()
         {
             stunTime -= Time.deltaTime;
+
+            if (stunTime <= 0)
+                rb.isKinematic = true;
+            
             return stunTime;
         }
         
@@ -171,6 +178,7 @@ namespace Enemies
         /// <param name="knockBackVector"> The direction you want them to be knocked to. </param>
         private void KnockBack(Vector3 knockBackVector, float knockbackTime)
         {
+            rb.isKinematic = false;
             rb.AddForce(knockBackVector);
             Stun(stunTime = knockbackTime);
         }

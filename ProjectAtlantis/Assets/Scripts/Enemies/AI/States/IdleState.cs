@@ -21,7 +21,13 @@ namespace Enemies.AI.States
 
         public override void OnEnter()
         {
-        
+            fsm.Owner.ResetVelocity();
+            
+            // Only does Idle State if enemy is not from the arena.
+            if (fsm.Owner.IsArenaEnemy)
+            {
+                fsm.Transition(fsm.WalkState);
+            }
         }
 
         public override void Update()
