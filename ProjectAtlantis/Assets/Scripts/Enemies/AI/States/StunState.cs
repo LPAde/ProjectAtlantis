@@ -2,17 +2,14 @@ using Enemies.AI.FiniteStateMachines;
 
 namespace Enemies.AI.States
 {
-    public class WalkToPlayerState : State
+    public class StunState : State
     {
-        private readonly float _attackRange;
+        private float stunTime;
         
-        public WalkToPlayerState(FiniteStateMachine newFSM) : base(newFSM)
-        {
-        }
-
         public override void CheckTransition()
         {
-            
+            if(stunTime < 0)
+                fsm.Transition(fsm.IdleState);
         }
 
         public override void OnEnter()
@@ -21,12 +18,15 @@ namespace Enemies.AI.States
 
         public override void Update()
         {
-            fsm.Owner.WalkToPlayer();
+            stunTime = fsm.Owner.EndureStun();
         }
 
         public override void OnExit()
         {
-            fsm.Owner.Stop();
+        }
+
+        public StunState(FiniteStateMachine newFSM) : base(newFSM)
+        {
         }
     }
 }

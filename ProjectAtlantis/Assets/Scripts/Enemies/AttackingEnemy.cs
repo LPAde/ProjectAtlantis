@@ -1,3 +1,4 @@
+using Enemies.AI.FiniteStateMachines;
 using Gameplay.Combat.Projectiles.EnemyProjectiles;
 using Unity.Mathematics;
 using UnityEngine;
@@ -11,6 +12,8 @@ namespace Enemies
         [SerializeField] private Transform projectileSpawnPosition;
         private bool _mayAttack;
         
+        
+        public AttackerFsm FiniteAttackerStateMachine { get; private set; }
         public Transform ProjectileSpawnPosition => projectileSpawnPosition;
 
         protected override void OnEnable()
@@ -24,7 +27,29 @@ namespace Enemies
             GameManager.Instance.RhythmManager.HitPerfect -= MayAttack;
             base.OnDisable();
         }
-        
+
+        protected override void Start()
+        {
+            FiniteAttackerStateMachine = new AttackerFsm(this);
+            
+            FiniteAttackerStateMachine.Initialize(FiniteAttackerStateMachine.IdleState);
+        }
+
+        protected override void Update()
+        {
+            FiniteAttackerStateMachine.Update();
+        }
+
+        public override void WalkToPlayer()
+        {
+            base.WalkToPlayer();
+
+            float distance = (FiniteStateMachine.Owner.transform.position - GameManager.Instance.Player.PlayerController.transform.position).sqrMagnitude;
+
+            if(distance < stats.AttackRange*stats.AttackRange)
+                FiniteStateMachine.Transition(FiniteAttackerStateMachine.FightState);
+        }
+
         /// <summary>
         /// Checks cooldown and attacks when it should.
         /// </summary>
@@ -48,7 +73,13 @@ namespace Enemies
                 stats.AttackCooldown = stats.AttackMaxCooldown;
             }
         }
-        
+
+        protected override void Stun(float duration)
+        {
+            stunTime = duration;
+            FiniteAttackerStateMachine.Transition(FiniteAttackerStateMachine.StunState);
+        }
+
         private void MayAttack()
         {
             if(stats.AttackCooldown > 0)

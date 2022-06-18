@@ -1,5 +1,4 @@
 using System;
-using Enemies.AI;
 using Enemies.AI.FiniteStateMachines;
 using UnityEngine;
 using UnityEngine.AI;
@@ -12,6 +11,7 @@ namespace Enemies
         
         [SerializeField] private float difficultyModifier = 1;
         [SerializeField] private float combatScore;
+        [SerializeField] protected float stunTime;
         [SerializeField] private NavMeshAgent agent;
         [SerializeField] private Rigidbody rb;
 
@@ -45,14 +45,14 @@ namespace Enemies
                 GameManager.Instance.ArenaManager.RemoveArenaEnemy(this);
         }
 
-        private void Start()
+        protected virtual void Start()
         {
             FiniteStateMachine = new FiniteStateMachine(this);
             
             FiniteStateMachine.Initialize(FiniteStateMachine.IdleState);
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             FiniteStateMachine.Update();
         }
@@ -121,6 +121,7 @@ namespace Enemies
         public void TakeDamage(float damage, float duration)
         {
             TakeDamage(damage);
+            Stun(stunTime = duration);
         }
 
         /// <summary>
@@ -129,8 +130,7 @@ namespace Enemies
         public virtual void WalkToPlayer()
         {
             agent.isStopped = false;
-            KnockBack(CalculateSeparation());
-            agent.SetDestination(GameManager.Instance.Player.PlayerController.transform.position);
+            agent.SetDestination(GameManager.Instance.Player.PlayerController.transform.position + CalculateSeparation());
         }
 
         /// <summary>
@@ -139,6 +139,15 @@ namespace Enemies
         public void Stop()
         {
             agent.isStopped = true;
+        }
+        
+        /// <summary>
+        /// Stuns the enemy for a set amount of time.
+        /// </summary>
+        public float EndureStun()
+        {
+            stunTime -= Time.deltaTime;
+            return stunTime;
         }
         
         /// <summary>
@@ -152,12 +161,10 @@ namespace Enemies
             agent.updatePosition = true;
         }
 
-        /// <summary>
-        /// Stuns the enemy for a set amount of time.
-        /// </summary>
-        private void Stun(float stunDuration)
+        protected virtual void Stun(float duration)
         {
-            // TODO: Implement Stun.
+            stunTime = duration;
+            FiniteStateMachine.Transition(FiniteStateMachine.StunState);
         }
 
         /// <summary>

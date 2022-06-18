@@ -8,8 +8,8 @@ namespace Enemies.AI.FiniteStateMachines
         public State CurrentState { get; private set; }
 
         public State IdleState { get; }
-        public State FightState { get; }
         public State WalkState { get; }
+        public State StunState { get; }
 
         public BaseEnemy Owner => owner;
         
@@ -18,6 +18,7 @@ namespace Enemies.AI.FiniteStateMachines
             owner = newOwner;
             IdleState = new IdleState(this);
             WalkState = new WalkToPlayerState(this);
+            StunState = new StunState(this);
         }
         
         public void Initialize(State initialState)
