@@ -37,6 +37,8 @@ namespace PlayerScripts
 
         private void Awake()
         {
+            Load();
+            
             foreach (var spell in combatSpells)
             {
                 spell.SetOwner(this);
@@ -103,9 +105,39 @@ namespace PlayerScripts
             stats.Strength += addedStats.Strength;
             stats.Defense += addedStats.Defense;
             stats.Speed += addedStats.Speed;
+            
+            // Always save the stats.
+            Save();
+        }
+
+        /// <summary>
+        /// Uses the external save system to load and overwrite the players data.
+        /// </summary>
+        private void Load()
+        {
+            string statsString = SaveSystem.GetString("PlayerStats");
+            var allStats = statsString.Split("-");
+
+            stats.MAXHealth = int.Parse(allStats[0]);
+            stats.Health = int.Parse(allStats[1]);
+            stats.HealthRegen = int.Parse(allStats[2]);
+            stats.Strength = int.Parse(allStats[3]);
+            stats.Defense = int.Parse(allStats[4]);
+            stats.Speed = int.Parse(allStats[5]);
+            
+            // TODO: Load Spells.
+        }
+
+        /// <summary>
+        /// Uses the external save system to save the players data.
+        /// </summary>
+        private void Save()
+        {
+            SaveSystem.SetString("PlayerStats", string.Concat(stats.MAXHealth, "-", stats.Health, "-",stats.HealthRegen, "-", stats.Strength, "-",stats.Defense, "-", stats.Speed));
+            
+            //TODO: Save Spells.
         }
     }
-
 
     [Serializable]
     public struct PlayerStats
