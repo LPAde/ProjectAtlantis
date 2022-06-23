@@ -37,7 +37,8 @@ namespace PlayerScripts
 
         private void Awake()
         {
-            Load();
+            GameManager.Instance.Load += Load;
+            GameManager.Instance.Save += Save;
             
             foreach (var spell in combatSpells)
             {
@@ -106,8 +107,8 @@ namespace PlayerScripts
             stats.Defense += addedStats.Defense;
             stats.Speed += addedStats.Speed;
             
-            // Always save the stats.
-            Save();
+            // Always saving after Statupgrade.
+            GameManager.Instance.Save.Invoke();
         }
 
         /// <summary>

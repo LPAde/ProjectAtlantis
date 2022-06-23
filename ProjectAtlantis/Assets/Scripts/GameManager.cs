@@ -1,3 +1,4 @@
+using System;
 using Enemies;
 using Gameplay.Rhythm;
 using Gameplay.Spawning;
@@ -43,6 +44,9 @@ public class GameManager : MonoBehaviour
      public WaveManager WaveManager => waveManager;
 
     #endregion
+
+    public Action Save;
+    public Action Load;
     
     private void Awake()
     {
@@ -50,5 +54,10 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         else 
             Instance = this;
+    }
+
+    private void Start()
+    {
+        Load.Invoke();
     }
 }
