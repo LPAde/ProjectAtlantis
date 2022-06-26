@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace PlayerScripts
@@ -16,6 +17,12 @@ namespace PlayerScripts
         [SerializeField] private float dashSpeed;
         
         #region Unity Methods
+
+        private void Awake()
+        {
+            GameManager.Instance.Load += Load;
+            GameManager.Instance.Save += Save;
+        }
 
         private void Start()
         {
@@ -159,6 +166,22 @@ namespace PlayerScripts
                     player.MovementSpell.Cast();
                     break;
             }
+        }
+
+        /// <summary>
+        /// Reads the position of the player object.
+        /// </summary>
+        private void Load()
+        {
+            transform.position = SaveSystem.GetVector3("PlayerPosition");
+        }
+
+        /// <summary>
+        /// Saves the position of the player object.
+        /// </summary>
+        private void Save()
+        {
+            SaveSystem.SetVector3("PlayerPosition", transform.position);
         }
 
         #endregion

@@ -1,5 +1,6 @@
 using System;
 using Enemies;
+using Gameplay.Combat.Spells;
 using Gameplay.Rhythm;
 using Gameplay.Spawning;
 using PlayerScripts;
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private EnemyManager enemyManager;
     [SerializeField] private HudManager hudManager;
     [SerializeField] private AudioManager audioManager;
+    [SerializeField] private SpellManager spellManager;
 
     [Header("Arena Related Managers")] 
     [SerializeField] private ArenaManager arenaManager;
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviour
      public EnemyManager EnemyManager => enemyManager;
      public HudManager HudManager => hudManager;
      public AudioManager AudioManager => audioManager;
+     public SpellManager SpellManager => spellManager;
      public ArenaManager ArenaManager => arenaManager;
      public EnemySpawner EnemySpawner => enemySpawner;
      public WaveManager WaveManager => waveManager;

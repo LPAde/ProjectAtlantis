@@ -116,6 +116,7 @@ namespace PlayerScripts
         /// </summary>
         private void Load()
         {
+            // Stats.
             string statsString = SaveSystem.GetString("PlayerStats");
             var allStats = statsString.Split("-");
 
@@ -125,8 +126,17 @@ namespace PlayerScripts
             stats.Strength = int.Parse(allStats[3]);
             stats.Defense = int.Parse(allStats[4]);
             stats.Speed = int.Parse(allStats[5]);
+
+            // Spells.
+            string spellString = SaveSystem.GetString("PlayerSpells");
+            var idStrings = spellString.Split("-");
             
-            // TODO: Load Spells.
+            for (int i = 0; i < combatSpells.Length; i++)
+            {
+                combatSpells[i] = (CombatSpell)GameManager.Instance.SpellManager.GetSpell(int.Parse(idStrings[i]));
+            }
+
+            movementSpell = (MovementSpell) GameManager.Instance.SpellManager.GetSpell(int.Parse(idStrings[3]));
         }
 
         /// <summary>
@@ -134,9 +144,13 @@ namespace PlayerScripts
         /// </summary>
         private void Save()
         {
-            SaveSystem.SetString("PlayerStats", string.Concat(stats.MAXHealth, "-", stats.Health, "-",stats.HealthRegen, "-", stats.Strength, "-",stats.Defense, "-", stats.Speed));
+            SaveSystem.SetString
+                ("PlayerStats", string.Concat(stats.MAXHealth, "-", stats.Health, "-",stats.HealthRegen, "-", stats.Strength, "-",stats.Defense, "-", stats.Speed));
             
-            //TODO: Save Spells.
+            SaveSystem.SetString
+                ("PlayerSpells", string.Concat(GameManager.Instance.SpellManager.GetSpellID(combatSpells[0]), "-",
+                GameManager.Instance.SpellManager.GetSpellID(combatSpells[1]), "-",GameManager.Instance.SpellManager.GetSpellID(combatSpells[2])
+                , "-",GameManager.Instance.SpellManager.GetSpellID(movementSpell), "-"));
         }
     }
 

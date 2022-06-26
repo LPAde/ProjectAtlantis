@@ -24,6 +24,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Projectiles/PlayerProjectiles/Whirlpool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Spells/DashSpell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Spells/SpellManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@12.1.6/Runtime/UniversalAdditionalCameraData.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/BaseEnemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Spells/BubbleBash.cs" root0="FORCE_HIGHLIGHTING" />
@@ -38,6 +39,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Projectiles/PlayerProjectiles/SharkArrow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Projectiles/PlayerProjectiles/DoubleSlash.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Collectibles/DriftBottle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/AttackingEnemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay/Spawning/EnemySpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/AI/FiniteStateMachines/AttackerFsm.cs" root0="FORCE_HIGHLIGHTING" />
@@ -48,8 +50,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/ComplexSong.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Spells/CombatSpell.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Projectiles/EnemyProjectile.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Rhythm/Song.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Rhythm/ComplexSong.cs" />
@@ -61,7 +61,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Collectibles/HealItem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Rhythm/AreaChanger.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Spells/DashSpell.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Spawning/Wave.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Rhythm/RhythmManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Spawning/WaveManager.cs" />
@@ -86,7 +85,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Projectiles/PlayerProjectiles/Rift.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Spells/BubbleBash.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/AI/States/WalkToPlayerState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerScripts/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/AttackingEnemy.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/AI/FiniteStateMachines/AttackerFsm.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Projectiles/PlayerProjectiles/DoubleSlash.cs" />
@@ -97,8 +95,12 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/AI/FiniteStateMachines/FiniteStateMachine.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/BaseEnemy.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerScripts/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Spells/SpellManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerScripts/Player.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Collectibles/DriftBottle.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="27QWXrHVecriWndYg0L8xsrdhDN" />
@@ -170,6 +172,7 @@
       <workItem from="1655283066226" duration="6780000" />
       <workItem from="1655589974153" duration="695000" />
       <workItem from="1655734905482" duration="1839000" />
+      <workItem from="1656054085858" duration="4599000" />
     </task>
     <servers />
   </component>
