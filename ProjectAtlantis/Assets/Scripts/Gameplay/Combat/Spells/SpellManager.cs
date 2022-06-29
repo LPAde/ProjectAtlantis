@@ -22,6 +22,10 @@ namespace Gameplay.Combat.Spells
         private void Load()
         {
             string unlockedString = SaveSystem.GetString("UnlockedSpells");
+            
+            if(string.IsNullOrEmpty(unlockedString))
+                return;
+            
             var bools = unlockedString.Split("-");
 
             for (int i = 0; i < allUnlockedPlayerSpells.Count; i++)

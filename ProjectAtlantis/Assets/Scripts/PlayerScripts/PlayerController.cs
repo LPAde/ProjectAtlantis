@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace PlayerScripts
@@ -26,7 +25,10 @@ namespace PlayerScripts
 
         private void Start()
         {
+            print("here");
             movePos = transform.position;
+            print(movePos);
+            print(transform.position);
         }
         
         private void Update()
@@ -173,7 +175,12 @@ namespace PlayerScripts
         /// </summary>
         private void Load()
         {
-            transform.position = SaveSystem.GetVector3("PlayerPosition");
+            var vector = SaveSystem.GetVector3("PlayerPosition");
+            
+            if(vector == null || vector == Vector3.zero)
+                return;
+            
+            transform.position = vector;
         }
 
         /// <summary>

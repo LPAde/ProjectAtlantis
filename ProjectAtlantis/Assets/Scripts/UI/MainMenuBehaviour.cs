@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,13 +9,23 @@ namespace UI
 {
     public class MainMenuBehaviour : MonoBehaviour
     {
+        [Header("Audio Related Stuff")] 
+        [SerializeField] private AudioSource audioSource;
+        [SerializeField] private AudioClip startGameSound;
+        [SerializeField] private AudioClip buttonUISound;
+        
+        [Header("Video Related Stuff")]
         [SerializeField] private List<Button> buttons; 
         [SerializeField] private List<VideoClip> cutsceneClips;
         [SerializeField] private Sprite lockedSprite;
         
+        
         public void OnStartGameClick()
         {
-            SceneManager.LoadScene(1);
+            //SceneManager.LoadScene(1);
+            audioSource.clip = startGameSound;
+            audioSource.Play();
+            StartCoroutine(LoadYourAsyncScene());
         }
         
         public void OnDeleteClick()
@@ -52,6 +63,17 @@ namespace UI
 
                 buttons[i].image.sprite = lockedSprite;
             }
+        }
+
+        private IEnumerator LoadYourAsyncScene()
+        {
+            // Wait until the asynchronous scene fully loads
+            while (audioSource.isPlaying)
+            {
+                yield return null;
+            }
+            
+            SceneManager.LoadScene(1);
         }
     }
 }

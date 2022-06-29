@@ -118,6 +118,10 @@ namespace PlayerScripts
         {
             // Stats.
             string statsString = SaveSystem.GetString("PlayerStats");
+            
+            if(string.IsNullOrEmpty(statsString))
+                return;
+            
             var allStats = statsString.Split("-");
 
             stats.MAXHealth = int.Parse(allStats[0]);
