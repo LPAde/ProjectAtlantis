@@ -7,9 +7,9 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
     {
         [SerializeField] private bool isHopping;
         
-        public override void Initialize(Timing timing, Vector3 newMovementVector)
+        public override void Initialize(Vector3 newMovementVector, Timing timing)
         {
-            base.Initialize(timing, newMovementVector);
+            base.Initialize(newMovementVector, timing);
 
             if (timing == Timing.Bad)
                 isHopping = false;

@@ -113,7 +113,9 @@ public static class SaveSystem {
 
 	public static Vector3 GetVector3(string name)
 	{
-		if(string.IsNullOrEmpty(name)) return Vector3.zero;
+		if(string.IsNullOrEmpty(name)) 
+			return Vector3.zero;
+		
 		return iVector3(name, Vector3.zero);
 	}
 

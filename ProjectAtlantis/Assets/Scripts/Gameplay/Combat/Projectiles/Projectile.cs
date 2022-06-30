@@ -35,5 +35,10 @@ namespace Gameplay.Combat.Projectiles
         {
             movementVector = newMovementVector * projectileSpeed;
         }
+
+        public virtual void Initialize(Vector3 newMovementVector, Timing timing)
+        {
+            Initialize(newMovementVector);
+        }
     }
 }

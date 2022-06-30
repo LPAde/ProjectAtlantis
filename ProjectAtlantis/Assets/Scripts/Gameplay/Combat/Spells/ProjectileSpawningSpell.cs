@@ -15,6 +15,8 @@ namespace Gameplay.Combat.Spells
 
         public override void Cast()
         {
+            Debug.Log("in Cast");
+            
             // Stops when the spell is still on cooldown.
             if (currentCoolDown > 0)
             {
@@ -22,6 +24,7 @@ namespace Gameplay.Combat.Spells
                 return;
             }
             
+            Debug.Log("Cooldown Checked");
             currentCoolDown = maxCoolDown;
 
             // Check who is owner.
@@ -40,7 +43,7 @@ namespace Gameplay.Combat.Spells
                 var owningPlayer = (Player) owner;
                 
                 var proj = Instantiate(projectile, owningPlayer.ProjectileSpawnPosition.position, quaternion.identity, owningPlayer.transform).GetComponent<PlayerProjectile>();
-                proj.Initialize(GameManager.Instance.RhythmManager.CheckTiming(), owningPlayer.ProjectileSpawnPosition.forward);
+                proj.Initialize(owningPlayer.ProjectileSpawnPosition.forward,GameManager.Instance.RhythmManager.CheckTiming());
             }
         }
     }

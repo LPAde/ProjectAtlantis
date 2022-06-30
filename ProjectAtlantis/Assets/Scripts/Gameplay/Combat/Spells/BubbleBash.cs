@@ -29,7 +29,7 @@ namespace Gameplay.Combat.Spells
             for (int i = 0; i < projectiles.Count; i++)
             {
                 var proj = Instantiate(projectiles[i], owningPlayer.ProjectileSpawnPosition.position, quaternion.identity, owningPlayer.transform).GetComponent<PlayerProjectile>();
-                proj.Initialize(GameManager.Instance.RhythmManager.CheckTiming(), projectileVectors[i]);
+                proj.Initialize(projectileVectors[i], GameManager.Instance.RhythmManager.CheckTiming());
             }
         }
     }

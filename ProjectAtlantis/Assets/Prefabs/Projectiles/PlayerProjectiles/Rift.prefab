@@ -136,6 +136,9 @@ MonoBehaviour:
   projectileSpeed: 0
   lifeTime: 3
   movementVector: {x: 0, y: 0, z: 0}
-  scalings: []
+  scalings:
+  - 0.5
+  - 1
+  - 1.3
   enemies: []
   enemiesInCollider: []

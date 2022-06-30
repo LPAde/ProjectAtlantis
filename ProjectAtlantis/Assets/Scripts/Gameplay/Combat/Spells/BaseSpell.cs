@@ -1,3 +1,4 @@
+using Gameplay.Combat.Projectiles;
 using UnityEngine;
 
 namespace Gameplay.Combat.Spells

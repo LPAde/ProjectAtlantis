@@ -1,3 +1,5 @@
+using System;
+using Gameplay.Combat.Projectiles;
 using UnityEngine;
 
 namespace PlayerScripts
@@ -25,10 +27,7 @@ namespace PlayerScripts
 
         private void Start()
         {
-            print("here");
             movePos = transform.position;
-            print(movePos);
-            print(transform.position);
         }
         
         private void Update()

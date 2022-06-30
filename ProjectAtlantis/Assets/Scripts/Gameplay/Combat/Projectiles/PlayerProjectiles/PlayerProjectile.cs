@@ -7,10 +7,10 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
     {
         [SerializeField] private float[] scalings;
         
-        public virtual void Initialize(Timing timing, Vector3 newMovementVector)
+        public override void Initialize(Vector3 newMovementVector, Timing timing)
         {
-            Initialize(newMovementVector);
-        
+            base.Initialize(newMovementVector, timing);
+            
             // For testing.
             switch (timing)
             {

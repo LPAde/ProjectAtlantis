@@ -122,8 +122,8 @@ namespace Enemies
         /// <param name="knockBackTime"> How long the knock back will last. </param>
         public void TakeDamage(float damage, Vector3 knockBack, float knockBackTime)
         {
-            TakeDamage(damage);
             KnockBack(knockBack, knockBackTime);
+            TakeDamage(damage);
         }
 
         /// <summary>

@@ -4,11 +4,12 @@ using UnityEngine;
 
 namespace Gameplay.Combat.Projectiles.PlayerProjectiles
 {
-    public class Whirlpool : Projectile
+    public class Whirlpool : PlayerProjectile
     {
         [SerializeField] private List<BaseEnemy> enemies;
         [SerializeField] private float maxIntervalTime;
         [SerializeField] private float intervalTime;
+        
         protected override void FixedUpdate()
         {
             // Deals damage and knocks back once every few frames.
@@ -19,7 +20,13 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
             
             foreach (var enemy in enemies)
             {
+                if (enemy == null)
+                    enemies.Remove(enemy);
+                
                 enemy.TakeDamage(damage, enemy.transform.position - transform.position, intervalTime);
+                
+                if (enemy == null)
+                    enemies.Remove(enemy);
             }
 
             intervalTime = maxIntervalTime;
