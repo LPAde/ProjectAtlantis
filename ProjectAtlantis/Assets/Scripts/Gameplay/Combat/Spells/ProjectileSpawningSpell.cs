@@ -15,8 +15,6 @@ namespace Gameplay.Combat.Spells
 
         public override void Cast()
         {
-            Debug.Log("in Cast");
-            
             // Stops when the spell is still on cooldown.
             if (currentCoolDown > 0)
             {
@@ -24,7 +22,6 @@ namespace Gameplay.Combat.Spells
                 return;
             }
             
-            Debug.Log("Cooldown Checked");
             currentCoolDown = maxCoolDown;
 
             // Check who is owner.
