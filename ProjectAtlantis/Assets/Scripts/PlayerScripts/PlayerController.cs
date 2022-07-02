@@ -1,4 +1,3 @@
-using System;
 using Gameplay.Combat.Projectiles;
 using UnityEngine;
 
@@ -116,10 +115,13 @@ namespace PlayerScripts
             lookAtPos = GameManager.Instance.MainCam.ScreenToWorldPoint(lookAtPos);
             var transform1 = transform;
             var position = transform1.position;
+            
+            // Small fixes I had to do.
             lookAtPos.y = position.y;
+            lookAtPos.z -= 2;
             
             // Actually looking to the position.
-            transform1.forward = lookAtPos - position;
+            transform1.LookAt(lookAtPos);
         }
 
         private void Dash()
