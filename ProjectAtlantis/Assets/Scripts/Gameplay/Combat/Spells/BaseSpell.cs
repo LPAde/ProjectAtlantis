@@ -1,4 +1,3 @@
-using Gameplay.Combat.Projectiles;
 using UnityEngine;
 
 namespace Gameplay.Combat.Spells
@@ -8,7 +7,7 @@ namespace Gameplay.Combat.Spells
         [SerializeField] protected Character owner;
         [SerializeField] protected float maxCoolDown;
         [SerializeField] protected float currentCoolDown;
-
+        
         /// <summary>
         /// Sets the owner of the spell.
         /// </summary>

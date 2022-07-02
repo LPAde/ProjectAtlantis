@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shark Arrow
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
-  maxCoolDown: 0
+  maxCoolDown: 0.3
   currentCoolDown: 0
-  damageValue: 0
+  damageValue: 5
   projectile: {fileID: 6074599445876254602, guid: 168539f2476b51740a9241a623db0243, type: 3}

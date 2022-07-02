@@ -10,7 +10,13 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
         public override void Initialize(Vector3 newMovementVector, Timing timing)
         {
             base.Initialize(newMovementVector, timing);
-            
+
+            // Rotate in the correct direction.
+            var rotation = transform.rotation;
+            Quaternion lookRotation = Quaternion.Euler(rotation.eulerAngles.x, GameManager.Instance.Player.ProjectileSpawnPosition.eulerAngles.y, rotation.eulerAngles.z);
+            rotation = lookRotation;
+            transform.rotation = rotation;
+
             // For testing.
             switch (timing)
             {
