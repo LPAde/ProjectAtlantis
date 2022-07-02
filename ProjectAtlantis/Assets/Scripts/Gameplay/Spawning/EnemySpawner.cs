@@ -15,6 +15,8 @@ namespace Gameplay.Spawning
         private int _currentSpawnPosition;
 
         public Action<int> OnWaveStart;
+        
+        public bool IsSpawning { get; private set; }
 
         private void Awake()
         {
@@ -27,6 +29,7 @@ namespace Gameplay.Spawning
         /// </summary>
         private void StartSpawning(int wave)
         {
+            IsSpawning = true;
             StartCoroutine(SpawnEnemies());
         }
 
@@ -64,6 +67,8 @@ namespace Gameplay.Spawning
                 
                 yield return new WaitForSeconds(enemySpawnDelay);
             }
+
+            IsSpawning = false;
         }
     }
 }

@@ -9,6 +9,18 @@ namespace Enemies
 
         public List<BaseEnemy> Enemies => enemies;
 
+        private void Update()
+        {
+            // Testing
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                while (enemies.Count > 0)
+                {
+                    enemies[0].TakeDamage(9999999);
+                }
+            }
+        }
+
         public void AddEnemy(BaseEnemy newEnemy)
         {
             enemies.Add(newEnemy);

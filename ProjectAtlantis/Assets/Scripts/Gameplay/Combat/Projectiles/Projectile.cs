@@ -25,7 +25,7 @@ namespace Gameplay.Combat.Projectiles
 
         protected virtual void OnTriggerEnter(Collider other)
         {
-            if(other.CompareTag("Ground") || other.CompareTag("Projectile"))
+            if(other.CompareTag("Projectile"))
                 return;
         
             Destroy(gameObject);

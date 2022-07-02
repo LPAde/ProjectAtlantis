@@ -37,12 +37,15 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
 
         protected override void OnTriggerEnter(Collider other)
         {
+            if(other.CompareTag("Player"))
+                return;
+            
             if (other.CompareTag("Enemy"))
             {
                 var enemy = other.gameObject.GetComponent<BaseEnemy>();
                 enemy.TakeDamage(damage);
             }
-        
+            
             base.OnTriggerEnter(other);
         }
     }

@@ -60,7 +60,7 @@ namespace PlayerScripts
             movementSpell.TickDownCooldown();
             
             // Health regeneration. 
-            Heal(stats.HealthRegen);
+            Heal(stats.HealthRegen * Time.deltaTime);
         }
 
         /// <summary>

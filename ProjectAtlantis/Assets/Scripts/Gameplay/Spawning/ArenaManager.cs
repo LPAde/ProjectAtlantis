@@ -36,7 +36,8 @@ namespace Gameplay.Spawning
         {
             currentDuration -= Time.deltaTime;
 
-            if (currentDuration <= 0)
+            // Starts next wave when either the time is up or no enemies are cumming up.
+            if (currentDuration <= 0 || !GameManager.Instance.EnemySpawner.IsSpawning && GameManager.Instance.EnemyManager.Enemies.Count == 0)
             {
                 GameManager.Instance.EnemySpawner.OnWaveStart.Invoke(GameManager.Instance.WaveManager.CurrentWave);
             }
