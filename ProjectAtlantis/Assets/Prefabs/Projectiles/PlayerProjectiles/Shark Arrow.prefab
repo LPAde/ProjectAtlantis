@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6894290665634100190}
   - component: {fileID: 1420180077577763591}
   - component: {fileID: 8640262668338247178}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Shark Arrow
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -127,8 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 316cc9a8caca840489411dd860462bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  projectileSpeed: 0
+  damage: 7
+  projectileSpeed: 0.08
   lifeTime: 10
   movementVector: {x: 0, y: 0, z: 0}
   scalings:
