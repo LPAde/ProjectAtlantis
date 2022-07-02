@@ -9,6 +9,8 @@ namespace UI
 {
     public class MainMenuBehaviour : MonoBehaviour
     {
+        [SerializeField] private List<Button> allButtons;
+        
         [Header("Audio Related Stuff")] 
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private AudioClip startGameSound;
@@ -18,11 +20,14 @@ namespace UI
         [SerializeField] private List<Button> buttons; 
         [SerializeField] private List<VideoClip> cutsceneClips;
         [SerializeField] private Sprite lockedSprite;
-        
-        
+
         public void OnStartGameClick()
         {
-            //SceneManager.LoadScene(1);
+            foreach (var button in allButtons)
+            {
+                button.interactable = false;
+            }
+            
             audioSource.clip = startGameSound;
             audioSource.Play();
             StartCoroutine(LoadYourAsyncScene());
@@ -36,6 +41,11 @@ namespace UI
         public void OnCreditsClick()
         {
             SceneManager.LoadScene(2);
+        }
+
+        public void OnExitClick()
+        {
+            Application.Quit();
         }
 
         public void StartClip(Button btn)

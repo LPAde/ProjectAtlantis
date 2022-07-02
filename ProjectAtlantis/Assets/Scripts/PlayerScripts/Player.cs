@@ -1,6 +1,7 @@
 using System;
 using Gameplay.Combat.Spells;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace PlayerScripts
 {
@@ -39,6 +40,7 @@ namespace PlayerScripts
         {
             GameManager.Instance.Load += Load;
             GameManager.Instance.Save += Save;
+            OnPlayerDeath += EasyDeath;
             
             foreach (var spell in combatSpells)
             {
@@ -109,6 +111,14 @@ namespace PlayerScripts
             
             // Always saving after Statupgrade.
             GameManager.Instance.Save.Invoke();
+        }
+
+        /// <summary>
+        /// Temporary method for testing.
+        /// </summary>
+        private void EasyDeath()
+        {
+            SceneManager.LoadScene(0);
         }
 
         /// <summary>
