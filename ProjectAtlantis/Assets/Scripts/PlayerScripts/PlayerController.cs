@@ -8,6 +8,7 @@ namespace PlayerScripts
 
         [Header("Movement")] 
         [SerializeField] private Vector3 movePos;
+        [SerializeField] private Rigidbody rb;
 
         [Header("Dashes")]
         [SerializeField] private Vector3 dashVector;
@@ -99,6 +100,8 @@ namespace PlayerScripts
             if (movement.magnitude > dir.magnitude) 
                 movement = dir;
 
+            movement += Physics.gravity * Time.deltaTime;
+            
             // Move the character.
             player.CharacterController.Move(movement);
         }

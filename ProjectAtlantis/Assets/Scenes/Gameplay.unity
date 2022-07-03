@@ -1429,7 +1429,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &709860313
@@ -5181,8 +5181,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1780075051}
-  - component: {fileID: 1780075054}
   - component: {fileID: 1780075059}
+  - component: {fileID: 1780075054}
   - component: {fileID: 1780075058}
   - component: {fileID: 1780075053}
   m_Layer: 0
@@ -5200,7 +5200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780075050}
   m_LocalRotation: {x: -0, y: -0.6582556, z: -0, w: 0.75279456}
-  m_LocalPosition: {x: 998.38556, y: 120.96, z: 997.49194}
+  m_LocalPosition: {x: 982.3, y: 119.1, z: 984.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5224,7 +5224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2120613332}
   movePos: {x: 0, y: 0, z: 0}
-  rb: {fileID: 1780075059}
+  rb: {fileID: 0}
   dashVector: {x: 0, y: 0, z: 0}
   isDashing: 0
   dashDuration: 0
@@ -5274,7 +5274,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &1809845227
 GameObject:
@@ -5845,7 +5845,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2120613330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 9.75, y: 1.95, z: 5.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
