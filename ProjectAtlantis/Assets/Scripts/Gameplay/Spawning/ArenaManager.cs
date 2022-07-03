@@ -196,10 +196,18 @@ namespace Gameplay.Spawning
             spawnRates[2] += 10;
             spawnRates[3] += 5;
 
-            // Fixing wrong spawn-rates by adding or removing popcorn.
-            if (spawnRates[0] + spawnRates[1] + spawnRates[2] + spawnRates[3] < 100)
+            int combinedPositiveSpawnRates = 0;
+
+            for (int i = 0; i < spawnRates.Count; i++)
             {
-                spawnRates[0] += 100 - (spawnRates[0] + spawnRates[1] + spawnRates[2] + spawnRates[3]);
+                if (spawnRates[i] > 0)
+                    combinedPositiveSpawnRates += spawnRates[i];
+            }
+
+            // Fixing wrong spawn-rates by adding or removing popcorn.
+            if (combinedPositiveSpawnRates < 100)
+            {
+                spawnRates[0] += 100 - combinedPositiveSpawnRates;
             }
 
             // Removing the method after it reached it's low. 
