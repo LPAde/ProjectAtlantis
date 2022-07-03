@@ -1,4 +1,3 @@
-using Gameplay.Combat.Projectiles;
 using UnityEngine;
 
 namespace PlayerScripts
@@ -32,6 +31,7 @@ namespace PlayerScripts
         private void Update()
         {
             CheckInputs();
+            Look(); 
         }
 
         private void FixedUpdate()
@@ -39,7 +39,6 @@ namespace PlayerScripts
             if (!isDashing)
             {
                 Move();
-                Look(); 
             }
             else
             {
@@ -99,7 +98,7 @@ namespace PlayerScripts
             // Limit movement to never pass the target position.
             if (movement.magnitude > dir.magnitude) 
                 movement = dir;
-            
+
             // Move the character.
             player.CharacterController.Move(movement);
         }
