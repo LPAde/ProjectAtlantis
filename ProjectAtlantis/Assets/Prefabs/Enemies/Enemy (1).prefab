@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5354331257530108879}
   - component: {fileID: 6671241694820958072}
   - component: {fileID: -8129288842997452875}
+  - component: {fileID: 8597404781426865969}
   m_Layer: 0
   m_Name: Enemy (1)
   m_TagString: Enemy
@@ -151,6 +152,7 @@ MonoBehaviour:
   stunTime: 0
   agent: {fileID: 5354331257530108879}
   rb: {fileID: -8129288842997452875}
+  anim: {fileID: 8597404781426865969}
   desiredSeparation: 10
   maxForce: 100
   attack: {fileID: 8129369878255744576, guid: 625b423346f519149b4905b6d7fe46fc, type: 3}
@@ -171,6 +173,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!95 &8597404781426865969
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5354331257530108877}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8bd57da191c34a74abf49522c2ec251c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5354331257573039545
 GameObject:
   m_ObjectHideFlags: 0

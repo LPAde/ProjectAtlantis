@@ -64,6 +64,7 @@ namespace Gameplay.Spawning
                 var en = Instantiate(enemy,spawnPositions[_currentSpawnPosition].position,quaternion.identity,transform);
                 
                 GameManager.Instance.ArenaManager.AddArenaEnemy(en);
+                en.MakeArenaEnemy();
                 
                 yield return new WaitForSeconds(enemySpawnDelay);
             }

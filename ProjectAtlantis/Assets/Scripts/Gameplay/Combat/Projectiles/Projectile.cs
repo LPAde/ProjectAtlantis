@@ -10,7 +10,7 @@ namespace Gameplay.Combat.Projectiles
         [SerializeField] protected float lifeTime;
         [SerializeField] protected Vector3 movementVector;
 
-        private void Update()
+        protected virtual void Update()
         {
             lifeTime -= Time.deltaTime;
             

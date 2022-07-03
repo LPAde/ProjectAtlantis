@@ -23,6 +23,7 @@ namespace Enemies.AI.States
 
         public override void OnEnter()
         {
+            owner.SetAnimBool("IsAttacking",true);
         }
 
         public override void Update()
@@ -32,6 +33,7 @@ namespace Enemies.AI.States
 
         public override void OnExit()
         {
+            owner.SetAnimBool("IsAttacking",false);
         }
     }
 }

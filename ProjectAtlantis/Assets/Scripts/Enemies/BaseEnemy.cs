@@ -1,6 +1,5 @@
 using System;
 using Enemies.AI.FiniteStateMachines;
-using Gameplay.Combat.Projectiles;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -15,6 +14,7 @@ namespace Enemies
         [SerializeField] protected float stunTime;
         [SerializeField] private NavMeshAgent agent;
         [SerializeField] private Rigidbody rb;
+        [SerializeField] protected Animator anim;
 
         [Header("Flocking related values")]
         [SerializeField] private float desiredSeparation;
@@ -25,19 +25,12 @@ namespace Enemies
         public FiniteStateMachine FiniteStateMachine { get; private set; }
 
         public EnemyStats Stats => stats;
-
         public float CombatScore => combatScore;
         public bool IsArenaEnemy { get; private set; }
         
         protected virtual void OnEnable()
         {
             GameManager.Instance.EnemyManager.AddEnemy(this);
-
-            if (!GameManager.Instance.ArenaManager.IsInArena)
-                return;
-            
-            IsArenaEnemy = true;
-            GameManager.Instance.ArenaManager.AddArenaEnemy(this);
         }
 
         protected virtual void OnDisable()
@@ -69,6 +62,11 @@ namespace Enemies
             }
         }
 
+        public void MakeArenaEnemy()
+        {
+            IsArenaEnemy = true;
+        }
+        
         /// <summary>
         /// Deals damage to the enemy.
         /// </summary>
@@ -171,11 +169,22 @@ namespace Enemies
             
             return stunTime;
         }
-        
+
+        /// <summary>
+        /// Sets the bool of the enemies animator.
+        /// </summary>
+        /// <param name="animBool"></param>
+        /// <param name="boolState"></param>
+        public void SetAnimBool(string animBool, bool boolState)
+        {
+            anim.SetBool(animBool, boolState);
+        }
+
         /// <summary>
         /// Knocks the enemy in a direction once.
         /// </summary>
         /// <param name="knockBackVector"> The direction you want them to be knocked to. </param>
+        /// <param name="knockbackTime"> How long they get knocked back. </param>
         private void KnockBack(Vector3 knockBackVector, float knockbackTime)
         {
             rb.isKinematic = false;

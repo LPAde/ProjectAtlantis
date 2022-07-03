@@ -8,9 +8,9 @@ namespace Enemies
     public class AttackingEnemy : BaseEnemy
     {
         [Header("Attack related values")]
-        [SerializeField] private GameObject attack;
+        [SerializeField] protected GameObject attack;
         [SerializeField] private Transform projectileSpawnPosition;
-        private bool _mayAttack;
+        protected bool mayAttack;
         
         
         public AttackerFsm FiniteAttackerStateMachine { get; private set; }
@@ -61,7 +61,7 @@ namespace Enemies
             }
             else
             {
-                if(!_mayAttack)
+                if(!mayAttack)
                     return;
 
                 var position = projectileSpawnPosition.position;
@@ -71,6 +71,8 @@ namespace Enemies
                 projectile.Initialize(GameManager.Instance.Player.PlayerController.transform.position - position);
 
                 stats.AttackCooldown = stats.AttackMaxCooldown;
+
+                mayAttack = false;
             }
         }
 
@@ -80,12 +82,15 @@ namespace Enemies
             FiniteAttackerStateMachine.Transition(FiniteAttackerStateMachine.StunState);
         }
 
+        /// <summary>
+        /// Allows the attack when the timing was perfect.
+        /// </summary>
         private void MayAttack()
         {
             if(stats.AttackCooldown > 0)
                 return;
             
-            _mayAttack = true;
+            mayAttack = true;
         }
     }
 }
