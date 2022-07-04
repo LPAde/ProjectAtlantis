@@ -108,7 +108,7 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 45
+    agentSlope: 35
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 4b63d8a3b46d5314bb89574eeb57bba8, type: 2}
 --- !u!1 &20302468
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,7 +488,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 892283221}
   m_LocalRotation: {x: -0, y: 0.38491583, z: -0, w: 0.92295176}
-  m_LocalPosition: {x: 1044.7, y: 123, z: 1044.5}
+  m_LocalPosition: {x: 754.1, y: 123, z: 749.3}
   m_LocalScale: {x: 10.228774, y: 10.228774, z: 17.130129}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -635,15 +635,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50a594274ec07f442ac7916e54eae779, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 966.12
+      value: 679.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50a594274ec07f442ac7916e54eae779, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 116.46
+      value: 115.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50a594274ec07f442ac7916e54eae779, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 965.53
+      value: 677.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50a594274ec07f442ac7916e54eae779, type: 3}
       propertyPath: m_LocalRotation.w
