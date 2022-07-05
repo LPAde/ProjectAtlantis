@@ -7,7 +7,7 @@ public class CameraBehaviour : MonoBehaviour
 
     private void Start()
     {
-        offset = transform.position;
+        offset = transform.position - GameManager.Instance.Player.PlayerController.transform.position;
     }
 
     void Update()
