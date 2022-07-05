@@ -111,19 +111,14 @@ namespace PlayerScripts
         /// </summary>
         private void Look()
         {
-            // Converting the mouse position into a Vector the player can look to.
-            var lookAtPos = Input.mousePosition;
-            lookAtPos.z = GameManager.Instance.MainCam.transform.position.y - transform.position.y;
-            lookAtPos = GameManager.Instance.MainCam.ScreenToWorldPoint(lookAtPos);
-            var transform1 = transform;
-            var position = transform1.position;
+            var ray = GameManager.Instance.MainCam.ScreenPointToRay(Input.mousePosition);
+
+            if (!Physics.Raycast(ray, out var hit))
+                return;
             
-            // Small fixes I had to do.
-            lookAtPos.y = position.y;
-            lookAtPos.z -= 2;
-            
-            // Actually looking to the position.
-            transform1.LookAt(lookAtPos);
+            var lookAtPos = new Vector3(hit.point.x, transform.position.y, hit.point.z);
+                
+            transform.LookAt(lookAtPos);
         }
 
         private void Dash()
