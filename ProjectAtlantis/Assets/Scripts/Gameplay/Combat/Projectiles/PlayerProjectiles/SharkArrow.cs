@@ -7,7 +7,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
     {
         protected override void OnTriggerEnter(Collider other)
         {
-            if(other.CompareTag("Projectile") || other.CompareTag("Player"))
+            if(other.CompareTag("Projectile") || other.CompareTag("Player") || other.CompareTag("Area Hitbox"))
                 return;
 
             if (other.CompareTag("Enemy"))
