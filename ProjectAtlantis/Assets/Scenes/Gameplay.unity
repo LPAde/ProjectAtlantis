@@ -732,7 +732,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 320739661}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.16, z: 2}
+  m_LocalPosition: {x: 0, y: 2, z: 2}
   m_LocalScale: {x: 2.91961, y: 2.91961, z: 2.91961}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2647,7 +2647,7 @@ GameObject:
   - component: {fileID: 1076553800}
   m_Layer: 2
   m_Name: 'Volume Deepness 2 '
-  m_TagString: Untagged
+  m_TagString: Area Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3920,7 +3920,7 @@ GameObject:
   - component: {fileID: 1746630399}
   m_Layer: 0
   m_Name: Volume Global PostProcess
-  m_TagString: Untagged
+  m_TagString: Area Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
