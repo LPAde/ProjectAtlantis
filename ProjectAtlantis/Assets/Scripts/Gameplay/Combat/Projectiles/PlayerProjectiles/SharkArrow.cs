@@ -9,7 +9,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
         {
             if(other.CompareTag("Projectile") || other.CompareTag("Player") || other.CompareTag("Area Hitbox"))
                 return;
-print(other.gameObject);
+            
             if (other.CompareTag("Enemy"))
             {
                 var enemy = other.gameObject.GetComponent<BaseEnemy>();
