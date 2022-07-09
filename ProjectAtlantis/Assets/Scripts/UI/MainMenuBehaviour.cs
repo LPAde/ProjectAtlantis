@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Gameplay.Combat.Projectiles;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,6 +12,8 @@ namespace UI
     public class MainMenuBehaviour : MonoBehaviour
     {
         [SerializeField] private List<Button> allButtons;
+        [SerializeField] private List<string> allSaveFileStrings;
+        [SerializeField] private List<GameObject> allWindows;
         
         [Header("Audio Related Stuff")] 
         [SerializeField] private AudioSource audioSource;
@@ -33,14 +37,31 @@ namespace UI
             StartCoroutine(LoadYourAsyncScene());
         }
         
+        /// <summary>
+        /// Sets every Save value to zero.
+        /// </summary>
         public void OnDeleteClick()
         {
+            foreach (var t in allSaveFileStrings)
+            {
+                SaveSystem.SetString(t, string.Empty);
+            }
             
+            SaveSystem.SetVector3("PlayerPosition", Vector3.zero);
         }
         
         public void OnCreditsClick()
         {
             SceneManager.LoadScene(2);
+        }
+
+        public void OnExtrasClick()
+        {
+            allWindows[0].SetActive(allWindows[1].activeSelf);
+            allWindows[1].SetActive(!allWindows[1].activeSelf);
+            
+            if(allWindows[1].activeSelf)
+                OpenCutsceneCollection();
         }
 
         public void OnExitClick()
@@ -57,12 +78,17 @@ namespace UI
         {
             // Setup.
             string unlockedCutscenes = SaveSystem.GetString("UnlockedCutscenes");
-            var cutscenes = unlockedCutscenes.Split("-");
-
-            // Activate correct buttons.
-            for (int i = 0; i < cutscenes.Length; i++)
+            
+            // Only activate buttons when there are activated buttons.
+            if (unlockedCutscenes != String.Empty)
             {
-                buttons[int.Parse(cutscenes[i])].interactable = true;
+                var cutscenes = unlockedCutscenes.Split("-");
+                
+                // Activate correct buttons.
+                for (int i = 0; i < cutscenes.Length; i++)
+                {
+                    buttons[int.Parse(cutscenes[i])].interactable = true;
+                }
             }
             
             // Change sprites of the locked cutscenes.
