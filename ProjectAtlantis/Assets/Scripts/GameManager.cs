@@ -13,7 +13,11 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     #region Private Fields
+
+    [SerializeField] private GameObject gameplayWindow;
+    [SerializeField] private GameObject pauseWindow;
     
+    [Header("Gameplay Related Stuff")]
     [SerializeField] private Player player;
     [SerializeField] private Camera mainCam;
     [SerializeField] private DialogBox dialogBox;
@@ -45,11 +49,21 @@ public class GameManager : MonoBehaviour
      public ArenaManager ArenaManager => arenaManager;
      public EnemySpawner EnemySpawner => enemySpawner;
      public WaveManager WaveManager => waveManager;
+     
+     public bool IsPaused { get; private set; }
 
     #endregion
 
     public Action Save;
     public Action Load;
+    
+    public void ToggleWindows()
+    {
+        gameplayWindow.SetActive(!gameplayWindow.activeSelf);
+        pauseWindow.SetActive(!pauseWindow.activeSelf);
+
+        IsPaused = !IsPaused;
+    }
     
     private void Awake()
     {

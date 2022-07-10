@@ -8,7 +8,6 @@ namespace PlayerScripts
 
         [Header("Movement")] 
         [SerializeField] private Vector3 movePos;
-        [SerializeField] private Rigidbody rb;
 
         [Header("Dashes")]
         [SerializeField] private Vector3 dashVector;
@@ -32,7 +31,6 @@ namespace PlayerScripts
         private void Update()
         {
             CheckInputs();
-            Look(); 
         }
 
         private void FixedUpdate()
@@ -71,6 +69,7 @@ namespace PlayerScripts
                 Cast(KeyCode.Space);
             }
 
+            // Move
             if (Input.GetMouseButton(1))
             {
                 Ray ray = GameManager.Instance.MainCam.ScreenPointToRay(Input.mousePosition);
@@ -81,8 +80,14 @@ namespace PlayerScripts
                         return;
 
                     movePos = new Vector3(hit.point.x, hit.point.y, hit.point.z);
+                    
+                    Look(); 
                 }
             }
+            
+            // Pause
+            if(Input.GetKeyDown(KeyCode.Escape))
+                GameManager.Instance.ToggleWindows();
         }
 
         /// <summary>
@@ -140,6 +145,8 @@ namespace PlayerScripts
 
             movePos = transform.position;
             isDashing = false;
+                
+            Look(); 
         }
 
         /// <summary>
@@ -148,6 +155,8 @@ namespace PlayerScripts
         /// <param name="code"> The Input that should be worked with. </param>
         private void Cast(KeyCode code)
         {
+            Look(); 
+            
             switch (code)
             {
                 case KeyCode.Q:
@@ -175,7 +184,7 @@ namespace PlayerScripts
         {
             var vector = SaveSystem.GetVector3("PlayerPosition");
             
-            if(vector == null || vector == Vector3.zero)
+            if(vector == Vector3.zero)
                 return;
             
             transform.position = vector;
