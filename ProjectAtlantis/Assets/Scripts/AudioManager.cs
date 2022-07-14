@@ -23,7 +23,6 @@ public class AudioManager : MonoBehaviour
 
     public void OnSliderChange(Slider slider)
     {
-        print(slider.name);
         mixer.SetFloat(slider.name, slider.value);
     }
     
@@ -36,5 +35,15 @@ public class AudioManager : MonoBehaviour
         currentSong = newSong;
         backgroundMusic.clip = newSong.song;
         backgroundMusic.Play();
+    }
+
+    private void Load()
+    {
+        string loadString = SaveSystem.GetString("Volumes");
+    }
+
+    private void Save()
+    {
+        
     }
 }

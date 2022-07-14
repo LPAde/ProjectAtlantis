@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Gameplay.Combat.Projectiles
@@ -9,7 +8,8 @@ namespace Gameplay.Combat.Projectiles
         [SerializeField] protected float projectileSpeed;
         [SerializeField] protected float lifeTime;
         [SerializeField] protected Vector3 movementVector;
-
+        [SerializeField] private float maxDistanceToGround = 1.5f;
+        
         protected virtual void Update()
         {
             lifeTime -= Time.deltaTime;
@@ -20,7 +20,18 @@ namespace Gameplay.Combat.Projectiles
 
         protected virtual void FixedUpdate()
         {
-            transform.position += movementVector;
+            var hit = new RaycastHit();
+            var tempMovementVector = movementVector;
+            
+            if (Physics.Raycast (transform.position, -Vector3.up, out hit))
+            {
+                if(!hit.transform.CompareTag("Ground"))
+                    return;
+                
+                tempMovementVector.y -= (hit.distance - maxDistanceToGround);
+            }
+            
+            transform.position += tempMovementVector;
         }
 
         protected virtual void OnTriggerEnter(Collider other)
