@@ -20,10 +20,10 @@ namespace Gameplay.Combat.Projectiles
 
         protected virtual void FixedUpdate()
         {
-            var hit = new RaycastHit();
             var tempMovementVector = movementVector;
             
-            if (Physics.Raycast (transform.position, -Vector3.up, out hit))
+            // Fix height a bit to ensure the distance to the ground is being held.
+            if (Physics.Raycast (transform.position, -Vector3.up, out var hit))
             {
                 if(!hit.transform.CompareTag("Ground"))
                     return;
