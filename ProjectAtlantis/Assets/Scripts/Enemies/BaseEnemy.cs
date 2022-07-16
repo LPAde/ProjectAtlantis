@@ -20,7 +20,7 @@ namespace Enemies
         [SerializeField] private float desiredSeparation;
         [SerializeField] private float maxForce;
 
-        private bool wasSharked;
+        private bool _wasSharked;
         
         public FiniteStateMachine FiniteStateMachine { get; private set; }
 
@@ -97,9 +97,9 @@ namespace Enemies
             {
                 case SpellAbility.Shark:
 
-                    if (!wasSharked)
+                    if (!_wasSharked)
                     {
-                        wasSharked = true;
+                        _wasSharked = true;
                         TakeDamage(damage);
                     }
                     else
