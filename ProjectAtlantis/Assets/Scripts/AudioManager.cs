@@ -23,8 +23,11 @@ public class AudioManager : MonoBehaviour
             return;
         
         // Starts a new song when the current one ends.
-        if(!backgroundMusic.isPlaying && !GameManager.Instance.IsPaused)
+        if (!backgroundMusic.isPlaying && !GameManager.Instance.IsPaused)
+        {
             GameManager.Instance.RhythmManager.OnTrackChange.Invoke(currentSong);
+            print("here");
+        }
     }
 
     public void OnSliderChange(Slider slider)
@@ -53,6 +56,7 @@ public class AudioManager : MonoBehaviour
             
         var volumes = loadString.Split("*");
         
+        // Convert string into mixer and slider values.
         mixer.SetFloat("Master", float.Parse(volumes[0]));
         mixer.SetFloat("Music", float.Parse(volumes[1]));
         mixer.SetFloat("SFX", float.Parse(volumes[2]));
@@ -64,9 +68,9 @@ public class AudioManager : MonoBehaviour
 
     private void Save()
     {
-        // Master Music SFX
         string saveString = "";
 
+        // Use slider values for save system.
         for (int i = 0; i < mixerSliders.Count; i++)
         {
             saveString += mixerSliders[i].value + "*";

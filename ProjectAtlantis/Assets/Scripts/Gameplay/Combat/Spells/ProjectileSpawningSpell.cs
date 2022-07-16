@@ -18,7 +18,6 @@ namespace Gameplay.Combat.Spells
             // Stops when the spell is still on cooldown.
             if (currentCoolDown > 0)
             {
-                Debug.Log("ON CD");
                 return;
             }
             
