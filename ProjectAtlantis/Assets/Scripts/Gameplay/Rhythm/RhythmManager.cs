@@ -29,6 +29,7 @@ namespace Gameplay.Rhythm
         {
             HitPerfect += ResetPlayerAction;
             OnTrackChange += ChangeSong;
+            OnTrackChange += GameManager.Instance.AudioManager.UpdateBackgroundTrack;
         }
 
         private void Start()

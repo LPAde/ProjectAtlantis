@@ -55,10 +55,12 @@ namespace UI
             SceneManager.LoadScene(2);
         }
 
-        public void OnExtrasClick()
+        public void OnWindowChangeClick(int activatedWindowIndex)
         {
-            allWindows[0].SetActive(allWindows[1].activeSelf);
-            allWindows[1].SetActive(!allWindows[1].activeSelf);
+            for (int i = 0; i < allWindows.Count; i++)
+            {
+                allWindows[i].SetActive(i == activatedWindowIndex);
+            }
             
             if(allWindows[1].activeSelf)
                 OpenCutsceneCollection();

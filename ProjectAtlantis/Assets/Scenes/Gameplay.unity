@@ -5557,53 +5557,6 @@ Transform:
   m_Father: {fileID: 674557099}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &225608400
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 225608401}
-  - component: {fileID: 225608402}
-  m_Layer: 0
-  m_Name: Audio Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &225608401
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225608400}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2012971437}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &225608402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225608400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f35220f6c3774b4aa7a717da994b3dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backgroundMusic: {fileID: 440987888}
-  currentSong: {fileID: 0}
-  mixer: {fileID: 24100000, guid: 6b809a8547ad7e248afdc4321246f78c, type: 2}
 --- !u!1 &225654174
 GameObject:
   m_ObjectHideFlags: 0
@@ -6965,7 +6918,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 225608402}
+      - m_Target: {fileID: 819056035}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: OnSliderChange
         m_Mode: 2
@@ -7837,6 +7790,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies: []
+--- !u!1 &819056034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 819056036}
+  - component: {fileID: 819056035}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &819056035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819056034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f35220f6c3774b4aa7a717da994b3dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundMusic: {fileID: 440987888}
+  currentSong: {fileID: 0}
+  mixer: {fileID: 24100000, guid: 6b809a8547ad7e248afdc4321246f78c, type: 2}
+  mixerSliders:
+  - {fileID: 1066935891}
+  - {fileID: 1825009649}
+  - {fileID: 559445515}
+--- !u!4 &819056036
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819056034}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -413.23627, y: -224.36063, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2012971437}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &819606819
 GameObject:
   m_ObjectHideFlags: 0
@@ -9141,7 +9145,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 225608402}
+      - m_Target: {fileID: 819056035}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: OnSliderChange
         m_Mode: 2
@@ -11836,7 +11840,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 225608402}
+      - m_Target: {fileID: 819056035}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: OnSliderChange
         m_Mode: 2
@@ -12328,7 +12332,7 @@ MonoBehaviour:
   rhythmManager: {fileID: 995343680}
   enemyManager: {fileID: 758213586}
   hudManager: {fileID: 1771511856}
-  audioManager: {fileID: 225608402}
+  audioManager: {fileID: 819056035}
   spellManager: {fileID: 0}
   arenaManager: {fileID: 1086497784}
   enemySpawner: {fileID: 1641598934}
@@ -12345,7 +12349,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 225608401}
+  - {fileID: 819056036}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
