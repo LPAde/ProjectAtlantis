@@ -5,6 +5,7 @@ namespace Enemies
     public class AttackingMeleeEnemy : AttackingEnemy
     {
         private static readonly int Attack1 = Animator.StringToHash("Attack");
+        [SerializeField] private AudioSource source;
 
         /// <summary>
         /// Attacks are being done with the Animator.
@@ -32,6 +33,8 @@ namespace Enemies
             {
                 GameManager.Instance.Player.TakeDamage(stats.Strength);
             }
+            
+            source.Play();
         }
     }
 }
