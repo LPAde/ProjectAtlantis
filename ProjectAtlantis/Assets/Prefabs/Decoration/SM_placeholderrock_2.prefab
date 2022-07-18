@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 4716920624237424780}
   - component: {fileID: 2217818199823392996}
   - component: {fileID: 6117190204739031155}
+  - component: {fileID: 5134736967759684199}
   m_Layer: 0
   m_Name: bolder3
   m_TagString: Untagged
@@ -115,3 +116,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &5134736967759684199
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7252914638162359937}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.05145701
+  m_Center: {x: -0.0019072676, y: 0.018625712, z: -0.0030965053}
