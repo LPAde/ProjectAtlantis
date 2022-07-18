@@ -12,6 +12,7 @@ namespace PlayerScripts
         [SerializeField] private PlayerController playerController;
         [SerializeField] private CharacterController characterController;
         [SerializeField] private PlayerStats stats;
+        [SerializeField] private Animator anim;
         
         [Header("Attack Related Stuff")]
         [SerializeField] private Transform projectileSpawnPosition;
@@ -30,6 +31,7 @@ namespace PlayerScripts
         public PlayerController PlayerController => playerController;
         public CharacterController CharacterController => characterController;
         public PlayerStats PlayerStats => stats;
+        public Animator Anim => anim;
         public CombatSpell[] CombatSpells => combatSpells;
         public MovementSpell MovementSpell => movementSpell;
         public Transform ProjectileSpawnPosition => projectileSpawnPosition;

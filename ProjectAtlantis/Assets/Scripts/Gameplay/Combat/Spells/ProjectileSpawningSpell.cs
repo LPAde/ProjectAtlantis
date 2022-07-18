@@ -1,5 +1,4 @@
 using Enemies;
-using Gameplay.Combat.Projectiles;
 using Gameplay.Combat.Projectiles.EnemyProjectiles;
 using Gameplay.Combat.Projectiles.PlayerProjectiles;
 using PlayerScripts;

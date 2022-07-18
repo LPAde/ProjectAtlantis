@@ -8,6 +8,7 @@ namespace PlayerScripts
 
         [Header("Movement")] 
         [SerializeField] private Vector3 movePos;
+        [SerializeField] private bool isInAnimation;
 
         [Header("Dashes")]
         [SerializeField] private Vector3 dashVector;
@@ -51,6 +52,9 @@ namespace PlayerScripts
 
         private void CheckInputs()
         {
+            if(isInAnimation)
+                return;
+            
             // Not the most attractive solution, but a simple one that works.
             if (Input.GetKeyDown(KeyCode.Q))
             {
