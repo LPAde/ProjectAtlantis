@@ -15,7 +15,8 @@ namespace PlayerScripts
         [SerializeField] private bool isDashing;
         [SerializeField] private float dashDuration;
         [SerializeField] private float dashSpeed;
-        
+
+        [SerializeField] private int attackAnimationIndex;
         private static readonly int StartMoving = Animator.StringToHash("StartMoving");
         private static readonly int IsMoving = Animator.StringToHash("IsMoving");
         private static readonly int PressAttack = Animator.StringToHash("PressAttack");
@@ -198,21 +199,16 @@ namespace PlayerScripts
 
         private void DoCorrectAttackAnimation()
         {
-            if (player.Anim.GetCurrentAnimatorStateInfo(0).IsName("Eir_Hit_1") && !player.Anim.GetBool(PressAttack2))
+            if (attackAnimationIndex == 0)
             {
-                player.Anim.SetBool(PressAttack2, true);
+                attackAnimationIndex++;
             }
             else
             {
-                if (player.Anim.GetCurrentAnimatorStateInfo(0).IsName("Eir_Hit_2"))
-                {
-                    player.Anim.SetBool(PressAttack3, true);
-                }
-                else
-                {
-                    player.Anim.SetTrigger(PressAttack);
-                }
+                attackAnimationIndex = 0;
             }
+
+            player.Anim.SetTrigger(string.Concat(PressAttack, attackAnimationIndex));
         }
         
         /// <summary>
