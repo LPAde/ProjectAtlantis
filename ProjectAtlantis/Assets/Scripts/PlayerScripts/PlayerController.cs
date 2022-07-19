@@ -10,7 +10,7 @@ namespace PlayerScripts
         [SerializeField] private Vector3 movePos;
         [SerializeField] private bool isInAnimation;
 
-        [Header("Dashes")]
+        [Header("Dashing")]
         [SerializeField] private Vector3 dashVector;
         [SerializeField] private bool isDashing;
         [SerializeField] private float dashDuration;
@@ -18,9 +18,8 @@ namespace PlayerScripts
 
         [Header("Animation")]
         [SerializeField] private int attackAnimationIndex;
-        
+
         private static readonly int IsMoving = Animator.StringToHash("IsMoving");
-        private static readonly int PressAttack = Animator.StringToHash("PressAttack");
 
         #region Unity Methods
 
