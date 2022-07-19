@@ -20,6 +20,7 @@ namespace PlayerScripts
         private static readonly int IsMoving = Animator.StringToHash("IsMoving");
         private static readonly int PressAttack = Animator.StringToHash("PressAttack");
         private static readonly int PressAttack2 = Animator.StringToHash("PressAttack2");
+        private static readonly int PressAttack3 = Animator.StringToHash("PressAttack3");
 
         #region Unity Methods
 
@@ -77,7 +78,6 @@ namespace PlayerScripts
             {
                 Cast(KeyCode.Space);
                 player.Anim.SetBool(IsMoving, true);
-                player.Anim.SetTrigger(StartMoving);
             }
 
             // Move
@@ -94,7 +94,6 @@ namespace PlayerScripts
                     
                     Look(); 
                     player.Anim.SetBool(IsMoving, true);
-                    player.Anim.SetTrigger(StartMoving);
                 }
             }
             
@@ -207,7 +206,7 @@ namespace PlayerScripts
             {
                 if (player.Anim.GetCurrentAnimatorStateInfo(0).IsName("Eir_Hit_2"))
                 {
-                    player.Anim.SetBool("PressAttack3", true);
+                    player.Anim.SetBool(PressAttack3, true);
                 }
                 else
                 {
