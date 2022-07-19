@@ -16,12 +16,11 @@ namespace PlayerScripts
         [SerializeField] private float dashDuration;
         [SerializeField] private float dashSpeed;
 
+        [Header("Animation")]
         [SerializeField] private int attackAnimationIndex;
-        private static readonly int StartMoving = Animator.StringToHash("StartMoving");
+        
         private static readonly int IsMoving = Animator.StringToHash("IsMoving");
         private static readonly int PressAttack = Animator.StringToHash("PressAttack");
-        private static readonly int PressAttack2 = Animator.StringToHash("PressAttack2");
-        private static readonly int PressAttack3 = Animator.StringToHash("PressAttack3");
 
         #region Unity Methods
 
@@ -208,7 +207,7 @@ namespace PlayerScripts
                 attackAnimationIndex = 0;
             }
 
-            player.Anim.SetTrigger(string.Concat(PressAttack, attackAnimationIndex));
+            player.Anim.SetTrigger(string.Concat("PressAttack", attackAnimationIndex));
         }
         
         /// <summary>
