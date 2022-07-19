@@ -15,8 +15,11 @@ namespace PlayerScripts
         [SerializeField] private bool isDashing;
         [SerializeField] private float dashDuration;
         [SerializeField] private float dashSpeed;
+        
         private static readonly int StartMoving = Animator.StringToHash("StartMoving");
         private static readonly int IsMoving = Animator.StringToHash("IsMoving");
+        private static readonly int PressAttack = Animator.StringToHash("PressAttack");
+        private static readonly int PressAttack2 = Animator.StringToHash("PressAttack2");
 
         #region Unity Methods
 
@@ -174,14 +177,17 @@ namespace PlayerScripts
             switch (code)
             {
                 case KeyCode.Q:
+                    DoCorrectAttackAnimation();
                     player.CombatSpells[0].Cast();
                     break;
                 
                 case KeyCode.W:
+                    DoCorrectAttackAnimation();
                     player.CombatSpells[1].Cast();
                     break;
                 
                 case KeyCode.E:
+                    DoCorrectAttackAnimation();
                     player.CombatSpells[2].Cast();
                     break;
                 
@@ -191,6 +197,25 @@ namespace PlayerScripts
             }
         }
 
+        private void DoCorrectAttackAnimation()
+        {
+            if (player.Anim.GetCurrentAnimatorStateInfo(0).IsName("Eir_Hit_1") && !player.Anim.GetBool(PressAttack2))
+            {
+                player.Anim.SetBool(PressAttack2, true);
+            }
+            else
+            {
+                if (player.Anim.GetCurrentAnimatorStateInfo(0).IsName("Eir_Hit_2"))
+                {
+                    player.Anim.SetBool("PressAttack3", true);
+                }
+                else
+                {
+                    player.Anim.SetTrigger(PressAttack);
+                }
+            }
+        }
+        
         /// <summary>
         /// Reads the position of the player object.
         /// </summary>
