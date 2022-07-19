@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -2572759433383277482}
   m_Layer: 2
   m_Name: Rift
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,6 +136,7 @@ MonoBehaviour:
   projectileSpeed: 0
   lifeTime: 3
   movementVector: {x: 0, y: 0, z: 0}
+  maxDistanceToGround: 1.5
   scalings:
   - 0.5
   - 1
