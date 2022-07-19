@@ -21,7 +21,8 @@ namespace Gameplay.Spawning
         [SerializeField] private float currentDuration;
         [SerializeField] private float baseDuration;
         [SerializeField] private float durationIncrease;
-        
+
+        public List<float> HeightChecks => heightChecks;
         public bool IsInArena => isInArena;
 
         #region Unity Methods

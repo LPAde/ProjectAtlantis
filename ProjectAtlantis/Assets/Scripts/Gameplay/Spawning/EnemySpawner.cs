@@ -10,7 +10,9 @@ namespace Gameplay.Spawning
     public class EnemySpawner : MonoBehaviour
     {
         [SerializeField] private List<BaseEnemy> enemies;
-        [SerializeField] private List<Transform> spawnPositions;
+        [SerializeField] private List<Transform> spawnPositionsHeightOne;
+        [SerializeField] private List<Transform> spawnPositionsHeightTwo;
+        [SerializeField] private List<Transform> spawnPositionsHeightThree;
         [SerializeField] private float enemySpawnDelay;
         private int _currentSpawnPosition;
 
@@ -34,22 +36,67 @@ namespace Gameplay.Spawning
         }
 
         /// <summary>
-        /// Updates the current spawn point.
+        /// Determines the point at which an enemy shall be spawned.
         /// </summary>
-        private void UpdateSpawnPoints()
+        /// <returns> The point something shall be spawned at. </returns>
+        private Vector3 GetSpawnPoint()
         {
-            if (spawnPositions.Count < 2)
-                return;
-
             _currentSpawnPosition++;
+            float playerHeight = GameManager.Instance.Player.PlayerController.transform.position.y;
+            var heightChecks = GameManager.Instance.ArenaManager.HeightChecks;
 
-            if (_currentSpawnPosition >= spawnPositions.Count)
+            // Case: Player is at the top.
+            if (playerHeight > heightChecks[0])
+            {
+                
+                if (_currentSpawnPosition >= spawnPositionsHeightOne.Count)
+                    _currentSpawnPosition = 0;
+
+                return spawnPositionsHeightOne[_currentSpawnPosition].position;
+            }
+
+            // Case: Player is in the middle.
+            if(playerHeight > heightChecks[1])
+            {
+                
+                if (_currentSpawnPosition >= spawnPositionsHeightTwo.Count)
+                    _currentSpawnPosition = 0;
+
+                return spawnPositionsHeightTwo[_currentSpawnPosition].position;
+            }
+
+            // Case: Player is at the bottom.
+            if (_currentSpawnPosition >= spawnPositionsHeightThree.Count)
                 _currentSpawnPosition = 0;
+
+            return spawnPositionsHeightThree[_currentSpawnPosition].position;
         }
 
         private void UpdateWave(int wave)
         {
             enemies = GameManager.Instance.WaveManager.GenerateNextWave(enemies);
+        }
+
+        /// <summary>
+        /// Creates a spawn delay for the spawns depending on the possible spawn points at the current height.
+        /// </summary>
+        /// <param name="height"> The current height of the spawn point. </param>
+        /// <returns> The delay for the next spawn. </returns>
+        private float GetSpawnDelay(float height)
+        {
+            float tempSpawnDelay = enemySpawnDelay;
+            
+            if (Math.Abs(height - spawnPositionsHeightOne[0].position.y) < .0001f)
+            {
+                return tempSpawnDelay / spawnPositionsHeightOne.Count;
+            }
+
+            if (Math.Abs(height - spawnPositionsHeightTwo[0].position.y) < .0001f)
+            {
+                return tempSpawnDelay / spawnPositionsHeightTwo.Count;
+            }
+
+            return tempSpawnDelay / spawnPositionsHeightThree.Count;
         }
 
         /// <summary>
@@ -60,13 +107,13 @@ namespace Gameplay.Spawning
         {
             foreach (var enemy in enemies)
             {
-                UpdateSpawnPoints();
-                var en = Instantiate(enemy,spawnPositions[_currentSpawnPosition].position,quaternion.identity,transform);
+                var spawnPoint = GetSpawnPoint();
+                var en = Instantiate(enemy,spawnPoint,quaternion.identity,transform);
                 
                 GameManager.Instance.ArenaManager.AddArenaEnemy(en);
                 en.MakeArenaEnemy();
-                
-                yield return new WaitForSeconds(enemySpawnDelay);
+
+                yield return new WaitForSeconds(GetSpawnDelay(spawnPoint.y));
             }
 
             IsSpawning = false;

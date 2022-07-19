@@ -75,8 +75,9 @@ namespace Enemies
         {
             float takenDamage = damage - stats.Defense;
             
+            // Ensure at least one damage is dealt.
             if(takenDamage <= 0)
-                return;
+                takenDamage = 1;
             
             stats.Health -= takenDamage * difficultyModifier;
             
