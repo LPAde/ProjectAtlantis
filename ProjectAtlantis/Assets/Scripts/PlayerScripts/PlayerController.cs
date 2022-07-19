@@ -15,7 +15,9 @@ namespace PlayerScripts
         [SerializeField] private bool isDashing;
         [SerializeField] private float dashDuration;
         [SerializeField] private float dashSpeed;
-        
+        private static readonly int StartMoving = Animator.StringToHash("StartMoving");
+        private static readonly int IsMoving = Animator.StringToHash("IsMoving");
+
         #region Unity Methods
 
         private void Awake()
@@ -71,6 +73,8 @@ namespace PlayerScripts
             else if (Input.GetKeyDown(KeyCode.Space))
             {
                 Cast(KeyCode.Space);
+                player.Anim.SetBool(IsMoving, true);
+                player.Anim.SetTrigger(StartMoving);
             }
 
             // Move
@@ -86,6 +90,8 @@ namespace PlayerScripts
                     movePos = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                     
                     Look(); 
+                    player.Anim.SetBool(IsMoving, true);
+                    player.Anim.SetTrigger(StartMoving);
                 }
             }
             
@@ -113,6 +119,10 @@ namespace PlayerScripts
             
             // Move the character.
             player.CharacterController.Move(movement);
+            
+            // Stop movement animation when there is no movement.
+            if(movement.x == 0 && movement.z == 0)
+                player.Anim.SetBool(IsMoving, false);
         }
 
         /// <summary>
