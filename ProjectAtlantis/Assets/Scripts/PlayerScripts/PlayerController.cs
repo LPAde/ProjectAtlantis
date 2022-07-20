@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace PlayerScripts
 {
@@ -107,8 +108,9 @@ namespace PlayerScripts
             }
             
             // Pause
-            if(Input.GetKeyDown(KeyCode.Escape))
-                GameManager.Instance.ToggleWindows();
+            if (Input.GetKeyDown(KeyCode.Escape))
+                SceneManager.LoadScene(0);
+            //    GameManager.Instance.ToggleWindows();
         }
 
         /// <summary>
