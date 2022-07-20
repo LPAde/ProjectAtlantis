@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Gameplay.Combat.Projectiles
@@ -9,6 +10,7 @@ namespace Gameplay.Combat.Projectiles
         [SerializeField] protected float lifeTime;
         [SerializeField] protected Vector3 movementVector;
         [SerializeField] private float maxDistanceToGround = 1.5f;
+        [SerializeField] private GameObject deathParticleObject;
         
         protected virtual void Update()
         {
@@ -40,6 +42,12 @@ namespace Gameplay.Combat.Projectiles
                 return;
             
             Destroy(gameObject);
+        }
+
+        private void OnDestroy()
+        {
+            if(deathParticleObject != null) 
+                Instantiate(deathParticleObject, transform.position, Quaternion.identity, GameManager.Instance.transform);
         }
 
         public void Initialize(Vector3 newMovementVector)
