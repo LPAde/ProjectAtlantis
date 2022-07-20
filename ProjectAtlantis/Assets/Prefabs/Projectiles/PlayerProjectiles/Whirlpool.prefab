@@ -202,6 +202,7 @@ MonoBehaviour:
   lifeTime: 5
   movementVector: {x: 0, y: 0, z: 0}
   maxDistanceToGround: 1.5
+  deathParticleObject: {fileID: 0}
   scalings:
   - 0.5
   - 1
@@ -330,7 +331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7203705362870443672, guid: 7f1820c36b0f0504a9c371c573ad2784, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7203705362870443672, guid: 7f1820c36b0f0504a9c371c573ad2784, type: 3}
       propertyPath: m_LocalRotation.x
@@ -338,7 +339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7203705362870443672, guid: 7f1820c36b0f0504a9c371c573ad2784, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7203705362870443672, guid: 7f1820c36b0f0504a9c371c573ad2784, type: 3}
       propertyPath: m_LocalRotation.z
@@ -350,7 +351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7203705362870443672, guid: 7f1820c36b0f0504a9c371c573ad2784, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7203705362870443672, guid: 7f1820c36b0f0504a9c371c573ad2784, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
