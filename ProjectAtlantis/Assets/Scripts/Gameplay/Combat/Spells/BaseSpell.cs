@@ -8,6 +8,8 @@ namespace Gameplay.Combat.Spells
         [SerializeField] protected float maxCoolDown;
         [SerializeField] protected float currentCoolDown;
         [SerializeField] private Sprite spellSprite;
+
+        public Sprite SpellSprite => spellSprite;
         
         /// <summary>
         /// Sets the owner of the spell.
@@ -23,9 +25,11 @@ namespace Gameplay.Combat.Spells
         {
         }
 
-        public void TickDownCooldown()
+        public float TickDownCooldown()
         {
             currentCoolDown -= Time.deltaTime;
+            
+            return currentCoolDown;
         }
     }
 }

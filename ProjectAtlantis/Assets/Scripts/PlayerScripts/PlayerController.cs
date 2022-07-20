@@ -170,29 +170,35 @@ namespace PlayerScripts
         /// <param name="code"> The Input that should be worked with. </param>
         private void Cast(KeyCode code)
         {
-            Look(); 
-            
+            Look();
+            byte spellIndex = 0;
             switch (code)
             {
                 case KeyCode.Q:
                     DoCorrectAttackAnimation();
-                    player.CombatSpells[0].Cast();
+                    spellIndex = 0;
+                    player.CombatSpells[spellIndex].Cast();
                     break;
                 
                 case KeyCode.W:
                     DoCorrectAttackAnimation();
-                    player.CombatSpells[1].Cast();
+                    spellIndex = 1;
+                    player.CombatSpells[spellIndex].Cast();
                     break;
                 
                 case KeyCode.E:
                     DoCorrectAttackAnimation();
-                    player.CombatSpells[2].Cast();
+                    spellIndex = 2;
+                    player.CombatSpells[spellIndex].Cast();
                     break;
                 
-                case KeyCode.Space: 
+                case KeyCode.Space:
+                    spellIndex = 3;
                     player.MovementSpell.Cast();
                     break;
             }
+            
+            GameManager.Instance.HudManager.UseSkill(spellIndex);
         }
 
         private void DoCorrectAttackAnimation()

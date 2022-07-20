@@ -50,16 +50,19 @@ namespace PlayerScripts
             }
             
             movementSpell.SetOwner(this);
+            
+            GameManager.Instance.HudManager.UpdateSkills(combatSpells, movementSpell);
         }
 
         private void LateUpdate()
         {
             // Reducing spell cooldown.
-            foreach (var spell in combatSpells)
+            for (var index = 0; index < combatSpells.Length; index++)
             {
-                spell.TickDownCooldown();
+                GameManager.Instance.HudManager.CooldownSkill(combatSpells[index].TickDownCooldown(), index);
             }
-            movementSpell.TickDownCooldown();
+
+            GameManager.Instance.HudManager.CooldownSkill(movementSpell.TickDownCooldown(), 3);
             
             // Health regeneration. 
             Heal(stats.HealthRegen * Time.deltaTime);
@@ -111,6 +114,8 @@ namespace PlayerScripts
             stats.Strength += addedStats.Strength;
             stats.Defense += addedStats.Defense;
             stats.Speed += addedStats.Speed;
+            
+            GameManager.Instance.HudManager.UpdateHealth(stats.Health, stats.MAXHealth);
             
             // Always saving after Statupgrade.
             GameManager.Instance.Save.Invoke();
