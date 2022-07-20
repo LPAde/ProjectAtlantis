@@ -38,7 +38,7 @@ namespace Gameplay.Combat.Projectiles
         {
             if(other.CompareTag("Projectile") || other.CompareTag("Area Hitbox"))
                 return;
-        
+            
             Destroy(gameObject);
         }
 

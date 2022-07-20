@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 2217818199823392996}
   - component: {fileID: 6117190204739031155}
   - component: {fileID: 5134736967759684199}
+  - component: {fileID: 3480914754166858750}
   m_Layer: 0
   m_Name: bolder3
   m_TagString: Untagged
@@ -129,3 +130,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.05145701
   m_Center: {x: -0.0019072676, y: 0.018625712, z: -0.0030965053}
+--- !u!54 &3480914754166858750
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7252914638162359937}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
