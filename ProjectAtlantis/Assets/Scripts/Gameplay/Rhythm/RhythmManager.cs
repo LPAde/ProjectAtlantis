@@ -57,18 +57,24 @@ namespace Gameplay.Rhythm
             
             if (currentTimers[0] < leeway[0])
             {
+                print("perfect");
                 return Timing.Perfect;
             }
-            if (currentTimers[0] < leeway[1])
+            else if (currentTimers[0] < leeway[1])
             {
+                print("amazing");
                 return Timing.Amazing;
             }
-            if (currentTimers[0] < leeway[2])
+            else if (currentTimers[0] < leeway[2])
             {
+                print("good");
                 return Timing.Good;
             }
-            
-            return Timing.Bad;
+            else
+            {
+                print("bad");
+                return Timing.Bad;
+            }
         }
 
         /// <summary>
