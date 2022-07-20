@@ -7,6 +7,8 @@ namespace Enemies
         private static readonly int Attack1 = Animator.StringToHash("Attack");
         [SerializeField] private AudioSource source;
 
+        private bool _didHit;
+
         /// <summary>
         /// Attacks are being done with the Animator.
         /// </summary>
@@ -29,12 +31,21 @@ namespace Enemies
 
         public void StartAttack()
         {
+            if(_didHit)
+                return;
+            
             if (stats.AttackRange * stats.AttackRange > (attack.transform.position - GameManager.Instance.Player.PlayerController.transform.position).sqrMagnitude)
             {
                 GameManager.Instance.Player.TakeDamage(stats.Strength);
+                _didHit = true;
             }
             
             source.Play();
+        }
+
+        public void EndAttack()
+        {
+            _didHit = false;
         }
     }
 }
