@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45107907, g: 0.5008992, b: 0.5741101, a: 1}
+  m_IndirectSpecularColor: {r: 0.45107877, g: 0.5008987, b: 0.5741096, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8277,6 +8277,7 @@ MonoBehaviour:
   isDashing: 0
   dashDuration: 0
   dashSpeed: 0
+  attackAnimationIndex: 0
 --- !u!65 &1780075054
 BoxCollider:
   m_ObjectHideFlags: 0
