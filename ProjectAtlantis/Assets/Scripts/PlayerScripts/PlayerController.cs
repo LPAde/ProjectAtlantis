@@ -16,6 +16,9 @@ namespace PlayerScripts
         [SerializeField] private float dashDuration;
         [SerializeField] private float dashSpeed;
 
+        [Header("Audio")] 
+        [SerializeField] private AudioClip swimSound;
+        
         [Header("Animation")]
         [SerializeField] private int attackAnimationIndex;
 
@@ -93,6 +96,9 @@ namespace PlayerScripts
                     
                     Look(); 
                     player.Anim.SetBool(IsMoving, true);
+                    player.AudioSource.clip = swimSound;
+                    player.AudioSource.loop = true;
+                    player.AudioSource.Play();
                 }
             }
             
@@ -122,8 +128,12 @@ namespace PlayerScripts
             player.CharacterController.Move(movement);
             
             // Stop movement animation when there is no movement.
-            if(movement.x == 0 && movement.z == 0)
+            if (movement.x == 0 && movement.z == 0)
+            {
                 player.Anim.SetBool(IsMoving, false);
+                player.AudioSource.loop = false;
+                player.AudioSource.Stop();   
+            }
         }
 
         /// <summary>

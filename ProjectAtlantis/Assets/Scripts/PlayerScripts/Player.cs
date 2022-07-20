@@ -12,6 +12,7 @@ namespace PlayerScripts
         [SerializeField] private PlayerController playerController;
         [SerializeField] private CharacterController characterController;
         [SerializeField] private PlayerStats stats;
+        [SerializeField] private AudioSource audioSource;
         [SerializeField] private Animator anim;
         
         [Header("Attack Related Stuff")]
@@ -30,6 +31,7 @@ namespace PlayerScripts
 
         public PlayerController PlayerController => playerController;
         public CharacterController CharacterController => characterController;
+        public AudioSource AudioSource => audioSource;
         public PlayerStats PlayerStats => stats;
         public Animator Anim => anim;
         public CombatSpell[] CombatSpells => combatSpells;
