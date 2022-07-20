@@ -5,7 +5,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
 {
     public class PlayerProjectile : Projectile
     {
-        [SerializeField] private float[] scalings;
+        [SerializeField] protected float[] scalings;
         
         public override void Initialize(Vector3 newMovementVector, Timing timing)
         {
