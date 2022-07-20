@@ -107,8 +107,8 @@ namespace PlayerScripts
             }
             
             // Pause
-            if(Input.GetKeyDown(KeyCode.Escape))
-                GameManager.Instance.ToggleWindows();
+           // if(Input.GetKeyDown(KeyCode.Escape))
+           //     GameManager.Instance.ToggleWindows();
         }
 
         /// <summary>
