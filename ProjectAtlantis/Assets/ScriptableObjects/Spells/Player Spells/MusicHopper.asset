@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6c14e4c27cd40f4885456fceaf74904, type: 3}
-  m_Name: Whirlpool
+  m_Name: MusicHopper
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
-  maxCoolDown: 5
-  currentCoolDown: -5.7598886
-  spellSprite: {fileID: 21300000, guid: e25178c6d34f74b4eaee23e1780358e8, type: 3}
-  damageValue: 1
-  projectile: {fileID: 2780305998763911827, guid: 106b2e4c968f1c04ebf60245be523e5a, type: 3}
+  maxCoolDown: 0
+  currentCoolDown: 0
+  spellSprite: {fileID: 21300000, guid: b9d27caea70e8484881dc25729ae5ee3, type: 3}
+  damageValue: 0
+  projectile: {fileID: 0}
