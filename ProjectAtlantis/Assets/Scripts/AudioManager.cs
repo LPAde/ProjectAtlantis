@@ -28,6 +28,10 @@ public class AudioManager : MonoBehaviour
             GameManager.Instance.RhythmManager.OnTrackChange.Invoke(currentSong);
             print("here");
         }
+        else if (!backgroundMusic.isPlaying)
+        {
+            backgroundMusic.Play();
+        }
     }
 
     public void OnSliderChange(Slider slider)

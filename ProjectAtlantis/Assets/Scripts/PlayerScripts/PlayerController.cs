@@ -96,6 +96,10 @@ namespace PlayerScripts
                     
                     Look(); 
                     player.Anim.SetBool(IsMoving, true);
+                    
+                    if(player.AudioSource.clip == swimSound)
+                        return;
+                    
                     player.AudioSource.clip = swimSound;
                     player.AudioSource.loop = true;
                     player.AudioSource.Play();
