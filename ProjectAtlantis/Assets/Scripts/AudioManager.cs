@@ -24,12 +24,11 @@ public class AudioManager : MonoBehaviour
             return;
 
         _songLenght -= Time.deltaTime;
-        print(_songLenght);
+        
         // Starts a new song when the current one ends.
         if (_songLenght <= 0)
         {
             GameManager.Instance.RhythmManager.OnTrackChange.Invoke(currentSong);
-            print("here");
         }
     }
 
@@ -48,6 +47,7 @@ public class AudioManager : MonoBehaviour
         currentSong = newSong;
         backgroundMusic.clip = newSong.song;
         _songLenght = backgroundMusic.clip.length;
+        
         backgroundMusic.Play();
     }
 

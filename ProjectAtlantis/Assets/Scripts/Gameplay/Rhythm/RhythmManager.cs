@@ -92,13 +92,13 @@ namespace Gameplay.Rhythm
                 slider.minValue = 0;
             }
             
-            currentTimers[0] = currentBeat;
-            currentTimers[1] = currentBeat*2;
-            currentTimers[2] = currentBeat*3;
+            currentTimers[0] = 0;
+            currentTimers[1] = currentBeat;
+            currentTimers[2] = currentBeat*2;
             
-            currentTimers[3] = currentBeat;
-            currentTimers[4] = currentBeat*2;
-            currentTimers[5] = currentBeat*3;
+            currentTimers[3] = 0;
+            currentTimers[4] = currentBeat;
+            currentTimers[5] = currentBeat*2;
 
             leeway[0] = currentBeat * leewayPercentages[0];
             leeway[1] = currentBeat * leewayPercentages[1];
