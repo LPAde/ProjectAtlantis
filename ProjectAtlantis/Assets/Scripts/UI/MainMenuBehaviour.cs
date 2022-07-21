@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Gameplay.Combat.Projectiles;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,6 +13,7 @@ namespace UI
         [SerializeField] private List<Button> allButtons;
         [SerializeField] private List<string> allSaveFileStrings;
         [SerializeField] private List<GameObject> allWindows;
+        [SerializeField] private string websiteUrl;
         
         [Header("Audio Related Stuff")] 
         [SerializeField] private AudioSource audioSource;
@@ -64,6 +64,11 @@ namespace UI
             
             if(allWindows[1].activeSelf)
                 OpenCutsceneCollection();
+        }
+
+        public void OnWebsiteClick()
+        {
+            Application.OpenURL(websiteUrl);
         }
 
         public void OnExitClick()

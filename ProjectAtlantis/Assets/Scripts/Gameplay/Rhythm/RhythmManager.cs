@@ -114,6 +114,7 @@ namespace Gameplay.Rhythm
         {
             if (currentTimers[0] < 0)
             {
+                print("hit");
                 HitPerfect.Invoke();
                 HandleSimpleTimers();
             }

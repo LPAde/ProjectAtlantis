@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource backgroundMusic;
     [SerializeField] private Song currentSong;
     [SerializeField] private AudioMixer mixer;
+    private float _songLenght;
     
     [SerializeField] private List<Slider> mixerSliders;
 
@@ -21,9 +22,11 @@ public class AudioManager : MonoBehaviour
     {
         if(backgroundMusic == null)
             return;
-        
+
+        _songLenght -= Time.deltaTime;
+        print(_songLenght);
         // Starts a new song when the current one ends.
-        if (!backgroundMusic.isPlaying && !GameManager.Instance.IsPaused)
+        if (_songLenght <= 0)
         {
             GameManager.Instance.RhythmManager.OnTrackChange.Invoke(currentSong);
             print("here");
@@ -44,6 +47,7 @@ public class AudioManager : MonoBehaviour
     {
         currentSong = newSong;
         backgroundMusic.clip = newSong.song;
+        _songLenght = backgroundMusic.clip.length;
         backgroundMusic.Play();
     }
 
