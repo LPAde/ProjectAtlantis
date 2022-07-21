@@ -23,7 +23,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
                 if (enemy == null)
                     enemies.Remove(enemy);
                 
-                enemy.TakeDamage(damage, enemy.transform.position - transform.position, maxIntervalTime);
+                enemy.TakeDamage(damage, (transform.position - enemy.transform.position) * 50, maxIntervalTime);
                 
                 if (enemy == null)
                     enemies.Remove(enemy);

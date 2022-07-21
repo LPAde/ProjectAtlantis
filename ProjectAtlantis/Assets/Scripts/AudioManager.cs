@@ -13,6 +13,8 @@ public class AudioManager : MonoBehaviour
     
     [SerializeField] private List<Slider> mixerSliders;
 
+    public AudioSource BackgroundMusic => backgroundMusic;
+    
     private void Awake()
     {
         Load();
