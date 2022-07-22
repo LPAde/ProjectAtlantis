@@ -9,11 +9,11 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource backgroundMusic;
     [SerializeField] private Song currentSong;
     [SerializeField] private AudioMixer mixer;
-    private float _songLenght;
+    [SerializeField] private float songLenght;
     
     [SerializeField] private List<Slider> mixerSliders;
 
-    public AudioSource BackgroundMusic => backgroundMusic;
+    public float SongTime => backgroundMusic.time;
     
     private void Awake()
     {
@@ -25,10 +25,10 @@ public class AudioManager : MonoBehaviour
         if(backgroundMusic == null)
             return;
 
-        _songLenght -= Time.deltaTime;
+        songLenght -= Time.deltaTime;
         
         // Starts a new song when the current one ends.
-        if (_songLenght <= 0)
+        if (songLenght <= 0)
         {
             GameManager.Instance.RhythmManager.OnTrackChange.Invoke(currentSong);
         }
@@ -48,7 +48,7 @@ public class AudioManager : MonoBehaviour
     {
         currentSong = newSong;
         backgroundMusic.clip = newSong.song;
-        _songLenght = backgroundMusic.clip.length;
+        songLenght = backgroundMusic.clip.length;
         
         backgroundMusic.Play();
     }

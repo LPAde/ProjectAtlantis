@@ -28,8 +28,8 @@ namespace Gameplay.Rhythm
         private void Awake()
         {
             HitPerfect += ResetPlayerAction;
-            OnTrackChange += ChangeSong;
             OnTrackChange += GameManager.Instance.AudioManager.UpdateBackgroundTrack;
+            OnTrackChange += ChangeSong;
         }
 
         private void Start()
@@ -54,18 +54,19 @@ namespace Gameplay.Rhythm
                 return Timing.Bad;
             
             playerActed = true;
+            float currentTime = currentTimers[0] - GameManager.Instance.AudioManager.SongTime - currentBeat*.5f;
             
-            if (currentTimers[0] < leeway[0])
+            if (currentTime < leeway[0])
             {
                 print("perfect");
                 return Timing.Perfect;
             }
-            else if (currentTimers[0] < leeway[1])
+            else if (currentTime < leeway[1])
             {
                 print("amazing");
                 return Timing.Amazing;
             }
-            else if (currentTimers[0] < leeway[2])
+            else if (currentTime < leeway[2])
             {
                 print("good");
                 return Timing.Good;
@@ -88,17 +89,19 @@ namespace Gameplay.Rhythm
             
             foreach (var slider in sliders)
             {
-                slider.maxValue = currentBeat * 4; 
+                slider.maxValue = currentBeat * 3; 
                 slider.minValue = 0;
             }
+
+            float songTime = GameManager.Instance.AudioManager.SongTime;
             
-            currentTimers[0] = 0;
-            currentTimers[1] = currentBeat;
-            currentTimers[2] = currentBeat*2;
+            currentTimers[0] = currentBeat + songTime;
+            currentTimers[1] = currentBeat*2 + songTime;
+            currentTimers[2] = currentBeat*3 + songTime;
             
-            currentTimers[3] = 0;
-            currentTimers[4] = currentBeat;
-            currentTimers[5] = currentBeat*2;
+            currentTimers[3] = currentBeat + songTime;
+            currentTimers[4] = currentBeat*2 + songTime;
+            currentTimers[5] = currentBeat*3 + songTime;
 
             leeway[0] = currentBeat * leewayPercentages[0];
             leeway[1] = currentBeat * leewayPercentages[1];
@@ -112,18 +115,16 @@ namespace Gameplay.Rhythm
         /// </summary>
         private void SimpleUpdate()
         {
-            if (currentTimers[0] < 0)
+            // Check if current timing is the beat.
+            if (currentTimers[0] - GameManager.Instance.AudioManager.SongTime - currentBeat*.5f < 0)
             {
-                print("hit");
                 HitPerfect.Invoke();
                 HandleSimpleTimers();
             }
 
             for (int i = 0; i < currentTimers.Count; i++)
             {
-                currentTimers[i] -= Time.deltaTime;
-                
-                sliders[i].value = currentTimers[i];
+                sliders[i].value = currentTimers[i] - GameManager.Instance.AudioManager.SongTime - currentBeat*.5f;
             }
         }
         
@@ -132,13 +133,10 @@ namespace Gameplay.Rhythm
         /// </summary>
         private void HandleSimpleTimers()
         {
-            currentTimers[0] = currentTimers[1];
-            currentTimers[1] = currentTimers[2];
-            currentTimers[2] += currentBeat;
-            
-            currentTimers[3] = currentTimers[4];
-            currentTimers[4] = currentTimers[5];
-            currentTimers[5] += currentBeat;
+            for (int i = 0; i < currentTimers.Count; i++)
+            {
+                currentTimers[i] += currentBeat;
+            }
         }
         
         private void ResetPlayerAction()

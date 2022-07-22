@@ -11169,6 +11169,7 @@ MonoBehaviour:
   backgroundMusic: {fileID: 440987888}
   currentSong: {fileID: 0}
   mixer: {fileID: 24100000, guid: 6b809a8547ad7e248afdc4321246f78c, type: 2}
+  songLenght: 0
   mixerSliders:
   - {fileID: 1066935891}
   - {fileID: 1825009649}
@@ -27797,7 +27798,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137973762}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: eceb6ec171414f14cb23eda7733a507e, type: 2}
   m_CullingMode: 0
