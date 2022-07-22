@@ -11170,7 +11170,7 @@ MonoBehaviour:
   backgroundMusic: {fileID: 440987888}
   currentSong: {fileID: 0}
   mixer: {fileID: 24100000, guid: 6b809a8547ad7e248afdc4321246f78c, type: 2}
-  songLenght: 0
+  timeSongHasPlayed: 0
   mixerSliders:
   - {fileID: 1066935891}
   - {fileID: 1825009649}
@@ -27505,6 +27505,10 @@ PrefabInstance:
     - target: {fileID: 349626857605024824, guid: 6badc13244c3a1f41b22b79f53727c60, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482204778943335325, guid: 6badc13244c3a1f41b22b79f53727c60, type: 3}
+      propertyPath: m_Size.x
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 7145662699095209264, guid: 6badc13244c3a1f41b22b79f53727c60, type: 3}
       propertyPath: m_Layer
