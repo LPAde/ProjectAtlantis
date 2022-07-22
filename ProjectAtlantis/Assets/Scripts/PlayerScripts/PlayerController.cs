@@ -26,13 +26,7 @@ namespace PlayerScripts
         private static readonly int IsMoving = Animator.StringToHash("IsMoving");
 
         #region Unity Methods
-
-        private void Awake()
-        {
-            GameManager.Instance.Load += Load;
-            GameManager.Instance.Save += Save;
-        }
-
+        
         private void Start()
         {
             movePos = transform.position;
@@ -228,27 +222,6 @@ namespace PlayerScripts
             }
 
             player.Anim.SetTrigger(string.Concat("PressAttack", attackAnimationIndex));
-        }
-        
-        /// <summary>
-        /// Reads the position of the player object.
-        /// </summary>
-        private void Load()
-        {
-            var vector = SaveSystem.GetVector3("PlayerPosition");
-            
-            if(vector == Vector3.zero)
-                return;
-            
-            transform.position = vector;
-        }
-
-        /// <summary>
-        /// Saves the position of the player object.
-        /// </summary>
-        private void Save()
-        {
-            SaveSystem.SetVector3("PlayerPosition", transform.position);
         }
 
         #endregion

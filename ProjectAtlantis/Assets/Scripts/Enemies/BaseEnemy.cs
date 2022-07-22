@@ -1,7 +1,10 @@
 using System;
+using System.Collections.Generic;
 using Enemies.AI.FiniteStateMachines;
+using Gameplay.Collectibles;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 namespace Enemies
 {
@@ -20,10 +23,14 @@ namespace Enemies
         [SerializeField] private float desiredSeparation;
         [SerializeField] private float maxForce;
 
+        [Header("Drop related values")] 
+        [SerializeField] private List<GameObject> droppableItems;
+        [SerializeField] private List<int> spawnChances;
+        [SerializeField] private int lastPossibleHealDrop;
+        
         private bool _wasSharked;
         
         public FiniteStateMachine FiniteStateMachine { get; private set; }
-
         public EnemyStats Stats => stats;
         public float CombatScore => combatScore;
         public bool IsArenaEnemy { get; private set; }
@@ -59,6 +66,50 @@ namespace Enemies
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 KnockBack(Vector3.left * 100, 2);
+            }
+        }
+
+        private void OnDestroy()
+        {
+            if (spawnChances.Count == 0)
+                return;
+            
+            
+            int random = Random.Range(0, 1000);
+            float playerHeight = GameManager.Instance.Player.PlayerController.transform.position.y;
+            var heightChecks = GameManager.Instance.ArenaManager.HeightChecks;
+            
+            if (playerHeight > heightChecks[0])
+            {
+                // Doubling all heal Items spawn chances.
+                for (int i = 0; i < lastPossibleHealDrop; i++)
+                {
+                    spawnChances[i] *= 2;
+                }
+            }
+            else if(playerHeight > heightChecks[1])
+            {
+                for (int i = 0; i < droppableItems.Count; i++)
+                {
+                    spawnChances[i] = (int)(spawnChances[i] * 1.5f);
+                }
+            }
+            else
+            {
+                for (int i = lastPossibleHealDrop; i < droppableItems.Count; i++)
+                {
+                    spawnChances[i] *= 2;
+                }
+            }
+            
+
+            for (int i = droppableItems.Count - 1; i > -1; i--)
+            {
+                if (random < spawnChances[i])
+                {
+                    Instantiate(droppableItems[i], transform.position, Quaternion.identity, GameManager.Instance.transform);
+                    break;
+                }
             }
         }
 

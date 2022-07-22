@@ -81,6 +81,9 @@ MonoBehaviour:
   anim: {fileID: 0}
   desiredSeparation: 10
   maxForce: 100
+  droppableItems: []
+  spawnChances: 
+  lastPossibleHealDrop: 1
 --- !u!195 &1478235745316608612
 NavMeshAgent:
   m_ObjectHideFlags: 0

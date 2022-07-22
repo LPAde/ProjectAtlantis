@@ -12,8 +12,8 @@ namespace Gameplay.Collectibles
         /// </summary>
         protected override void OnCollecting()
         {
-            GameManager.Instance.Player.UpgradeStats(addedStats);
             base.OnCollecting();
+            GameManager.Instance.Player.UpgradeStats(addedStats);
         }
     }
 }

@@ -142,18 +142,18 @@ namespace PlayerScripts
             if(string.IsNullOrEmpty(statsString))
                 return;
             
-            var allStats = statsString.Split("-");
+            var allStats = statsString.Split("*");
 
-            stats.MAXHealth = int.Parse(allStats[0]);
-            stats.Health = int.Parse(allStats[1]);
-            stats.HealthRegen = int.Parse(allStats[2]);
-            stats.Strength = int.Parse(allStats[3]);
-            stats.Defense = int.Parse(allStats[4]);
-            stats.Speed = int.Parse(allStats[5]);
+            stats.MAXHealth = float.Parse(allStats[0]);
+            stats.Health = float.Parse(allStats[0]);
+            stats.HealthRegen = float.Parse(allStats[2]);
+            stats.Strength = float.Parse(allStats[3]);
+            stats.Defense = float.Parse(allStats[4]);
+            stats.Speed = float.Parse(allStats[5]);
 
             // Spells.
             string spellString = SaveSystem.GetString("PlayerSpells");
-            var idStrings = spellString.Split("-");
+            var idStrings = spellString.Split("*");
             
             for (int i = 0; i < combatSpells.Length; i++)
             {
@@ -161,6 +161,8 @@ namespace PlayerScripts
             }
 
             movementSpell = (MovementSpell) GameManager.Instance.SpellManager.GetSpell(int.Parse(idStrings[3]));
+            
+            GameManager.Instance.HudManager.UpdateSkills(combatSpells, movementSpell);
         }
 
         /// <summary>
@@ -169,12 +171,12 @@ namespace PlayerScripts
         private void Save()
         {
             SaveSystem.SetString
-                ("PlayerStats", string.Concat(stats.MAXHealth, "-", stats.Health, "-",stats.HealthRegen, "-", stats.Strength, "-",stats.Defense, "-", stats.Speed));
+                ("PlayerStats", string.Concat(stats.MAXHealth, "*", stats.Health, "*",stats.HealthRegen, "*", stats.Strength, "*",stats.Defense, "*", stats.Speed));
             
             SaveSystem.SetString
-                ("PlayerSpells", string.Concat(GameManager.Instance.SpellManager.GetSpellID(combatSpells[0]), "-",
-                GameManager.Instance.SpellManager.GetSpellID(combatSpells[1]), "-",GameManager.Instance.SpellManager.GetSpellID(combatSpells[2])
-                , "-",GameManager.Instance.SpellManager.GetSpellID(movementSpell), "-"));
+                ("PlayerSpells", string.Concat(GameManager.Instance.SpellManager.GetSpellID(combatSpells[0]), "*",
+                GameManager.Instance.SpellManager.GetSpellID(combatSpells[1]), "*",GameManager.Instance.SpellManager.GetSpellID(combatSpells[2])
+                , "*",GameManager.Instance.SpellManager.GetSpellID(movementSpell), "*"));
         }
     }
 

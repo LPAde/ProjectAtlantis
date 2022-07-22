@@ -4,6 +4,16 @@ namespace Gameplay.Collectibles
 {
     public abstract class BaseItem : MonoBehaviour
     {
+        [SerializeField] private float upTime;
+
+        private void Update()
+        {
+            upTime -= Time.deltaTime;
+            
+            if(upTime < 0)
+                Destroy(gameObject);
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if(other.CompareTag("Player"))
