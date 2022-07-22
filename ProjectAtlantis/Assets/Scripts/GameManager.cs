@@ -6,6 +6,7 @@ using Gameplay.Spawning;
 using PlayerScripts;
 using UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [DefaultExecutionOrder(-100)]
 public class GameManager : MonoBehaviour
@@ -56,15 +57,7 @@ public class GameManager : MonoBehaviour
 
     public Action Save;
     public Action Load;
-    
-    public void ToggleWindows()
-    {
-        gameplayWindow.SetActive(!gameplayWindow.activeSelf);
-        pauseWindow.SetActive(!pauseWindow.activeSelf);
-
-        IsPaused = !IsPaused;
-    }
-    
+ 
     private void Awake()
     {
         if(Instance != null)
@@ -76,5 +69,22 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Load.Invoke();
+    } 
+    
+    public void ToggleWindows()
+    {
+        gameplayWindow.SetActive(!gameplayWindow.activeSelf);
+        pauseWindow.SetActive(!pauseWindow.activeSelf);
+
+        IsPaused = !IsPaused;
+        
+        if(!IsPaused)
+            AudioManager.RestartSong();
+    }
+
+    public void SaveAndQuit()
+    {
+        Save.Invoke();
+        SceneManager.LoadScene(0);
     }
 }

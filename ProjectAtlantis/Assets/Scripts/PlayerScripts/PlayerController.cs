@@ -103,8 +103,7 @@ namespace PlayerScripts
             
             // Pause
             if (Input.GetKeyDown(KeyCode.Escape))
-                SceneManager.LoadScene(0);
-            //    GameManager.Instance.ToggleWindows();
+                GameManager.Instance.ToggleWindows();
         }
 
         /// <summary>
