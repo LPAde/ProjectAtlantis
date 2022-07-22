@@ -15,6 +15,7 @@ namespace Gameplay.Rhythm
         [Header("Visual Stuff")]
         [SerializeField] private List<Slider> sliders;
         [SerializeField] private List<float> currentTimers;
+        [SerializeField] private float sliderOffset;
         
         [Header("Song Related Stuff")]
         [SerializeField] private Song currentSong;
@@ -54,7 +55,7 @@ namespace Gameplay.Rhythm
                 return Timing.Bad;
             
             playerActed = true;
-            float currentTime = currentTimers[0] - GameManager.Instance.AudioManager.SongTime - currentBeat*.5f;
+            float currentTime = currentTimers[0] - GameManager.Instance.AudioManager.SongTime - sliderOffset;
             
             if (currentTime < leeway[0])
             {
@@ -116,7 +117,7 @@ namespace Gameplay.Rhythm
         private void SimpleUpdate()
         {
             // Check if current timing is the beat.
-            if (currentTimers[0] - GameManager.Instance.AudioManager.SongTime - currentBeat*.5f < 0)
+            if (currentTimers[0] - GameManager.Instance.AudioManager.SongTime - sliderOffset < 0)
             {
                 HitPerfect.Invoke();
                 HandleSimpleTimers();
@@ -124,7 +125,7 @@ namespace Gameplay.Rhythm
 
             for (int i = 0; i < currentTimers.Count; i++)
             {
-                sliders[i].value = currentTimers[i] - GameManager.Instance.AudioManager.SongTime - currentBeat*.5f;
+                sliders[i].value = currentTimers[i] - GameManager.Instance.AudioManager.SongTime - sliderOffset;
             }
         }
         
