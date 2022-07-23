@@ -10,14 +10,29 @@ namespace Gameplay.Spawning
     public class WaveManager : MonoBehaviour
     {
         [SerializeField] private int currentWave;
+        
+        [Header("Hardcoded Enemy Waves")]
         [SerializeField] private List<int> hardcodedWavesIndicator;
         [SerializeField] private List<Wave> hardcodedWaves;
 
-        public int CurrentWave => currentWave;
+        [Header("Item Related Stuff")] 
+        [SerializeField] private List<GameObject> keys;
+        [SerializeField] private List<int> keySpawnWaves;
+        [SerializeField] private List<GameObject> walls;
         
+        
+        public int CurrentWave => currentWave;
+
+        private void Awake()
+        {
+            GameManager.Instance.Load += Load;
+        }
+
         public List<BaseEnemy> GenerateNextWave(List<BaseEnemy> lastWave)
         {
             currentWave++;
+            
+            WaveItemCheck();
             
             // Checks if we are in a hardcoded Wave.
             for (int i = 0; i < hardcodedWavesIndicator.Count; i++)
@@ -61,6 +76,46 @@ namespace Gameplay.Spawning
             }
             
             return newWave;
+        }
+
+        public void DestroyWall(int collectedKeys)
+        {
+            Destroy(walls[collectedKeys-1]);
+        }
+
+        private void WaveItemCheck()
+        {
+            if (keySpawnWaves.Contains(currentWave))
+            {
+                int index = 0;
+                for (int i = 0; i < keySpawnWaves.Count; i++)
+                {
+                    if (keySpawnWaves[i] == currentWave)
+                    {
+                        index = i;
+                        break;
+                    }
+                }
+                
+                if(walls[index] == null)
+                    return;
+
+                keys[index].SetActive(true);
+            }
+        }
+        
+        private void Load()
+        {
+            int keyAmount = SaveSystem.GetInt("UsedKeys");
+            
+            if (keyAmount == 0)
+                return;
+            
+            // Remove and destroy all unlocked walls.
+            for (int i = 0; i < keyAmount; i++)
+            {
+                Destroy(walls[i]);
+            }
         }
     }
 

@@ -6,7 +6,7 @@ namespace Gameplay.Collectibles
     {
         [SerializeField] private float upTime;
 
-        private void Update()
+        protected virtual void Update()
         {
             upTime -= Time.deltaTime;
             

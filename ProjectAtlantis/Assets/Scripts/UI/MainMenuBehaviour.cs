@@ -48,6 +48,7 @@ namespace UI
             }
             
             SaveSystem.SetVector3("PlayerPosition", Vector3.zero);
+            SaveSystem.SetInt("UsedKeys", 0);
         }
         
         public void OnCreditsClick()
