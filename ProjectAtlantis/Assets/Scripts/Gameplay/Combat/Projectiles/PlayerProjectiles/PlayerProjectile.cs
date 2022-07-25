@@ -6,6 +6,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
     public class PlayerProjectile : Projectile
     {
         [SerializeField] protected float[] scalings;
+        [SerializeField] private GameObject spawnParticle;
         
         public override void Initialize(Vector3 newMovementVector, Timing timing)
         {
@@ -28,9 +29,15 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
                     break;
                 case Timing.Amazing:
                     damage *= scalings[2];
+                    var position = transform.position;
+                    var aObj = Instantiate(spawnParticle, position, Quaternion.identity, GameManager.Instance.transform);
+                    aObj.transform.LookAt(position + newMovementVector);
                     break;
                 case Timing.Perfect:
                     damage *= scalings[3];
+                    var position1 = transform.position;
+                    var pObj = Instantiate(spawnParticle, position1, Quaternion.identity, GameManager.Instance.transform);
+                    pObj.transform.LookAt(position1 + newMovementVector);
                     break;
             }
         }
