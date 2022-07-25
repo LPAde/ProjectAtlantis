@@ -9,12 +9,12 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
         [SerializeField] private Collider newCollider;
         [SerializeField] private bool isSecondHitBox;
         
-        protected override void FixedUpdate()
+        protected override void Update()
         {
-            if(lifeTime < .5f)
+            if(lifeTime < .1f)
                 ChangeHitBox();
             
-            base.FixedUpdate();
+            base.Update();
         }
 
         protected override void OnTriggerEnter(Collider other)
@@ -27,7 +27,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
             if (!isSecondHitBox)
             {
                 // Knocks opponent to the desired position.
-                en.TakeDamage(damage, GameManager.Instance.Player.ProjectileSpawnPosition.position * 3 - en.transform.position, lifeTime - .5f);
+                en.TakeDamage(damage, (GameManager.Instance.Player.ProjectileSpawnPosition.position - en.transform.position) * 50, lifeTime - .5f);
             }
             else
             {

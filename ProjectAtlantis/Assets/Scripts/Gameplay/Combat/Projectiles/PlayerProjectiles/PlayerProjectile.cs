@@ -29,15 +29,23 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
                     break;
                 case Timing.Amazing:
                     damage *= scalings[2];
-                    var position = transform.position;
-                    var aObj = Instantiate(spawnParticle, position, Quaternion.identity, GameManager.Instance.transform);
-                    aObj.transform.LookAt(position + newMovementVector);
+                    if (spawnParticle != null)
+                    {
+                       var position = transform.position;
+                       var aObj = Instantiate(spawnParticle, position, Quaternion.identity, GameManager.Instance.transform);
+                       aObj.transform.LookAt(position + newMovementVector); 
+                    }
+                    
                     break;
                 case Timing.Perfect:
                     damage *= scalings[3];
-                    var position1 = transform.position;
-                    var pObj = Instantiate(spawnParticle, position1, Quaternion.identity, GameManager.Instance.transform);
-                    pObj.transform.LookAt(position1 + newMovementVector);
+
+                    if (spawnParticle != null)
+                    {
+                        var position1 = transform.position;
+                        var pObj = Instantiate(spawnParticle, position1, Quaternion.identity, GameManager.Instance.transform);
+                        pObj.transform.LookAt(position1 + newMovementVector);
+                    }
                     break;
             }
         }

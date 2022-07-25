@@ -69,50 +69,6 @@ namespace Enemies
             }
         }
 
-        private void OnDestroy()
-        {
-            if (spawnChances.Count == 0)
-                return;
-            
-            
-            int random = Random.Range(0, 1000);
-            float playerHeight = GameManager.Instance.Player.PlayerController.transform.position.y;
-            var heightChecks = GameManager.Instance.ArenaManager.HeightChecks;
-            
-            if (playerHeight > heightChecks[0])
-            {
-                // Doubling all heal Items spawn chances.
-                for (int i = 0; i < lastPossibleHealDrop; i++)
-                {
-                    spawnChances[i] *= 2;
-                }
-            }
-            else if(playerHeight > heightChecks[1])
-            {
-                for (int i = 0; i < droppableItems.Count; i++)
-                {
-                    spawnChances[i] = (int)(spawnChances[i] * 1.5f);
-                }
-            }
-            else
-            {
-                for (int i = lastPossibleHealDrop; i < droppableItems.Count; i++)
-                {
-                    spawnChances[i] *= 2;
-                }
-            }
-            
-
-            for (int i = droppableItems.Count - 1; i > -1; i--)
-            {
-                if (random < spawnChances[i])
-                {
-                    Instantiate(droppableItems[i], transform.position, Quaternion.identity, GameManager.Instance.transform);
-                    break;
-                }
-            }
-        }
-
         public void MakeArenaEnemy()
         {
             IsArenaEnemy = true;
@@ -131,10 +87,10 @@ namespace Enemies
                 takenDamage = 1;
             
             stats.Health -= takenDamage * difficultyModifier;
-            
+            print("here");
             if(stats.Health <= 0)
             {
-                Destroy(gameObject);
+                Die();
             }
         }
 
@@ -230,6 +186,54 @@ namespace Enemies
         public void SetAnimBool(string animBool, bool boolState)
         {
             anim.SetBool(animBool, boolState);
+        }
+        
+        private void Die()
+        {
+            if (spawnChances.Count == 0)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            int random = Random.Range(0, 1000);
+            float playerHeight = GameManager.Instance.Player.PlayerController.transform.position.y;
+            var heightChecks = GameManager.Instance.ArenaManager.HeightChecks;
+            
+            if (playerHeight > heightChecks[0])
+            {
+                // Doubling all heal Items spawn chances.
+                for (int i = 0; i < lastPossibleHealDrop; i++)
+                {
+                    spawnChances[i] *= 2;
+                }
+            }
+            else if(playerHeight > heightChecks[1])
+            {
+                for (int i = 0; i < droppableItems.Count; i++)
+                {
+                    spawnChances[i] = (int)(spawnChances[i] * 1.5f);
+                }
+            }
+            else
+            {
+                for (int i = lastPossibleHealDrop; i < droppableItems.Count; i++)
+                {
+                    spawnChances[i] *= 2;
+                }
+            }
+            
+
+            for (int i = droppableItems.Count - 1; i > -1; i--)
+            {
+                if (random < spawnChances[i])
+                {
+                    Instantiate(droppableItems[i], transform.position, Quaternion.identity, GameManager.Instance.transform);
+                    break;
+                }
+            }
+            
+            Destroy(gameObject);
         }
 
         /// <summary>

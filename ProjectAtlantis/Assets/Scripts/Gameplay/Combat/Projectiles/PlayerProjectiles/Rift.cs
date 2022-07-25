@@ -9,7 +9,16 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
     {
         [SerializeField] private List<BaseEnemy> enemies;
         [SerializeField] private List<BaseEnemy> enemiesInCollider;
-        
+
+        private void Start()
+        {
+            var transform1 = transform;
+            transform1.eulerAngles = transform1.eulerAngles + new Vector3(0, 90, 0);
+            var position = transform1.position;
+            position += position - GameManager.Instance.Player.PlayerController.transform.position;
+            transform1.position = position;
+        }
+
         protected override void OnTriggerEnter(Collider other)
         {
             // Checks if the object is an enemy and if it was hit already.

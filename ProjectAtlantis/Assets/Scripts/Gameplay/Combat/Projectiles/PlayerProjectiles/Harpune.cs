@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Enemies;
 using UnityEngine;
 
@@ -5,7 +6,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
 {
     public class Harpune : PlayerProjectile
     {
-        [SerializeField] private Vector3 knockBackVector;
+        [SerializeField] private List<BaseEnemy> hitEnemies;
         
         protected override void OnTriggerEnter(Collider other)
         {
@@ -14,7 +15,12 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
 
             var en = other.GetComponent<BaseEnemy>();
             
-            en.TakeDamage(damage, knockBackVector, 1);
+            if(hitEnemies.Contains(en))
+                return;
+            
+            hitEnemies.Add(en);
+            
+            en.TakeDamage(damage, (en.transform.position - GameManager.Instance.Player.PlayerController.transform.position).normalized * 200, 1);
         }
     }
 }

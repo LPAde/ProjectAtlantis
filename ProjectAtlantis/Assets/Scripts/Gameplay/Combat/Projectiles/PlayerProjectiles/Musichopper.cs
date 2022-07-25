@@ -12,7 +12,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
             base.Initialize(newMovementVector, timing);
 
             if (timing == Timing.Bad)
-                isHopping = false;
+                isHopping = true;
         }
 
         protected override void OnTriggerEnter(Collider other)
@@ -27,10 +27,10 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
                 enemy.TakeDamage(damage);
                 
                 // Checks if
-                if(!isHopping)
+                if(isHopping)
                     Destroy(gameObject);
                 
-                isHopping = false;
+                isHopping = true;
             }
             else
             {
@@ -46,12 +46,13 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
         private Vector3 CalculateNextFlyDirection(BaseEnemy lastTarget)
         {
            var en = GameManager.Instance.EnemyManager.GetClosestEnemy(lastTarget);
+           print(en.transform.position);
            
            // Failsafe, when no enemies are alive.
            if(en == null)
                return Vector3.down;
 
-           return lastTarget.transform.position - en.transform.position;
+           return (en.transform.position - transform.position).normalized * projectileSpeed;
         }
     }
 }

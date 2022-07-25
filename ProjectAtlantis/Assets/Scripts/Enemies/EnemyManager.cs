@@ -39,7 +39,7 @@ namespace Enemies
         public BaseEnemy GetClosestEnemy(BaseEnemy currentEnemy)
         {
             // Stops when there are no enemies alive.
-            if (enemies[0] == null)
+            if (enemies[0] == null || enemies[1] == null)
                 return null; 
             
             // Set up.

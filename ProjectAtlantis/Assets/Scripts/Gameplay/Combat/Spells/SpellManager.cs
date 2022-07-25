@@ -66,7 +66,7 @@ namespace Gameplay.Combat.Spells
         /// <returns> The id of that spell. </returns>
         public int GetSpellID(BaseSpell spell)
         {
-            // Failsave, in case spell is not included.
+            // Fail-save, in case spell is not included.
             if (!allPlayerSpells.Contains(spell))
                 return -1;
 
@@ -92,7 +92,7 @@ namespace Gameplay.Combat.Spells
         /// <returns> The spell. </returns>
         public BaseSpell GetSpell(int id)
         {
-            // Failsave, in case spell is not included.
+            // Fail-save, in case spell is not included.
             if (id == -1)
                 return null;
 

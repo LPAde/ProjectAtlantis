@@ -10,7 +10,6 @@ namespace Gameplay.Combat.Spells
     public class BubbleBash : DashSpell
     {
         [SerializeField] private List<GameObject> projectiles;
-        [SerializeField] private List<Vector3> projectileVectors;
 
         public override void Cast()
         {
@@ -20,17 +19,18 @@ namespace Gameplay.Combat.Spells
                 return;
             }
             
-            currentCoolDown = maxCoolDown;
-            
             base.Cast();
 
             Player owningPlayer = (Player)owner;
 
             for (int i = 0; i < projectiles.Count; i++)
             {
-                var proj = Instantiate(projectiles[i], owningPlayer.ProjectileSpawnPosition.position, quaternion.identity, owningPlayer.transform).GetComponent<PlayerProjectile>();
-                proj.Initialize(projectileVectors[i], GameManager.Instance.RhythmManager.CheckTiming());
+                Debug.Log("here");
+                var proj = Instantiate(projectiles[i], owningPlayer.BubblePositions[i].position, quaternion.identity, owningPlayer.transform).GetComponent<PlayerProjectile>();
+                proj.Initialize(owningPlayer.BubblePositions[i].position - owningPlayer.PlayerController.transform.position, GameManager.Instance.RhythmManager.CheckTiming());
             }
+            
+            currentCoolDown = maxCoolDown;
         }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Gameplay.Combat.Spells;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,6 +18,7 @@ namespace PlayerScripts
         
         [Header("Attack Related Stuff")]
         [SerializeField] private Transform projectileSpawnPosition;
+        [SerializeField] private List<Transform> bubblePositions;
         [SerializeField] private CombatSpell[] combatSpells;
         [SerializeField] private MovementSpell movementSpell;
 
@@ -34,9 +36,10 @@ namespace PlayerScripts
         public AudioSource AudioSource => audioSource;
         public PlayerStats PlayerStats => stats;
         public Animator Anim => anim;
+        public Transform ProjectileSpawnPosition => projectileSpawnPosition;
+        public List<Transform> BubblePositions => bubblePositions;
         public CombatSpell[] CombatSpells => combatSpells;
         public MovementSpell MovementSpell => movementSpell;
-        public Transform ProjectileSpawnPosition => projectileSpawnPosition;
 
         #endregion
 

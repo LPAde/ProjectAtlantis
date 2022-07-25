@@ -26,7 +26,7 @@ namespace Gameplay.Combat.Spells
             // Calculates own Vector.
             var travelVector = travelDistance *
                                owningPlayer.ProjectileSpawnPosition.forward;
-            
+            Debug.Log(travelVector);
             // Tells player to dash.
             owningPlayer.PlayerController.InitializeDash(travelVector, dashDuration, dashSpeed);
         }
