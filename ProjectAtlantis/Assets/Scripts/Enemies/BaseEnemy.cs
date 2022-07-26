@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using Enemies.AI.FiniteStateMachines;
-using Gameplay.Collectibles;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -59,14 +58,6 @@ namespace Enemies
         protected virtual void Update()
         {
             FiniteStateMachine.Update();
-        }
-
-        private void FixedUpdate()
-        {
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                KnockBack(Vector3.left * 100, 2);
-            }
         }
 
         public void MakeArenaEnemy()

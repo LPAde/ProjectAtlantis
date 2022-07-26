@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using System.Globalization;
 using Gameplay.Combat.Spells;
+using PlayerScripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,16 +9,35 @@ namespace UI
 {
     public class HudManager : MonoBehaviour
     {
+        [Header("Gameplay Info")]
         [SerializeField] private Slider healthBar;
         [SerializeField] private List<Button> skillIndicators;
         [SerializeField] private List<TextMeshProUGUI> skillCooldowns;
+
+        [Header("Stat-screen")] 
+        [SerializeField] private GameObject statScreen;
+        [SerializeField] private List<TextMeshProUGUI> statsText;
 
         private void Start()
         {
             healthBar.maxValue = GameManager.Instance.Player.PlayerStats.MAXHealth;
             healthBar.value = GameManager.Instance.Player.PlayerStats.Health;
+            
+            UpdateStats(GameManager.Instance.Player.PlayerStats);
         }
-        
+
+        private void Update()
+        {
+            if (Input.GetKey(KeyCode.Tab))
+            {
+                statScreen.SetActive(true);
+            }
+            else
+            {
+                statScreen.SetActive(false);
+            }
+        }
+
         /// <summary>
         /// Updates the health bar.
         /// </summary>
@@ -54,12 +73,35 @@ namespace UI
             skillIndicators[3].image.sprite = movementSpell.SpellSprite;
         }
 
+        /// <summary>
+        /// Updates the stats at the stats screen.
+        /// </summary>
+        /// <param name="stats"> The players stats. </param>
+        public void UpdateStats(PlayerStats stats)
+        {
+            print("here");
+            statsText[0].text = stats.MAXHealth.ToString("0"); 
+            statsText[1].text = stats.HealthRegen.ToString("0.0");
+            statsText[2].text = stats.Strength.ToString("0");
+            statsText[3].text = stats.Defense.ToString("0");
+            statsText[4].text = stats.Speed.ToString("0");
+        }
+
+        /// <summary>
+        /// Shows the player that a skill has been activated.
+        /// </summary>
+        /// <param name="index"> Which skill has been used. </param>
         public void UseSkill(int index)
         {
             skillIndicators[index].interactable = false;
             skillCooldowns[index].gameObject.SetActive(true);
         }
 
+        /// <summary>
+        /// Sets the cooldown text of a certain skill.
+        /// </summary>
+        /// <param name="cooldown"> The cooldown of the skill. </param>
+        /// <param name="index"> Which skill is meant. </param>
         public void CooldownSkill(float cooldown, int index)
         {
             if (cooldown <= 0)

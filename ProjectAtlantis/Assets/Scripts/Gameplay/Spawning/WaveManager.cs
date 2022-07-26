@@ -114,6 +114,9 @@ namespace Gameplay.Spawning
             // Remove and destroy all unlocked walls.
             for (int i = 0; i < keyAmount; i++)
             {
+                if(i >= walls.Count)
+                    break;
+                
                 Destroy(walls[i]);
             }
         }

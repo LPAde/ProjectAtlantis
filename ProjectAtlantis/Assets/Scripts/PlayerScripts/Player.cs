@@ -121,6 +121,7 @@ namespace PlayerScripts
             stats.Speed += addedStats.Speed;
             
             GameManager.Instance.HudManager.UpdateHealth(stats.Health, stats.MAXHealth);
+            GameManager.Instance.HudManager.UpdateStats(stats);
             
             // Always saving after Statupgrade.
             GameManager.Instance.Save.Invoke();
