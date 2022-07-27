@@ -10,12 +10,12 @@ namespace Gameplay.Combat.Spells
         [SerializeField] private float dashDuration;
         [SerializeField] private float dashSpeed;
         
-        public override void Cast()
+        public override bool Cast()
         {
             // Stops when the spell is still on cooldown.
             if (currentCoolDown > 0)
             {
-                return;
+                return false;
             }
             
             currentCoolDown = maxCoolDown;
@@ -26,9 +26,11 @@ namespace Gameplay.Combat.Spells
             // Calculates own Vector.
             var travelVector = travelDistance *
                                owningPlayer.ProjectileSpawnPosition.forward;
-            Debug.Log(travelVector);
+            
             // Tells player to dash.
             owningPlayer.PlayerController.InitializeDash(travelVector, dashDuration, dashSpeed);
+
+            return true;
         }
     }
 }

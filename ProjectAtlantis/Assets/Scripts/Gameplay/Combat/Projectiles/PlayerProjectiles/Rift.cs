@@ -12,6 +12,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
 
         private void Start()
         {
+            // Fixing the rotation and the position of the rift.
             var transform1 = transform;
             transform1.eulerAngles = transform1.eulerAngles + new Vector3(0, 90, 0);
             var position = transform1.position;

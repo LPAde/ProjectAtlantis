@@ -12,12 +12,13 @@ namespace Gameplay.Combat.Spells
     {
         [SerializeField] private GameObject projectile;
 
-        public override void Cast()
+        public override bool Cast()
         {
             // Stops when the spell is still on cooldown.
             if (currentCoolDown > 0)
             {
-                return;
+                Debug.Log("false");
+                return false;
             }
             
             currentCoolDown = maxCoolDown;
@@ -40,6 +41,8 @@ namespace Gameplay.Combat.Spells
                 var proj = Instantiate(projectile, owningPlayer.ProjectileSpawnPosition.position, quaternion.identity, owningPlayer.transform).GetComponent<PlayerProjectile>();
                 proj.Initialize(owningPlayer.ProjectileSpawnPosition.forward,GameManager.Instance.RhythmManager.CheckTiming());
             }
+            Debug.Log("true");
+            return true;
         }
     }
 }

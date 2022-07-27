@@ -74,7 +74,6 @@ namespace PlayerScripts
             else if (Input.GetKeyDown(KeyCode.Space))
             {
                 Cast(KeyCode.Space);
-                player.Anim.SetBool(IsMoving, true);
             }
 
             // Move
@@ -178,35 +177,48 @@ namespace PlayerScripts
         /// <param name="code"> The Input that should be worked with. </param>
         private void Cast(KeyCode code)
         {
+            byte spellIndex = 5;
             Look();
-            byte spellIndex = 0;
+            
             switch (code)
             {
                 case KeyCode.Q:
-                    DoCorrectAttackAnimation();
-                    spellIndex = 0;
-                    player.CombatSpells[spellIndex].Cast();
+                    if (player.CombatSpells[0].Cast())
+                    {
+                        DoCorrectAttackAnimation(); 
+                        spellIndex = 0;
+                    }
                     break;
                 
                 case KeyCode.W:
-                    DoCorrectAttackAnimation();
-                    spellIndex = 1;
-                    player.CombatSpells[spellIndex].Cast();
+                    
+                    if (player.CombatSpells[1].Cast())
+                    {
+                        DoCorrectAttackAnimation();
+                        spellIndex = 1;
+                    }
                     break;
                 
                 case KeyCode.E:
-                    DoCorrectAttackAnimation();
-                    spellIndex = 2;
-                    player.CombatSpells[spellIndex].Cast();
+                    
+                    if (player.CombatSpells[2].Cast())
+                    {
+                        DoCorrectAttackAnimation();
+                        spellIndex = 2;
+                    }
                     break;
                 
                 case KeyCode.Space:
-                    spellIndex = 3;
-                    player.MovementSpell.Cast();
+                    if (player.MovementSpell.Cast())
+                    {
+                        spellIndex = 3;
+                        player.Anim.SetBool(IsMoving, true);
+                    }
                     break;
             }
             
-            GameManager.Instance.HudManager.UseSkill(spellIndex);
+            if(spellIndex < 5) 
+                GameManager.Instance.HudManager.UseSkill(spellIndex);
         }
 
         private void DoCorrectAttackAnimation()

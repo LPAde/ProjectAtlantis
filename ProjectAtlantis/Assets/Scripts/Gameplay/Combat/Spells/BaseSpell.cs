@@ -20,10 +20,8 @@ namespace Gameplay.Combat.Spells
             owner = newOwner;
             currentCoolDown = 0;
         }
-        
-        public virtual void Cast()
-        {
-        }
+
+        public abstract bool Cast();
 
         public float TickDownCooldown()
         {

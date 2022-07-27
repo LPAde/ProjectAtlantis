@@ -136,7 +136,7 @@ MonoBehaviour:
   projectileSpeed: 0
   lifeTime: 1
   movementVector: {x: 0, y: 0, z: 0}
-  maxDistanceToGround: 0
+  maxDistanceToGround: 0.1
   deathParticleObject: {fileID: 0}
   scalings:
   - 0.5

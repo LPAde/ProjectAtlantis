@@ -79,7 +79,6 @@ namespace UI
         /// <param name="stats"> The players stats. </param>
         public void UpdateStats(PlayerStats stats)
         {
-            print("here");
             statsText[0].text = stats.MAXHealth.ToString("0"); 
             statsText[1].text = stats.HealthRegen.ToString("0.0");
             statsText[2].text = stats.Strength.ToString("0");

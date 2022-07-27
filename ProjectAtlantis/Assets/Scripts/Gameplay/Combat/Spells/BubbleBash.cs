@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Gameplay.Combat.Projectiles.PlayerProjectiles;
 using PlayerScripts;
 using Unity.Mathematics;
+using UnityEditor.Searcher;
 using UnityEngine;
 
 namespace Gameplay.Combat.Spells
@@ -11,12 +12,12 @@ namespace Gameplay.Combat.Spells
     {
         [SerializeField] private List<GameObject> projectiles;
 
-        public override void Cast()
+        public override bool Cast()
         {
             // Stops when the spell is still on cooldown.
             if (currentCoolDown > 0)
             {
-                return;
+                return false;
             }
             
             base.Cast();
@@ -31,6 +32,8 @@ namespace Gameplay.Combat.Spells
             }
             
             currentCoolDown = maxCoolDown;
+
+            return true;
         }
     }
 }
