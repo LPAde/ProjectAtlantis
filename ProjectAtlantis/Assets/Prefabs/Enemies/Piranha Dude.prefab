@@ -3270,7 +3270,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 89d2c4cbe4063ef45af82dc0c99c7acf, type: 3}
+  - {fileID: 2100000, guid: 2e56342bc1ba22343883f300b050784e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3922,6 +3922,9 @@ MonoBehaviour:
   anim: {fileID: 1616863657507273015}
   desiredSeparation: 2
   maxForce: 30
+  droppableItems: []
+  spawnChances: 
+  lastPossibleHealDrop: 0
   attack: {fileID: 2020013886563540342}
   projectileSpawnPosition: {fileID: 2097467621244435593}
   source: {fileID: 6431700552649181868}
