@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace PlayerScripts
 {
@@ -91,12 +90,11 @@ namespace PlayerScripts
                     Look(); 
                     player.Anim.SetBool(IsMoving, true);
                     
-                    if(player.AudioSource.clip == swimSound)
+                    if(player.LoopingAudioSource.clip == swimSound)
                         return;
                     
-                    player.AudioSource.clip = swimSound;
-                    player.AudioSource.loop = true;
-                    player.AudioSource.Play();
+                    player.PlayLoopingSound(PlayerSounds.Swimming);
+                    player.PlayOneTimeSound(PlayerSounds.StartSwimming);
                 }
             }
             
@@ -129,7 +127,7 @@ namespace PlayerScripts
             if (movement.x == 0 && movement.z == 0)
             {
                 player.Anim.SetBool(IsMoving, false);
-                player.AudioSource.clip = null;  
+                player.StopLoopingSound();
             }
         }
 
@@ -213,6 +211,7 @@ namespace PlayerScripts
                     {
                         spellIndex = 3;
                         player.Anim.SetBool(IsMoving, true);
+                        player.PlayOneTimeSound(PlayerSounds.StartSwimming);
                     }
                     break;
             }

@@ -13,7 +13,9 @@ namespace PlayerScripts
         [SerializeField] private PlayerController playerController;
         [SerializeField] private CharacterController characterController;
         [SerializeField] private PlayerStats stats;
-        [SerializeField] private AudioSource audioSource;
+        [SerializeField] private AudioSource loopingAudioSource;
+        [SerializeField] private AudioSource oneTimeAudioSource;
+        [SerializeField] private List<AudioClip> audioClips;
         [SerializeField] private Animator anim;
         
         [Header("Attack Related Stuff")]
@@ -33,7 +35,7 @@ namespace PlayerScripts
 
         public PlayerController PlayerController => playerController;
         public CharacterController CharacterController => characterController;
-        public AudioSource AudioSource => audioSource;
+        public AudioSource LoopingAudioSource => loopingAudioSource;
         public PlayerStats PlayerStats => stats;
         public Animator Anim => anim;
         public Transform ProjectileSpawnPosition => projectileSpawnPosition;
@@ -126,7 +128,39 @@ namespace PlayerScripts
             // Always saving after Statupgrade.
             GameManager.Instance.Save.Invoke();
         }
+        
+        /// <summary>
+        /// Plays a desired sound once.
+        /// </summary>
+        /// <param name="sound"> The desired sound. </param>
+        public void PlayOneTimeSound(PlayerSounds sound)
+        {
+            oneTimeAudioSource.Stop();
+            oneTimeAudioSource.clip = audioClips[(int) sound];
+            oneTimeAudioSource.Play();
+        }
 
+        /// <summary>
+        /// Plays a desired sound in a loop.
+        /// </summary>
+        /// <param name="sound"> The desired sound. </param>
+        public void PlayLoopingSound(PlayerSounds sound)
+        {
+            loopingAudioSource.Stop();
+            loopingAudioSource.clip = audioClips[(int) sound];
+            loopingAudioSource.Play();
+        }
+
+        /// <summary>
+        /// Stops the looping sound and plays the idle instead.
+        /// </summary>
+        public void StopLoopingSound()
+        {
+            loopingAudioSource.Stop();
+            loopingAudioSource.clip = audioClips[(int) PlayerSounds.Idle];
+            loopingAudioSource.Play();
+        }
+        
         /// <summary>
         /// Temporary method for testing.
         /// </summary>
@@ -236,5 +270,12 @@ namespace PlayerScripts
             get => speed;
             internal set => speed = value;
         }
+    }
+
+    public enum PlayerSounds
+    {
+        Swimming = 0,
+        StartSwimming = 1,
+        Idle = 2
     }
 }
