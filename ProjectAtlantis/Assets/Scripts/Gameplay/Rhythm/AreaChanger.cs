@@ -12,10 +12,14 @@ namespace Gameplay.Rhythm
          if (!other.CompareTag("Player")) 
             return;
          
-         if(GameManager.Instance.RhythmManager.CurrentSong == areaSong)
+         if(GameManager.Instance.RhythmManager.CurrentSong != areaSong)
+         {
+            GameManager.Instance.RhythmManager.OnTrackChange.Invoke(areaSong);
+         }
+         
+         if(GameManager.Instance.AmbienceSound.clip == ambience)
             return;
          
-         GameManager.Instance.RhythmManager.OnTrackChange.Invoke(areaSong);
          GameManager.Instance.AmbienceSound.clip = ambience;
          GameManager.Instance.AmbienceSound.Play();
       }
