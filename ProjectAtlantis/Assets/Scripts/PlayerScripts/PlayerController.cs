@@ -183,6 +183,7 @@ namespace PlayerScripts
                 case KeyCode.Q:
                     if (player.CombatSpells[0].Cast())
                     {
+                        player.PlayOneTimeSound(PlayerSounds.Attack);
                         DoCorrectAttackAnimation(); 
                         spellIndex = 0;
                     }
@@ -192,6 +193,7 @@ namespace PlayerScripts
                     
                     if (player.CombatSpells[1].Cast())
                     {
+                        player.PlayOneTimeSound(PlayerSounds.Attack);
                         DoCorrectAttackAnimation();
                         spellIndex = 1;
                     }
@@ -201,6 +203,7 @@ namespace PlayerScripts
                     
                     if (player.CombatSpells[2].Cast())
                     {
+                        player.PlayOneTimeSound(PlayerSounds.Attack2);
                         DoCorrectAttackAnimation();
                         spellIndex = 2;
                     }

@@ -276,6 +276,8 @@ namespace PlayerScripts
     {
         Swimming = 0,
         StartSwimming = 1,
-        Idle = 2
+        Idle = 2,
+        Attack = 3, 
+        Attack2 = 4,
     }
 }
