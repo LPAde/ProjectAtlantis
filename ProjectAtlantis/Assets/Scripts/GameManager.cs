@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private Camera mainCam;
     [SerializeField] private DialogBox dialogBox;
+    [SerializeField] private AudioSource ambienceSound;
     
     [Header("Base Managers")]
     [SerializeField] private RhythmManager rhythmManager;
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour
      public WaveManager WaveManager => waveManager;
      
      public bool IsPaused { get; private set; }
+     public AudioSource AmbienceSound => ambienceSound;
 
     #endregion
 

@@ -5,6 +5,7 @@ namespace Gameplay.Rhythm
    public class AreaChanger : MonoBehaviour
    {
       [SerializeField] private Song areaSong;
+      [SerializeField] private AudioClip ambience;
 
       private void OnTriggerEnter(Collider other)
       {
@@ -15,6 +16,8 @@ namespace Gameplay.Rhythm
             return;
          
          GameManager.Instance.RhythmManager.OnTrackChange.Invoke(areaSong);
+         GameManager.Instance.AmbienceSound.clip = ambience;
+         GameManager.Instance.AmbienceSound.Play();
       }
    }
 }
