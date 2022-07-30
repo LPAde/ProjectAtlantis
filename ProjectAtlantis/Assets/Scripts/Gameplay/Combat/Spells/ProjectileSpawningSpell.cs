@@ -17,7 +17,6 @@ namespace Gameplay.Combat.Spells
             // Stops when the spell is still on cooldown.
             if (currentCoolDown > 0)
             {
-                Debug.Log("false");
                 return false;
             }
             
@@ -41,7 +40,7 @@ namespace Gameplay.Combat.Spells
                 var proj = Instantiate(projectile, owningPlayer.ProjectileSpawnPosition.position, quaternion.identity, owningPlayer.transform).GetComponent<PlayerProjectile>();
                 proj.Initialize(owningPlayer.ProjectileSpawnPosition.forward,GameManager.Instance.RhythmManager.CheckTiming());
             }
-            Debug.Log("true");
+            
             return true;
         }
     }
