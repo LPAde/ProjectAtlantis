@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Bubble Bash
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
-  maxCoolDown: 3
-  currentCoolDown: 0.83147407
+  maxCoolDown: 5
+  currentCoolDown: -193.58148
   spellSprite: {fileID: 21300000, guid: 6a0b4f98323e5d646bc36f8c5bb394b7, type: 3}
   travelDistance: 2
   dashDuration: 0.1
@@ -25,9 +25,3 @@ MonoBehaviour:
   - {fileID: 6074599445876254602, guid: cfb2f1ec42a00b046b8bd71db6a378cc, type: 3}
   - {fileID: 6074599445876254602, guid: cfb2f1ec42a00b046b8bd71db6a378cc, type: 3}
   - {fileID: 6074599445876254602, guid: cfb2f1ec42a00b046b8bd71db6a378cc, type: 3}
-  projectileVectors:
-  - {x: -2, y: 0, z: 0}
-  - {x: -1, y: 0, z: 1}
-  - {x: 0, y: 0, z: 2}
-  - {x: 1, y: 0, z: 1}
-  - {x: 2, y: 0, z: 0}
