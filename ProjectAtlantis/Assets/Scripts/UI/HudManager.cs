@@ -63,9 +63,9 @@ namespace UI
         /// </summary>
         /// <param name="combatSpells"> The combat spells. </param>
         /// <param name="movementSpell"> The movement spell. </param>
-        public void UpdateSkills(CombatSpell[] combatSpells, MovementSpell movementSpell)
+        public void UpdateSkills(List<CombatSpell> combatSpells, MovementSpell movementSpell)
         {
-            for (int i = 0; i < combatSpells.Length; i++)
+            for (int i = 0; i < combatSpells.Count; i++)
             {
                 skillIndicators[i].image.sprite = combatSpells[i].SpellSprite;
             }

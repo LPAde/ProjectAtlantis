@@ -21,7 +21,7 @@ namespace PlayerScripts
         [Header("Attack Related Stuff")]
         [SerializeField] private Transform projectileSpawnPosition;
         [SerializeField] private List<Transform> bubblePositions;
-        [SerializeField] private CombatSpell[] combatSpells;
+        [SerializeField] private List<CombatSpell> combatSpells;
         [SerializeField] private MovementSpell movementSpell;
 
         // In case we want to add some simple difficulty modes.
@@ -40,7 +40,7 @@ namespace PlayerScripts
         public Animator Anim => anim;
         public Transform ProjectileSpawnPosition => projectileSpawnPosition;
         public List<Transform> BubblePositions => bubblePositions;
-        public CombatSpell[] CombatSpells => combatSpells;
+        public List<CombatSpell> CombatSpells => combatSpells;
         public MovementSpell MovementSpell => movementSpell;
 
         #endregion
@@ -50,7 +50,10 @@ namespace PlayerScripts
             GameManager.Instance.Load += Load;
             GameManager.Instance.Save += Save;
             OnPlayerDeath += EasyDeath;
-            
+        }
+
+        private void Start()
+        {
             foreach (var spell in combatSpells)
             {
                 spell.SetOwner(this);
@@ -64,7 +67,7 @@ namespace PlayerScripts
         private void LateUpdate()
         {
             // Reducing spell cooldown.
-            for (var index = 0; index < combatSpells.Length; index++)
+            for (var index = 0; index < combatSpells.Count; index++)
             {
                 GameManager.Instance.HudManager.CooldownSkill(combatSpells[index].TickDownCooldown(), index);
             }
@@ -126,6 +129,24 @@ namespace PlayerScripts
             GameManager.Instance.HudManager.UpdateStats(stats);
             
             // Always saving after Statupgrade.
+            GameManager.Instance.Save.Invoke();
+        }
+
+        public void SetSpell(BaseSpell newSpell, int index)
+        {
+            if (index < 3)
+            {
+                combatSpells[index] = (CombatSpell)newSpell;
+                combatSpells[index].SetOwner(this);
+            }
+            else
+            {
+                movementSpell = (MovementSpell) newSpell;
+                movementSpell.SetOwner(this);
+            }
+            
+            GameManager.Instance.HudManager.UpdateSkills(combatSpells, movementSpell);
+            
             GameManager.Instance.Save.Invoke();
         }
         
@@ -193,7 +214,7 @@ namespace PlayerScripts
             string spellString = SaveSystem.GetString("PlayerSpells");
             var idStrings = spellString.Split("*");
             
-            for (int i = 0; i < combatSpells.Length; i++)
+            for (int i = 0; i < combatSpells.Count; i++)
             {
                 combatSpells[i] = (CombatSpell)GameManager.Instance.SpellManager.GetSpell(int.Parse(idStrings[i]));
             }
