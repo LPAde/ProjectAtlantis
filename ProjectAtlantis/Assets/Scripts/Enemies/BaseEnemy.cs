@@ -140,7 +140,7 @@ namespace Enemies
         public virtual void WalkToPlayer()
         {
             agent.isStopped = false;
-            agent.SetDestination(GameManager.Instance.Player.PlayerController.transform.position + CalculateSeparation());
+            agent.SetDestination(GameManager.Instance.Player.PlayerController.transform.position);
         }
 
         /// <summary>
@@ -243,48 +243,6 @@ namespace Enemies
         {
             stunTime = duration;
             FiniteStateMachine.Transition(FiniteStateMachine.StunState);
-        }
-
-        /// <summary>
-        /// Does the flocking behaviour.
-        /// </summary>
-        /// <returns> How much the Enemy has to change their movement. </returns>
-        private Vector3 CalculateSeparation()
-        {
-            // Setup.
-            Vector3 totalSeparation = Vector3.zero;
-            int neighbourCount = 0;
-            var enManager = GameManager.Instance.EnemyManager;
-            
-            // Checks how many other enemies are close.
-            foreach (var en in enManager.Enemies)
-            {
-                Vector3 separation = transform.position - en.transform.position;
-                float distance = separation.magnitude;
-
-                if (distance > 0 && distance < desiredSeparation)
-                {
-                    separation.Normalize();
-                    separation /= distance;
-                    totalSeparation += separation;
-                    neighbourCount++;
-                }
-            }
-
-            // Sets the separation vector.
-            if (neighbourCount > 0)
-            {
-                Vector3 averageSeparation = totalSeparation / neighbourCount;
-                averageSeparation = averageSeparation.normalized * stats.Speed;
-                Vector3 separationVector = averageSeparation - agent.velocity;
-
-                if (separationVector.magnitude > maxForce)
-                    separationVector = separationVector.normalized * maxForce;
-
-                return separationVector;
-            }
-            
-            return Vector3.zero;
         }
     }
 

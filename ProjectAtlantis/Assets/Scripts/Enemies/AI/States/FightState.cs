@@ -23,11 +23,12 @@ namespace Enemies.AI.States
 
         public override void OnEnter()
         {
-            
+            owner.Stop();
         }
 
         public override void Update()
         {
+            owner.transform.LookAt(GameManager.Instance.Player.PlayerController.transform);
             owner.Attack();
         }
 

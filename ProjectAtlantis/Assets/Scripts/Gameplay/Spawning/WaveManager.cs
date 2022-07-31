@@ -72,7 +72,6 @@ namespace Gameplay.Spawning
                     newWave.Add(possibleEnemies[random]);
                     newCombatScore += possibleEnemies[random].CombatScore;
                 }
-                formerCombatScore++;
             }
             
             return newWave;
