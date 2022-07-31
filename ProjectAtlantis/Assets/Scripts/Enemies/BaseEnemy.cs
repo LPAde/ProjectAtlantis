@@ -140,7 +140,17 @@ namespace Enemies
         public virtual void WalkToPlayer()
         {
             agent.isStopped = false;
-            agent.SetDestination(GameManager.Instance.Player.PlayerController.transform.position);
+            var target = GameManager.Instance.Player.PlayerController.transform.position;
+            
+            if((target-transform.position).magnitude < 3)
+            {
+                Stop();
+                return;
+            }
+            
+            print((target-transform.position).magnitude);
+            
+            agent.SetDestination(target);
         }
 
         /// <summary>

@@ -28,7 +28,9 @@ namespace Enemies.AI.States
 
         public override void Update()
         {
-            owner.transform.LookAt(GameManager.Instance.Player.PlayerController.transform);
+            var target = GameManager.Instance.Player.PlayerController.transform.position;
+            target.y = owner.transform.position.y;
+            owner.transform.LookAt(target);
             owner.Attack();
         }
 
