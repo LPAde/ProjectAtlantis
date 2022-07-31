@@ -88,7 +88,7 @@ namespace Gameplay.Combat.Spells
         private void Load()
         {
             string unlockedString = SaveSystem.GetString("UnlockedSpells");
-            
+            print(unlockedString);
             if(string.IsNullOrEmpty(unlockedString))
                 return;
                 
@@ -96,7 +96,8 @@ namespace Gameplay.Combat.Spells
 
             for (int i = 0; i < allUnlockedPlayerSpells.Count; i++)
             {
-                if (bools[i] == "true")
+                print(bools[i]);
+                if (bools[i] == "True")
                 {
                     allUnlockedPlayerSpells[i] = true;
                 }
@@ -119,7 +120,7 @@ namespace Gameplay.Combat.Spells
                 unlockedString += allUnlockedPlayerSpells[i].ToString();
                 unlockedString += "-";
             }
-            
+            print(unlockedString);
             SaveSystem.SetString("UnlockedSpells", unlockedString);
         }
 
