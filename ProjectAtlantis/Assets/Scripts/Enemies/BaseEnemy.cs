@@ -18,10 +18,6 @@ namespace Enemies
         [SerializeField] private Rigidbody rb;
         [SerializeField] protected Animator anim;
 
-        [Header("Flocking related values")]
-        [SerializeField] private float desiredSeparation;
-        [SerializeField] private float maxForce;
-
         [Header("Drop related values")] 
         [SerializeField] private List<GameObject> droppableItems;
         [SerializeField] private List<int> spawnChances;
