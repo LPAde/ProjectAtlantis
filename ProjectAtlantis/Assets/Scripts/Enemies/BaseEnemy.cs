@@ -78,7 +78,7 @@ namespace Enemies
                 takenDamage = 1;
             
             stats.Health -= takenDamage * difficultyModifier;
-            print("here");
+            
             if(stats.Health <= 0)
             {
                 Die();

@@ -46,8 +46,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
         private Vector3 CalculateNextFlyDirection(BaseEnemy lastTarget)
         {
            var en = GameManager.Instance.EnemyManager.GetClosestEnemy(lastTarget);
-           print(en.transform.position);
-           
+
            // Failsafe, when no enemies are alive.
            if(en == null)
                return Vector3.down;

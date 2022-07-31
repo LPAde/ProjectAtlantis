@@ -6,6 +6,9 @@ namespace Gameplay.Combat.Projectiles.EnemyProjectiles
     {
         protected override void OnTriggerEnter(Collider other)
         {
+            if(other.CompareTag("Enemy"))
+                return;
+            
             if (other.CompareTag("Player"))
             {
                 GameManager.Instance.Player.TakeDamage(damage);
