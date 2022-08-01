@@ -14,6 +14,7 @@ namespace Gameplay.Spawning
         [SerializeField] private List<Transform> spawnPositionsHeightTwo;
         [SerializeField] private List<Transform> spawnPositionsHeightThree;
         [SerializeField] private float enemySpawnDelay;
+        [SerializeField] private int maxEnemyAmount;
         private int _currentSpawnPosition;
 
         public Action<int> OnWaveStart;
@@ -107,6 +108,9 @@ namespace Gameplay.Spawning
         {
             foreach (var enemy in enemies)
             {
+                while (GameManager.Instance.EnemyManager.Enemies.Count >= maxEnemyAmount)
+                    yield return new WaitForSeconds(enemySpawnDelay * 3);
+                
                 var spawnPoint = GetSpawnPoint();
                 var en = Instantiate(enemy,spawnPoint,quaternion.identity,transform);
                 
