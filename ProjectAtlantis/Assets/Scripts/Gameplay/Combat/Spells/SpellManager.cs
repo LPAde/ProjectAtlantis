@@ -166,6 +166,19 @@ namespace Gameplay.Combat.Spells
             return allPlayerSpells[id];
         }
 
+        public void UnlockSpell(BaseSpell spellToUnlock)
+        {
+            for (int i = 0; i < allPlayerSpells.Count; i++)
+            {
+                if (spellToUnlock == allPlayerSpells[i])
+                {
+                    allUnlockedPlayerSpells[i] = true;
+                }
+            }
+            
+            Save();
+        }
+
         public void OnSpellPress(Button btn)
         {
             if(!btn.enabled)

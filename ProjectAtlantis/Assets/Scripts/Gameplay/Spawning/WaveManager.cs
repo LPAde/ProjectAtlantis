@@ -19,6 +19,8 @@ namespace Gameplay.Spawning
         [SerializeField] private List<GameObject> keys;
         [SerializeField] private List<int> keySpawnWaves;
         [SerializeField] private List<GameObject> walls;
+        [SerializeField] private List<GameObject> spells;
+        [SerializeField] private List<int> spellSpawnWaves;
         
         
         public int CurrentWave => currentWave;
@@ -101,22 +103,50 @@ namespace Gameplay.Spawning
 
                 keys[index].SetActive(true);
             }
+
+            if (spellSpawnWaves.Contains(currentWave))
+            {
+                int index = 0;
+                for (int i = 0; i < spellSpawnWaves.Count; i++)
+                {
+                    if (spellSpawnWaves[i] == currentWave)
+                    {
+                        index = i;
+                        break;
+                    }
+                }
+                
+                if(spells[index] == null)
+                    return;
+
+                spells[index].SetActive(true);
+            }
         }
         
         private void Load()
         {
             int keyAmount = SaveSystem.GetInt("UsedKeys");
-            
-            if (keyAmount == 0)
-                return;
-            
-            // Remove and destroy all unlocked walls.
-            for (int i = 0; i < keyAmount; i++)
+
+            if (keyAmount != 0)
             {
-                if(i >= walls.Count)
-                    break;
-                
-                Destroy(walls[i]);
+                // Remove and destroy all unlocked walls.
+                for (int i = 0; i < keyAmount; i++)
+                {
+                    if (i >= walls.Count)
+                        break;
+
+                    Destroy(walls[i]);
+                }
+            }
+
+            int spellAmount = SaveSystem.GetInt("UnlockedSpells");
+            
+            if(spellAmount == 0)
+                return;
+
+            for (int i = 0; i < spellAmount; i++)
+            {
+                Destroy(spells[i]);
             }
         }
     }
