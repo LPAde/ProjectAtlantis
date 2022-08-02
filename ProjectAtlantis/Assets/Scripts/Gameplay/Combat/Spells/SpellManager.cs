@@ -53,9 +53,8 @@ namespace Gameplay.Combat.Spells
         /// </summary>
         private void Load()
         {
-            print("here");
             string unlockedString = SaveSystem.GetString("UnlockedSpells");
-            print(unlockedString);
+            
             if(string.IsNullOrEmpty(unlockedString))
                 return;
                 

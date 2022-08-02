@@ -27,6 +27,7 @@ namespace UI
         [SerializeField] private List<Image> combatSpellImages;
         [SerializeField] private Image movementSpellImage;
         [SerializeField] private List<BaseSpell> startingSpells;
+        [SerializeField] private List<SpellChangeButton> spellChangeButtons;
         
         public GameObject Image { get; set; }
         public SpellManager SpellManager => spellManager;
@@ -88,10 +89,22 @@ namespace UI
             for (int i = 0; i < combatSpellImages.Count; i++)
             {
                 combatSpellImages[i].sprite = startingSpells[i].SpellSprite;
+                SpellManager.UnlockSpell(startingSpells[i]);
             }
 
             movementSpellImage.sprite = startingSpells[3].SpellSprite;
+            SpellManager.UnlockSpell(startingSpells[3]);
+            
+            SaveSystem.SetString
+            ("PlayerSpells", string.Concat(SpellManager.GetSpellID(startingSpells[0]), "*",
+                SpellManager.GetSpellID(startingSpells[1]), "*",SpellManager.GetSpellID(startingSpells[2])
+                , "*",Instance.SpellManager.GetSpellID(startingSpells[3]), "*"));
 
+            for (int i = 0; i < spellChangeButtons.Count; i++)
+            {
+                spellChangeButtons[i].Start();
+            }
+            
             audioSource.clip = buttonUISound;
             audioSource.Play();
         }

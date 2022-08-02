@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using Gameplay.Combat.Spells;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -16,7 +14,7 @@ namespace UI
         [SerializeField] private float toleranceValue;
         [SerializeField] private bool interactable;
 
-        private void Start()
+        public void Start()
         {
             if(MainMenuBehaviour.Instance.SpellManager.CheckSpellUnlocked(spell))
             {
