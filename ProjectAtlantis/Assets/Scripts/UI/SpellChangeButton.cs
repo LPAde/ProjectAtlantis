@@ -44,8 +44,8 @@ namespace UI
             if(!interactable)
                 return;
             
-            MainMenuBehaviour.Instance.image = Instantiate(image,Input.mousePosition,Quaternion.identity,transform);
-            MainMenuBehaviour.Instance.image.GetComponent<Image>().sprite = spell.SpellSprite;
+            MainMenuBehaviour.Instance.Image = Instantiate(image,Input.mousePosition,Quaternion.identity,transform);
+            MainMenuBehaviour.Instance.Image.GetComponent<Image>().sprite = spell.SpellSprite;
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -53,7 +53,7 @@ namespace UI
             if(!interactable)
                 return;
             
-            MainMenuBehaviour.Instance.image.transform.position = Input.mousePosition;
+            MainMenuBehaviour.Instance.Image.transform.position = Input.mousePosition;
         }
 
         public void OnEndDrag(PointerEventData eventData)
@@ -76,7 +76,7 @@ namespace UI
             if(spell is MovementSpell moveSpell)
             {
                 // Distance Check.
-                if ((MainMenuBehaviour.Instance.image.transform.position -
+                if ((MainMenuBehaviour.Instance.Image.transform.position -
                      MainMenuBehaviour.Instance.MovementSpellImage.transform.position).magnitude < toleranceValue)
                 {
                     movementSpell = moveSpell;
@@ -84,7 +84,7 @@ namespace UI
                 }
                 else
                 {
-                    print((MainMenuBehaviour.Instance.image.transform.position -
+                    print((MainMenuBehaviour.Instance.Image.transform.position -
                            MainMenuBehaviour.Instance.MovementSpellImage.transform.position).magnitude);
                 }
             }
@@ -93,7 +93,7 @@ namespace UI
                 // Distance Check.
                 for (int i = 0; i < MainMenuBehaviour.Instance.CombatSpellImages.Count; i++)
                 {
-                    if ((MainMenuBehaviour.Instance.image.transform.position -
+                    if ((MainMenuBehaviour.Instance.Image.transform.position -
                          MainMenuBehaviour.Instance.CombatSpellImages[i].transform.position).magnitude < toleranceValue)
                     {
                         bool hasSpellAlready = false;
@@ -133,7 +133,7 @@ namespace UI
                 MainMenuBehaviour.Instance.SpellManager.GetSpellID(combatSpells[1]), "*",MainMenuBehaviour.Instance.SpellManager.GetSpellID(combatSpells[2])
                 , "*",MainMenuBehaviour.Instance.SpellManager.GetSpellID(movementSpell), "*"));
             
-            Destroy(MainMenuBehaviour.Instance.image);
+            Destroy(MainMenuBehaviour.Instance.Image);
         }
     }
 }

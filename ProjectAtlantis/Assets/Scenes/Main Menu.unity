@@ -3116,7 +3116,7 @@ MonoBehaviour:
   websiteUrl: https://atlantis630704786.wordpress.com/
   audioSource: {fileID: 1488218731}
   startGameSound: {fileID: 8300000, guid: 9ec9c979728154e72810f2e4a38e5ffa, type: 3}
-  buttonUISound: {fileID: 0}
+  buttonUISound: {fileID: 8300000, guid: 12fc62612e2c0456684bb1617dca2a05, type: 3}
   spellManager: {fileID: 1569964128}
   lockedSprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
   combatSpellImages:
@@ -3124,6 +3124,11 @@ MonoBehaviour:
   - {fileID: 1764276983}
   - {fileID: 701093418}
   movementSpellImage: {fileID: 1589566698}
+  startingSpells:
+  - {fileID: 11400000, guid: a92cefc61c38c8f409b42e3162117284, type: 2}
+  - {fileID: 11400000, guid: b34b3317b6aaa5745afda0eb439e4a8c, type: 2}
+  - {fileID: 11400000, guid: f6142b4bbfbcab140b219f0cb388d3ba, type: 2}
+  - {fileID: 11400000, guid: be3d99900a91c2b4ab58a02ac6abe49b, type: 2}
 --- !u!4 &944124702
 Transform:
   m_ObjectHideFlags: 0

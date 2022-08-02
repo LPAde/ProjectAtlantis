@@ -1,11 +1,9 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Gameplay.Combat.Spells;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.Video;
 
 namespace UI
 {
@@ -28,8 +26,9 @@ namespace UI
         [SerializeField] private Sprite lockedSprite;
         [SerializeField] private List<Image> combatSpellImages;
         [SerializeField] private Image movementSpellImage;
+        [SerializeField] private List<BaseSpell> startingSpells;
         
-        public GameObject image { get; set; }
+        public GameObject Image { get; set; }
         public SpellManager SpellManager => spellManager;
         public Sprite LockedSprite => lockedSprite;
         public List<Image> CombatSpellImages => combatSpellImages;
@@ -85,11 +84,24 @@ namespace UI
             SaveSystem.SetVector3("PlayerPosition", Vector3.zero);
             SaveSystem.SetInt("UsedKeys", 0);
             SaveSystem.SetInt("UnlockedSpells", 0);
+
+            for (int i = 0; i < combatSpellImages.Count; i++)
+            {
+                combatSpellImages[i].sprite = startingSpells[i].SpellSprite;
+            }
+
+            movementSpellImage.sprite = startingSpells[3].SpellSprite;
+
+            audioSource.clip = buttonUISound;
+            audioSource.Play();
         }
         
         public void OnCreditsClick()
         {
             SceneManager.LoadScene(2);
+            
+            audioSource.clip = buttonUISound;
+            audioSource.Play();
         }
 
         public void OnWindowChangeClick(int activatedWindowIndex)
@@ -98,21 +110,24 @@ namespace UI
             {
                 allWindows[i].SetActive(i == activatedWindowIndex);
             }
+            
+            audioSource.clip = buttonUISound;
+            audioSource.Play();
         }
 
         public void OnWebsiteClick()
         {
             Application.OpenURL(websiteUrl);
+            
+            audioSource.clip = buttonUISound;
+            audioSource.Play();
         }
 
         public void OnExitClick()
         {
+            audioSource.clip = buttonUISound;
+            audioSource.Play();
             Application.Quit();
-        }
-
-        public void StartClip(Button btn)
-        {
-            // TODO: Do clip logic.
         }
 
         private IEnumerator LoadYourAsyncScene()

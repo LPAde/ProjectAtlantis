@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject gameplayWindow;
     [SerializeField] private GameObject pauseWindow;
+    [SerializeField] private AudioSource pauseSound;
     
     [Header("Gameplay Related Stuff")]
     [SerializeField] private Player player;
@@ -82,6 +83,9 @@ public class GameManager : MonoBehaviour
         
         if(!IsPaused)
             AudioManager.RestartSong();
+        else
+            pauseSound.Play();
+        
     }
 
     public void SaveAndQuit()
