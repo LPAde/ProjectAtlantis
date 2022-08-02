@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Gameplay.Combat.Projectiles;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,16 +21,15 @@ namespace Gameplay.Combat.Spells
                 GameManager.Instance.Load += Load; 
                 GameManager.Instance.Save += Save;
             }
-            else
-            {
-                Load();
-            }
         }
 
         private void Start()
         {
-            if(GameManager.Instance != null)
+            if(GameManager.Instance == null)
+            {
+                Load();
                 return;
+            }
             
             // Image and button fixing.
             for (int i = 0; i < allUnlockedPlayerSpells.Count; i++)
@@ -53,6 +53,7 @@ namespace Gameplay.Combat.Spells
         /// </summary>
         private void Load()
         {
+            print("here");
             string unlockedString = SaveSystem.GetString("UnlockedSpells");
             print(unlockedString);
             if(string.IsNullOrEmpty(unlockedString))
@@ -117,6 +118,18 @@ namespace Gameplay.Combat.Spells
             return id;
         }
 
+        // Checks if your spell is unlocked.
+        public bool CheckSpellUnlocked(BaseSpell spellToCheck)
+        {
+            for (int i = 0; i < allPlayerSpells.Count; i++)
+            {
+                if (allPlayerSpells[i] == spellToCheck)
+                    return allUnlockedPlayerSpells[i];
+            }
+
+            return false;
+        }
+        
         /// <summary>
         /// Gives you a spell by its id.
         /// </summary>
