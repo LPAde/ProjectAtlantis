@@ -38,6 +38,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/HudManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMP_Text.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7F1C80C7-6A23-4C4B-BC29-1EB52832BBBA/19/52683d76/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/SpellChangeButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Npc.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
@@ -56,7 +57,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Projectiles/Musikhüpfer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Projectiles/PlayerProjectile.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Projectiles/Musichopper.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/AI/FightState.cs" />
@@ -85,12 +85,10 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/AudioManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Collectibles/BaseItem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Collectibles/Key.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Projectiles/PlayerProjectiles/PlayerProjectile.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Projectiles/PlayerProjectiles/DoubleSlash.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Projectiles/PlayerProjectiles/Harpune.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Projectiles/PlayerProjectiles/Rift.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Spells/BaseSpell.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Spells/DashSpell.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Spells/BubbleBash.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Spells/ProjectileSpawningSpell.cs" />
@@ -102,11 +100,14 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Projectiles/PlayerProjectiles/Musichopper.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Projectiles/EnemyProjectiles/EnemyProjectile.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/AI/States/FightState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/BaseEnemy.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Spawning/EnemySpawner.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Spawning/WaveManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Spells/SpellManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Collectibles/UnlockableSpell.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Spells/SpellManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/BaseEnemy.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Combat/Spells/BaseSpell.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/SpellChangeButton.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuBehaviour.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="27QWXrHVecriWndYg0L8xsrdhDN" />
@@ -189,7 +190,7 @@
       <workItem from="1659270022852" duration="4288000" />
       <workItem from="1659275689622" duration="1046000" />
       <workItem from="1659278022021" duration="1614000" />
-      <workItem from="1659388893029" duration="1745000" />
+      <workItem from="1659388893029" duration="3787000" />
     </task>
     <servers />
   </component>

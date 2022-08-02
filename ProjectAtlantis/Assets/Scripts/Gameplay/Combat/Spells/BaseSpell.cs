@@ -7,9 +7,13 @@ namespace Gameplay.Combat.Spells
         [SerializeField] protected Character owner;
         [SerializeField] protected float maxCoolDown;
         [SerializeField] protected float currentCoolDown;
+        
+        [Header("Visual Stuff")]
         [SerializeField] private Sprite spellSprite;
-
+        [SerializeField] private string description;
+        
         public Sprite SpellSprite => spellSprite;
+        public string Description => description;
         
         /// <summary>
         /// Sets the owner of the spell.

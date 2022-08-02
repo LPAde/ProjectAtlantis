@@ -19,8 +19,15 @@ namespace Gameplay.Combat.Spells
         
         private void Awake()
         {
-            GameManager.Instance.Load += Load;
-            GameManager.Instance.Save += Save;
+            if (GameManager.Instance != null)
+            { 
+                GameManager.Instance.Load += Load; 
+                GameManager.Instance.Save += Save;
+            }
+            else
+            {
+                Load();
+            }
         }
 
         private void Start()

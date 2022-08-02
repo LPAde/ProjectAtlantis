@@ -138,14 +138,12 @@ namespace Enemies
             agent.isStopped = false;
             var target = GameManager.Instance.Player.PlayerController.transform.position;
             
-            if((target-transform.position).magnitude < 3)
+            if((target-transform.position).magnitude < stats.AttackRange)
             {
                 Stop();
                 return;
             }
-            
-            print((target-transform.position).magnitude);
-            
+
             agent.SetDestination(target);
         }
 

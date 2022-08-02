@@ -20,7 +20,7 @@ namespace UI
         [SerializeField] private AudioClip startGameSound;
         [SerializeField] private AudioClip buttonUISound;
         
-        [Header("Video Related Stuff")]
+        [Header("Spell Related Stuff")]
         [SerializeField] private List<Button> buttons; 
         [SerializeField] private List<VideoClip> cutsceneClips;
         [SerializeField] private Sprite lockedSprite;
