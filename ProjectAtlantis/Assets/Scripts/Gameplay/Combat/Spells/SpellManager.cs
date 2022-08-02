@@ -9,14 +9,10 @@ namespace Gameplay.Combat.Spells
         [SerializeField] private List<BaseSpell> allPlayerSpells;
 
         [Header("Spell-Changing Related Stuff")] 
-        [SerializeField] private GameObject spellChooseWindow;
         [SerializeField] private List<bool> allUnlockedPlayerSpells;
         [SerializeField] private List<Button> spellButtons;
         [SerializeField] private Sprite lockedSpellSprite;
-        [SerializeField] private BaseSpell targetedSpell;
 
-        public bool SpellChooseWindowOpen => spellChooseWindow.activeSelf;
-        
         private void Awake()
         {
             if (GameManager.Instance != null)
@@ -32,6 +28,9 @@ namespace Gameplay.Combat.Spells
 
         private void Start()
         {
+            if(GameManager.Instance != null)
+                return;
+            
             // Image and button fixing.
             for (int i = 0; i < allUnlockedPlayerSpells.Count; i++)
             {
@@ -44,46 +43,6 @@ namespace Gameplay.Combat.Spells
                 {
                     spellButtons[i].image.sprite = allPlayerSpells[i].SpellSprite;
                 }
-            }
-        }
-
-        private void Update()
-        {
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                spellChooseWindow.SetActive(true);
-            }
-            else
-            {
-                spellChooseWindow.SetActive(false);
-            }
-            
-            if (!spellChooseWindow.activeSelf)
-                return;
-            
-            if(targetedSpell == null)
-                return;
-
-            if (GameManager.Instance.Player.CombatSpells.Contains((CombatSpell) targetedSpell))
-            {
-                targetedSpell = null;
-                return;
-            }
-            
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                GameManager.Instance.Player.SetSpell(targetedSpell, 0);
-                targetedSpell = null;
-            }
-            else if (Input.GetKeyDown(KeyCode.W))
-            {
-                GameManager.Instance.Player.SetSpell(targetedSpell, 1);
-                targetedSpell = null;
-            }
-            else if (Input.GetKeyDown(KeyCode.E))
-            {
-                GameManager.Instance.Player.SetSpell(targetedSpell, 2);
-                targetedSpell = null;
             }
         }
 
@@ -103,7 +62,6 @@ namespace Gameplay.Combat.Spells
 
             for (int i = 0; i < allUnlockedPlayerSpells.Count; i++)
             {
-                print(bools[i]);
                 if (bools[i] == "True")
                 {
                     allUnlockedPlayerSpells[i] = true;
@@ -127,7 +85,7 @@ namespace Gameplay.Combat.Spells
                 unlockedString += allUnlockedPlayerSpells[i].ToString();
                 unlockedString += "-";
             }
-            print(unlockedString);
+            
             SaveSystem.SetString("UnlockedSpells", unlockedString);
         }
 
@@ -184,32 +142,6 @@ namespace Gameplay.Combat.Spells
             }
             
             Save();
-        }
-
-        public void OnSpellPress(Button btn)
-        {
-            if(!btn.enabled)
-                return;
-
-            int buttonIndex = -1;
-            
-            for (int i = 0; i < spellButtons.Count; i++)
-            {
-                if(spellButtons[i] != btn)
-                    continue;
-
-                buttonIndex = i;
-                break;
-            }
-
-            if (allPlayerSpells[buttonIndex] is MovementSpell)
-            {
-                GameManager.Instance.Player.SetSpell(allPlayerSpells[buttonIndex], 3);
-            }
-            else
-            {
-                targetedSpell = allPlayerSpells[buttonIndex];
-            }
         }
     }
 }

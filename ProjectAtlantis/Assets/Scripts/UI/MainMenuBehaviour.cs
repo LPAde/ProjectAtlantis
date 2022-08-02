@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Gameplay.Combat.Spells;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,6 +11,8 @@ namespace UI
 {
     public class MainMenuBehaviour : MonoBehaviour
     {
+        public static MainMenuBehaviour Instance;
+        
         [SerializeField] private List<Button> allButtons;
         [SerializeField] private List<string> allSaveFileStrings;
         [SerializeField] private List<GameObject> allWindows;
@@ -19,11 +22,43 @@ namespace UI
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private AudioClip startGameSound;
         [SerializeField] private AudioClip buttonUISound;
-        
-        [Header("Spell Related Stuff")]
-        [SerializeField] private List<Button> buttons; 
-        [SerializeField] private List<VideoClip> cutsceneClips;
+
+        [Header("Spell Related Stuff")] 
+        [SerializeField] private SpellManager spellManager;
         [SerializeField] private Sprite lockedSprite;
+        [SerializeField] private List<Image> combatSpellImages;
+        [SerializeField] private Image movementSpellImage;
+        
+        public GameObject image { get; set; }
+        public SpellManager SpellManager => spellManager;
+        public Sprite LockedSprite => lockedSprite;
+        public List<Image> CombatSpellImages => combatSpellImages;
+        public Image MovementSpellImage => movementSpellImage;
+        
+        
+        private void Awake()
+        {
+            if(Instance != null)
+                Destroy(Instance);
+            
+            Instance = this;
+            
+            // Setup.
+            string spellString = SaveSystem.GetString("PlayerSpells");
+            var idStrings = spellString.Split("*");
+            
+            List<CombatSpell> combatSpells = new List<CombatSpell>();
+            
+            for (int i = 0; i < combatSpellImages.Count; i++)
+            {
+                combatSpells.Add((CombatSpell) SpellManager.GetSpell(int.Parse(idStrings[i])));
+                combatSpellImages[i].sprite = combatSpells[i].SpellSprite;
+            }
+            var movementSpell = (MovementSpell) SpellManager.GetSpell(int.Parse(idStrings[3]));
+
+            movementSpellImage.sprite = movementSpell.SpellSprite;
+            
+        }
 
         public void OnStartGameClick()
         {
@@ -49,6 +84,7 @@ namespace UI
             
             SaveSystem.SetVector3("PlayerPosition", Vector3.zero);
             SaveSystem.SetInt("UsedKeys", 0);
+            SaveSystem.SetInt("UnlockedSpells", 0);
         }
         
         public void OnCreditsClick()
@@ -62,9 +98,6 @@ namespace UI
             {
                 allWindows[i].SetActive(i == activatedWindowIndex);
             }
-            
-            if(allWindows[1].activeSelf)
-                OpenCutsceneCollection();
         }
 
         public void OnWebsiteClick()
@@ -80,33 +113,6 @@ namespace UI
         public void StartClip(Button btn)
         {
             // TODO: Do clip logic.
-        }
-
-        private void OpenCutsceneCollection()
-        {
-            // Setup.
-            string unlockedCutscenes = SaveSystem.GetString("UnlockedCutscenes");
-            
-            // Only activate buttons when there are activated buttons.
-            if (unlockedCutscenes != String.Empty)
-            {
-                var cutscenes = unlockedCutscenes.Split("-");
-                
-                // Activate correct buttons.
-                for (int i = 0; i < cutscenes.Length; i++)
-                {
-                    buttons[int.Parse(cutscenes[i])].interactable = true;
-                }
-            }
-            
-            // Change sprites of the locked cutscenes.
-            for (int i = 0; i < buttons.Count; i++)
-            {
-                if(buttons[i].interactable)
-                    continue;
-
-                buttons[i].image.sprite = lockedSprite;
-            }
         }
 
         private IEnumerator LoadYourAsyncScene()

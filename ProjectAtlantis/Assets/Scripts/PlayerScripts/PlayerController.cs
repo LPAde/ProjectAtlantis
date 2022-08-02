@@ -56,10 +56,7 @@ namespace PlayerScripts
         {
             if(isInAnimation)
                 return;
-            
-            if(GameManager.Instance.SpellManager.SpellChooseWindowOpen)
-                return;
-            
+
             // Not the most attractive solution, but a simple one that works.
             if (Input.GetKeyDown(KeyCode.Q))
             {
