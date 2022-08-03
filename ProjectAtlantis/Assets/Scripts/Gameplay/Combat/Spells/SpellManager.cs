@@ -1,7 +1,5 @@
 using System.Collections.Generic;
-using Gameplay.Combat.Projectiles;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Gameplay.Combat.Spells
 {

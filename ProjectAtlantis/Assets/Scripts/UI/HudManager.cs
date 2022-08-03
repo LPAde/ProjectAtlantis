@@ -28,14 +28,7 @@ namespace UI
 
         private void Update()
         {
-            if (Input.GetKey(KeyCode.Tab))
-            {
-                statScreen.SetActive(true);
-            }
-            else
-            {
-                statScreen.SetActive(false);
-            }
+            statScreen.SetActive(Input.GetKey(KeyCode.Tab));
         }
 
         /// <summary>
