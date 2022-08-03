@@ -147,6 +147,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2574014737595074619}
     m_Modifications:
+    - target: {fileID: 2732148778953107339, guid: f0006ce46e421954a9d1af96eb1f0424, type: 3}
+      propertyPath: TrailModule.worldSpace
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6185263540291828113, guid: f0006ce46e421954a9d1af96eb1f0424, type: 3}
       propertyPath: m_Name
       value: SharkArrow (1)
@@ -209,6 +213,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7278581007747046213, guid: f0006ce46e421954a9d1af96eb1f0424, type: 3}
       propertyPath: m_SortMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7278581007747046213, guid: f0006ce46e421954a9d1af96eb1f0424, type: 3}
+      propertyPath: m_CastShadows
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7278581007747046213, guid: f0006ce46e421954a9d1af96eb1f0424, type: 3}
