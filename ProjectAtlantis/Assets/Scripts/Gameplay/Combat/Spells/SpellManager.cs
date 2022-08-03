@@ -11,8 +11,6 @@ namespace Gameplay.Combat.Spells
 
         [Header("Spell-Changing Related Stuff")] 
         [SerializeField] private List<bool> allUnlockedPlayerSpells;
-        [SerializeField] private List<Button> spellButtons;
-        [SerializeField] private Sprite lockedSpellSprite;
 
         private void Awake()
         {
@@ -28,21 +26,6 @@ namespace Gameplay.Combat.Spells
             if(GameManager.Instance == null)
             {
                 Load();
-                return;
-            }
-            
-            // Image and button fixing.
-            for (int i = 0; i < allUnlockedPlayerSpells.Count; i++)
-            {
-                if (!allUnlockedPlayerSpells[i])
-                {
-                    spellButtons[i].interactable = false;
-                    spellButtons[i].image.sprite = lockedSpellSprite;
-                }
-                else
-                {
-                    spellButtons[i].image.sprite = allPlayerSpells[i].SpellSprite;
-                }
             }
         }
 
