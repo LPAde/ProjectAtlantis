@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Enemies.AI.FiniteStateMachines;
+using UI;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -76,8 +77,8 @@ namespace Enemies
             
             stats.Health -= takenDamage * difficultyModifier;
 
-            
-            ShowDamageText(takenDamage);
+            if(stats.Health > 0)
+                ShowDamageText(takenDamage);
             
             if(stats.Health <= 0)
             {
@@ -189,8 +190,9 @@ namespace Enemies
 
         private void ShowDamageText(float damage)
         {
-            var textBox = Instantiate(damageText, transform.position, Quaternion.identity, transform);
-            textBox.GetComponent<TextMesh>().text = damage.ToString("0");
+            var textBox = Instantiate(damageText, transform.position, Quaternion.identity, GameManager.Instance.EnemyManager.transform).GetComponent<FloatingText>();
+            textBox.text.text = damage.ToString("0");
+            textBox.owner = this;
         }
         
         private void Die()

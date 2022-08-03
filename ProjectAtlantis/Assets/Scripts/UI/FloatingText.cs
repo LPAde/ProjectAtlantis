@@ -1,3 +1,4 @@
+using Enemies;
 using UnityEngine;
 
 namespace UI
@@ -6,17 +7,17 @@ namespace UI
     {
         [SerializeField] private float destroyTime;
         [SerializeField] private Vector3 offset;
+        public TextMesh text;
+        public BaseEnemy owner;
         
         void Start()
         {
             Destroy(gameObject,destroyTime);
-
-            transform.localPosition += offset;
         }
 
         private void Update()
         {
-            transform.rotation = Quaternion.LookRotation( transform.position - Camera.main.transform.position );
+            transform.localPosition = owner.transform.position + offset;
         }
     }
 }
