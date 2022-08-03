@@ -73,7 +73,7 @@ namespace UI
         /// <param name="waveCount"> The wave the player is at. </param>
         public void UpdateWaveCount(int waveCount)
         {
-            waveCountText.text = waveCount.ToString();
+            waveCountText.text = string.Concat("Current Wave: ", waveCount.ToString());
         }
 
         /// <summary>
