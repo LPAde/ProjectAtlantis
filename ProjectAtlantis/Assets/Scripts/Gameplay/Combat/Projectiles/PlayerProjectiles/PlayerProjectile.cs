@@ -31,8 +31,9 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
                     damage *= scalings[2];
                     if (spawnParticle != null)
                     {
-                       var position = transform.position;
-                       var aObj = Instantiate(spawnParticle, position, Quaternion.identity, GameManager.Instance.transform);
+                        var transform1 = transform;
+                        var position = transform1.position;
+                       var aObj = Instantiate(spawnParticle, position, Quaternion.identity, transform1);
                        aObj.transform.LookAt(position + newMovementVector); 
                     }
                     
@@ -42,8 +43,9 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
 
                     if (spawnParticle != null)
                     {
-                        var position1 = transform.position;
-                        var pObj = Instantiate(spawnParticle, position1, Quaternion.identity, GameManager.Instance.transform);
+                        var transform1 = transform;
+                        var position1 = transform1.position;
+                        var pObj = Instantiate(spawnParticle, position1, Quaternion.identity, transform1);
                         pObj.transform.LookAt(position1 + newMovementVector);
                     }
                     break;
