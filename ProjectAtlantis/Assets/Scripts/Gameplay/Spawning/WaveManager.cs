@@ -33,6 +33,7 @@ namespace Gameplay.Spawning
         public List<BaseEnemy> GenerateNextWave(List<BaseEnemy> lastWave)
         {
             currentWave++;
+            GameManager.Instance.HudManager.UpdateWaveCount(currentWave);
             
             WaveItemCheck();
             

@@ -13,7 +13,8 @@ namespace UI
         [SerializeField] private Slider healthBar;
         [SerializeField] private List<Button> skillIndicators;
         [SerializeField] private List<TextMeshProUGUI> skillCooldowns;
-
+        [SerializeField] private TextMeshProUGUI waveCountText;
+        
         [Header("Stat-screen")] 
         [SerializeField] private GameObject statScreen;
         [SerializeField] private List<TextMeshProUGUI> statsText;
@@ -64,6 +65,15 @@ namespace UI
             }
 
             skillIndicators[3].image.sprite = movementSpell.SpellSprite;
+        }
+
+        /// <summary>
+        /// Updates the current wave count.
+        /// </summary>
+        /// <param name="waveCount"> The wave the player is at. </param>
+        public void UpdateWaveCount(int waveCount)
+        {
+            waveCountText.text = waveCount.ToString();
         }
 
         /// <summary>
