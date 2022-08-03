@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Enemies;
 using UnityEngine;
@@ -9,7 +10,28 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
         [SerializeField] private List<BaseEnemy> enemies;
         [SerializeField] private float maxIntervalTime;
         [SerializeField] private float intervalTime;
-        
+
+        public override void Initialize(Vector3 newMovementVector, Timing timing)
+        {
+            base.Initialize(newMovementVector, timing);
+
+            switch (timing)
+            {
+                case Timing.Bad:
+                    lifeTime *= scalings[0];
+                    break;
+                case Timing.Good:
+                    lifeTime *= scalings[1];
+                    break;
+                case Timing.Amazing:
+                    lifeTime *= scalings[2];
+                    break;
+                case Timing.Perfect:
+                    lifeTime *= scalings[3];
+                    break;
+            }
+        }
+
         protected override void FixedUpdate()
         {
             // Deals damage and knocks back once every few frames.
