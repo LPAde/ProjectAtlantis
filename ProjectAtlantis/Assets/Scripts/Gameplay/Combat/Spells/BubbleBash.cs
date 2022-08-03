@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using Gameplay.Combat.Projectiles.PlayerProjectiles;
 using PlayerScripts;
 using Unity.Mathematics;
-using UnityEditor.Searcher;
 using UnityEngine;
 
 namespace Gameplay.Combat.Spells
