@@ -17,7 +17,8 @@ namespace Enemies
         [SerializeField] private NavMeshAgent agent;
         [SerializeField] private Rigidbody rb;
         [SerializeField] protected Animator anim;
-
+        [SerializeField] private GameObject damageText;
+        
         [Header("Drop related values")] 
         [SerializeField] private List<GameObject> droppableItems;
         [SerializeField] private List<int> spawnChances;
@@ -74,6 +75,9 @@ namespace Enemies
                 takenDamage = 1;
             
             stats.Health -= takenDamage * difficultyModifier;
+
+            
+            ShowDamageText(takenDamage);
             
             if(stats.Health <= 0)
             {
@@ -181,6 +185,12 @@ namespace Enemies
         public void SetAnimBool(string animBool, bool boolState)
         {
             anim.SetBool(animBool, boolState);
+        }
+
+        private void ShowDamageText(float damage)
+        {
+            var textBox = Instantiate(damageText, transform.position, Quaternion.identity, transform);
+            textBox.GetComponent<TextMesh>().text = damage.ToString("0");
         }
         
         private void Die()
