@@ -1,11 +1,15 @@
-Shader "Custom/DisableZWrite"
+Shader "Custom/Mask"
 {
-	SubShader{
-		Tags{
-			"RenderType" = "Opaque"
-		}
-		Pass{
-			ZWrite Off
-		}
+	Properties{}
+
+		SubShader{
+
+			Tags {
+				"RenderType" = "Opaque"
+			}
+
+			Pass {
+				ZWrite Off
+			}
 	}
 }
