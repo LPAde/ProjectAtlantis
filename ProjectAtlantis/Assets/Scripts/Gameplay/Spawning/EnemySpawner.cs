@@ -122,5 +122,21 @@ namespace Gameplay.Spawning
 
             IsSpawning = false;
         }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                enemySpawnDelay = 1;
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                enemySpawnDelay = 2;
+            }
+        }
     }
 }
