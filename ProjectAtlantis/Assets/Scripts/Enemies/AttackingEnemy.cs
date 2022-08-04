@@ -10,6 +10,7 @@ namespace Enemies
         [Header("Attack related values")]
         [SerializeField] protected GameObject attack;
         [SerializeField] private Transform projectileSpawnPosition;
+        [SerializeField] protected AudioSource source;
         protected bool mayAttack;
         
         
@@ -71,16 +72,22 @@ namespace Enemies
                 if(!mayAttack)
                     return;
 
-                var position = projectileSpawnPosition.position;
-                var projectile =
-                    Instantiate(attack, position, quaternion.identity,
-                        GameManager.Instance.transform).GetComponent<EnemyProjectile>();
-                projectile.Initialize(GameManager.Instance.Player.PlayerController.transform.position - position);
-
                 stats.AttackCooldown = stats.AttackMaxCooldown;
+                anim.SetTrigger("Attack");
 
                 mayAttack = false;
             }
+        }
+        
+        public virtual void StartAttack()
+        {
+            var position = projectileSpawnPosition.position;
+            var projectile =
+                Instantiate(attack, position, quaternion.identity,
+                    GameManager.Instance.transform).GetComponent<EnemyProjectile>();
+            projectile.Initialize(GameManager.Instance.Player.PlayerController.transform.position - position);
+            
+            source.Play();
         }
 
         protected override void Stun(float duration)

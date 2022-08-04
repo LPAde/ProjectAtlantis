@@ -25,7 +25,6 @@ namespace Gameplay.Combat.Spells
 
             for (int i = 0; i < projectiles.Count; i++)
             {
-                Debug.Log("here");
                 var proj = Instantiate(projectiles[i], owningPlayer.BubblePositions[i].position, quaternion.identity, owningPlayer.transform).GetComponent<PlayerProjectile>();
                 proj.Initialize(owningPlayer.BubblePositions[i].position - owningPlayer.PlayerController.transform.position, GameManager.Instance.RhythmManager.CheckTiming());
             }

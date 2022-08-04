@@ -5,7 +5,6 @@ namespace Enemies
     public class AttackingMeleeEnemy : AttackingEnemy
     {
         private static readonly int Attack1 = Animator.StringToHash("Attack");
-        [SerializeField] private AudioSource source;
 
         private bool _didHit;
 
@@ -29,13 +28,11 @@ namespace Enemies
             stats.AttackCooldown = stats.AttackMaxCooldown;
         }
 
-        public void StartAttack()
+        public override void StartAttack()
         {
             if(_didHit)
                 return;
             
-            print("distance" + (attack.transform.position - GameManager.Instance.Player.PlayerController.transform.position).sqrMagnitude);
-            print("AR: " + stats.AttackRange);
             if (stats.AttackRange * stats.AttackRange > (attack.transform.position - GameManager.Instance.Player.PlayerController.transform.position).sqrMagnitude)
             {
                 GameManager.Instance.Player.TakeDamage(stats.Strength);
