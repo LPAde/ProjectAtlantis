@@ -55,8 +55,12 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
 
         protected override void OnTriggerEnter(Collider other)
         {
-            if(other.CompareTag("Enemy"))
-               enemies.Add(other.GetComponent<BaseEnemy>()); 
+            if (!other.CompareTag("Enemy"))
+                return;
+            
+            var en = other.GetComponent<BaseEnemy>();
+            enemies.Add(en); 
+            en.TakeDamage(damage, (transform.position - en.transform.position) * 50, maxIntervalTime);
         }
 
         private void OnTriggerExit(Collider other)

@@ -3891,7 +3891,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05621752, y: 0.060052436, z: 0.16380721}
+  m_Size: {x: 0.05621752, y: 1, z: 0.16380721}
   m_Center: {x: -0.00045974553, y: 0.031509362, z: -0.06088276}
 --- !u!95 &7817460257212713284
 Animator:
@@ -3931,7 +3931,7 @@ MonoBehaviour:
     strength: 20
     defense: 15
     speed: 3
-    attackRange: 2
+    attackRange: 1
     attackMaxCooldown: 3
     attackCooldown: 3
     triggerRange: 5

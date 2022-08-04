@@ -34,6 +34,8 @@ namespace Enemies
             if(_didHit)
                 return;
             
+            print("distance" + (attack.transform.position - GameManager.Instance.Player.PlayerController.transform.position).sqrMagnitude);
+            print("AR: " + stats.AttackRange);
             if (stats.AttackRange * stats.AttackRange > (attack.transform.position - GameManager.Instance.Player.PlayerController.transform.position).sqrMagnitude)
             {
                 GameManager.Instance.Player.TakeDamage(stats.Strength);

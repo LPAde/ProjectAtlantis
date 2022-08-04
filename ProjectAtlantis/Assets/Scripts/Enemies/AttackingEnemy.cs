@@ -42,10 +42,17 @@ namespace Enemies
 
         public override void WalkToPlayer()
         {
+            var target = GameManager.Instance.Player.PlayerController.transform.position;
+            
+            if((target-transform.position).magnitude < stats.AttackRange)
+            {
+                Stop();
+            }
+            
             base.WalkToPlayer();
 
-            float distance = (FiniteAttackerStateMachine.Owner.transform.position - GameManager.Instance.Player.PlayerController.transform.position).sqrMagnitude;
-
+            float distance = (FiniteAttackerStateMachine.Owner.transform.position - target).sqrMagnitude;
+            
             if(distance < stats.AttackRange*stats.AttackRange)
                 FiniteAttackerStateMachine.Transition(FiniteAttackerStateMachine.FightState);
         }
