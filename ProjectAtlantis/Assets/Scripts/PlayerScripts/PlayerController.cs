@@ -239,6 +239,11 @@ namespace PlayerScripts
 
         #endregion
 
+        public void LookAtMovement()
+        {
+            transform.LookAt(new Vector3(movePos.x, transform.position.y, movePos.z));
+        }
+        
         public void InitializeDash(Vector3 newDashVector, float newDashDuration, float newDashSpeed)
         {
             dashVector = newDashVector;
