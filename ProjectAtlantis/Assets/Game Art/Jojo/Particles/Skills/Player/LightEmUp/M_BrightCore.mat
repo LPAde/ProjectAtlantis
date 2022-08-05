@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Trail01
+  m_Name: M_BrightCore
   m_Shader: {fileID: -6465566751694194690, guid: e39679878f1a4cb4793ba527aad14114, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -38,13 +38,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaClipping: 0.2
+    - _AlphaClipping: -11.13
     - _DissolveScale: 35
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Color01: {r: 766.9961, g: 0, b: 0, a: 0}
-    - _Color02: {r: 1024, g: 216.84706, b: 0, a: 0}
+    - _Color01: {r: 719611, g: 0, b: 785404, a: 0}
+    - _Color02: {r: 804253700, g: 0, b: 0, a: 0}
     - _DissolveSpeed: {r: -0.5, g: 0, b: 0, a: 0}
     - _MainTextureSpeed: {r: -1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
