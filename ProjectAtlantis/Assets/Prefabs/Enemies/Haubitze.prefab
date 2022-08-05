@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6031627294116188361}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Arm3_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1723528014143685005}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_WholeBody_Ctrl_Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1677867291633297148}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Arm1_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5420872955550688970}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm3_BR_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8798495910339669921}
   - component: {fileID: 5388677160673273417}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5562081835190921756}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm2_FL_Ctrl_Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3638459402552056907}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Head2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3922580371293463107}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_TopHead_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5047721946097049298}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm4_FL_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,7 +391,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1539314626410998297}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_BodyBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 673774606974037096}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm3_BL_Ctrl_Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,7 +459,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 343336230743995744}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm4_BR_Ctrl_Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,7 +491,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6913821245145272780}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Main_Ctrl_Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,7 +523,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6226058125974312785}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Arm2_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -555,7 +555,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2918984975715117443}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Arm1_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -587,7 +587,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4378207800957109567}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm3_BR_Ctrl_Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -624,9 +624,9 @@ GameObject:
   - component: {fileID: 2672865092570195401}
   - component: {fileID: 2672865092570195414}
   - component: {fileID: 2672865092570195415}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -761,7 +761,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.34262586, z: 1}
+  m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0.8286871, z: 0}
 --- !u!1 &2415255583262120625
 GameObject:
@@ -803,7 +803,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8197088779973017335}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Head3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -834,7 +834,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4739058830092936828}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Head_Ctrl_Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -866,7 +866,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8312156817610573020}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm2_BR_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -898,7 +898,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1460858322801950528}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm1_FL_Ctrl_Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -930,7 +930,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2791214469781027781}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm1_BR_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -962,7 +962,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3590056364626233034}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm1_BR_Ctrl_Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -994,7 +994,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 985325782298015150}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Main_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1026,7 +1026,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3346652546195457669}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm4_BL_Ctrl_Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1058,7 +1058,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4949391884449695193}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm4_FL_Ctrl_Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1090,7 +1090,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1709989098889216999}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Arm3_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1122,7 +1122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6545219022266272924}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm1_BL_Ctrl_Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1154,7 +1154,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5958382246329284895}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Head_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1186,7 +1186,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8388379757514663387}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm1_FR_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1218,7 +1218,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 965912907653530276}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Arm2_BR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1250,7 +1250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5609512423886776896}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Arm4_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1282,7 +1282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7473203269114638560}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_LowerBody_Ctrl_Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1314,7 +1314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 927406845224602378}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm2_FL_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1346,7 +1346,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5343887679659257611}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_LowerBody_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1381,7 +1381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5138487640508212877}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm4_BL_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1412,7 +1412,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7824728606196230034}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Arm4_BR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1444,7 +1444,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3470130246145954476}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm3_FR_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1476,7 +1476,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8907869604348278417}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Arm5_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1507,7 +1507,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1244328094236100404}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Arm2_BL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1539,7 +1539,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6441865833035978797}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Arm5_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1570,7 +1570,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7203379124764511079}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_TopHead_Ctrl_Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1602,7 +1602,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3404400313453625636}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm1_BL_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1634,7 +1634,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6290231732492154111}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm3_BL_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1666,7 +1666,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 910390373501787813}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm3_FL_Ctrl_Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1698,7 +1698,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5075211025585742602}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm1_FL_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1730,7 +1730,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3910443895162357875}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Arm5_BL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1761,7 +1761,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2980505789098252464}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Arm2_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1793,7 +1793,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 645298051469079562}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm2_FR_Ctrl_Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1825,7 +1825,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8091202644409149638}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Arm1_BR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1857,7 +1857,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1495534766239330352}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm4_FR_Ctrl_Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1889,7 +1889,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6194820613560030227}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm3_FL_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1921,7 +1921,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2481712271200797855}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm1_FR_Ctrl_Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1953,7 +1953,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4105802408319054697}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Arm3_BL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1985,7 +1985,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7811972720704070512}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2017,7 +2017,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8086494358291280338}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm2_FR_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2049,7 +2049,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9130187415844961974}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Arm5_BR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2080,7 +2080,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5962455866694566542}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Head1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2112,7 +2112,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1849745813874639116}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Arm4_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2144,7 +2144,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7150300334374568303}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm4_FR_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2175,7 +2175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5135924667487473005}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm4_BR_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2206,7 +2206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4018383730651991019}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Arm4_BL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2238,7 +2238,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5137498059631432304}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm2_BR_Ctrl_Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2270,7 +2270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 227452747376812688}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm2_BL_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2302,7 +2302,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8203452365433135485}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm2_BL_Ctrl_Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2334,7 +2334,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4887118124254558698}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Arm3_BR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2366,7 +2366,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3033685774783904492}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Haubitze_Arm1_BL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2399,7 +2399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6645750430148565268}
   - component: {fileID: 8484575371045914887}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: polySurface1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2506,7 +2506,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000836623766900491}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_Arm3_FR_Ctrl_Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2538,7 +2538,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5598576341678319666}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bitze_WholeBody_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
