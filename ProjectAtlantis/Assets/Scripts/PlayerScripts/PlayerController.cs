@@ -9,6 +9,7 @@ namespace PlayerScripts
         [Header("Movement")] 
         [SerializeField] private Vector3 movePos;
         [SerializeField] private bool isInAnimation;
+        [SerializeField] private MovementIndicator indicator;
 
         [Header("Dashing")]
         [SerializeField] private Vector3 dashVector;
@@ -87,6 +88,7 @@ namespace PlayerScripts
 
                     movePos = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                     
+                    indicator.Activate(movePos);
                     Look(); 
                     player.Anim.SetBool(IsMoving, true);
                     
