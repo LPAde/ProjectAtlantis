@@ -19,6 +19,7 @@ namespace Enemies
         [SerializeField] private Rigidbody rb;
         [SerializeField] protected Animator anim;
         [SerializeField] private GameObject damageText;
+        [SerializeField] private GameObject deathParticle;
         
         [Header("Drop related values")] 
         [SerializeField] private List<GameObject> droppableItems;
@@ -247,7 +248,8 @@ namespace Enemies
                     break;
                 }
             }
-            
+
+            Instantiate(deathParticle,transform.position,Quaternion.identity,GameManager.Instance.transform);
             Destroy(gameObject);
         }
 
