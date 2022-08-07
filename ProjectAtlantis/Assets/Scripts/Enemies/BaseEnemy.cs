@@ -214,6 +214,11 @@ namespace Enemies
                 {
                     spawnChances[i] *= 2;
                 }
+
+                for (int i = lastPossibleHealDrop; i < droppableItems.Count; i++)
+                {
+                    spawnChances[i] = (int)(spawnChances[i] * .5f);
+                }
             }
             else if(playerHeight > heightChecks[1])
             {
@@ -224,6 +229,10 @@ namespace Enemies
             }
             else
             {
+                for (int i = 0; i < lastPossibleHealDrop; i++)
+                {
+                    spawnChances[i] = (int)(spawnChances[i] * .5f);
+                }
                 for (int i = lastPossibleHealDrop; i < droppableItems.Count; i++)
                 {
                     spawnChances[i] *= 2;

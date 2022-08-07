@@ -178,7 +178,6 @@ namespace PlayerScripts
         private void Cast(KeyCode code)
         {
             byte spellIndex = 5;
-            Look();
             
             switch (code)
             {
@@ -221,8 +220,11 @@ namespace PlayerScripts
                     break;
             }
             
-            if(spellIndex < 5) 
-                GameManager.Instance.HudManager.UseSkill(spellIndex);
+            if(!(spellIndex < 5))
+                return;
+            
+            Look();
+            GameManager.Instance.HudManager.UseSkill(spellIndex);
         }
 
         private void DoCorrectAttackAnimation()
