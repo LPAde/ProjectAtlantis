@@ -7,6 +7,7 @@ namespace Gameplay.Combat.Spells
         [SerializeField] protected Character owner;
         [SerializeField] protected float maxCoolDown;
         [SerializeField] protected float currentCoolDown;
+        [SerializeField] protected float currentMaxCoolDown;
         
         [Header("Visual Stuff")]
         [SerializeField] private Sprite spellSprite;
@@ -23,6 +24,7 @@ namespace Gameplay.Combat.Spells
         {
             owner = newOwner;
             currentCoolDown = 0;
+            currentMaxCoolDown = maxCoolDown;
         }
 
         public abstract bool Cast();
@@ -32,6 +34,11 @@ namespace Gameplay.Combat.Spells
             currentCoolDown -= Time.deltaTime;
             
             return currentCoolDown;
+        }
+
+        public void ReduceMaxCooldown(float cdr)
+        {
+            currentMaxCoolDown = maxCoolDown - (maxCoolDown * cdr);
         }
     }
 }

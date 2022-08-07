@@ -124,6 +124,20 @@ namespace PlayerScripts
             stats.Strength += addedStats.Strength;
             stats.Defense += addedStats.Defense;
             stats.Speed += addedStats.Speed;
+            stats.CoolDownReduction += addedStats.CoolDownReduction;
+
+            // Caps.
+            if (stats.Speed > 50)
+                stats.Speed = 50;
+
+            if (stats.CoolDownReduction > .5f)
+                stats.CoolDownReduction = .5f;
+
+            foreach (var spell in CombatSpells)
+            {
+                spell.ReduceMaxCooldown(stats.CoolDownReduction);
+            }
+            movementSpell.ReduceMaxCooldown(stats.CoolDownReduction);
             
             GameManager.Instance.HudManager.UpdateHealth(stats.Health, stats.MAXHealth);
             GameManager.Instance.HudManager.UpdateStats(stats);
@@ -209,6 +223,7 @@ namespace PlayerScripts
             stats.Strength = float.Parse(allStats[3]);
             stats.Defense = float.Parse(allStats[4]);
             stats.Speed = float.Parse(allStats[5]);
+            stats.CoolDownReduction = float.Parse(allStats[6]);
 
             // Spells.
             string spellString = SaveSystem.GetString("PlayerSpells");
@@ -221,6 +236,12 @@ namespace PlayerScripts
 
             movementSpell = (MovementSpell) GameManager.Instance.SpellManager.GetSpell(int.Parse(idStrings[3]));
             
+            foreach (var spell in CombatSpells)
+            {
+                spell.ReduceMaxCooldown(stats.CoolDownReduction);
+            }
+            movementSpell.ReduceMaxCooldown(stats.CoolDownReduction);
+            
             GameManager.Instance.HudManager.UpdateSkills(combatSpells, movementSpell);
         }
 
@@ -230,7 +251,7 @@ namespace PlayerScripts
         private void Save()
         {
             SaveSystem.SetString
-                ("PlayerStats", string.Concat(stats.MAXHealth, "*", stats.Health, "*",stats.HealthRegen, "*", stats.Strength, "*",stats.Defense, "*", stats.Speed));
+                ("PlayerStats", string.Concat(stats.MAXHealth, "*", stats.Health, "*",stats.HealthRegen, "*", stats.Strength, "*",stats.Defense, "*", stats.Speed, "*", stats.CoolDownReduction));
             
             SaveSystem.SetString
                 ("PlayerSpells", string.Concat(GameManager.Instance.SpellManager.GetSpellID(combatSpells[0]), "*",
@@ -248,6 +269,7 @@ namespace PlayerScripts
         [SerializeField] private float strength;
         [SerializeField] private float defense;
         [SerializeField] private float speed;
+        [SerializeField] private float coolDownReduction;
 
         public float MAXHealth
         {
@@ -290,6 +312,12 @@ namespace PlayerScripts
         {
             get => speed;
             internal set => speed = value;
+        }
+
+        public float CoolDownReduction
+        {
+            get => coolDownReduction;
+            internal set => coolDownReduction = value;
         }
     }
 

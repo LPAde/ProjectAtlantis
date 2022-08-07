@@ -30,6 +30,7 @@ namespace Enemies
 
         public override void StartAttack()
         {
+            IsInAnimation = true;
             if(_didHit)
                 return;
             
@@ -42,8 +43,9 @@ namespace Enemies
             source.Play();
         }
 
-        public void EndAttack()
+        public override void EndAttack()
         {
+            base.EndAttack();
             _didHit = false;
         }
     }

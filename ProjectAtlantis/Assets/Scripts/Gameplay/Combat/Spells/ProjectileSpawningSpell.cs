@@ -20,7 +20,7 @@ namespace Gameplay.Combat.Spells
                 return false;
             }
             
-            currentCoolDown = maxCoolDown;
+            currentCoolDown = currentMaxCoolDown;
 
             // Check who is owner.
             if (owner is AttackingEnemy owningEnemy)

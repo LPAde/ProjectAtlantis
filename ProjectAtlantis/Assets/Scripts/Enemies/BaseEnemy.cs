@@ -239,7 +239,6 @@ namespace Enemies
                 }
             }
             
-
             for (int i = droppableItems.Count - 1; i > -1; i--)
             {
                 if (random < spawnChances[i])

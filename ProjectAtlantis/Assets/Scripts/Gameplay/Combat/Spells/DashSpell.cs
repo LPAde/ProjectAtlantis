@@ -18,7 +18,7 @@ namespace Gameplay.Combat.Spells
                 return false;
             }
             
-            currentCoolDown = maxCoolDown;
+            currentCoolDown = currentMaxCoolDown;
             
             // Player Spell.
             Player owningPlayer = (Player) owner;

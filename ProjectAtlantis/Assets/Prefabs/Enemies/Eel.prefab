@@ -3942,9 +3942,13 @@ MonoBehaviour:
   rb: {fileID: 7817460257212713286}
   anim: {fileID: 7817460257212713284}
   damageText: {fileID: 2650182319893656862, guid: 2373df2e840c4da4cab84c3660787942, type: 3}
-  droppableItems: []
-  spawnChances: 
-  lastPossibleHealDrop: 0
+  droppableItems:
+  - {fileID: 6903789023718622927, guid: 21cc14fcb29431d4ea6760e80421f689, type: 3}
+  - {fileID: 6903789023718622927, guid: c80f3da98ca3c084e8c1c22437d6d239, type: 3}
+  - {fileID: 6903789023718622927, guid: 57f0e3279b025434584823a90c2d6223, type: 3}
+  - {fileID: 3660890396933874106, guid: 9d3f0b1ad0d4e5f47a8b5d7bc6cde7b3, type: 3}
+  spawnChances: 9f010000730000000f00000000000000
+  lastPossibleHealDrop: 3
   attack: {fileID: 667458498113269027}
   projectileSpawnPosition: {fileID: 0}
   source: {fileID: 5688246028348885950}

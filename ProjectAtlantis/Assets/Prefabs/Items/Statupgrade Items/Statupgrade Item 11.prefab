@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3660890396933874108}
   - component: {fileID: 3660890396933874109}
   m_Layer: 2
-  m_Name: Statupgrade Item 8
+  m_Name: Statupgrade Item 11
   m_TagString: Area Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,10 +129,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upTime: 8
   addedStats:
-    maxHealth: 6
+    maxHealth: 8
     health: 0
-    healthRegen: 0
+    healthRegen: 0.15
     strength: 0
-    defense: 0
-    speed: 0.12
+    defense: 5
+    speed: 0
     coolDownReduction: 0

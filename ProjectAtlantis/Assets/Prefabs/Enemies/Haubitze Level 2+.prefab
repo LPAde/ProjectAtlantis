@@ -625,7 +625,7 @@ GameObject:
   - component: {fileID: 2672865092570195414}
   - component: {fileID: 2672865092570195415}
   m_Layer: 2
-  m_Name: Haubitze
+  m_Name: Haubitze Level 2+
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -723,12 +723,13 @@ MonoBehaviour:
   anim: {fileID: 2672865092570195412}
   damageText: {fileID: 2650182319893656862, guid: 2373df2e840c4da4cab84c3660787942, type: 3}
   droppableItems:
-  - {fileID: 6903789023718622927, guid: 50c5c53dc1f0fd144ab0099208282e00, type: 3}
-  - {fileID: 6903789023718622927, guid: 20272b0687236c24e81226b90c305efd, type: 3}
-  - {fileID: 6903789023718622927, guid: ed955edc6bfa522448e97a51cb08d1b4, type: 3}
+  - {fileID: 6903789023718622927, guid: 57f0e3279b025434584823a90c2d6223, type: 3}
   - {fileID: 3660890396933874106, guid: 578f1f997e5f41d41b392b86a780390e, type: 3}
-  spawnChances: 3f020000a90100002c010000c8000000
-  lastPossibleHealDrop: 3
+  - {fileID: 3660890396933874106, guid: 511aa890c4eab6847803a60f5b419ed6, type: 3}
+  - {fileID: 3660890396933874106, guid: fc10c69b2b698214c84c16d80822835b, type: 3}
+  - {fileID: 3660890396933874106, guid: c6115112a797d2143bcec58d4cf6d64f, type: 3}
+  spawnChances: 000000006a000000380000001a0000000d000000
+  lastPossibleHealDrop: 1
   attack: {fileID: 8129369878255744576, guid: 625b423346f519149b4905b6d7fe46fc, type: 3}
   projectileSpawnPosition: {fileID: 2415255583262120624}
   source: {fileID: 5388677160673273417}

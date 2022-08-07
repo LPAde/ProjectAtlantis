@@ -129,9 +129,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upTime: 8
   addedStats:
-    maxHealth: 2
+    maxHealth: 0
     health: 0
     healthRegen: 0
     strength: 0
     defense: 0
-    speed: 1
+    speed: 0
+    coolDownReduction: 0.005

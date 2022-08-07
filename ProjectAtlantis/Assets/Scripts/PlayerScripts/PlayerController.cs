@@ -88,7 +88,7 @@ namespace PlayerScripts
 
                     movePos = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                     
-                    indicator.Activate(movePos);
+                    
                     Look(); 
                     player.Anim.SetBool(IsMoving, true);
                     
@@ -99,6 +99,10 @@ namespace PlayerScripts
                     player.PlayOneTimeSound(PlayerSounds.StartSwimming);
                 }
             }
+            
+            // Movement indicator on click.
+            if(Input.GetMouseButtonDown(1))
+                indicator.Activate(movePos);
             
             // Pause
             if (Input.GetKeyDown(KeyCode.Escape))

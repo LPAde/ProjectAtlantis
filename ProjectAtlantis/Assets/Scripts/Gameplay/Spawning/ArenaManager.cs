@@ -77,11 +77,12 @@ namespace Gameplay.Spawning
             
             /*
              * 0 = Popcorn
-             * 1 = Shooters
-             * 2 = Piranha
-             * 3 = Serpent
-             * 4 = Shotguncrab
-             * 5 = Boss
+             * 1 = Jellycanon
+             * 2 = Eel
+             * 3 = Piranhadude
+             * 4 = Stronk Piranhadude
+             * 5 = Shotguncrab
+             * 6 = Jellycanon 2
              */
             if (playerHeight > heightChecks[0])
             {
@@ -127,7 +128,7 @@ namespace Gameplay.Spawning
                                 possibleEnemies.Add(allEnemies[0]);
                                 break;
                             case 1:
-                                possibleEnemies.Add(allEnemies[1]);
+                                possibleEnemies.Add(allEnemies[6]);
                                 break;
                             case 2:
                                 possibleEnemies.Add(allEnemies[3]);
@@ -155,7 +156,7 @@ namespace Gameplay.Spawning
                                 possibleEnemies.Add(allEnemies[0]);
                                 break;
                             case 1:
-                                possibleEnemies.Add(allEnemies[1]);
+                                possibleEnemies.Add(allEnemies[6]);
                                 break;
                             case 2:
                                 possibleEnemies.Add(allEnemies[4]);

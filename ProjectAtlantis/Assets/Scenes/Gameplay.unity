@@ -16553,8 +16553,9 @@ MonoBehaviour:
   - {fileID: 2672865092570195401, guid: 027978a282416c84dbdfa54379a758c1, type: 3}
   - {fileID: 7817460257212713285, guid: 49b30a3466cb1f646889fd2dca40d2e8, type: 3}
   - {fileID: 3218187807698273160, guid: 26ff459c6c6e0c54dbec56c5c9d349d7, type: 3}
+  - {fileID: 3218187807698273160, guid: a9223b37f8d714540a857e5bdcbd9713, type: 3}
   - {fileID: 7817460257212713285, guid: 49b30a3466cb1f646889fd2dca40d2e8, type: 3}
-  - {fileID: 3218187807698273160, guid: 26ff459c6c6e0c54dbec56c5c9d349d7, type: 3}
+  - {fileID: 2672865092570195401, guid: e7cd812c5d1aac84f8ff79df11247313, type: 3}
   arenaEnemies: []
   spawnRates: 5a0000000f000000f1fffffff6ffffff
   spawnChangeIndicator: 2
@@ -31415,9 +31416,10 @@ MonoBehaviour:
     maxHealth: 100
     health: 100
     healthRegen: 0.5
-    strength: 0
-    defense: 0
+    strength: 10
+    defense: 10
     speed: 7
+    coolDownReduction: 0
   loopingAudioSource: {fileID: 344868122}
   oneTimeAudioSource: {fileID: 1590146658}
   audioClips:

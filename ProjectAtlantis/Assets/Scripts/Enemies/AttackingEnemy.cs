@@ -11,9 +11,10 @@ namespace Enemies
         [SerializeField] protected GameObject attack;
         [SerializeField] private Transform projectileSpawnPosition;
         [SerializeField] protected AudioSource source;
+        
         protected bool mayAttack;
         
-        
+        public bool IsInAnimation { get; internal set; }
         public AttackerFsm FiniteAttackerStateMachine { get; private set; }
         public Transform ProjectileSpawnPosition => projectileSpawnPosition;
 
@@ -81,13 +82,20 @@ namespace Enemies
         
         public virtual void StartAttack()
         {
+            IsInAnimation = true;
             var position = projectileSpawnPosition.position;
             var projectile =
                 Instantiate(attack, position, quaternion.identity,
                     GameManager.Instance.transform).GetComponent<EnemyProjectile>();
-            projectile.Initialize(GameManager.Instance.Player.PlayerController.transform.position - position);
+            
+            projectile.Initialize(transform.forward);
             
             source.Play();
+        }
+
+        public virtual void EndAttack()
+        {
+            IsInAnimation = false;
         }
 
         protected override void Stun(float duration)

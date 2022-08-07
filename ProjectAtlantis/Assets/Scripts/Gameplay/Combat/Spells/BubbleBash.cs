@@ -29,7 +29,7 @@ namespace Gameplay.Combat.Spells
                 proj.Initialize(owningPlayer.BubblePositions[i].position - owningPlayer.PlayerController.transform.position, GameManager.Instance.RhythmManager.CheckTiming());
             }
             
-            currentCoolDown = maxCoolDown;
+            currentCoolDown = currentMaxCoolDown;
 
             return true;
         }
