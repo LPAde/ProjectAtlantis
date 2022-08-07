@@ -61,6 +61,9 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
         {
             foreach (var enemy in enemiesInCollider)
             {
+                if(enemy == null)
+                    continue;
+                
                 enemy.TakeDamage(damage * 2);
             }
             

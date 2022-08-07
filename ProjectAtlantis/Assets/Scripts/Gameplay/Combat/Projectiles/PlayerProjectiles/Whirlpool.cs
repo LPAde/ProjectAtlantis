@@ -42,7 +42,10 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
             foreach (var enemy in enemies)
             {
                 if (enemy == null)
+                {
                     enemies.Remove(enemy);
+                    continue;
+                }
                 
                 enemy.TakeDamage(damage, (transform.position - enemy.transform.position) * 50, maxIntervalTime);
                 

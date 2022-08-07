@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
     [Header("Gameplay Related Stuff")]
     [SerializeField] private Player player;
     [SerializeField] private Camera mainCam;
-    [SerializeField] private DialogBox dialogBox;
     [SerializeField] private AudioSource ambienceSound;
     
     [Header("Base Managers")]
@@ -43,7 +42,6 @@ public class GameManager : MonoBehaviour
 
      public Player Player => player;
      public Camera MainCam => mainCam;
-     public DialogBox DialogBox => dialogBox;
      public RhythmManager RhythmManager => rhythmManager;
      public EnemyManager EnemyManager => enemyManager;
      public HudManager HudManager => hudManager;
