@@ -53,7 +53,7 @@ namespace Enemies
             FiniteStateMachine.Initialize(FiniteStateMachine.IdleState);
         }
 
-        protected virtual void Update()
+        public virtual void EnemyUpdate()
         {
             FiniteStateMachine.Update();
         }

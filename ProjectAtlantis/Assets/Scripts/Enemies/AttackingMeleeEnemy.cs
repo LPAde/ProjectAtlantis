@@ -18,13 +18,9 @@ namespace Enemies
                 stats.AttackCooldown -= Time.deltaTime;
                 return;
             }
-            
-            if (!mayAttack)
-                return;
 
             anim.SetTrigger(Attack1);
             
-            mayAttack = false;
             stats.AttackCooldown = stats.AttackMaxCooldown;
         }
 

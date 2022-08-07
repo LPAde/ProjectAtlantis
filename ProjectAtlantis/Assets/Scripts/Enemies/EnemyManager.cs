@@ -11,13 +11,9 @@ namespace Enemies
 
         private void Update()
         {
-            // Testing
-            if (Input.GetKeyDown(KeyCode.I))
+            foreach (var enemy in enemies)
             {
-                while (enemies.Count > 0)
-                {
-                    enemies[0].TakeDamage(9999999);
-                }
+                 enemy.EnemyUpdate();
             }
         }
 

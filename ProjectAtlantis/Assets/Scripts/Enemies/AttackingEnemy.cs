@@ -12,23 +12,9 @@ namespace Enemies
         [SerializeField] private Transform projectileSpawnPosition;
         [SerializeField] protected AudioSource source;
         
-        protected bool mayAttack;
-        
         public bool IsInAnimation { get; internal set; }
         public AttackerFsm FiniteAttackerStateMachine { get; private set; }
         public Transform ProjectileSpawnPosition => projectileSpawnPosition;
-
-        protected override void OnEnable()
-        {
-            GameManager.Instance.RhythmManager.HitPerfect += MayAttack;
-            base.OnEnable();
-        }
-
-        protected override void OnDisable()
-        {
-            GameManager.Instance.RhythmManager.HitPerfect -= MayAttack;
-            base.OnDisable();
-        }
 
         protected override void Start()
         {
@@ -37,7 +23,7 @@ namespace Enemies
             FiniteAttackerStateMachine.Initialize(FiniteAttackerStateMachine.IdleState);
         }
 
-        protected override void Update()
+        public override void EnemyUpdate()
         {
             FiniteAttackerStateMachine.Update();
         }
@@ -70,13 +56,8 @@ namespace Enemies
             }
             else
             {
-                if(!mayAttack)
-                    return;
-
                 stats.AttackCooldown = stats.AttackMaxCooldown;
                 anim.SetTrigger("Attack");
-
-                mayAttack = false;
             }
         }
         
@@ -102,17 +83,6 @@ namespace Enemies
         {
             stunTime = duration;
             FiniteAttackerStateMachine.Transition(FiniteAttackerStateMachine.StunState);
-        }
-
-        /// <summary>
-        /// Allows the attack when the timing was perfect.
-        /// </summary>
-        private void MayAttack()
-        {
-            if(stats.AttackCooldown > 0)
-                return;
-            
-            mayAttack = true;
         }
     }
 }

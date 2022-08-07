@@ -17,7 +17,14 @@ namespace UI
 
         private void Update()
         {
-            transform.localPosition = owner.transform.position + offset;
+            if (owner == null)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                transform.localPosition = owner.transform.position + offset;
+            }
         }
     }
 }

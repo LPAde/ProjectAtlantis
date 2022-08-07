@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Enemies;
 using UnityEngine;
 
@@ -39,18 +40,9 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
             if(intervalTime > 0)
                 return;
             
-            foreach (var enemy in enemies)
+            foreach (var enemy in enemies.Where(enemy => enemy != null))
             {
-                if (enemy == null)
-                {
-                    enemies.Remove(enemy);
-                    continue;
-                }
-                
                 enemy.TakeDamage(damage, (transform.position - enemy.transform.position) * 50, maxIntervalTime);
-                
-                if (enemy == null)
-                    enemies.Remove(enemy);
             }
 
             intervalTime = maxIntervalTime;
