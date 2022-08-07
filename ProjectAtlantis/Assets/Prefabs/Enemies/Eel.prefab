@@ -3875,8 +3875,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
@@ -3904,8 +3904,8 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 6b8579c97007d83459520147464a62bf, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
+  m_CullingMode: 2
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -3942,6 +3942,8 @@ MonoBehaviour:
   rb: {fileID: 7817460257212713286}
   anim: {fileID: 7817460257212713284}
   damageText: {fileID: 2650182319893656862, guid: 2373df2e840c4da4cab84c3660787942, type: 3}
+  deathParticle: {fileID: 0}
+  deathParticleUpTime: 0
   droppableItems:
   - {fileID: 6903789023718622927, guid: 21cc14fcb29431d4ea6760e80421f689, type: 3}
   - {fileID: 6903789023718622927, guid: c80f3da98ca3c084e8c1c22437d6d239, type: 3}

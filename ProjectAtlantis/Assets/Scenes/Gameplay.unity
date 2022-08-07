@@ -593,6 +593,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seamoss_04 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
 --- !u!4 &32420196 stripped
@@ -667,6 +671,10 @@ PrefabInstance:
     - target: {fileID: 5376841479789578478, guid: 19c7fa349a968a241812866df35cd6b7, type: 3}
       propertyPath: m_Name
       value: SM_Seaweed_01_04 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376841479789578478, guid: 19c7fa349a968a241812866df35cd6b7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19c7fa349a968a241812866df35cd6b7, type: 3}
@@ -849,6 +857,10 @@ PrefabInstance:
     - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
       propertyPath: m_Name
       value: VFX Bubbles (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
@@ -1238,7 +1250,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &66466269
 Transform:
@@ -1841,6 +1853,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seamoss_04 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
 --- !u!4 &91524754 stripped
@@ -1911,6 +1927,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seaweed_01_01 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6879817231658662740, guid: 06a203c69b72b5e409b9ed557807abb9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06a203c69b72b5e409b9ed557807abb9, type: 3}
 --- !u!4 &92405240 stripped
@@ -1933,7 +1953,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &92701158
 Transform:
@@ -2023,6 +2043,10 @@ PrefabInstance:
     - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
       propertyPath: m_Name
       value: VFX Bubbles (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
@@ -2231,6 +2255,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seamoss_04 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
 --- !u!4 &126354829 stripped
@@ -2435,6 +2463,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seaweed_01_05 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4490198430087755944, guid: 6623e6ba77395f84396d34d5cba51947, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5798523732993270991, guid: 6623e6ba77395f84396d34d5cba51947, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -2509,7 +2541,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &146820973
 Transform:
@@ -2651,7 +2683,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &154171752
 Transform:
@@ -3388,6 +3420,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX Bubbles (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
 --- !u!1 &209144693
@@ -3523,6 +3559,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7136428373430365112, guid: 1a345048653b57f43b21a897f12567fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7173925886276298800, guid: 1a345048653b57f43b21a897f12567fa, type: 3}
       propertyPath: spell
       value: 
@@ -3553,7 +3593,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &220898227
 Transform:
@@ -3697,6 +3737,10 @@ PrefabInstance:
     - target: {fileID: 882908357302775345, guid: f8006480dc6ba41499c39598cc5c7cc0, type: 3}
       propertyPath: m_Name
       value: SM_Seaweed_01_10 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 882908357302775345, guid: f8006480dc6ba41499c39598cc5c7cc0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6445000853934610224, guid: f8006480dc6ba41499c39598cc5c7cc0, type: 3}
       propertyPath: m_RootOrder
@@ -4079,6 +4123,10 @@ PrefabInstance:
     - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
       propertyPath: m_Name
       value: SM_Seamoss_04 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
@@ -4640,6 +4688,10 @@ PrefabInstance:
     - target: {fileID: 8532874178960190956, guid: 942278639ace6c948806909dd1b60005, type: 3}
       propertyPath: m_Name
       value: SM_Seamoss_03 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8532874178960190956, guid: 942278639ace6c948806909dd1b60005, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 942278639ace6c948806909dd1b60005, type: 3}
@@ -5243,7 +5295,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &332699463
 Transform:
@@ -5781,6 +5833,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7136428373430365112, guid: 1a345048653b57f43b21a897f12567fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7173925886276298800, guid: 1a345048653b57f43b21a897f12567fa, type: 3}
       propertyPath: spell
       value: 
@@ -5874,6 +5930,10 @@ PrefabInstance:
       value: Big_Bridge(Lv3-HUB)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 96db8ad86d8ad9943b3f997631e2c6a4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 96db8ad86d8ad9943b3f997631e2c6a4, type: 3}
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
@@ -5939,6 +5999,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX Bubbles (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
 --- !u!4 &373973002 stripped
@@ -5999,7 +6063,7 @@ GameObject:
   m_TagString: Area Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &379240647
 MonoBehaviour:
@@ -6455,6 +6519,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX Bubbles (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
 --- !u!1 &402290144
@@ -6597,6 +6665,10 @@ PrefabInstance:
     - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
       propertyPath: m_Name
       value: SM_Seamoss_04 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
@@ -6793,7 +6865,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &424496124
 Transform:
@@ -7181,7 +7253,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &443946223
 Transform:
@@ -7438,6 +7510,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX Bubbles (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
 --- !u!1001 &453637217
@@ -7450,6 +7526,10 @@ PrefabInstance:
     - target: {fileID: 882908357302775345, guid: f8006480dc6ba41499c39598cc5c7cc0, type: 3}
       propertyPath: m_Name
       value: SM_Seaweed_01_10 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 882908357302775345, guid: f8006480dc6ba41499c39598cc5c7cc0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6445000853934610224, guid: f8006480dc6ba41499c39598cc5c7cc0, type: 3}
       propertyPath: m_RootOrder
@@ -7622,7 +7702,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &459466774
 Transform:
@@ -8164,6 +8244,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seaweed_01_08 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6377010940248275356, guid: eb46001b1f3f8d049bd2fed8b9fbff08, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb46001b1f3f8d049bd2fed8b9fbff08, type: 3}
 --- !u!4 &493322846 stripped
@@ -8196,7 +8280,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &508243536
 Transform:
@@ -8393,7 +8477,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &520928872
 Transform:
@@ -8587,6 +8671,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seamoss_03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8532874178960190956, guid: 942278639ace6c948806909dd1b60005, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 942278639ace6c948806909dd1b60005, type: 3}
 --- !u!4 &527326218 stripped
@@ -8609,7 +8697,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &532318154
 Transform:
@@ -8649,6 +8737,10 @@ PrefabInstance:
     - target: {fileID: 882908357302775345, guid: f8006480dc6ba41499c39598cc5c7cc0, type: 3}
       propertyPath: m_Name
       value: SM_Seaweed_01_10 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 882908357302775345, guid: f8006480dc6ba41499c39598cc5c7cc0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6445000853934610224, guid: f8006480dc6ba41499c39598cc5c7cc0, type: 3}
       propertyPath: m_RootOrder
@@ -8901,7 +8993,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &546575428
 Transform:
@@ -9318,7 +9410,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &567016024
 Transform:
@@ -9712,7 +9804,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &619290814
 Transform:
@@ -9809,6 +9901,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seamoss_04 (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
 --- !u!4 &620714122 stripped
@@ -9830,7 +9926,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &634023760
 Transform:
@@ -10295,6 +10391,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seaweed_01_06 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3251474379881065365, guid: 9bd90fc39e7d02543a559ffec7a2a2c8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5392775368572614170, guid: 9bd90fc39e7d02543a559ffec7a2a2c8, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -10420,6 +10520,10 @@ PrefabInstance:
     - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
       propertyPath: m_Name
       value: SM_Seamoss_04 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
@@ -10654,6 +10758,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seaweed_01_05 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4490198430087755944, guid: 6623e6ba77395f84396d34d5cba51947, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5798523732993270991, guid: 6623e6ba77395f84396d34d5cba51947, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -10776,6 +10884,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seaweed_01_04 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5376841479789578478, guid: 19c7fa349a968a241812866df35cd6b7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19c7fa349a968a241812866df35cd6b7, type: 3}
 --- !u!4 &694133993 stripped
@@ -10850,6 +10962,10 @@ PrefabInstance:
     - target: {fileID: 8458576471863745049, guid: 40a8492c1e74f39459c0f145291bb530, type: 3}
       propertyPath: m_Name
       value: SM_Seaweed_01_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458576471863745049, guid: 40a8492c1e74f39459c0f145291bb530, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40a8492c1e74f39459c0f145291bb530, type: 3}
@@ -11082,7 +11198,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &718981942
 Transform:
@@ -11464,7 +11580,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &743110848
 Transform:
@@ -11598,6 +11714,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX Bubbles (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
 --- !u!1 &758213584
@@ -11705,6 +11825,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX Bubbles (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
 --- !u!4 &765236735 stripped
@@ -11731,7 +11855,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &768522007
 Transform:
@@ -11809,6 +11933,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX Bubbles (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
 --- !u!1001 &777149746
@@ -11821,6 +11949,10 @@ PrefabInstance:
     - target: {fileID: 3438308174704195384, guid: 02142e541f6830349b786678fb86c819, type: 3}
       propertyPath: m_Name
       value: SM_Seaweed_01_03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3438308174704195384, guid: 02142e541f6830349b786678fb86c819, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6996283442366279976, guid: 02142e541f6830349b786678fb86c819, type: 3}
       propertyPath: m_RootOrder
@@ -11935,6 +12067,10 @@ PrefabInstance:
     - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
       propertyPath: m_Name
       value: VFX Bubbles (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
@@ -12118,6 +12254,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX Bubbles (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
 --- !u!1001 &805840808
@@ -12174,6 +12314,10 @@ PrefabInstance:
     - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
       propertyPath: m_Name
       value: VFX Bubbles (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
@@ -12471,7 +12615,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &833078226
 Transform:
@@ -13747,6 +13891,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seamoss_03 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8532874178960190956, guid: 942278639ace6c948806909dd1b60005, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 942278639ace6c948806909dd1b60005, type: 3}
 --- !u!4 &919041282 stripped
@@ -13917,6 +14065,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seamoss_02 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8398885486011289223, guid: f1102ca2bc8910c418a96e905ed76807, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1102ca2bc8910c418a96e905ed76807, type: 3}
 --- !u!4 &938797418 stripped
@@ -13982,6 +14134,10 @@ PrefabInstance:
     - target: {fileID: 7136428373430365112, guid: 1a345048653b57f43b21a897f12567fa, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7136428373430365112, guid: 1a345048653b57f43b21a897f12567fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7173925886276298800, guid: 1a345048653b57f43b21a897f12567fa, type: 3}
       propertyPath: spell
@@ -14066,6 +14222,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seamoss_04 (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
 --- !u!4 &951528578 stripped
@@ -14127,6 +14287,10 @@ PrefabInstance:
     - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
       propertyPath: m_Name
       value: VFX Bubbles (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
@@ -14343,6 +14507,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6290984639534805951, guid: b78bdb07a0584764b9188d91b616e6fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b78bdb07a0584764b9188d91b616e6fa, type: 3}
 --- !u!4 &972605727 stripped
@@ -14370,6 +14538,10 @@ PrefabInstance:
     - target: {fileID: 882908357302775345, guid: f8006480dc6ba41499c39598cc5c7cc0, type: 3}
       propertyPath: m_Name
       value: SM_Seaweed_01_10 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 882908357302775345, guid: f8006480dc6ba41499c39598cc5c7cc0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6445000853934610224, guid: f8006480dc6ba41499c39598cc5c7cc0, type: 3}
       propertyPath: m_RootOrder
@@ -14480,7 +14652,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &986151049
 Transform:
@@ -14941,6 +15113,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seaweed_01_06 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3251474379881065365, guid: 9bd90fc39e7d02543a559ffec7a2a2c8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5392775368572614170, guid: 9bd90fc39e7d02543a559ffec7a2a2c8, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -15150,7 +15326,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1013139307
 Transform:
@@ -15307,7 +15483,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1021633592
 Transform:
@@ -15484,7 +15660,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1056381601
 Transform:
@@ -15707,6 +15883,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX Bubbles (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
 --- !u!1 &1071889518
@@ -15864,7 +16044,7 @@ GameObject:
   m_TagString: Area Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1076553800
 MonoBehaviour:
@@ -16049,7 +16229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!154 &1078136292
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -16322,7 +16502,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1083903091
 Transform:
@@ -18868,6 +19048,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX Bubbles (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
 --- !u!1 &1143776137
@@ -18885,7 +19069,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1143776138
 Transform:
@@ -19056,6 +19240,10 @@ PrefabInstance:
     - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
       propertyPath: m_Name
       value: VFX Bubbles (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
@@ -19398,6 +19586,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seamoss_02 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8398885486011289223, guid: f1102ca2bc8910c418a96e905ed76807, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1102ca2bc8910c418a96e905ed76807, type: 3}
 --- !u!4 &1206480973 stripped
@@ -19596,6 +19788,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seaweed_01_08 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6377010940248275356, guid: eb46001b1f3f8d049bd2fed8b9fbff08, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb46001b1f3f8d049bd2fed8b9fbff08, type: 3}
 --- !u!4 &1240639032 stripped
@@ -19658,6 +19854,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX Bubbles (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
 --- !u!1 &1250533919
@@ -19676,7 +19876,7 @@ GameObject:
   m_TagString: Area Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1250533920
 Transform:
@@ -19734,7 +19934,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1254727721
 Transform:
@@ -20188,7 +20388,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1286956978
 Transform:
@@ -20274,6 +20474,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX Bubbles (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
 --- !u!4 &1301518793 stripped
@@ -20333,7 +20537,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1313776864
 Transform:
@@ -20503,6 +20707,10 @@ PrefabInstance:
     - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
       propertyPath: m_Name
       value: VFX Bubbles (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
@@ -21113,6 +21321,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7136428373430365112, guid: 1a345048653b57f43b21a897f12567fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7173925886276298800, guid: 1a345048653b57f43b21a897f12567fa, type: 3}
       propertyPath: spell
       value: 
@@ -21188,7 +21400,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1355004803
 Transform:
@@ -21233,7 +21445,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1355522078
 Transform:
@@ -21792,6 +22004,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seamoss_03 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8532874178960190956, guid: 942278639ace6c948806909dd1b60005, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 942278639ace6c948806909dd1b60005, type: 3}
 --- !u!4 &1413256842 stripped
@@ -21814,7 +22030,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1415176676
 Transform:
@@ -21899,6 +22115,10 @@ PrefabInstance:
     - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
       propertyPath: m_Name
       value: VFX Bubbles (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
@@ -22251,6 +22471,10 @@ PrefabInstance:
     - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
       propertyPath: m_Name
       value: SM_Seamoss_04 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
@@ -22624,6 +22848,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seamoss_04 (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
 --- !u!4 &1508713769 stripped
@@ -22789,6 +23017,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seamoss_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8398885486011289223, guid: f1102ca2bc8910c418a96e905ed76807, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1102ca2bc8910c418a96e905ed76807, type: 3}
 --- !u!4 &1511482763 stripped
@@ -22806,6 +23038,10 @@ PrefabInstance:
     - target: {fileID: 3251474379881065365, guid: 9bd90fc39e7d02543a559ffec7a2a2c8, type: 3}
       propertyPath: m_Name
       value: SM_Seaweed_01_06 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251474379881065365, guid: 9bd90fc39e7d02543a559ffec7a2a2c8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5392775368572614170, guid: 9bd90fc39e7d02543a559ffec7a2a2c8, type: 3}
       propertyPath: m_RootOrder
@@ -23223,7 +23459,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1545651117
 Transform:
@@ -23368,6 +23604,10 @@ PrefabInstance:
     - target: {fileID: 6377010940248275356, guid: eb46001b1f3f8d049bd2fed8b9fbff08, type: 3}
       propertyPath: m_Name
       value: SM_Seaweed_01_08 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377010940248275356, guid: eb46001b1f3f8d049bd2fed8b9fbff08, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb46001b1f3f8d049bd2fed8b9fbff08, type: 3}
@@ -23573,6 +23813,10 @@ PrefabInstance:
     - target: {fileID: 5376841479789578478, guid: 19c7fa349a968a241812866df35cd6b7, type: 3}
       propertyPath: m_Name
       value: SM_Seaweed_01_04 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376841479789578478, guid: 19c7fa349a968a241812866df35cd6b7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19c7fa349a968a241812866df35cd6b7, type: 3}
@@ -23905,6 +24149,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seaweed_01_01 1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6879817231658662740, guid: 06a203c69b72b5e409b9ed557807abb9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06a203c69b72b5e409b9ed557807abb9, type: 3}
 --- !u!4 &1599105196 stripped
@@ -23979,6 +24227,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seamoss_04 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
 --- !u!4 &1600489107 stripped
@@ -23996,6 +24248,10 @@ PrefabInstance:
     - target: {fileID: 3438308174704195384, guid: 02142e541f6830349b786678fb86c819, type: 3}
       propertyPath: m_Name
       value: SM_Seaweed_01_03 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3438308174704195384, guid: 02142e541f6830349b786678fb86c819, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6996283442366279976, guid: 02142e541f6830349b786678fb86c819, type: 3}
       propertyPath: m_RootOrder
@@ -24229,6 +24485,10 @@ PrefabInstance:
     - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
       propertyPath: m_Name
       value: SM_Seamoss_04 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
@@ -24499,7 +24759,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1642854736
 Transform:
@@ -24668,6 +24928,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seaweed_01_01 1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6879817231658662740, guid: 06a203c69b72b5e409b9ed557807abb9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06a203c69b72b5e409b9ed557807abb9, type: 3}
 --- !u!4 &1666647487 stripped
@@ -24835,7 +25099,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1669346419
 Transform:
@@ -25295,7 +25559,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1693181694
 Transform:
@@ -25622,7 +25886,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1703987949
 Transform:
@@ -25997,7 +26261,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1711124894
 Transform:
@@ -26083,6 +26347,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX Bubbles (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
 --- !u!4 &1730524297 stripped
@@ -26105,7 +26373,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1732713180
 Transform:
@@ -26290,6 +26558,10 @@ PrefabInstance:
     - target: {fileID: 7136428373430365112, guid: 1a345048653b57f43b21a897f12567fa, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7136428373430365112, guid: 1a345048653b57f43b21a897f12567fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7173925886276298800, guid: 1a345048653b57f43b21a897f12567fa, type: 3}
       propertyPath: spell
@@ -26523,7 +26795,7 @@ GameObject:
   m_TagString: Area Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1746630399
 MonoBehaviour:
@@ -26611,6 +26883,10 @@ PrefabInstance:
     - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
       propertyPath: m_Name
       value: VFX Bubbles (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
@@ -26709,6 +26985,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX Bubbles (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
 --- !u!4 &1754208758 stripped
@@ -26782,6 +27062,10 @@ PrefabInstance:
     - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
       propertyPath: m_Name
       value: SM_Seamoss_04 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
@@ -27067,7 +27351,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1773921860
 Transform:
@@ -27178,6 +27462,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 96db8ad86d8ad9943b3f997631e2c6a4, type: 3}
       propertyPath: m_Name
       value: Big_Bridge(HUB-Endless)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 96db8ad86d8ad9943b3f997631e2c6a4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 96db8ad86d8ad9943b3f997631e2c6a4, type: 3}
       propertyPath: m_TagString
@@ -27669,6 +27957,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seaweed_01_06 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3251474379881065365, guid: 9bd90fc39e7d02543a559ffec7a2a2c8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5392775368572614170, guid: 9bd90fc39e7d02543a559ffec7a2a2c8, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -27995,7 +28287,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1831117176
 Transform:
@@ -28078,7 +28370,7 @@ GameObject:
   m_TagString: Area Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1844942145
 Transform:
@@ -28189,6 +28481,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seamoss_04 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
 --- !u!4 &1858322513 stripped
@@ -28262,6 +28558,10 @@ PrefabInstance:
     - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
       propertyPath: m_Name
       value: SM_Seamoss_04 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
@@ -28383,6 +28683,10 @@ PrefabInstance:
     - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
       propertyPath: m_Name
       value: SM_Seamoss_04 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
@@ -28619,7 +28923,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1907483856
 Transform:
@@ -28896,7 +29200,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1918987577
 Transform:
@@ -29111,6 +29415,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seamoss_02 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8398885486011289223, guid: f1102ca2bc8910c418a96e905ed76807, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1102ca2bc8910c418a96e905ed76807, type: 3}
 --- !u!4 &1950766605 stripped
@@ -29176,6 +29484,10 @@ PrefabInstance:
     - target: {fileID: 7136428373430365112, guid: 1a345048653b57f43b21a897f12567fa, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7136428373430365112, guid: 1a345048653b57f43b21a897f12567fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7173925886276298800, guid: 1a345048653b57f43b21a897f12567fa, type: 3}
       propertyPath: spell
@@ -29676,6 +29988,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX Bubbles (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
 --- !u!1 &1994835068
@@ -29694,7 +30010,7 @@ GameObject:
   m_TagString: Area Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1994835069
 Transform:
@@ -29938,6 +30254,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seamoss_02 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8398885486011289223, guid: f1102ca2bc8910c418a96e905ed76807, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1102ca2bc8910c418a96e905ed76807, type: 3}
 --- !u!4 &2001811698 stripped
@@ -30096,7 +30416,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2033358050
 Transform:
@@ -30679,6 +30999,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX Bubbles (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
 --- !u!1001 &2078208723
@@ -30873,6 +31197,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seamoss_03 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8532874178960190956, guid: 942278639ace6c948806909dd1b60005, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 942278639ace6c948806909dd1b60005, type: 3}
 --- !u!4 &2081593510 stripped
@@ -30967,6 +31295,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seaweed_01_10
       objectReference: {fileID: 0}
+    - target: {fileID: 882908357302775345, guid: f8006480dc6ba41499c39598cc5c7cc0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6445000853934610224, guid: f8006480dc6ba41499c39598cc5c7cc0, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -31036,7 +31368,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2097593610
 Transform:
@@ -31130,6 +31462,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Seaweed_01_02 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8458576471863745049, guid: 40a8492c1e74f39459c0f145291bb530, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40a8492c1e74f39459c0f145291bb530, type: 3}
 --- !u!4 &2102623336 stripped
@@ -31213,6 +31549,10 @@ PrefabInstance:
     - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
       propertyPath: m_Name
       value: SM_Seamoss_04 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487286191058317906, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f854d557eaa7ac4b9fc9ec7dab09d44, type: 3}
@@ -31336,7 +31676,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2112257838
 Transform:
@@ -31495,6 +31835,10 @@ PrefabInstance:
     - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
       propertyPath: m_Name
       value: VFX Bubbles (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
@@ -32576,6 +32920,10 @@ PrefabInstance:
     - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
       propertyPath: m_Name
       value: VFX Bubbles
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288194756459605147, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98bb3e1a4b2128c46b65b9d3d54470b6, type: 3}
