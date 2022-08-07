@@ -17,6 +17,10 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
             base.Update();
         }
 
+        protected override void FixedUpdate()
+        {
+        }
+
         protected override void OnTriggerEnter(Collider other)
         {
             if(!other.CompareTag("Enemy"))

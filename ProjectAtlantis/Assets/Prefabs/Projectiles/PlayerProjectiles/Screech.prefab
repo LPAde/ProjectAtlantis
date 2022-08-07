@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 50
-  projectileSpeed: 0
-  lifeTime: 1
+  projectileSpeed: 0.01
+  lifeTime: 8
   movementVector: {x: 0, y: 0, z: 0}
   maxDistanceToGround: 1.5
   deathParticleObject: {fileID: 0}

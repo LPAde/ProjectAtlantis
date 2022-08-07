@@ -20,6 +20,10 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
             transform1.position = position;
         }
 
+        protected override void FixedUpdate()
+        {
+        }
+
         protected override void OnTriggerEnter(Collider other)
         {
             // Checks if the object is an enemy and if it was hit already.

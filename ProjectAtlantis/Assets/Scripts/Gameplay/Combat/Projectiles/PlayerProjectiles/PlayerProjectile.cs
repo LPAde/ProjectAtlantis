@@ -14,7 +14,8 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
 
             // Rotate in the correct direction.
             transform.LookAt(transform.position + movementVector);
-
+            print(transform.position);
+print(transform.position + movementVector);
             // For testing.
             switch (timing)
             {
