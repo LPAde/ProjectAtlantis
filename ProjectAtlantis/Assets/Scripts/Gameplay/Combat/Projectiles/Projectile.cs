@@ -48,6 +48,9 @@ namespace Gameplay.Combat.Projectiles
 
         private void OnDestroy()
         {
+            if(lifeTime <= 0)
+                return;
+            
             if (deathParticleObject != null)
             {
                 var particle = Instantiate(deathParticleObject, transform.position, Quaternion.identity, GameManager.Instance.transform);
