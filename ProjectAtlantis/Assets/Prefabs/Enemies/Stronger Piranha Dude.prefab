@@ -3921,6 +3921,8 @@ MonoBehaviour:
   rb: {fileID: 912329425325376488}
   anim: {fileID: 1616863657507273015}
   damageText: {fileID: 2650182319893656862, guid: 2373df2e840c4da4cab84c3660787942, type: 3}
+  deathParticle: {fileID: 0}
+  deathParticleUpTime: 0
   droppableItems:
   - {fileID: 6903789023718622927, guid: 57f0e3279b025434584823a90c2d6223, type: 3}
   - {fileID: 3660890396933874106, guid: 511aa890c4eab6847803a60f5b419ed6, type: 3}
@@ -3994,8 +3996,8 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 6181a813fe283c24e88242400915009e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
+  m_CullingMode: 2
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0

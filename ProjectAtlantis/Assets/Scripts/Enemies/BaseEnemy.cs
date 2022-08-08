@@ -20,6 +20,10 @@ namespace Enemies
         [SerializeField] protected Animator anim;
         [SerializeField] private GameObject damageText;
         
+        [Header("Particle related stuff")]
+        [SerializeField] private GameObject deathParticle;
+        [SerializeField] private float deathParticleUpTime;
+        
         [Header("Drop related values")] 
         [SerializeField] private List<GameObject> droppableItems;
         [SerializeField] private List<int> spawnChances;
@@ -247,7 +251,9 @@ namespace Enemies
                     break;
                 }
             }
-            
+
+            var particle = Instantiate(deathParticle,transform.position,Quaternion.identity,GameManager.Instance.transform);
+            Destroy(particle, deathParticleUpTime);
             Destroy(gameObject);
         }
 

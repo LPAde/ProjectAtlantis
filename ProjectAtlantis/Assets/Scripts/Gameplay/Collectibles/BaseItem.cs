@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using UnityEngine;
 
 namespace Gameplay.Collectibles
@@ -5,6 +6,10 @@ namespace Gameplay.Collectibles
     public abstract class BaseItem : MonoBehaviour
     {
         [SerializeField] private float upTime;
+
+        [Header("Particle Related Stuff")] 
+        [SerializeField] private GameObject ParticleObject;
+        [SerializeField] private float particleUpTime;
 
         protected virtual void Update()
         {
@@ -16,8 +21,13 @@ namespace Gameplay.Collectibles
 
         private void OnTriggerEnter(Collider other)
         {
-            if(other.CompareTag("Player"))
-                OnCollecting();
+            if (!other.CompareTag("Player")) 
+                return;
+            
+            var particle = Instantiate(ParticleObject, transform.position, Quaternion.identity, GameManager.Instance.transform);
+            Destroy(particle, particleUpTime);
+            
+            OnCollecting();
         }
 
         /// <summary>

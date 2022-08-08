@@ -6,7 +6,10 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
     public class PlayerProjectile : Projectile
     {
         [SerializeField] protected float[] scalings;
+        
+        [Header("Particle related stuff")]
         [SerializeField] private GameObject spawnParticle;
+        [SerializeField] private float spawnParticleUpTime;
         
         public override void Initialize(Vector3 newMovementVector, Timing timing)
         {
@@ -30,8 +33,9 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
                     {
                         var transform1 = transform;
                         var position = transform1.position;
-                       var aObj = Instantiate(spawnParticle, position, Quaternion.identity, transform1);
-                       aObj.transform.LookAt(position + newMovementVector); 
+                        var aObj = Instantiate(spawnParticle, position, Quaternion.identity, transform1);
+                        aObj.transform.LookAt(position + newMovementVector); 
+                        Destroy(aObj, spawnParticleUpTime);
                     }
                     
                     break;
@@ -44,6 +48,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
                         var position1 = transform1.position;
                         var pObj = Instantiate(spawnParticle, position1, Quaternion.identity, transform1);
                         pObj.transform.LookAt(position1 + newMovementVector);
+                        Destroy(pObj, spawnParticleUpTime);
                     }
                     break;
             }
