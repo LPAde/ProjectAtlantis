@@ -45,6 +45,15 @@ namespace UI
             
             // Setup.
             string spellString = SaveSystem.GetString("PlayerSpells");
+
+            // First time.
+            if (string.IsNullOrEmpty(spellString))
+            {
+                OnDeleteClick();
+                return;
+            }
+            
+            // Not first time.
             var idStrings = spellString.Split("*");
             
             List<CombatSpell> combatSpells = new List<CombatSpell>();
@@ -85,16 +94,21 @@ namespace UI
             SaveSystem.SetVector3("PlayerPosition", Vector3.zero);
             SaveSystem.SetInt("UsedKeys", 0);
             SaveSystem.SetInt("UnlockedSpells", 0);
-
+            spellManager.LockAllSpells();
+            
+            
+            
             for (int i = 0; i < combatSpellImages.Count; i++)
             {
                 combatSpellImages[i].sprite = startingSpells[i].SpellSprite;
                 SpellManager.UnlockSpell(startingSpells[i]);
             }
+            
 
             movementSpellImage.sprite = startingSpells[3].SpellSprite;
             SpellManager.UnlockSpell(startingSpells[3]);
             
+
             SaveSystem.SetString
             ("PlayerSpells", string.Concat(SpellManager.GetSpellID(startingSpells[0]), "*",
                 SpellManager.GetSpellID(startingSpells[1]), "*",SpellManager.GetSpellID(startingSpells[2])

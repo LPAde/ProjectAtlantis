@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Gameplay.Combat.Projectiles;
 using UnityEngine;
 
 namespace Gameplay.Combat.Spells
@@ -34,7 +35,7 @@ namespace Gameplay.Combat.Spells
         /// </summary>
         private void Load()
         {
-            string unlockedString = SaveSystem.GetString("UnlockedSpells");
+            string unlockedString = SaveSystem.GetString("UnlockedSpellsString");
             
             if(string.IsNullOrEmpty(unlockedString))
                 return;
@@ -67,11 +68,22 @@ namespace Gameplay.Combat.Spells
                 unlockedString += "-";
             }
             
-            SaveSystem.SetString("UnlockedSpells", unlockedString);
+            SaveSystem.SetString("UnlockedSpellsString", unlockedString);
         }
 
         #endregion
 
+        /// <summary>
+        /// Locks all non starting spells.
+        /// </summary>
+        public void LockAllSpells()
+        {
+            for (int i = 4; i < allUnlockedPlayerSpells.Count; i++)
+            {
+                allUnlockedPlayerSpells[i] = false;
+            }
+        }
+        
         /// <summary>
         /// Gives you an id by its spell.
         /// </summary>
