@@ -8737,12 +8737,12 @@ GameObject:
   m_Component:
   - component: {fileID: 532368614}
   - component: {fileID: 532368613}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Level_1_Border_Box_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &532368613
 BoxCollider:
@@ -10147,12 +10147,12 @@ GameObject:
   m_Component:
   - component: {fileID: 641791799}
   - component: {fileID: 641791798}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Level_1_Border_Box_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &641791798
 BoxCollider:
@@ -10658,6 +10658,7 @@ Transform:
   - {fileID: 1021633592}
   - {fileID: 1254727721}
   - {fileID: 220898227}
+  - {fileID: 816927355}
   m_Father: {fileID: 315689708}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12420,12 +12421,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 816927355}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Terrain_Borders_Group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &816927355
 Transform:
@@ -12434,7 +12435,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816927354}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 51.93915, y: 42.97157, z: 181.30621}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12450,8 +12451,8 @@ Transform:
   - {fileID: 1156799393}
   - {fileID: 1894223174}
   - {fileID: 1700241310}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 674557099}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &818152000
 GameObject:
@@ -12743,12 +12744,12 @@ GameObject:
   m_Component:
   - component: {fileID: 830769555}
   - component: {fileID: 830769554}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Level_1_Border_Box_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &830769554
 BoxCollider:
@@ -17222,12 +17223,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1103807281}
   - component: {fileID: 1103807280}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Level_1_Border_Box_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1103807280
 BoxCollider:
@@ -19332,12 +19333,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1156799393}
   - component: {fileID: 1156799392}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Level_1_Border_Box_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1156799392
 BoxCollider:
@@ -22214,12 +22215,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1408923252}
   - component: {fileID: 1408923251}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Level_1_Border_Box_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1408923251
 BoxCollider:
@@ -22805,12 +22806,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1469863654}
   - component: {fileID: 1469863653}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Level_1_Border_Box_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1469863653
 BoxCollider:
@@ -26239,12 +26240,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1700241310}
   - component: {fileID: 1700241309}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Level_1_Border_Box_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1700241309
 BoxCollider:
@@ -29286,12 +29287,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1894223174}
   - component: {fileID: 1894223173}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Level_1_Border_Box_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1894223173
 BoxCollider:
@@ -29962,12 +29963,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1956460428}
   - component: {fileID: 1956460427}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Level_1_Border_Box_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1956460427
 BoxCollider:
@@ -30047,12 +30048,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1960089222}
   - component: {fileID: 1960089221}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Level_1_Border_Box_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1960089221
 BoxCollider:
