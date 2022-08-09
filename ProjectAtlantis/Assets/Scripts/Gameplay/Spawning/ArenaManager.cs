@@ -205,9 +205,9 @@ namespace Gameplay.Spawning
                 if (spawnRates[i] > 0)
                     combinedPositiveSpawnRates += spawnRates[i];
             }
-
+            
             // Fixing wrong spawn-rates by adding or removing popcorn.
-            if (combinedPositiveSpawnRates < 100)
+            if (combinedPositiveSpawnRates != 100)
             {
                 spawnRates[0] += 100 - combinedPositiveSpawnRates;
             }

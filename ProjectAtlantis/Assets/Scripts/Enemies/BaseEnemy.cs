@@ -57,6 +57,15 @@ namespace Enemies
             FiniteStateMachine.Initialize(FiniteStateMachine.IdleState);
         }
 
+        private void OnCollisionStay(Collision other)
+        {
+            if(stunTime <= 0)
+                return;
+            
+            // Dirty fix to prevent player from shoving this.
+            rb.isKinematic = other.transform.CompareTag("Player");
+        }
+
         public virtual void EnemyUpdate()
         {
             FiniteStateMachine.Update();
@@ -161,6 +170,9 @@ namespace Enemies
         /// </summary>
         public void Stop()
         {
+            if(this == null)
+                return;
+            
             agent.isStopped = true;
         }
 
@@ -252,8 +264,12 @@ namespace Enemies
                 }
             }
 
-            var particle = Instantiate(deathParticle,transform.position,Quaternion.identity,GameManager.Instance.transform);
-            Destroy(particle, deathParticleUpTime);
+            if (deathParticle != null)
+            {
+                var particle = Instantiate(deathParticle,transform.position,Quaternion.identity,GameManager.Instance.transform);
+                Destroy(particle, deathParticleUpTime);
+            }
+            
             Destroy(gameObject);
         }
 
