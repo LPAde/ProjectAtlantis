@@ -29698,7 +29698,6 @@ MonoBehaviour:
   pauseSound: {fileID: 481102018}
   player: {fileID: 2120613332}
   mainCam: {fileID: 139947791}
-  dialogBox: {fileID: 406502287}
   ambienceSound: {fileID: 1544457029}
   rhythmManager: {fileID: 995343680}
   enemyManager: {fileID: 758213586}
@@ -31193,6 +31192,7 @@ MonoBehaviour:
     strength: 0
     defense: 0
     speed: 7
+    coolDownReduction: 0
   loopingAudioSource: {fileID: 344868122}
   oneTimeAudioSource: {fileID: 1590146658}
   audioClips:
