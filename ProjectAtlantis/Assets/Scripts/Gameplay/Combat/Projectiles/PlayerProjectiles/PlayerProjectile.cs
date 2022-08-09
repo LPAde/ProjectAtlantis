@@ -29,6 +29,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
                     break;
                 case Timing.Amazing:
                     damage *= scalings[2];
+                    
                     if (spawnParticle != null)
                     {
                         var transform1 = transform;
@@ -41,7 +42,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
                     break;
                 case Timing.Perfect:
                     damage *= scalings[3];
-
+                    
                     if (spawnParticle != null)
                     {
                         var transform1 = transform;

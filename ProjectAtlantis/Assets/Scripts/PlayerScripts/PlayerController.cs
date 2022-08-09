@@ -88,15 +88,14 @@ namespace PlayerScripts
 
                     movePos = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                     
-                    
                     Look(); 
                     player.Anim.SetBool(IsMoving, true);
-                    
-                    if(player.LoopingAudioSource.clip == swimSound)
-                        return;
-                    
-                    player.PlayLoopingSound(PlayerSounds.Swimming);
-                    player.PlayOneTimeSound(PlayerSounds.StartSwimming);
+
+                    if (player.LoopingAudioSource.clip != swimSound)
+                    {
+                        player.PlayLoopingSound(PlayerSounds.Swimming);
+                        player.PlayOneTimeSound(PlayerSounds.StartSwimming);
+                    }
                 }
             }
             

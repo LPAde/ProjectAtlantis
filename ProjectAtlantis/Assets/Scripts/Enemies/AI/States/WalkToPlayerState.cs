@@ -5,7 +5,7 @@ namespace Enemies.AI.States
 {
     public class WalkToPlayerState : State
     {
-        private const float MAXTargetTime = .5f;
+        private const float MAXTargetTime = .3f;
         private float _targetTime;
         
         public WalkToPlayerState(FiniteStateMachine newFSM) : base(newFSM)

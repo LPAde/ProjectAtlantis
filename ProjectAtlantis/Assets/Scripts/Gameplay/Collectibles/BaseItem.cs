@@ -1,4 +1,3 @@
-using System.Security.Cryptography;
 using UnityEngine;
 
 namespace Gameplay.Collectibles
@@ -8,7 +7,7 @@ namespace Gameplay.Collectibles
         [SerializeField] private float upTime;
 
         [Header("Particle Related Stuff")] 
-        [SerializeField] private GameObject ParticleObject;
+        [SerializeField] private GameObject particleObject;
         [SerializeField] private float particleUpTime;
 
         protected virtual void Update()
@@ -24,8 +23,12 @@ namespace Gameplay.Collectibles
             if (!other.CompareTag("Player")) 
                 return;
             
-            var particle = Instantiate(ParticleObject, transform.position, Quaternion.identity, GameManager.Instance.transform);
-            Destroy(particle, particleUpTime);
+            if(particleObject != null)
+            {
+                var particle = Instantiate(particleObject, transform.position, Quaternion.identity,
+                    GameManager.Instance.transform);
+                Destroy(particle, particleUpTime);
+            }
             
             OnCollecting();
         }
