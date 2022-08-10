@@ -226,6 +226,10 @@ namespace PlayerScripts
             
             if(spellIndex < 5) 
                 GameManager.Instance.HudManager.UseSkill(spellIndex);
+            else
+            {
+                LookAtMovement();
+            }
         }
 
         private void DoCorrectAttackAnimation()
