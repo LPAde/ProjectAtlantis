@@ -83,12 +83,14 @@ MonoBehaviour:
   movementVector: {x: 0, y: 0, z: 0}
   maxDistanceToGround: 1.5
   deathParticleObject: {fileID: 4929086472472058720}
+  deathParticleUpTime: 2
   scalings:
   - 0.3
   - 0.6
   - 1.5
   - 3
   spawnParticle: {fileID: 1526503774949299958, guid: 14d7f9430c568f542a8ca4cc6482a317, type: 3}
+  spawnParticleUpTime: 2
   isHopping: 0
 --- !u!1001 &8574981423875941719
 PrefabInstance:

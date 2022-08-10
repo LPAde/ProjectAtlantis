@@ -66,12 +66,14 @@ MonoBehaviour:
   movementVector: {x: 0, y: 0, z: 0}
   maxDistanceToGround: 1.5
   deathParticleObject: {fileID: 9150125954143917303, guid: 3d485533be68b4b4c89b4ed399e1746c, type: 3}
+  deathParticleUpTime: 2
   scalings:
   - 0.7
   - 1
   - 1.4
   - 2.2
   spawnParticle: {fileID: 1526503774949299958, guid: 14d7f9430c568f542a8ca4cc6482a317, type: 3}
+  spawnParticleUpTime: 2
 --- !u!54 &1420180077577763591
 Rigidbody:
   m_ObjectHideFlags: 0
