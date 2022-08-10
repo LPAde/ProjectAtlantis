@@ -52,12 +52,14 @@ MonoBehaviour:
   movementVector: {x: 0, y: 0, z: 0}
   maxDistanceToGround: 0.1
   deathParticleObject: {fileID: 0}
+  deathParticleUpTime: 0
   scalings:
   - 0.5
   - 1
   - 1.3
   - 2
   spawnParticle: {fileID: 1526503774949299958, guid: 14d7f9430c568f542a8ca4cc6482a317, type: 3}
+  spawnParticleUpTime: 0
   enemies: []
   enemiesInCollider: []
 --- !u!65 &6644561040778854349
@@ -71,8 +73,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 12.311034, y: 9.531006, z: 5.109559}
-  m_Center: {x: 5.97, y: 0, z: 0}
+  m_Size: {x: 9.16, y: 8.94, z: 4.47}
+  m_Center: {x: -3.02, y: 0, z: 0}
 --- !u!1001 &2267251804241668355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -90,27 +92,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2661237276265851674, guid: f90d3c4d50032c049980b2bc2e3d5faa, type: 3}
       propertyPath: m_LocalScale.x
-      value: 215.09035
+      value: 83.91105
       objectReference: {fileID: 0}
     - target: {fileID: 2661237276265851674, guid: f90d3c4d50032c049980b2bc2e3d5faa, type: 3}
       propertyPath: m_LocalScale.y
-      value: 163.20688
+      value: 63.67027
       objectReference: {fileID: 0}
     - target: {fileID: 2661237276265851674, guid: f90d3c4d50032c049980b2bc2e3d5faa, type: 3}
       propertyPath: m_LocalScale.z
-      value: 234.68501
+      value: 91.55532
       objectReference: {fileID: 0}
     - target: {fileID: 2661237276265851674, guid: f90d3c4d50032c049980b2bc2e3d5faa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.16
+      value: -2.81
       objectReference: {fileID: 0}
     - target: {fileID: 2661237276265851674, guid: f90d3c4d50032c049980b2bc2e3d5faa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.53
+      value: -1.72
       objectReference: {fileID: 0}
     - target: {fileID: 2661237276265851674, guid: f90d3c4d50032c049980b2bc2e3d5faa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2661237276265851674, guid: f90d3c4d50032c049980b2bc2e3d5faa, type: 3}
       propertyPath: m_LocalRotation.w

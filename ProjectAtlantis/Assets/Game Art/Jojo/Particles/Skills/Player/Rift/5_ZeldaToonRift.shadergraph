@@ -1695,7 +1695,7 @@
             },
             "m_InputSlot": {
                 "m_Node": {
-                    "m_Id": "dbcf5c9b208547bc9e1242cd35bc1f70"
+                    "m_Id": "b61c42324beb4963b32b849f1fda1f76"
                 },
                 "m_SlotId": 0
             }
@@ -2746,20 +2746,6 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "d837ccc6cc6c4e17b04a9a500b6dcdf1"
-                },
-                "m_SlotId": 0
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
-                    "m_Id": "dbcf5c9b208547bc9e1242cd35bc1f70"
-                },
-                "m_SlotId": 3
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "b61c42324beb4963b32b849f1fda1f76"
                 },
                 "m_SlotId": 0
             }
@@ -4518,7 +4504,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"84703242e9f7c5e45aa0924a04b73b36\",\"type\":3}}",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -9473,7 +9459,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"6428f4bb758264741a451451c65eb2f0\",\"type\":3}}",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -18502,7 +18488,7 @@
     "m_CastShadows": true,
     "m_ReceiveShadows": true,
     "m_CustomEditorGUI": "",
-    "m_SupportVFX": false
+    "m_SupportVFX": true
 }
 
 {
