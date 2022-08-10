@@ -206,6 +206,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2574014737595074619}
     m_Modifications:
+    - target: {fileID: 2273238722883781368, guid: df5818c51b2dc5247b01feba71122640, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7069292393447211391, guid: df5818c51b2dc5247b01feba71122640, type: 3}
       propertyPath: m_Name
       value: Stab
