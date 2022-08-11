@@ -6791,18 +6791,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allPlayerSpells:
+  - {fileID: 11400000, guid: be3d99900a91c2b4ab58a02ac6abe49b, type: 2}
   - {fileID: 11400000, guid: 0f2bbc46e8723744d8c76cbc99eb979c, type: 2}
-  - {fileID: 11400000, guid: 2d47c969fc9b56c429c125dae44880b9, type: 2}
-  - {fileID: 11400000, guid: f6142b4bbfbcab140b219f0cb388d3ba, type: 2}
   - {fileID: 11400000, guid: a92cefc61c38c8f409b42e3162117284, type: 2}
   - {fileID: 11400000, guid: a56309bd50c68e74cae10de9e7cf6947, type: 2}
-  - {fileID: 11400000, guid: b34b3317b6aaa5745afda0eb439e4a8c, type: 2}
-  - {fileID: 11400000, guid: ccb11b8581a6a73429e93282a31d6dd6, type: 2}
+  - {fileID: 11400000, guid: 76aa692e9e101b94490820c01da61c8c, type: 2}
   - {fileID: 11400000, guid: 6548cfc9ae65f174ba7340ba4d0520b3, type: 2}
-  - {fileID: 11400000, guid: be3d99900a91c2b4ab58a02ac6abe49b, type: 2}
+  - {fileID: 11400000, guid: f6142b4bbfbcab140b219f0cb388d3ba, type: 2}
+  - {fileID: 11400000, guid: ccb11b8581a6a73429e93282a31d6dd6, type: 2}
   - {fileID: 11400000, guid: 11f2496c2c1b2c7498a6111463e6754c, type: 2}
+  - {fileID: 11400000, guid: b34b3317b6aaa5745afda0eb439e4a8c, type: 2}
   - {fileID: 11400000, guid: 11f2496c2c1b2c7498a6111463e6754c, type: 2}
-  - {fileID: 11400000, guid: 11f2496c2c1b2c7498a6111463e6754c, type: 2}
+  - {fileID: 11400000, guid: 2d47c969fc9b56c429c125dae44880b9, type: 2}
   allUnlockedPlayerSpells: 000000000000000000000000
 --- !u!1 &1589566696
 GameObject:
@@ -10820,7 +10820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 8955685987341097508}
-  spell: {fileID: 11400000, guid: 11f2496c2c1b2c7498a6111463e6754c, type: 2}
+  spell: {fileID: 11400000, guid: 76aa692e9e101b94490820c01da61c8c, type: 2}
   image: {fileID: 4664101387088317243, guid: f5ea127bd6c4367498e3b76afeb1b66d, type: 3}
   toleranceValue: 50
   interactable: 0
