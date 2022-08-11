@@ -262,8 +262,6 @@ namespace Enemies
                 if (random < spawnChances[i])
                 {
                     var position = transform.position;
-                    print(new Vector3(position.x, position.y + groundDistance, position.z));
-                    print(position);
                     Instantiate(droppableItems[i], new Vector3(position.x, position.y + groundDistance, position.z), Quaternion.identity, GameManager.Instance.transform);
                     break;
                 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Enemies;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
         [SerializeField] protected float[] scalings;
         
         [Header("Particle related stuff")]
-        [SerializeField] private GameObject spawnParticle;
+        [SerializeField] private List<GameObject> spawnParticles;
         [SerializeField] private float spawnParticleUpTime;
         
         public override void Initialize(Vector3 newMovementVector, Timing timing)
@@ -17,42 +18,56 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
 
             // Rotate in the correct direction.
             transform.LookAt(transform.position + movementVector);
+
+            GameObject obj = new GameObject();
             
-            // For testing.
             switch (timing)
             {
                 case Timing.Bad:
                     damage *= scalings[0];
+                    
+                    if (spawnParticles[0] != null)
+                    {
+                        var transform1 = transform;
+                        var position1 = transform1.position;
+                        obj = Instantiate(spawnParticles[0], position1, Quaternion.identity, transform1);
+                    }
                     break;
                 case Timing.Good:
                     damage *= scalings[1];
+                    
+                    if (spawnParticles[1] != null)
+                    {
+                        var transform1 = transform;
+                        var position1 = transform1.position;
+                        obj = Instantiate(spawnParticles[1], position1, Quaternion.identity, transform1);
+                    }
                     break;
                 case Timing.Amazing:
                     damage *= scalings[2];
                     
-                    if (spawnParticle != null)
+                    if (spawnParticles[2] != null)
                     {
                         var transform1 = transform;
                         var position = transform1.position;
-                        var aObj = Instantiate(spawnParticle, position, Quaternion.identity, transform1);
-                        aObj.transform.LookAt(position + newMovementVector); 
-                        Destroy(aObj, spawnParticleUpTime);
+                        obj = Instantiate(spawnParticles[2], position, Quaternion.identity, transform1);
                     }
                     
                     break;
                 case Timing.Perfect:
                     damage *= scalings[3];
                     
-                    if (spawnParticle != null)
+                    if (spawnParticles[3] != null)
                     {
                         var transform1 = transform;
                         var position1 = transform1.position;
-                        var pObj = Instantiate(spawnParticle, position1, Quaternion.identity, transform1);
-                        pObj.transform.LookAt(position1 + newMovementVector);
-                        Destroy(pObj, spawnParticleUpTime);
+                        obj = Instantiate(spawnParticles[3], position1, Quaternion.identity, transform1);
                     }
                     break;
             }
+            
+            obj.transform.LookAt(transform.position + newMovementVector);
+            Destroy(obj, spawnParticleUpTime);
         }
 
         protected override void OnTriggerEnter(Collider other)
