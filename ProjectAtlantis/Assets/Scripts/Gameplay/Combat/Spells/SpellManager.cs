@@ -77,7 +77,7 @@ namespace Gameplay.Combat.Spells
         /// </summary>
         public void LockAllSpells()
         {
-            for (int i = 4; i < allUnlockedPlayerSpells.Count; i++)
+            for (int i = 0; i < allUnlockedPlayerSpells.Count; i++)
             {
                 allUnlockedPlayerSpells[i] = false;
             }

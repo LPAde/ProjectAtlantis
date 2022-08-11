@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
   maxCoolDown: 4
-  currentCoolDown: -5.7598886
-  currentMaxCoolDown: 0
+  currentCoolDown: -256.38104
+  currentMaxCoolDown: 4
   spellSprite: {fileID: 21300000, guid: a2b5160cec71f984abcfcdcdb1ae5756, type: 3}
   spellName: Dash
-  description: Dashes in direction of mouse.
+  description: Dashes in direction of the cursor.
   travelDistance: 3
   dashDuration: 0.2
   dashSpeed: 25
