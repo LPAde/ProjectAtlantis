@@ -15,6 +15,7 @@ namespace Gameplay.Combat.Spells
         
         public Sprite SpellSprite => spellSprite;
         public string Description => description;
+        public string MaxCooldown => maxCoolDown.ToString("0");
         
         /// <summary>
         /// Sets the owner of the spell.

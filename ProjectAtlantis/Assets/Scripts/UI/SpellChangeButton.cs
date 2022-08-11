@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Gameplay.Combat.Spells;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -14,11 +15,18 @@ namespace UI
         [SerializeField] private float toleranceValue;
         [SerializeField] private bool interactable;
 
+        [Header("Tool Tip related stuff")] 
+        [SerializeField] private GameObject toolTip;
+        [SerializeField] private TextMeshProUGUI description;
+        [SerializeField] private TextMeshProUGUI coolDown;
+
         public void Start()
         {
             if(MainMenuBehaviour.Instance.SpellManager.CheckSpellUnlocked(spell))
             {
                 gameObject.GetComponent<Image>().sprite = spell.SpellSprite;
+                description.text = spell.Description;
+                coolDown.text = spell.MaxCooldown + "s";
                 interactable = true;
             }
             else
@@ -34,6 +42,7 @@ namespace UI
             if(!interactable)
                 return;
             
+            toolTip.SetActive(true);
             // TODO: Message with drag and drop notification && Open Small Window with description.
         }
 

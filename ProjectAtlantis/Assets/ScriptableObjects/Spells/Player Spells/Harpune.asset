@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
   maxCoolDown: 6
-  currentCoolDown: -56.874138
+  currentCoolDown: -9.421483
+  currentMaxCoolDown: 6
   spellSprite: {fileID: 21300000, guid: 6c8ebc44e516f834eb5d4e484f221b90, type: 3}
+  description: Throws a harpune that knocks enemies back
   damageValue: 0
   projectile: {fileID: 6074599445876254602, guid: c5425ac797729434d895354dd131e376, type: 3}
