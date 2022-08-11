@@ -157,6 +157,14 @@ namespace UI
             Application.Quit();
         }
 
+        public void ToggleAllSpellButtons()
+        {
+            foreach (var btn in spellChangeButtons)
+            {
+                btn.Button.interactable = !btn.Button.interactable;
+            }
+        }
+
         private IEnumerator LoadYourAsyncScene()
         {
             // Wait until the asynchronous scene fully loads
