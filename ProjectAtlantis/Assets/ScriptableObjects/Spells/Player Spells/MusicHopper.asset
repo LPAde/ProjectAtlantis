@@ -15,6 +15,9 @@ MonoBehaviour:
   owner: {fileID: 0}
   maxCoolDown: 0.8
   currentCoolDown: -1.2553333
+  currentMaxCoolDown: 0
   spellSprite: {fileID: 21300000, guid: b9d27caea70e8484881dc25729ae5ee3, type: 3}
+  spellName: Musichopper
+  description: Throws a note that when thrown in beat bounces to the next enemy.
   damageValue: 0
   projectile: {fileID: 6074599445876254602, guid: d3c73423b06126c4eb5c57f8bd433d88, type: 3}

@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6c14e4c27cd40f4885456fceaf74904, type: 3}
-  m_Name: Light em Up
+  m_Name: Sharknado
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
-  maxCoolDown: 0.6
-  currentCoolDown: -1.4208589
-  currentMaxCoolDown: 0
-  spellSprite: {fileID: 21300000, guid: 73a27ad50ad195641a6894955081d9e6, type: 3}
-  spellName: Light'em Up
-  description: Small spammable Fireball.
-  damageValue: 10
-  projectile: {fileID: 6074599445876254602, guid: d44d0b54d6abf1043b5ee3a50cb3b4bc, type: 3}
+  maxCoolDown: 0.9
+  currentCoolDown: 0
+  currentMaxCoolDown: 0.9
+  spellSprite: {fileID: 0}
+  spellName: Sharknado
+  description: Shark Arrows that create whirlpools...whait what?
+  damageValue: 0
+  projectile: {fileID: 6074599445876254602, guid: 28d34115e3789f2408676bf01af105b9, type: 3}
