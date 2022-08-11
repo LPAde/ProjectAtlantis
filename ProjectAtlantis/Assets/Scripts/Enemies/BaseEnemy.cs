@@ -28,6 +28,7 @@ namespace Enemies
         [SerializeField] private List<GameObject> droppableItems;
         [SerializeField] private List<int> spawnChances;
         [SerializeField] private int lastPossibleHealDrop;
+        [SerializeField] private float groundDistance;
         
         private bool _wasSharked;
         
@@ -257,13 +258,18 @@ namespace Enemies
             
             for (int i = droppableItems.Count - 1; i > -1; i--)
             {
+                // Item drop.
                 if (random < spawnChances[i])
                 {
-                    Instantiate(droppableItems[i], transform.position, Quaternion.identity, GameManager.Instance.transform);
+                    var position = transform.position;
+                    print(new Vector3(position.x, position.y + groundDistance, position.z));
+                    print(position);
+                    Instantiate(droppableItems[i], new Vector3(position.x, position.y + groundDistance, position.z), Quaternion.identity, GameManager.Instance.transform);
                     break;
                 }
             }
 
+            // Particle stuff.
             if (deathParticle != null)
             {
                 var particle = Instantiate(deathParticle,transform.position,Quaternion.identity,GameManager.Instance.transform);
