@@ -15,7 +15,10 @@ MonoBehaviour:
   owner: {fileID: 0}
   maxCoolDown: 5
   currentCoolDown: -193.58148
+  currentMaxCoolDown: 5
   spellSprite: {fileID: 21300000, guid: 6a0b4f98323e5d646bc36f8c5bb394b7, type: 3}
+  spellName: Bubble Bash
+  description: Short dash that fires some bubbles forward.
   travelDistance: 2
   dashDuration: 0.1
   dashSpeed: 25

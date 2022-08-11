@@ -14,11 +14,14 @@ namespace UI
         [SerializeField] private BaseSpell spell;
         [SerializeField] private GameObject image;
         [SerializeField] private float toleranceValue;
+        [SerializeField] private bool interactable;
 
         [Header("Tool Tip related stuff")] 
         [SerializeField] private GameObject toolTip;
+        [SerializeField] private TextMeshProUGUI nameText;
         [SerializeField] private TextMeshProUGUI description;
         [SerializeField] private TextMeshProUGUI coolDown;
+        private bool _didDrag;
 
         public Button Button => button;
         
@@ -27,34 +30,49 @@ namespace UI
             if(MainMenuBehaviour.Instance.SpellManager.CheckSpellUnlocked(spell))
             {
                 button.image.sprite = spell.SpellSprite;
+                nameText.text = spell.SpellName;
                 description.text = spell.Description;
                 coolDown.text = spell.MaxCooldown + "s";
-                button.interactable = true;
+                interactable = true;
             }
             else
             {
                 button.image.sprite = MainMenuBehaviour.Instance.LockedSprite;
                 button.interactable = false;
+                interactable = false;
             }
         }
 
         public void OnClick()
         {
+            if (_didDrag)
+            {
+                _didDrag = false;
+                return;
+            }
+            
             toolTip.SetActive(true);
             MainMenuBehaviour.Instance.ToggleAllSpellButtons();
         }
 
         public void OnBeginDrag(PointerEventData eventData)
         {
+            if(!interactable)
+                return;
+            
             if(!button.interactable)
                 return;
             
             MainMenuBehaviour.Instance.Image = Instantiate(image,Input.mousePosition,Quaternion.identity,transform);
             MainMenuBehaviour.Instance.Image.GetComponent<Image>().sprite = spell.SpellSprite;
+            _didDrag = true;
         }
 
         public void OnDrag(PointerEventData eventData)
         {
+            if(!interactable)
+                return;
+            
             if(!button.interactable)
                 return;
             
@@ -63,9 +81,9 @@ namespace UI
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            if(!button.interactable)
+            if(!interactable)
                 return;
-            
+
             // Setup.
             string spellString = SaveSystem.GetString("PlayerSpells");
             var idStrings = spellString.Split("*");
@@ -86,6 +104,7 @@ namespace UI
                 {
                     movementSpell = moveSpell;
                     MainMenuBehaviour.Instance.MovementSpellImage.sprite = spell.SpellSprite;
+                    _didDrag = false;
                 }
             }
             else if(spell is CombatSpell combatSpell)
@@ -96,6 +115,7 @@ namespace UI
                     if ((MainMenuBehaviour.Instance.Image.transform.position -
                          MainMenuBehaviour.Instance.CombatSpellImages[i].transform.position).magnitude < toleranceValue)
                     {
+                        _didDrag = false;
                         bool hasSpellAlready = false;
                         // Check if spell is already taken.
                         for (int j = 0; j < combatSpells.Count; j++)

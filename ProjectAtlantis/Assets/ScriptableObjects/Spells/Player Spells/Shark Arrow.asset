@@ -15,6 +15,10 @@ MonoBehaviour:
   owner: {fileID: 0}
   maxCoolDown: 0.7
   currentCoolDown: -2.6593814
+  currentMaxCoolDown: 0.7
   spellSprite: {fileID: 21300000, guid: 22e29efd5399e904e84cab13a8a1f99f, type: 3}
+  spellName: Shark Arrow
+  description: Shoots a little shark that deals more damage when the enemy has been
+    hit by one already.
   damageValue: 5
   projectile: {fileID: 6074599445876254602, guid: 168539f2476b51740a9241a623db0243, type: 3}

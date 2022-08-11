@@ -11,11 +11,13 @@ namespace Gameplay.Combat.Spells
         
         [Header("Visual Stuff")]
         [SerializeField] private Sprite spellSprite;
+        [SerializeField] private string spellName;
         [SerializeField] private string description;
         
         public Sprite SpellSprite => spellSprite;
+        public string SpellName => spellName;
         public string Description => description;
-        public string MaxCooldown => maxCoolDown.ToString("0");
+        public string MaxCooldown => maxCoolDown.ToString("0.0");
         
         /// <summary>
         /// Sets the owner of the spell.
