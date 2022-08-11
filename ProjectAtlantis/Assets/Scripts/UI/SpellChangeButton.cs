@@ -7,48 +7,46 @@ using UnityEngine.UI;
 
 namespace UI
 {
-    public class SpellChangeButton : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler,
+    public class SpellChangeButton : MonoBehaviour, IBeginDragHandler, IDragHandler,
         IEndDragHandler
     {
+        [SerializeField] private Button button;
         [SerializeField] private BaseSpell spell;
         [SerializeField] private GameObject image;
         [SerializeField] private float toleranceValue;
-        [SerializeField] private bool interactable;
 
         [Header("Tool Tip related stuff")] 
         [SerializeField] private GameObject toolTip;
         [SerializeField] private TextMeshProUGUI description;
         [SerializeField] private TextMeshProUGUI coolDown;
 
+        public Button Button => button;
+        
         public void Start()
         {
             if(MainMenuBehaviour.Instance.SpellManager.CheckSpellUnlocked(spell))
             {
-                gameObject.GetComponent<Image>().sprite = spell.SpellSprite;
+                button.image.sprite = spell.SpellSprite;
                 description.text = spell.Description;
                 coolDown.text = spell.MaxCooldown + "s";
-                interactable = true;
+                button.interactable = true;
             }
             else
             {
-                gameObject.GetComponent<Image>().sprite = MainMenuBehaviour.Instance.LockedSprite;
-                gameObject.GetComponent<Button>().interactable = false;
-                interactable = false;
+                button.image.sprite = MainMenuBehaviour.Instance.LockedSprite;
+                button.interactable = false;
             }
         }
 
-        public void OnPointerClick(PointerEventData eventData)
+        public void OnClick()
         {
-            if(!interactable)
-                return;
-            
             toolTip.SetActive(true);
-            // TODO: Message with drag and drop notification && Open Small Window with description.
+            MainMenuBehaviour.Instance.ToggleAllSpellButtons();
         }
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            if(!interactable)
+            if(!button.interactable)
                 return;
             
             MainMenuBehaviour.Instance.Image = Instantiate(image,Input.mousePosition,Quaternion.identity,transform);
@@ -57,7 +55,7 @@ namespace UI
 
         public void OnDrag(PointerEventData eventData)
         {
-            if(!interactable)
+            if(!button.interactable)
                 return;
             
             MainMenuBehaviour.Instance.Image.transform.position = Input.mousePosition;
@@ -65,7 +63,7 @@ namespace UI
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            if(!interactable)
+            if(!button.interactable)
                 return;
             
             // Setup.
@@ -88,11 +86,6 @@ namespace UI
                 {
                     movementSpell = moveSpell;
                     MainMenuBehaviour.Instance.MovementSpellImage.sprite = spell.SpellSprite;
-                }
-                else
-                {
-                    print((MainMenuBehaviour.Instance.Image.transform.position -
-                           MainMenuBehaviour.Instance.MovementSpellImage.transform.position).magnitude);
                 }
             }
             else if(spell is CombatSpell combatSpell)
