@@ -89,7 +89,11 @@ MonoBehaviour:
   - 0.6
   - 1.5
   - 3
-  spawnParticle: {fileID: 1526503774949299958, guid: 14d7f9430c568f542a8ca4cc6482a317, type: 3}
+  spawnParticles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   spawnParticleUpTime: 2
   isHopping: 0
 --- !u!1001 &8574981423875941719

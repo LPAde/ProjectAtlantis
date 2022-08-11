@@ -77,7 +77,11 @@ MonoBehaviour:
   - 0.8
   - 1
   - 1.2
-  spawnParticle: {fileID: 1526503774949299958, guid: 14d7f9430c568f542a8ca4cc6482a317, type: 3}
+  spawnParticles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   spawnParticleUpTime: 2
   formerCollider: {fileID: 0}
   newCollider: {fileID: 7256086677719768833}
