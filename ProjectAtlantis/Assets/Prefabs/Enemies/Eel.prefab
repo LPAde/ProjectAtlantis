@@ -1251,8 +1251,8 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 6b8579c97007d83459520147464a62bf, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
+  m_CullingMode: 2
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -1349,6 +1349,7 @@ MonoBehaviour:
   - {fileID: 3660890396933874106, guid: 9d3f0b1ad0d4e5f47a8b5d7bc6cde7b3, type: 3}
   spawnChances: 9f010000730000000f00000000000000
   lastPossibleHealDrop: 3
+  groundDistance: 0
   attack: {fileID: 5167443418096483842}
   projectileSpawnPosition: {fileID: 1137609934919130116}
   source: {fileID: 1848486563794298145}

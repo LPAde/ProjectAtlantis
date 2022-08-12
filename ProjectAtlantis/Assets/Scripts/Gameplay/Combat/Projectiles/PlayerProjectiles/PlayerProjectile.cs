@@ -19,7 +19,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
             // Rotate in the correct direction.
             transform.LookAt(transform.position + movementVector);
 
-            GameObject obj = new GameObject();
+            GameObject obj = null;
             
             switch (timing)
             {

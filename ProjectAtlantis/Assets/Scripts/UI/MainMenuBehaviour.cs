@@ -71,6 +71,7 @@ namespace UI
 
             string playerStats = SaveSystem.GetString("PlayerStats");
             var stats = playerStats.Split("*");
+         
             
             highScores[0].text = stats[0];
             highScores[1].text = stats[2];
