@@ -59,10 +59,12 @@ namespace Gameplay.Rhythm
             
             if (currentTime < leeway[0])
             {
+                GameManager.Instance.HudManager.HitAnimation();
                 return Timing.Perfect;
             }
             else if (currentTime < leeway[1])
             {
+                GameManager.Instance.HudManager.HitAnimation();
                 return Timing.Amazing;
             }
             else if (currentTime < leeway[2])

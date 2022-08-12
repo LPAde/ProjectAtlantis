@@ -1,3 +1,4 @@
+using System;
 using Enemies;
 using PlayerScripts;
 using UnityEngine;
@@ -26,6 +27,22 @@ namespace Gameplay.Combat.Spells
             // Calculates own Vector.
             var travelVector = travelDistance *
                                owningPlayer.ProjectileSpawnPosition.forward;
+
+            switch (GameManager.Instance.RhythmManager.CheckTiming())
+            {
+                case Timing.Bad:
+                    travelVector *= .2f;
+                    break;
+                case Timing.Good:
+                    travelVector *= .8f;
+                    break;
+                case Timing.Amazing:
+                    travelVector *= 1.2f;
+                    break;
+                case Timing.Perfect:
+                    travelVector *= 2f;
+                    break;
+            }
             
             // Tells player to dash.
             owningPlayer.PlayerController.InitializeDash(travelVector, dashDuration, dashSpeed);

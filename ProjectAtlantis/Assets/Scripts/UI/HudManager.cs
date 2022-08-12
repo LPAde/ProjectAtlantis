@@ -14,6 +14,7 @@ namespace UI
         [SerializeField] private List<Button> skillIndicators;
         [SerializeField] private List<TextMeshProUGUI> skillCooldowns;
         [SerializeField] private TextMeshProUGUI waveCountText;
+        [SerializeField] private Animator anim;
         
         [Header("Stat-screen")] 
         [SerializeField] private GameObject statScreen;
@@ -32,6 +33,11 @@ namespace UI
             statScreen.SetActive(Input.GetKey(KeyCode.Tab));
         }
 
+        public void HitAnimation()
+        {
+            anim.SetTrigger("Hit");
+        }
+        
         /// <summary>
         /// Updates the health bar.
         /// </summary>
