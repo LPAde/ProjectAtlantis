@@ -93,6 +93,9 @@ namespace UI
             statsText[2].text = stats.Strength.ToString("0");
             statsText[3].text = stats.Defense.ToString("0");
             statsText[4].text = stats.Speed.ToString("0");
+            
+            float cdr = stats.CoolDownReduction * 10;
+            statsText[5].text = cdr.ToString("0.00");
         }
 
         /// <summary>
