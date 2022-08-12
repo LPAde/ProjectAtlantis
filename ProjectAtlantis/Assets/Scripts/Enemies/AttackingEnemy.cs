@@ -11,7 +11,8 @@ namespace Enemies
         [SerializeField] protected GameObject attack;
         [SerializeField] private Transform projectileSpawnPosition;
         [SerializeField] protected AudioSource source;
-        
+        private static readonly int Attack1 = Animator.StringToHash("Attack");
+
         public bool IsInAnimation { get; internal set; }
         public AttackerFsm FiniteAttackerStateMachine { get; private set; }
         public Transform ProjectileSpawnPosition => projectileSpawnPosition;
@@ -57,7 +58,8 @@ namespace Enemies
             else
             {
                 stats.AttackCooldown = stats.AttackMaxCooldown;
-                anim.SetTrigger("Attack");
+                source.Play();
+                anim.SetTrigger(Attack1);
             }
         }
         
