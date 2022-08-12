@@ -30,7 +30,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
                     {
                         var transform1 = transform;
                         var position1 = transform1.position;
-                        obj = Instantiate(spawnParticles[0], position1, Quaternion.identity, transform1);
+                        obj = Instantiate(spawnParticles[0], position1, Quaternion.identity, GameManager.Instance.Player.transform);
                     }
                     break;
                 case Timing.Good:
@@ -40,7 +40,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
                     {
                         var transform1 = transform;
                         var position1 = transform1.position;
-                        obj = Instantiate(spawnParticles[1], position1, Quaternion.identity, transform1);
+                        obj = Instantiate(spawnParticles[1], position1, Quaternion.identity, GameManager.Instance.Player.transform);
                     }
                     break;
                 case Timing.Amazing:
@@ -50,7 +50,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
                     {
                         var transform1 = transform;
                         var position = transform1.position;
-                        obj = Instantiate(spawnParticles[2], position, Quaternion.identity, transform1);
+                        obj = Instantiate(spawnParticles[2], position, Quaternion.identity, GameManager.Instance.Player.transform);
                     }
                     
                     break;
@@ -61,7 +61,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
                     {
                         var transform1 = transform;
                         var position1 = transform1.position;
-                        obj = Instantiate(spawnParticles[3], position1, Quaternion.identity, transform1);
+                        obj = Instantiate(spawnParticles[3], position1, Quaternion.identity, GameManager.Instance.Player.transform);
                     }
                     break;
             }
