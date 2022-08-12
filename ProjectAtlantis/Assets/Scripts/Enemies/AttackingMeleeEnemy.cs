@@ -20,6 +20,7 @@ namespace Enemies
             }
 
             anim.SetTrigger(Attack1);
+            source.Play();
             
             stats.AttackCooldown = stats.AttackMaxCooldown;
         }
@@ -36,7 +37,6 @@ namespace Enemies
                 _didHit = true;
             }
             
-            source.Play();
         }
 
         public override void EndAttack()

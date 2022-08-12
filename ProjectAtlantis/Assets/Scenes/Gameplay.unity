@@ -4002,7 +4002,6 @@ GameObject:
   m_Component:
   - component: {fileID: 139947792}
   - component: {fileID: 139947791}
-  - component: {fileID: 139947790}
   - component: {fileID: 139947793}
   - component: {fileID: 139947794}
   m_Layer: 2
@@ -4012,14 +4011,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &139947790
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 139947789}
-  m_Enabled: 1
 --- !u!20 &139947791
 Camera:
   m_ObjectHideFlags: 0
@@ -48216,6 +48207,7 @@ GameObject:
   - component: {fileID: 1780075054}
   - component: {fileID: 1780075058}
   - component: {fileID: 1780075053}
+  - component: {fileID: 1780075060}
   m_Layer: 2
   m_Name: Player Model
   m_TagString: Player
@@ -48313,6 +48305,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!81 &1780075060
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780075050}
+  m_Enabled: 1
 --- !u!1001 &1784492515
 PrefabInstance:
   m_ObjectHideFlags: 0
