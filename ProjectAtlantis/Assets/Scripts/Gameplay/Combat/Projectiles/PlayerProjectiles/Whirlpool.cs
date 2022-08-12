@@ -42,7 +42,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
             
             foreach (var enemy in enemies.Where(enemy => enemy != null))
             {
-                enemy.TakeDamage(damage, (transform.position - enemy.transform.position) * 50, maxIntervalTime);
+                enemy.TakeDamage(damage, (transform.position - enemy.transform.position), maxIntervalTime);
             }
 
             intervalTime = maxIntervalTime;
@@ -55,7 +55,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
             
             var en = other.GetComponent<BaseEnemy>();
             enemies.Add(en); 
-            en.TakeDamage(damage, (transform.position - en.transform.position) * 50, maxIntervalTime);
+            en.TakeDamage(damage, (transform.position - en.transform.position) * 2, maxIntervalTime);
         }
 
         private void OnTriggerExit(Collider other)
