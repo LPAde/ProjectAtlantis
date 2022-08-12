@@ -60,11 +60,11 @@ namespace Enemies
 
         private void OnCollisionStay(Collision other)
         {
-            if(stunTime <= 0)
-                return;
-            
-            // Dirty fix to prevent player from shoving this.
-            rb.isKinematic = other.transform.CompareTag("Player");
+          // if(stunTime <= 0)
+          //     return;
+          // 
+          // // Dirty fix to prevent player from shoving this.
+          // rb.isKinematic = other.transform.CompareTag("Player");
         }
 
         public virtual void EnemyUpdate()
@@ -284,8 +284,7 @@ namespace Enemies
         /// <param name="knockbackTime"> How long they get knocked back. </param>
         private void KnockBack(Vector3 knockBackVector, float knockbackTime)
         {
-            rb.isKinematic = false;
-            rb.AddForce(knockBackVector);
+            agent.velocity = knockBackVector;
             Stun(stunTime = knockbackTime);
         }
 

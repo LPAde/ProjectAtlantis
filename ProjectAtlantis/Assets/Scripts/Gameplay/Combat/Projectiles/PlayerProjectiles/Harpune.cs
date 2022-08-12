@@ -20,7 +20,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
             
             hitEnemies.Add(en);
             
-            en.TakeDamage(damage, (en.transform.position - GameManager.Instance.Player.PlayerController.transform.position).normalized * 200, 1);
+            en.TakeDamage(damage, movementVector * 25, lifeTime + 2);
         }
     }
 }
