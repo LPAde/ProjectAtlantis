@@ -37,7 +37,6 @@ namespace UI
         public List<Image> CombatSpellImages => combatSpellImages;
         public Image MovementSpellImage => movementSpellImage;
         
-        
         private void Awake()
         {
             if(Instance != null)
@@ -72,7 +71,7 @@ namespace UI
 
             string playerStats = SaveSystem.GetString("PlayerStats");
             var stats = playerStats.Split("*");
-            print(playerStats);
+            
             highScores[0].text = stats[0];
             highScores[1].text = stats[2];
             highScores[2].text = stats[3];
@@ -109,28 +108,24 @@ namespace UI
             SaveSystem.SetInt("UnlockedSpells", 0);
             SaveSystem.SetInt("BestWave", 0);
             spellManager.LockAllSpells();
-            
-            
-            
+
             for (int i = 0; i < combatSpellImages.Count; i++)
             {
                 combatSpellImages[i].sprite = startingSpells[i].SpellSprite;
                 SpellManager.UnlockSpell(startingSpells[i]);
             }
-            
 
             movementSpellImage.sprite = startingSpells[3].SpellSprite;
             SpellManager.UnlockSpell(startingSpells[3]);
-            
 
             SaveSystem.SetString
             ("PlayerSpells", string.Concat(SpellManager.GetSpellID(startingSpells[0]), "*",
                 SpellManager.GetSpellID(startingSpells[1]), "*",SpellManager.GetSpellID(startingSpells[2])
                 , "*",Instance.SpellManager.GetSpellID(startingSpells[3]), "*"));
 
-            for (int i = 0; i < spellChangeButtons.Count; i++)
+            foreach (var t in spellChangeButtons)
             {
-                spellChangeButtons[i].Start();
+                t.Start();
             }
             
             allButtons[2].interactable = false;
