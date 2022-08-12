@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1420180077577763591}
   - component: {fileID: -8474129771256577816}
   - component: {fileID: 7256086677719768833}
-  - component: {fileID: 2312394151748783814}
+  - component: {fileID: 7787893448086136371}
   m_Layer: 2
   m_Name: Double Slash
   m_TagString: Projectile
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 20
   projectileSpeed: 0.01
-  lifeTime: 0.2
+  lifeTime: 0.7
   movementVector: {x: 0, y: 0, z: 0}
   maxDistanceToGround: 1.5
   deathParticleObject: {fileID: 0}
@@ -83,9 +83,10 @@ MonoBehaviour:
   - {fileID: 3288915799712109705, guid: a8f22048d7a187b44919bd3c7a341ad5, type: 3}
   - {fileID: 3288915799712109705, guid: 0d4b517a28753144790a98ef5d5041ab, type: 3}
   spawnParticleUpTime: 2
-  formerCollider: {fileID: 0}
+  formerCollider: {fileID: 7787893448086136371}
   newCollider: {fileID: 7256086677719768833}
   isSecondHitBox: 0
+  hitEnemies: []
 --- !u!136 &7256086677719768833
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -95,13 +96,13 @@ CapsuleCollider:
   m_GameObject: {fileID: 6074599445876254602}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.3
   m_Height: 3.5741951
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0.80147064}
---- !u!135 &2312394151748783814
-SphereCollider:
+--- !u!65 &7787893448086136371
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -111,8 +112,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.56
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.1560018, y: 1, z: 1}
+  m_Center: {x: -0.14045012, y: 0, z: 0}
 --- !u!1001 &2450724648387889230
 PrefabInstance:
   m_ObjectHideFlags: 0
