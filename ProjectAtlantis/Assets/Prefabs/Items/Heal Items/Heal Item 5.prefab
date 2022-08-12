@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upTime: 6
-  particleObject: {fileID: 4960525936104710295, guid: 9ae3ae958ad0a4f46a31be796f1a1c6a, type: 3}
+  particleObject: {fileID: 4960525936104710295, guid: 6f3ea57497ede6c4b984ea0ef7476f71, type: 3}
   particleUpTime: 4
   value: 200
 --- !u!1001 &750106605145718000
@@ -139,6 +139,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6903789023718622920}
     m_Modifications:
+    - target: {fileID: 3924513757087217460, guid: 7fa6e2ad958901449824d75aba0c351f, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3924513757087217460, guid: 7fa6e2ad958901449824d75aba0c351f, type: 3}
+      propertyPath: InitialModule.startSizeZ.scalar
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4714579940549122783, guid: 7fa6e2ad958901449824d75aba0c351f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.456
+      objectReference: {fileID: 0}
     - target: {fileID: 5167640904045707734, guid: 7fa6e2ad958901449824d75aba0c351f, type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 0.032

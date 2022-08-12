@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upTime: 8
-  particleObject: {fileID: 4960525936104710295, guid: a00a4e7326c763842b63f0a4431ae273, type: 3}
+  particleObject: {fileID: 4960525936104710295, guid: 2d15a44ff42168241b1e50242741a595, type: 3}
   particleUpTime: 4
   addedStats:
     maxHealth: 0
@@ -94,6 +94,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3660890396933874080}
     m_Modifications:
+    - target: {fileID: 5055714933116138984, guid: 18ac5fc70e4cf114396baafd1c9c6f91, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055714933116138984, guid: 18ac5fc70e4cf114396baafd1c9c6f91, type: 3}
+      propertyPath: InitialModule.startSizeZ.scalar
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5055714933798709045, guid: 18ac5fc70e4cf114396baafd1c9c6f91, type: 3}
       propertyPath: m_RootOrder
       value: 0

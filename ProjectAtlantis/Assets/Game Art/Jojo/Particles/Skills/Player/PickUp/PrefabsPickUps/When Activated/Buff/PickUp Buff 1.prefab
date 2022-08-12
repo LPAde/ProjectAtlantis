@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2035629550720010558}
   m_Layer: 0
-  m_Name: PickUp Heal
+  m_Name: PickUp Buff 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -255,7 +255,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.13550198, g: 0.990566, b: 0.31589702, a: 1}
+      maxColor: {r: 1, g: 0.6825919, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -899,7 +899,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 7
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -3974,7 +3974,7 @@ ParticleSystem:
     lifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4102,7 +4102,7 @@ ParticleSystem:
     widthOverTrail:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.35
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4802,7 +4802,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 06bb149b815a8d74dafe734446669987, type: 2}
+  - {fileID: 2100000, guid: f1d8b29640a9c2c4aa05997a91e3501d, type: 2}
   - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -5078,7 +5078,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 0.1745283, b: 0.1745283, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5140,8 +5140,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 3.5
-      minScalar: 3
+      scalar: 2
+      minScalar: 1.6
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -9949,7 +9949,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 0.21295045, b: 0.1764706, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -10011,8 +10011,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 5.5
-      minScalar: 5
+      scalar: 2.8
+      minScalar: 2.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -14215,8 +14215,8 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0
-          value: 1
+          time: 0.00909091
+          value: 0.0044573843
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -14224,23 +14224,14 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.48550597
-          value: 0.3187923
-          inSlope: -3.6837735
-          outSlope: -3.6837735
+          time: 0.4523953
+          value: -0.29571196
+          inSlope: -1.649532
+          outSlope: -1.649532
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 1
-        - serializedVersion: 3
-          time: 0.49784982
-          value: 0.0014648438
-          inSlope: -4.8743324
-          outSlope: -4.8743324
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.11290575
+          outWeight: 0.11183444
         - serializedVersion: 3
           time: 1
           value: -1

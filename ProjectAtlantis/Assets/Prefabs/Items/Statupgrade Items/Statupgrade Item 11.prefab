@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upTime: 8
-  particleObject: {fileID: 4960525936104710295, guid: a00a4e7326c763842b63f0a4431ae273, type: 3}
+  particleObject: {fileID: 4960525936104710295, guid: 2d15a44ff42168241b1e50242741a595, type: 3}
   particleUpTime: 4
   addedStats:
     maxHealth: 8
@@ -141,6 +141,14 @@ PrefabInstance:
     - target: {fileID: 7165984032432371147, guid: c6c1a4be1c5ed40479f698b68bedff4a, type: 3}
       propertyPath: m_Name
       value: PickUp Def MaxHealth HealthRegen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165984033303569005, guid: c6c1a4be1c5ed40479f698b68bedff4a, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165984033303569005, guid: c6c1a4be1c5ed40479f698b68bedff4a, type: 3}
+      propertyPath: InitialModule.startSizeZ.scalar
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6c1a4be1c5ed40479f698b68bedff4a, type: 3}
