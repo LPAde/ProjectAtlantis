@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Gameplay.Combat.Spells;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -15,6 +16,7 @@ namespace UI
         [SerializeField] private List<string> allSaveFileStrings;
         [SerializeField] private List<GameObject> allWindows;
         [SerializeField] private string websiteUrl;
+        [SerializeField] private List<TextMeshProUGUI> highScores;
         
         [Header("Audio Related Stuff")] 
         [SerializeField] private AudioSource audioSource;
@@ -50,6 +52,7 @@ namespace UI
             if (string.IsNullOrEmpty(spellString))
             {
                 OnDeleteClick();
+                allButtons[2].interactable = false;
                 return;
             }
             
@@ -66,7 +69,17 @@ namespace UI
             var movementSpell = (MovementSpell) SpellManager.GetSpell(int.Parse(idStrings[3]));
 
             movementSpellImage.sprite = movementSpell.SpellSprite;
-            
+
+            string playerStats = SaveSystem.GetString("PlayerStats");
+            var stats = playerStats.Split("*");
+            print(playerStats);
+            highScores[0].text = stats[0];
+            highScores[1].text = stats[2];
+            highScores[2].text = stats[3];
+            highScores[3].text = stats[4];
+            highScores[4].text = stats[5];
+            highScores[5].text = stats[6];
+            highScores[6].text = SaveSystem.GetInt("BestWave").ToString();
         }
 
         public void OnStartGameClick()
@@ -94,6 +107,7 @@ namespace UI
             SaveSystem.SetVector3("PlayerPosition", Vector3.zero);
             SaveSystem.SetInt("UsedKeys", 0);
             SaveSystem.SetInt("UnlockedSpells", 0);
+            SaveSystem.SetInt("BestWave", 0);
             spellManager.LockAllSpells();
             
             
@@ -118,6 +132,8 @@ namespace UI
             {
                 spellChangeButtons[i].Start();
             }
+            
+            allButtons[2].interactable = false;
             
             audioSource.clip = buttonUISound;
             audioSource.Play();

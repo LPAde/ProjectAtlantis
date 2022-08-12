@@ -75,6 +75,13 @@ namespace Gameplay.Spawning
 
         private void UpdateWave(int wave)
         {
+            // Check if the player has set a new record and reward him for doing so.
+            int record = SaveSystem.GetInt("BestWave");
+            if (record < wave)
+            {
+                SaveSystem.SetInt("BestWave", wave);
+            }
+            
             enemies = GameManager.Instance.WaveManager.GenerateNextWave(enemies);
         }
 
