@@ -10,7 +10,6 @@ namespace Gameplay.Rhythm
         [Header("Player Related Stuff")]
         [SerializeField] private List<float> leeway;
         [SerializeField] private List<float> leewayPercentages;
-        [SerializeField] private bool playerActed;
         
         [Header("Visual Stuff")]
         [SerializeField] private List<Slider> sliders;
@@ -22,13 +21,11 @@ namespace Gameplay.Rhythm
         [SerializeField] private float currentBeat;
 
         public Action<Song> OnTrackChange;
-        public Action HitPerfect;
 
         public Song CurrentSong => currentSong;
         
         private void Awake()
         {
-            HitPerfect += ResetPlayerAction;
             OnTrackChange += GameManager.Instance.AudioManager.UpdateBackgroundTrack;
             OnTrackChange += ChangeSong;
         }
@@ -51,10 +48,6 @@ namespace Gameplay.Rhythm
         /// <returns> How close to the timing we currently are. </returns>
         public Timing CheckTiming()
         {
-            if (playerActed)
-                return Timing.Bad;
-            
-            playerActed = true;
             float currentTime = currentTimers[0] - GameManager.Instance.AudioManager.SongTime - sliderOffset;
             
             if (currentTime < leeway[0])
@@ -117,7 +110,6 @@ namespace Gameplay.Rhythm
             // Check if current timing is the beat.
             if (currentTimers[0] - GameManager.Instance.AudioManager.SongTime - sliderOffset < 0)
             {
-                HitPerfect.Invoke();
                 HandleSimpleTimers();
             }
 
@@ -136,11 +128,6 @@ namespace Gameplay.Rhythm
             {
                 currentTimers[i] += currentBeat;
             }
-        }
-        
-        private void ResetPlayerAction()
-        {
-            playerActed = false;
         }
     }
 }
