@@ -53,14 +53,15 @@ namespace Gameplay.Spawning
             
             // Setting up the spawning.
             float formerCombatScore = lastWave.Sum(enemy => enemy.CombatScore);
+            
+            if (formerCombatScore > 100000)
+                formerCombatScore = 100000;
+            
             formerCombatScore *= GameManager.Instance.ArenaManager.GetDifficultyModifier();
             
             float newCombatScore = 0;
             List<BaseEnemy> newWave = new List<BaseEnemy>();
             List<BaseEnemy> possibleEnemies = GameManager.Instance.ArenaManager.GetPossibleEnemies(currentWave);
-
-            if (newCombatScore > 100000)
-                newCombatScore = 100000;
             
             // Adding enemies to the new list till the new combat score is bigger, then the former combat score.
             while (newCombatScore < formerCombatScore)
