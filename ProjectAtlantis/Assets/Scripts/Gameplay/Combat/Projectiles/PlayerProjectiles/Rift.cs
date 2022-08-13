@@ -49,7 +49,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
             enemiesInCollider.Remove(en);
         }
 
-        private void OnDestroy()
+        protected override void OnDestroy()
         {
             Explode();
         }
