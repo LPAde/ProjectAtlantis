@@ -41,7 +41,7 @@ namespace Gameplay.Spawning
             if (currentDuration <= 0 || !GameManager.Instance.EnemySpawner.IsSpawning && arenaEnemies.Count == 0)
             {
                 // Don't start when there are max enemies on the field.
-                if(arenaEnemies.Count >= GameManager.Instance.EnemySpawner.MaxEnemyAmount)
+                if(arenaEnemies.Count-5 >= GameManager.Instance.EnemySpawner.MaxEnemyAmount)
                 {
                     currentDuration += durationIncrease;
                     return;
