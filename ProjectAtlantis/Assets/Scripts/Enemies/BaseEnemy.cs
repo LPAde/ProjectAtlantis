@@ -165,6 +165,9 @@ namespace Enemies
             if(this == null)
                 return;
             
+            if(stats.Health <= 0)
+                return;
+            
             agent.isStopped = true;
         }
 
