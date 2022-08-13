@@ -128,7 +128,7 @@ MonoBehaviour:
       x: -186
       y: -2171
       width: 1575
-      height: 1921
+      height: 1805
     contents:
     - model: {fileID: 8926484042661614756}
       id: 0
@@ -264,10 +264,10 @@ MonoBehaviour:
   - title: TornadoCore bot
     position:
       serializedVersion: 2
-      x: 103
-      y: 1364
+      x: 119
+      y: 1506
       width: 1287
-      height: 1724
+      height: 1736
     contents:
     - model: {fileID: 8926484042661614894}
       id: 0
@@ -326,10 +326,10 @@ MonoBehaviour:
   - title: Tornado outer bot
     position:
       serializedVersion: 2
-      x: 1513
-      y: 1373
-      width: 1287
-      height: 1713
+      x: 1465
+      y: 1466
+      width: 1388
+      height: 1762
     contents:
     - model: {fileID: 8926484042661614958}
       id: 0
@@ -472,7 +472,7 @@ MonoBehaviour:
     x: -186
     y: -3418
     width: 4737
-    height: 6553
+    height: 6660
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -609,7 +609,21 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":0.0,"g":11.313708305358887,"b":6.832592964172363,"a":0.0}'
+      m_SerializableObject: '{"r":0.0,"g":290.6372375488281,"b":176.51266479492188,"a":0.0}'
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: Tornado outer color
+    path: Tornado outer color
+    tooltip: 
+    sheetType: m_Vector4f
+    realType: Color
+    defaultValue:
+      m_Type:
+        m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"r":0.0,"g":11.181760787963868,"b":7.493536472320557,"a":0.0}'
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -707,7 +721,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.6
+      m_SerializableObject: 0.77
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -721,21 +735,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.83
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
-  - name: Tornado outer color
-    path: Tornado outer color
-    tooltip: 
-    sheetType: m_Vector4f
-    realType: Color
-    defaultValue:
-      m_Type:
-        m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":11.003135681152344,"g":39.3983268737793,"b":28.21772003173828,"a":0.0}'
+      m_SerializableObject: 0.82
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -1816,7 +1816,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614612}
   m_ExposedName: Duration
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 4
   m_Category: 
   m_Min:
     m_Type:
@@ -1863,14 +1863,14 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614612}
       inputSlot: {fileID: 8926484042661614910}
-    position: {x: 641, y: 1988}
+    position: {x: 657, y: 2130}
     expandedSlots: []
     expanded: 0
   - m_Id: 5
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614612}
       inputSlot: {fileID: 8926484042661614974}
-    position: {x: 2051, y: 1997}
+    position: {x: 2104, y: 2090}
     expandedSlots: []
     expanded: 0
   - m_Id: 7
@@ -2757,7 +2757,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
@@ -2790,14 +2790,14 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614642}
       inputSlot: {fileID: 8926484042661614776}
-    position: {x: 681, y: -1069}
+    position: {x: 680, y: -1091}
     expandedSlots: []
     expanded: 0
   - m_Id: 3
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614642}
       inputSlot: {fileID: 8926484042661614914}
-    position: {x: 682, y: 2466}
+    position: {x: 698, y: 2608}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661614642
@@ -2829,7 +2829,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":0.0,"g":11.313708305358887,"b":6.832592964172363,"a":0.0}'
+      m_SerializableObject: '{"r":0.0,"g":290.6372375488281,"b":176.51266479492188,"a":0.0}'
     m_Space: 2147483647
   m_Property:
     name: o
@@ -2989,7 +2989,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
+  m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
@@ -3043,14 +3043,14 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614648}
       inputSlot: {fileID: 8926484042661614936}
-    position: {x: 685, y: 2733}
+    position: {x: 701, y: 2875}
     expandedSlots: []
     expanded: 0
   - m_Id: 5
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614648}
       inputSlot: {fileID: 8926484042661615021}
-    position: {x: 1814, y: 2764}
+    position: {x: 1867, y: 2857}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661614648
@@ -3218,7 +3218,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614653}
   m_ExposedName: ScaleOverLifex
   m_Exposed: 1
-  m_Order: 5
+  m_Order: 6
   m_Category: 
   m_Min:
     m_Type:
@@ -3265,14 +3265,14 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614653}
       inputSlot: {fileID: 8926484042661614938}
-    position: {x: 679, y: 2831}
+    position: {x: 695, y: 2973}
     expandedSlots: []
     expanded: 0
   - m_Id: 5
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614653}
       inputSlot: {fileID: 8926484042661615002}
-    position: {x: 2089, y: 2840}
+    position: {x: 2142, y: 2933}
     expandedSlots: []
     expanded: 0
   - m_Id: 6
@@ -3346,7 +3346,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614655}
   m_ExposedName: ScaleOverLifeY
   m_Exposed: 1
-  m_Order: 6
+  m_Order: 7
   m_Category: 
   m_Min:
     m_Type:
@@ -3393,14 +3393,14 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614655}
       inputSlot: {fileID: 8926484042661614939}
-    position: {x: 679, y: 2864}
+    position: {x: 695, y: 3006}
     expandedSlots: []
     expanded: 0
   - m_Id: 5
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614655}
       inputSlot: {fileID: 8926484042661615003}
-    position: {x: 2089, y: 2873}
+    position: {x: 2142, y: 2966}
     expandedSlots: []
     expanded: 0
   - m_Id: 6
@@ -3428,7 +3428,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614655}
       inputSlot: {fileID: 8926484042661615126}
-    position: {x: 1438, y: 2951}
+    position: {x: 1491, y: 3044}
     expandedSlots: []
     expanded: 0
   - m_Id: 10
@@ -3514,7 +3514,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614657}
   m_ExposedName: ScaleOverLifeZ
   m_Exposed: 1
-  m_Order: 7
+  m_Order: 8
   m_Category: 
   m_Min:
     m_Type:
@@ -3561,14 +3561,14 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614657}
       inputSlot: {fileID: 8926484042661614940}
-    position: {x: 683, y: 2896}
+    position: {x: 699, y: 3038}
     expandedSlots: []
     expanded: 0
   - m_Id: 5
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614657}
       inputSlot: {fileID: 8926484042661615004}
-    position: {x: 2093, y: 2905}
+    position: {x: 2146, y: 2998}
     expandedSlots: []
     expanded: 0
   - m_Id: 6
@@ -3635,14 +3635,14 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661614659}
   m_ExposedName: TornadoCoreDissolve
   m_Exposed: 1
-  m_Order: 8
+  m_Order: 9
   m_Category: 
   m_Min:
     m_Type:
@@ -3675,7 +3675,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614659}
       inputSlot: {fileID: 8926484042661614949}
-    position: {x: 235, y: 2545}
+    position: {x: 251, y: 2687}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661614659
@@ -3703,7 +3703,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.6
+      m_SerializableObject: 0.77
     m_Space: 2147483647
   m_Property:
     name: o
@@ -3866,7 +3866,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614665}
   m_ExposedName: DissolveCurve
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 5
   m_Category: 
   m_Min:
     m_Type:
@@ -3913,14 +3913,14 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614665}
       inputSlot: {fileID: 8926484042661614953}
-    position: {x: 180, y: 2623}
+    position: {x: 196, y: 2765}
     expandedSlots: []
     expanded: 0
   - m_Id: 5
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614665}
       inputSlot: {fileID: 8926484042661615017}
-    position: {x: 1590, y: 2632}
+    position: {x: 1643, y: 2725}
     expandedSlots: []
     expanded: 0
   - m_Id: 6
@@ -6203,14 +6203,14 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661614737}
   m_ExposedName: TornadoCoreDissolve 1
   m_Exposed: 1
-  m_Order: 9
+  m_Order: 10
   m_Category: 
   m_Min:
     m_Type:
@@ -6243,7 +6243,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614737}
       inputSlot: {fileID: 8926484042661615013}
-    position: {x: 1643, y: 2507}
+    position: {x: 1696, y: 2600}
     expandedSlots: []
     expanded: 0
   - m_Id: 3
@@ -6278,7 +6278,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.83
+      m_SerializableObject: 0.82
     m_Space: 2147483647
   m_Property:
     name: o
@@ -6288,9 +6288,9 @@ MonoBehaviour:
   m_Direction: 1
   m_LinkedSlots:
   - {fileID: 8926484042661614727}
-  - {fileID: 8926484042661614875}
   - {fileID: 8926484042661615013}
   - {fileID: 8926484042661615813}
+  - {fileID: 8926484042661614875}
 --- !u!114 &8926484042661614738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6307,14 +6307,14 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661614739}
   m_ExposedName: Tornado outer color
   m_Exposed: 1
-  m_Order: 10
+  m_Order: 2
   m_Category: 
   m_Min:
     m_Type:
@@ -6347,7 +6347,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614739}
       inputSlot: {fileID: 8926484042661614978}
-    position: {x: 2085, y: 2471}
+    position: {x: 2138, y: 2564}
     expandedSlots: []
     expanded: 0
   - m_Id: 3
@@ -6386,7 +6386,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":11.003135681152344,"g":39.3983268737793,"b":28.21772003173828,"a":0.0}'
+      m_SerializableObject: '{"r":0.0,"g":11.181760787963868,"b":7.493536472320557,"a":0.0}'
     m_Space: 2147483647
   m_Property:
     name: o
@@ -11275,7 +11275,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614909}
-  m_UIPosition: {x: 940, y: 1782}
+  m_UIPosition: {x: 956, y: 1924}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -11811,7 +11811,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 940, y: 2187}
+  m_UIPosition: {x: 956, y: 2329}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -11850,7 +11850,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614937}
   - {fileID: 8926484042661615044}
   - {fileID: 8926484042661615321}
-  m_UIPosition: {x: 938, y: 2334}
+  m_UIPosition: {x: 954, y: 2476}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -12799,7 +12799,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614943}
-  m_UIPosition: {x: 941, y: 1423}
+  m_UIPosition: {x: 957, y: 1565}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -12926,7 +12926,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 128, y: 2685}
+  m_UIPosition: {x: 144, y: 2827}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -12982,7 +12982,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 636, y: 2562}
+  m_UIPosition: {x: 652, y: 2704}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -13119,7 +13119,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 365, y: 2632}
+  m_UIPosition: {x: 381, y: 2774}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -13299,7 +13299,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614973}
-  m_UIPosition: {x: 2350, y: 1791}
+  m_UIPosition: {x: 2403, y: 1884}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -13835,7 +13835,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 2350, y: 2196}
+  m_UIPosition: {x: 2403, y: 2289}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -13874,7 +13874,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615001}
   - {fileID: 8926484042661615050}
   - {fileID: 8926484042661615333}
-  m_UIPosition: {x: 2348, y: 2343}
+  m_UIPosition: {x: 2401, y: 2436}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -14823,7 +14823,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661615007}
-  m_UIPosition: {x: 2351, y: 1432}
+  m_UIPosition: {x: 2404, y: 1525}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -14950,7 +14950,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 1538, y: 2694}
+  m_UIPosition: {x: 1591, y: 2787}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -15006,7 +15006,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 2046, y: 2571}
+  m_UIPosition: {x: 2099, y: 2664}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -15143,7 +15143,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 1775, y: 2641}
+  m_UIPosition: {x: 1828, y: 2734}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -15271,7 +15271,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 2035, y: 2722}
+  m_UIPosition: {x: 2088, y: 2815}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -17694,7 +17694,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 191, y: 2910}
+  m_UIPosition: {x: 207, y: 3052}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -17878,7 +17878,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 456, y: 2945}
+  m_UIPosition: {x: 472, y: 3087}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -18246,7 +18246,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661615121}
       inputSlot: {fileID: 8926484042661615133}
-    position: {x: 1736, y: 2835}
+    position: {x: 1789, y: 2928}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661615121
@@ -18401,7 +18401,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 1662, y: 2949}
+  m_UIPosition: {x: 1715, y: 3042}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -18529,7 +18529,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 1437, y: 3032}
+  m_UIPosition: {x: 1490, y: 3125}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -18585,7 +18585,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 1920, y: 2960}
+  m_UIPosition: {x: 1973, y: 3053}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -19135,7 +19135,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661615169}
       inputSlot: {fileID: 8926484042661615113}
-    position: {x: 231, y: 2832}
+    position: {x: 247, y: 2974}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661615169
@@ -29434,14 +29434,14 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
+  m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661615849}
   m_ExposedName: TornadoScale coverSeam
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 3
   m_Category: 
   m_Min:
     m_Type:
