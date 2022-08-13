@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
+[DefaultExecutionOrder(1)]
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] private AudioSource backgroundMusic;

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 namespace UI
 {
+    [DefaultExecutionOrder(2)]
     public class SpellChangeButton : MonoBehaviour, IBeginDragHandler, IDragHandler,
         IEndDragHandler
     {

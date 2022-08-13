@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Gameplay.Combat.Spells;
@@ -8,6 +9,7 @@ using UnityEngine.UI;
 
 namespace UI
 {
+    [DefaultExecutionOrder(0)]
     public class MainMenuBehaviour : MonoBehaviour
     {
         public static MainMenuBehaviour Instance;
@@ -17,6 +19,7 @@ namespace UI
         [SerializeField] private List<GameObject> allWindows;
         [SerializeField] private string websiteUrl;
         [SerializeField] private List<TextMeshProUGUI> highScores;
+        [SerializeField] private SaveSystemSetup setup;
         
         [Header("Audio Related Stuff")] 
         [SerializeField] private AudioSource audioSource;
@@ -43,9 +46,15 @@ namespace UI
                 Destroy(Instance);
             
             Instance = this;
+
+            // Dirtier than Frankfurt.
+            setup.Awake();
             
+            string spellString;
+
             // Setup.
-            string spellString = SaveSystem.GetString("PlayerSpells");
+            spellString = SaveSystem.GetString("PlayerSpells");
+            
 
             // First time.
             if (string.IsNullOrEmpty(spellString))
@@ -70,8 +79,14 @@ namespace UI
             movementSpellImage.sprite = movementSpell.SpellSprite;
 
             string playerStats = SaveSystem.GetString("PlayerStats");
+
+            if (string.IsNullOrEmpty(playerStats))
+            {
+                allButtons[2].interactable = false;
+                return;
+            }
+            
             var stats = playerStats.Split("*");
-         
             
             highScores[0].text = stats[0];
             highScores[1].text = stats[2];

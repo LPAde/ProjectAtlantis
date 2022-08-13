@@ -53,6 +53,7 @@ MonoBehaviour:
   lifeTime: 4
   movementVector: {x: 0, y: 0, z: 0}
   maxDistanceToGround: 0.1
+  source: {fileID: 7158007011300883050}
   deathParticleObject: {fileID: 0}
   deathParticleUpTime: 0
   scalings:
@@ -106,7 +107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5550446071492633177}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.81, y: -1.72, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -122,9 +123,9 @@ AudioSource:
   m_GameObject: {fileID: 5550446071492633177}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 1393127532582932145, guid: 6b809a8547ad7e248afdc4321246f78c, type: 2}
+  OutputAudioMixerGroup: {fileID: 9077591346849718543, guid: 6b809a8547ad7e248afdc4321246f78c, type: 2}
   m_audioClip: {fileID: 8300000, guid: c50d72585b5714f908f9662655da61c4, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

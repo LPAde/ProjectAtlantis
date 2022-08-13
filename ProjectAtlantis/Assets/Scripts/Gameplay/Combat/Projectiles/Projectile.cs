@@ -9,11 +9,18 @@ namespace Gameplay.Combat.Projectiles
         [SerializeField] protected float lifeTime;
         [SerializeField] protected Vector3 movementVector;
         [SerializeField] private float maxDistanceToGround = 1.5f;
+        [SerializeField] private AudioSource source;
         
         [Header("Death Particle related stuff")]
         [SerializeField] private GameObject deathParticleObject;
         [SerializeField] private float deathParticleUpTime;
-        
+
+        private void Awake()
+        {
+            if(source != null)
+                source.Play();
+        }
+
         protected virtual void Update()
         {
             lifeTime -= Time.deltaTime;

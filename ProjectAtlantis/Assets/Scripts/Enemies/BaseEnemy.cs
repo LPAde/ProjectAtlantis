@@ -57,16 +57,7 @@ namespace Enemies
             
             FiniteStateMachine.Initialize(FiniteStateMachine.IdleState);
         }
-
-        private void OnCollisionStay(Collision other)
-        {
-          // if(stunTime <= 0)
-          //     return;
-          // 
-          // // Dirty fix to prevent player from shoving this.
-          // rb.isKinematic = other.transform.CompareTag("Player");
-        }
-
+        
         public virtual void EnemyUpdate()
         {
             FiniteStateMachine.Update();

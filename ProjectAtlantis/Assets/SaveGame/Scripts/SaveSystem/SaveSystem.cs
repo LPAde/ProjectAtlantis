@@ -308,6 +308,9 @@ public static class SaveSystem {
 
 	static string iString(string name, string defaultValue)
 	{
+		Debug.Log("Try iString");
+		Debug.Log(name);
+		
 		for(int i = 0; i < data.items.Count; i++)
 		{
 			if(string.Compare(name, data.items[i].Key) == 0)
@@ -315,7 +318,7 @@ public static class SaveSystem {
 				return Crypt(data.items[i].Value);
 			}
 		}
-
+Debug.Log("Shit empty");
 		return defaultValue;
 	}
 

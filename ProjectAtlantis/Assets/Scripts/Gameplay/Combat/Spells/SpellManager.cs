@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Gameplay.Combat.Spells
 {
+    [DefaultExecutionOrder(3)]
     public class SpellManager : MonoBehaviour
     {
         [SerializeField] private List<BaseSpell> allPlayerSpells;
