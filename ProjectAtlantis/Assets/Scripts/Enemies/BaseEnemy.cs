@@ -199,7 +199,7 @@ namespace Enemies
         private void ShowDamageText(float damage)
         {
             var textBox = Instantiate(damageText, transform.position, Quaternion.identity, GameManager.Instance.EnemyManager.transform).GetComponent<FloatingText>();
-            textBox.text.text = damage.ToString("0");
+            textBox.text.text = '-' + damage.ToString("0");
             textBox.owner = this;
         }
         
