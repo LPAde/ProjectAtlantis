@@ -20,6 +20,7 @@ namespace Gameplay.Spawning
         public Action<int> OnWaveStart;
         
         public bool IsSpawning { get; private set; }
+        public int MaxEnemyAmount => maxEnemyAmount;
 
         private void Awake()
         {
