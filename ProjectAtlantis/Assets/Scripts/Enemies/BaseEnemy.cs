@@ -205,6 +205,13 @@ namespace Enemies
         
         private void Die()
         {
+            // Particle stuff.
+            if (deathParticle != null)
+            {
+                var particle = Instantiate(deathParticle,transform.position,Quaternion.identity,GameManager.Instance.transform);
+                Destroy(particle, deathParticleUpTime);
+            }
+            
             if (spawnChances.Count == 0)
             {
                 Destroy(gameObject);
