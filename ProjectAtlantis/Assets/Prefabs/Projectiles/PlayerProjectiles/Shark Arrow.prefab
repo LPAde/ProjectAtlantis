@@ -133,8 +133,9 @@ MonoBehaviour:
   lifeTime: 10
   movementVector: {x: 0, y: 0, z: 0}
   maxDistanceToGround: 0.6
-  deathParticleObject: {fileID: 0}
-  deathParticleUpTime: 0
+  source: {fileID: 0}
+  deathParticleObject: {fileID: 4840863494363623929, guid: d58da11e082b44d4e87509e484668156, type: 3}
+  deathParticleUpTime: 1.5
   scalings:
   - 0.5
   - 1
