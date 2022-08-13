@@ -49,7 +49,7 @@ namespace Gameplay.Rhythm
         public Timing CheckTiming()
         {
             float currentTime = currentTimers[0] - GameManager.Instance.AudioManager.SongTime - sliderOffset;
-            print(currentTime);
+            
             if (currentTime < leeway[0])
             {
                 GameManager.Instance.HudManager.HitAnimation();

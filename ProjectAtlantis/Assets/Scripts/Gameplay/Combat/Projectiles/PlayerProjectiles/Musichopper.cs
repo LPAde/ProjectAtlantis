@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Enemies;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
     public class Musichopper : PlayerProjectile
     {
         [SerializeField] private bool isHopping;
+        [SerializeField] private List<AudioSource> hitSources;
         
         public override void Initialize(Vector3 newMovementVector, Timing timing)
         {
@@ -30,6 +32,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
                 if(isHopping)
                     Destroy(gameObject);
                 
+                hitSources[Random.Range(0, hitSources.Count)].Play();
                 isHopping = true;
             }
             else
