@@ -9,9 +9,7 @@ public class SaveSystemSetup : MonoBehaviour {
 
     public void Awake()
 	{
-		Debug.Log("Try Initialize");
 		SaveSystem.Initialize(fileName);
-		Debug.Log("Complete Initialize");
 		if(dontDestroyOnLoad) DontDestroyOnLoad(transform.gameObject);
 	}
 
