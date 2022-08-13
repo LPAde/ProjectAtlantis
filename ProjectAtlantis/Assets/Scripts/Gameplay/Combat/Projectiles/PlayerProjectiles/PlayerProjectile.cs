@@ -25,7 +25,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
             {
                 case Timing.Bad:
                     damage *= scalings[0];
-                    
+                    print("bad");
                     if (spawnParticles[0] != null)
                     {
                         var transform1 = transform;
@@ -35,7 +35,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
                     break;
                 case Timing.Good:
                     damage *= scalings[1];
-                    
+                    print("good");
                     if (spawnParticles[1] != null)
                     {
                         var transform1 = transform;
@@ -45,7 +45,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
                     break;
                 case Timing.Amazing:
                     damage *= scalings[2];
-                    
+                    print("amazing");
                     if (spawnParticles[2] != null)
                     {
                         var transform1 = transform;
