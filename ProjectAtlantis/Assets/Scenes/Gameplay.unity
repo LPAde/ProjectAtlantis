@@ -8,8 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: add03ea11ed6a1b4687c475564bc053b
+  m_OcclusionCullingData: {fileID: 36300000, guid: 57acb7bc769f10347927ce0062df853b, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -74216,7 +74216,7 @@ MonoBehaviour:
   - {fileID: 1223198785}
   - {fileID: 0}
   enemySpawnDelay: 2
-  maxEnemyAmount: 20
+  maxEnemyAmount: 300
 --- !u!65 &1641598935
 BoxCollider:
   m_ObjectHideFlags: 0
