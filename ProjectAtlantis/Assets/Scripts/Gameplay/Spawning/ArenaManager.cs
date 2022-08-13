@@ -41,7 +41,7 @@ namespace Gameplay.Spawning
             if (currentDuration <= 0 || !GameManager.Instance.EnemySpawner.IsSpawning && arenaEnemies.Count == 0)
             {
                 // Don't start when there are max enemies on the field.
-                if(allEnemies.Count >= GameManager.Instance.EnemySpawner.MaxEnemyAmount)
+                if(arenaEnemies.Count >= GameManager.Instance.EnemySpawner.MaxEnemyAmount)
                     return;
                 
                 GameManager.Instance.EnemySpawner.OnWaveStart.Invoke(GameManager.Instance.WaveManager.CurrentWave);
