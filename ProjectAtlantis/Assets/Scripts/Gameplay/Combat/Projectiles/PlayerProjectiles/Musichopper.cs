@@ -28,12 +28,16 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
                 movementVector = CalculateNextFlyDirection(enemy);
                 enemy.TakeDamage(damage);
                 
-                // Checks if
+                // Checks if it can hop.
                 if(isHopping)
+                {
                     Destroy(gameObject);
-                
-                hitSources[Random.Range(0, hitSources.Count)].Play();
-                isHopping = true;
+                }
+                else
+                {
+                    hitSources[Random.Range(0, hitSources.Count)].Play();
+                    isHopping = true;
+                }
             }
             else
             {
