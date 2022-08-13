@@ -12,8 +12,8 @@ namespace Gameplay.Combat.Projectiles
         [SerializeField] private AudioSource source;
         
         [Header("Death Particle related stuff")]
-        [SerializeField] private GameObject deathParticleObject;
-        [SerializeField] private float deathParticleUpTime;
+        [SerializeField] protected GameObject deathParticleObject;
+        [SerializeField] protected float deathParticleUpTime;
 
         private void Awake()
         {
@@ -53,7 +53,7 @@ namespace Gameplay.Combat.Projectiles
             Destroy(gameObject);
         }
 
-        private void OnDestroy()
+        protected virtual void OnDestroy()
         {
             if(lifeTime <= 0)
                 return;

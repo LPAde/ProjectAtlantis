@@ -22,5 +22,14 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
             
             en.TakeDamage(damage, movementVector * 25, lifeTime + 2);
         }
+
+        protected override void OnDestroy()
+        {
+            if (deathParticleObject != null)
+            {
+                var particle = Instantiate(deathParticleObject, transform.position, Quaternion.identity, GameManager.Instance.transform);
+                Destroy(particle, deathParticleUpTime);
+            }
+        }
     }
 }

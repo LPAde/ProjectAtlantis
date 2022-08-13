@@ -25,7 +25,6 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
             if (other.CompareTag("Enemy"))
             {
                 var enemy = other.gameObject.GetComponent<BaseEnemy>();
-                movementVector = CalculateNextFlyDirection(enemy);
                 enemy.TakeDamage(damage);
                 
                 // Checks if it can hop.
@@ -35,6 +34,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
                 }
                 else
                 {
+                    movementVector = CalculateNextFlyDirection(enemy);
                     hitSources[Random.Range(0, hitSources.Count)].Play();
                     isHopping = true;
                 }
