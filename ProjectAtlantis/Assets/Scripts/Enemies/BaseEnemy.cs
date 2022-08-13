@@ -208,7 +208,7 @@ namespace Enemies
             // Particle stuff.
             if (deathParticle != null)
             {
-                var particle = Instantiate(deathParticle,transform.position,Quaternion.identity,GameManager.Instance.transform);
+                var particle = Instantiate(deathParticle,transform.position,Quaternion.identity,GameManager.Instance.EnemyManager.transform);
                 Destroy(particle, deathParticleUpTime);
             }
             

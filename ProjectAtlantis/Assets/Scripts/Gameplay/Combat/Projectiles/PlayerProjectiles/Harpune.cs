@@ -27,7 +27,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
         {
             if (deathParticleObject != null)
             {
-                var particle = Instantiate(deathParticleObject, transform.position, Quaternion.identity, GameManager.Instance.transform);
+                var particle = Instantiate(deathParticleObject, transform.position, Quaternion.identity, GameManager.Instance.SpellManager.transform);
                 Destroy(particle, deathParticleUpTime);
             }
         }
