@@ -84,7 +84,7 @@ namespace UI
         {
             if(!interactable)
                 return;
-
+            
             // Setup.
             string spellString = SaveSystem.GetString("PlayerSpells");
             var idStrings = spellString.Split("*");
