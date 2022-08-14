@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 43229240}
-  m_IndirectSpecularColor: {r: 0.45107877, g: 0.5008987, b: 0.5741096, a: 1}
+  m_IndirectSpecularColor: {r: 0.45107907, g: 0.5008992, b: 0.5741101, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -155,7 +155,7 @@ Transform:
   - {fileID: 481102017}
   - {fileID: 1921004931}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3391383
 GameObject:
@@ -1345,63 +1345,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 201157462941845147, guid: 4d8850cdbdc7cff438f5861208bf1762, type: 3}
   m_PrefabInstance: {fileID: 1482589264}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &36848283
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1480954763017806103, guid: 4ea2043b3d30c0a4e917d353e6c86e33, type: 3}
-      propertyPath: m_Name
-      value: Stronger Piranha Dude
-      objectReference: {fileID: 0}
-    - target: {fileID: 2289719968954661805, guid: 4ea2043b3d30c0a4e917d353e6c86e33, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2289719968954661805, guid: 4ea2043b3d30c0a4e917d353e6c86e33, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 162.2179
-      objectReference: {fileID: 0}
-    - target: {fileID: 2289719968954661805, guid: 4ea2043b3d30c0a4e917d353e6c86e33, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 31.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2289719968954661805, guid: 4ea2043b3d30c0a4e917d353e6c86e33, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 161.81076
-      objectReference: {fileID: 0}
-    - target: {fileID: 2289719968954661805, guid: 4ea2043b3d30c0a4e917d353e6c86e33, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2289719968954661805, guid: 4ea2043b3d30c0a4e917d353e6c86e33, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2289719968954661805, guid: 4ea2043b3d30c0a4e917d353e6c86e33, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2289719968954661805, guid: 4ea2043b3d30c0a4e917d353e6c86e33, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2289719968954661805, guid: 4ea2043b3d30c0a4e917d353e6c86e33, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2289719968954661805, guid: 4ea2043b3d30c0a4e917d353e6c86e33, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2289719968954661805, guid: 4ea2043b3d30c0a4e917d353e6c86e33, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4ea2043b3d30c0a4e917d353e6c86e33, type: 3}
 --- !u!1001 &37643015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37398,7 +37341,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 819056035}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: OnSliderChange
         m_Mode: 2
@@ -40385,7 +40328,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 819056035}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: OnSliderChange
         m_Mode: 2
@@ -42017,7 +41960,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 819056035}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: OnSliderChange
         m_Mode: 2
@@ -78109,7 +78052,7 @@ Transform:
   - {fileID: 1538039165}
   - {fileID: 1063425278}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1711028729
 PrefabInstance:
@@ -92305,7 +92248,7 @@ Transform:
   m_Children:
   - {fileID: 819056036}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2016343539
 GameObject:
