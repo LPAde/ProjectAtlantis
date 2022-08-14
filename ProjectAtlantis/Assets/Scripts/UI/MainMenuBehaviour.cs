@@ -53,7 +53,7 @@ namespace UI
             // As dirty as the line above.
             if(Screen.width / Screen.height > 1.8f)
             {
-                Screen.SetResolution(2560, 1440, FullScreenMode.MaximizedWindow);
+                Screen.SetResolution(2560, 1440, FullScreenMode.FullScreenWindow);
             }
 
             if(SaveSystem.GetInt("GameQuality") < 1)
