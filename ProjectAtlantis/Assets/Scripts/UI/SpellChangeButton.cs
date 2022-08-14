@@ -26,6 +26,12 @@ namespace UI
 
         public Button Button => button;
         
+        private void Awake()
+        {
+            float res = Screen.currentResolution.width / 1280;
+            toleranceValue *= res;
+        }
+        
         public void Start()
         {
             if(MainMenuBehaviour.Instance.SpellManager.CheckSpellUnlocked(spell))

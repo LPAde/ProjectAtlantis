@@ -26,6 +26,7 @@ namespace Gameplay.Spawning
         {
             OnWaveStart += UpdateWave;
             OnWaveStart += StartSpawning;
+            GameManager.Instance.Player.OnPlayerDeath += TurnOff;
         }
 
         /// <summary>
@@ -145,6 +146,11 @@ namespace Gameplay.Spawning
             {
                 enemySpawnDelay = 2;
             }
+        }
+        
+        private void TurnOff()
+        {
+            gameObject.SetActive(false);
         }
     }
 }

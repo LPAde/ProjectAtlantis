@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ namespace Enemies
         {
             foreach (var enemy in enemies)
             {
-                 enemy.EnemyUpdate();
+                enemy.EnemyUpdate();
             }
         }
 
@@ -36,26 +37,27 @@ namespace Enemies
         {
             // Stops when there are no enemies alive.
             if (enemies.Count < 2)
-                return null; 
-            
+                return null;
+
             // Set up.
             BaseEnemy closestEnemy = enemies[0];
 
             if (currentEnemy == enemies[0] && enemies[1] != null)
                 closestEnemy = enemies[1];
-                
-            
-            float currentClosestSqrDistance = (closestEnemy.transform.position - currentEnemy.transform.position).sqrMagnitude;
+
+
+            float currentClosestSqrDistance =
+                (closestEnemy.transform.position - currentEnemy.transform.position).sqrMagnitude;
 
             // Finds closest enemy.
             for (int i = 1; i < enemies.Count; i++)
             {
                 // Skip if exact same position.
-                if(currentEnemy == enemies[i])
+                if (currentEnemy == enemies[i])
                     continue;
-                
+
                 float currentDistance = (enemies[i].transform.position - currentEnemy.transform.position).sqrMagnitude;
-                
+
                 if (currentDistance < currentClosestSqrDistance)
                 {
                     closestEnemy = enemies[i];

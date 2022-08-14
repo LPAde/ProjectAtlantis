@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace PlayerScripts
 {
@@ -7,6 +8,11 @@ namespace PlayerScripts
         public void LookAtMovement()
         {
             GameManager.Instance.Player.PlayerController.LookAtMovement();
+        }
+
+        public void GoToMainMenu()
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,13 +7,12 @@ namespace UI
     {
         [SerializeField] private float scrollSpeed;
         [SerializeField] private float finalHeight;
-        private Resolution _res;
 
         private void Start()
         {
             // Prevent the resolution hurting the credits.
-            _res = Screen.currentResolution;
-            Screen.SetResolution(1280, 720, FullScreenMode.FullScreenWindow);
+            finalHeight *= Screen.currentResolution.width / 1280;
+            scrollSpeed *= Screen.currentResolution.width / 1280;
         }
 
         void Update()
@@ -24,7 +22,6 @@ namespace UI
             if (!(transform.position.y > finalHeight) && !Input.GetKeyDown(KeyCode.Escape)) 
                 return;
             
-            Screen.SetResolution(_res.width,_res.height,FullScreenMode.FullScreenWindow);
             SceneManager.LoadScene(0);
         }
     }

@@ -49,7 +49,7 @@ namespace PlayerScripts
         {
             GameManager.Instance.Load += Load;
             GameManager.Instance.Save += Save;
-            OnPlayerDeath += EasyDeath;
+            OnPlayerDeath += StartDeathAnimation;
         }
 
         private void Start()
@@ -197,11 +197,12 @@ namespace PlayerScripts
         }
         
         /// <summary>
-        /// Temporary method for testing.
+        /// Saves game and starts the death animation.
         /// </summary>
-        private void EasyDeath()
+        private void StartDeathAnimation()
         {
-            SceneManager.LoadScene(0);
+            GameManager.Instance.Save.Invoke();
+            anim.SetTrigger("HealthZero");
         }
 
         /// <summary>
