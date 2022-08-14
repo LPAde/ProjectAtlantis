@@ -5,6 +5,7 @@ using Gameplay.Rhythm;
 using Gameplay.Spawning;
 using PlayerScripts;
 using UI;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,6 +19,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject gameplayWindow;
     [SerializeField] private GameObject pauseWindow;
     [SerializeField] private AudioSource pauseSound;
+    [SerializeField] private GameObject pauseCam;
+    [SerializeField] private GameObject instatiatedPauseCam;
     
     [Header("Gameplay Related Stuff")]
     [SerializeField] private Player player;
@@ -74,15 +77,28 @@ public class GameManager : MonoBehaviour
     
     public void ToggleWindows()
     {
+        if (IsPaused)
+        {
+            Destroy(instatiatedPauseCam);
+        }
+        else
+        {
+            instatiatedPauseCam = Instantiate(pauseCam,transform.position,quaternion.identity,pauseWindow.transform);
+        }
+        
         gameplayWindow.SetActive(!gameplayWindow.activeSelf);
         pauseWindow.SetActive(!pauseWindow.activeSelf);
 
         IsPaused = !IsPaused;
         
         if(!IsPaused)
+        {
             AudioManager.RestartSong();
+        }
         else
+        {
             pauseSound.Play();
+        }
         
     }
 
