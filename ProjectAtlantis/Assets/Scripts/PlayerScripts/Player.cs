@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using Gameplay.Combat.Spells;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace PlayerScripts
 {
@@ -30,6 +29,8 @@ namespace PlayerScripts
         #endregion
         
         public Action OnPlayerDeath;
+        private static readonly int Damage = Animator.StringToHash("TakeDamage");
+        private static readonly int HealthZero = Animator.StringToHash("HealthZero");
 
         #region Properties
 
@@ -84,6 +85,7 @@ namespace PlayerScripts
         /// <param name="damage"> How much damage is dealt. </param>
         public void TakeDamage(float damage)
         {
+            anim.SetTrigger(Damage);
             float takenDamage = damage - stats.Defense;
             
             // Ensure at least one damage is dealt.
@@ -202,7 +204,7 @@ namespace PlayerScripts
         private void StartDeathAnimation()
         {
             GameManager.Instance.Save.Invoke();
-            anim.SetTrigger("HealthZero");
+            anim.SetTrigger(HealthZero);
         }
 
         /// <summary>
