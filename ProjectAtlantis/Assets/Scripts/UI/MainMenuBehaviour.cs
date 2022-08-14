@@ -50,7 +50,12 @@ namespace UI
             // Dirtier than Frankfurt.
             setup.Awake();
             
-            string spellString;
+            // As dirty as the line above.
+            if(Screen.width / Screen.height > 1.8f)
+            {
+                print("here");
+                Screen.SetResolution(1920, 1080, FullScreenMode.FullScreenWindow);
+            }
 
             if(SaveSystem.GetInt("GameQuality") < 1)
                 SaveSystem.SetInt("GameQuality", 1);
@@ -65,6 +70,8 @@ namespace UI
                 qualityButtons[0].interactable = false;
                 qualityButtons[1].interactable = true;
             }
+            
+            string spellString;
             
             // Setup.
             spellString = SaveSystem.GetString("PlayerSpells");
