@@ -67,9 +67,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 20
   projectileSpeed: 0.01
-  lifeTime: 0.7
+  lifeTime: 1
   movementVector: {x: 0, y: 0, z: 0}
   maxDistanceToGround: 1.5
+  source: {fileID: 0}
   deathParticleObject: {fileID: 0}
   deathParticleUpTime: 0
   scalings:
