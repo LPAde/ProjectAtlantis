@@ -89,7 +89,6 @@ namespace PlayerScripts
                     movePos = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                     
                     Look(); 
-                    player.Anim.SetBool(IsMoving, true);
 
                     if (player.LoopingAudioSource.clip != swimSound)
                     {
@@ -113,6 +112,8 @@ namespace PlayerScripts
         /// </summary>
         private void Move()
         {
+            player.Anim.SetBool(IsMoving, true);
+            
             // Find the target position relative to the player.
             var dir = movePos - transform.position;
             

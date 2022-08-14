@@ -24,7 +24,6 @@ namespace UI
         [Header("Audio Related Stuff")] 
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private AudioClip startGameSound;
-        [SerializeField] private AudioClip buttonUISound;
 
         [Header("Spell Related Stuff")] 
         [SerializeField] private SpellManager spellManager;
@@ -165,7 +164,6 @@ namespace UI
             
             allButtons[2].interactable = false;
             
-            audioSource.clip = buttonUISound;
             audioSource.Play();
         }
         
@@ -173,7 +171,6 @@ namespace UI
         {
             SceneManager.LoadScene(2);
             
-            audioSource.clip = buttonUISound;
             audioSource.Play();
         }
 
@@ -184,7 +181,6 @@ namespace UI
                 allWindows[i].SetActive(i == activatedWindowIndex);
             }
             
-            audioSource.clip = buttonUISound;
             audioSource.Play();
         }
 
@@ -192,13 +188,11 @@ namespace UI
         {
             Application.OpenURL(websiteUrl);
             
-            audioSource.clip = buttonUISound;
             audioSource.Play();
         }
 
         public void OnExitClick()
         {
-            audioSource.clip = buttonUISound;
             audioSource.Play();
             Application.Quit();
         }
@@ -216,8 +210,9 @@ namespace UI
             int gameQuality = SaveSystem.GetInt("GameQuality");
             gameQuality = gameQuality == 1 ? 3 : 1;
             SaveSystem.SetInt("GameQuality", gameQuality);
+            audioSource.Play();
         }
-
+        
         private IEnumerator LoadYourAsyncScene()
         {
             // Wait until the asynchronous scene fully loads
