@@ -1,12 +1,14 @@
+using System;
 using Gameplay.Combat.Projectiles.EnemyProjectiles;
 using Unity.Mathematics;
+using UnityEditor;
 using UnityEngine;
 
 namespace Enemies
 {
     public class DualAttackingEnemy : AttackingMeleeEnemy
     {
-        [SerializeField] private float meleeDistance;
+        [SerializeField] private float meleeDistanceSquared;
 
         public override void Attack()
         {
@@ -16,17 +18,12 @@ namespace Enemies
                 return;
             }
             
-            if ((transform.position - GameManager.Instance.Player.PlayerController.transform.position).sqrMagnitude <
-                meleeDistance)
-            {
-                // TODO: Play Melee Animation
-                anim.SetTrigger("MeleeAttack");
-            }
-            else
-            {
-                //TODO: Play Ranged Animation
-                anim.SetTrigger("RangedAttack");
-            }
+            // Check Distance to player to decide on melee or ranged animation
+            anim.SetTrigger((transform.position - GameManager.Instance.Player.PlayerController.transform.position)
+                            .sqrMagnitude <
+                            meleeDistanceSquared
+                ? "MeleeAttack"
+                : "RangedAttack");
 
             stats.AttackCooldown = stats.AttackMaxCooldown;
             source.Play();
@@ -38,7 +35,7 @@ namespace Enemies
             if(DidHit)
                 return;
             
-            if (meleeDistance > (projectileSpawnPosition.position - GameManager.Instance.Player.PlayerController.transform.position).sqrMagnitude)
+            if (meleeDistanceSquared > (projectileSpawnPosition.position - GameManager.Instance.Player.PlayerController.transform.position).sqrMagnitude)
             {
                 GameManager.Instance.Player.TakeDamage(stats.Strength);
                 DidHit = true;
@@ -54,7 +51,6 @@ namespace Enemies
                     GameManager.Instance.transform).GetComponent<EnemyProjectile>();
             
             projectile.Initialize(transform.forward);
-            
         }
     }
 }
