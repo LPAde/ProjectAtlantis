@@ -37,7 +37,7 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
             if (!isSecondHitBox)
             {
                 // Knocks opponent to the desired position.
-                en.TakeDamage(damage, ((GameManager.Instance.Player.ProjectileSpawnPosition.position + GameManager.Instance.Player.ProjectileSpawnPosition.forward * 2.5f) - en.transform.position) * 3, lifeTime - .1f);
+                en.TakeDamage(damage, (GameManager.Instance.Player.ProjectileSpawnPosition.position + GameManager.Instance.Player.ProjectileSpawnPosition.forward * 2.5f - en.transform.position) * 3, lifeTime - .1f);
             }
             else
             {
