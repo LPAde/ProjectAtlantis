@@ -38,7 +38,7 @@ namespace Enemies
             if(DidHit)
                 return;
             
-            if (meleeDistance > (attack.transform.position - GameManager.Instance.Player.PlayerController.transform.position).sqrMagnitude)
+            if (meleeDistance > (projectileSpawnPosition.position - GameManager.Instance.Player.PlayerController.transform.position).sqrMagnitude)
             {
                 GameManager.Instance.Player.TakeDamage(stats.Strength);
                 DidHit = true;
