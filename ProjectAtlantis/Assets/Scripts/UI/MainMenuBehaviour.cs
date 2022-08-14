@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Gameplay.Combat.Spells;
@@ -15,6 +14,7 @@ namespace UI
         public static MainMenuBehaviour Instance;
         
         [SerializeField] private List<Button> allButtons;
+        [SerializeField] private List<Button> qualityButtons;
         [SerializeField] private List<string> allSaveFileStrings;
         [SerializeField] private List<GameObject> allWindows;
         [SerializeField] private string websiteUrl;
@@ -52,9 +52,22 @@ namespace UI
             
             string spellString;
 
+            if(SaveSystem.GetInt("GameQuality") < 1)
+                SaveSystem.SetInt("GameQuality", 1);
+
+            if (SaveSystem.GetInt("GameQuality") == 1)
+            {
+                qualityButtons[0].interactable = true;
+                qualityButtons[1].interactable = false;
+            }
+            else
+            {
+                qualityButtons[0].interactable = false;
+                qualityButtons[1].interactable = true;
+            }
+            
             // Setup.
             spellString = SaveSystem.GetString("PlayerSpells");
-            
 
             // First time.
             if (string.IsNullOrEmpty(spellString))
@@ -192,6 +205,13 @@ namespace UI
             }
         }
 
+        public void ToggleQuality()
+        {
+            int gameQuality = SaveSystem.GetInt("GameQuality");
+            gameQuality = gameQuality == 1 ? 3 : 1;
+            SaveSystem.SetInt("GameQuality", gameQuality);
+        }
+
         private IEnumerator LoadYourAsyncScene()
         {
             // Wait until the asynchronous scene fully loads
@@ -200,7 +220,7 @@ namespace UI
                 yield return null;
             }
             
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(SaveSystem.GetInt("GameQuality"));
         }
     }
 }
