@@ -9,7 +9,7 @@ namespace Enemies
     {
         [Header("Attack related values")]
         [SerializeField] protected GameObject attack;
-        [SerializeField] private Transform projectileSpawnPosition;
+        [SerializeField] protected Transform projectileSpawnPosition;
         [SerializeField] protected AudioSource source;
         private static readonly int Attack1 = Animator.StringToHash("Attack");
 

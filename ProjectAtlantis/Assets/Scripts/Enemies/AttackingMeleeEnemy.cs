@@ -6,7 +6,7 @@ namespace Enemies
     {
         private static readonly int Attack1 = Animator.StringToHash("Attack");
 
-        private bool _didHit;
+        protected bool DidHit;
 
         /// <summary>
         /// Attacks are being done with the Animator.
@@ -28,21 +28,20 @@ namespace Enemies
         public override void StartAttack()
         {
             IsInAnimation = true;
-            if(_didHit)
+            if(DidHit)
                 return;
             
             if (stats.AttackRange * stats.AttackRange > (attack.transform.position - GameManager.Instance.Player.PlayerController.transform.position).sqrMagnitude)
             {
                 GameManager.Instance.Player.TakeDamage(stats.Strength);
-                _didHit = true;
+                DidHit = true;
             }
-            
         }
 
         public override void EndAttack()
         {
             base.EndAttack();
-            _didHit = false;
+            DidHit = false;
         }
     }
 }
