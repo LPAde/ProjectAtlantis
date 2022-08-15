@@ -248,7 +248,7 @@ namespace PlayerScripts
             {
                 player.Anim.SetTrigger(AbilityWhirl);
             }
-            else if(spell.SpellName == "Scream")
+            else if(spell.SpellName == "Screech")
             {
                 player.Anim.SetTrigger("AbilityScream");
             }
