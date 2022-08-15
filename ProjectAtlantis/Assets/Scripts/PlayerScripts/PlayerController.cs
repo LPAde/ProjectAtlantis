@@ -251,11 +251,11 @@ namespace PlayerScripts
             {
                 player.Anim.SetTrigger("AbilityScream");
             }
-            else if (spell.SpellName == "Harpoon" || spell.SpellName == "Double Slash")
+            else if (spell.SpellName == "Double Slash")
             {
-                player.Anim.SetTrigger("AbilitySpear");
+                player.Anim.SetTrigger("AbilityDouble");
             }
-            else
+            else if(spell.SpellName == "Light'em Up")
             {
                 if (attackAnimationIndex == 0)
                 {
@@ -267,6 +267,10 @@ namespace PlayerScripts
                 }
 
                 player.Anim.SetTrigger(string.Concat("PressAttack", attackAnimationIndex));
+            }
+            else
+            {
+                player.Anim.SetTrigger("Throw");
             }
         }
 
