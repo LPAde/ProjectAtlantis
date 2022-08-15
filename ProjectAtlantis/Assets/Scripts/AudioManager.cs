@@ -46,8 +46,8 @@ public class AudioManager : MonoBehaviour
 
     public void RestartSong()
     {
-        backgroundMusic.Play();
         backgroundMusic.time = backgroundMusic.clip.length - timeSongHasPlayed;
+        backgroundMusic.Play();
     }
 
     public void OnSliderChange(Slider slider)
@@ -65,6 +65,7 @@ public class AudioManager : MonoBehaviour
         currentSong = newSong;
         backgroundMusic.clip = newSong.song;
         timeSongHasPlayed = backgroundMusic.clip.length;
+        backgroundMusic.time = 0;
         
         backgroundMusic.Play();
     }

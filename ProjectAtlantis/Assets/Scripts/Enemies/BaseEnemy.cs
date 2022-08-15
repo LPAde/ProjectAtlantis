@@ -73,7 +73,7 @@ namespace Enemies
 
         public virtual void EnemyUpdate()
         {
-            FiniteStateMachine.Update();
+            FiniteStateMachine?.Update();
         }
 
         public void MakeArenaEnemy()

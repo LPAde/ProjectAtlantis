@@ -21,19 +21,18 @@ namespace Enemies
         {
             FiniteAttackerStateMachine = new AttackerFsm(this);
             
-            FiniteAttackerStateMachine.Initialize(FiniteAttackerStateMachine.IdleState);
+            FiniteAttackerStateMachine.Initialize(FiniteAttackerStateMachine.WalkState);
         }
 
         public override void EnemyUpdate()
         {
-            FiniteAttackerStateMachine.Update();
+            FiniteAttackerStateMachine?.Update();
             stats.AttackCooldown -= Time.deltaTime;
         }
 
         public override void WalkToPlayer()
         {
             var target = GameManager.Instance.Player.PlayerController.transform.position;
-            
             if((target-transform.position).magnitude < stats.AttackRange)
             {
                 Stop();

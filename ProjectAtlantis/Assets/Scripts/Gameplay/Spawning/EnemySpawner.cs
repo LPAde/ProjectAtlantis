@@ -124,7 +124,7 @@ namespace Gameplay.Spawning
                     yield return new WaitForSeconds(1);
 
                 var spawnPoint = GetSpawnPoint();
-                var en = Instantiate(enemy,spawnPoint,quaternion.identity,transform);
+                var en = Instantiate(enemy,spawnPoint,quaternion.identity,GameManager.Instance.EnemyManager.transform);
                 
                 GameManager.Instance.ArenaManager.AddArenaEnemy(en);
                 en.MakeArenaEnemy();

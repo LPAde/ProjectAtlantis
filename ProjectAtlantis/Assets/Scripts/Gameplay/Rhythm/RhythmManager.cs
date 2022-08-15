@@ -85,8 +85,8 @@ namespace Gameplay.Rhythm
                 slider.minValue = 0;
             }
 
-            float songTime = GameManager.Instance.AudioManager.SongTime;
-            
+            float songTime = 0;
+
             currentTimers[0] = currentBeat + songTime;
             currentTimers[1] = currentBeat*2 + songTime;
             currentTimers[2] = currentBeat*3 + songTime;
