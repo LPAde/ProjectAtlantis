@@ -6,20 +6,19 @@ namespace UI
     public class CreditsBehaviour : MonoBehaviour
     {
         [SerializeField] private float scrollSpeed;
-        [SerializeField] private float finalHeight;
+        [SerializeField] private Transform finalHeight;
 
         private void Start()
         {
             // Prevent the resolution hurting the credits.
-            finalHeight *= Screen.currentResolution.width / 1280;
-            scrollSpeed *= Screen.currentResolution.width / 1280;
+            scrollSpeed = (finalHeight.position.y - transform.position.y) * .02f;
         }
 
         void Update()
         {
             transform.position += new Vector3(0,Time.deltaTime * scrollSpeed,0);
 
-            if (!(transform.position.y > finalHeight) && !Input.GetKeyDown(KeyCode.Escape)) 
+            if (!(transform.position.y > finalHeight.position.y) && !Input.GetKeyDown(KeyCode.Escape)) 
                 return;
             
             SceneManager.LoadScene(0);
