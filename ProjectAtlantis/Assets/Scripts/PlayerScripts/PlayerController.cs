@@ -251,7 +251,7 @@ namespace PlayerScripts
             {
                 player.Anim.SetTrigger("AbilityScream");
             }
-            else if (spell.SpellName == "Harpoon")
+            else if (spell.SpellName == "Harpoon" || spell.SpellName == "Double Slash")
             {
                 player.Anim.SetTrigger("AbilitySpear");
             }
