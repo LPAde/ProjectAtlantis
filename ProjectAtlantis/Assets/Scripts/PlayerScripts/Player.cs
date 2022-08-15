@@ -331,5 +331,6 @@ namespace PlayerScripts
         Idle = 2,
         Attack = 3, 
         Attack2 = 4,
+        Death = 5
     }
 }

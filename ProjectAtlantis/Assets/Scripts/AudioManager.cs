@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Gameplay.Rhythm;
+using PlayerScripts;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -15,10 +16,15 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private List<Slider> mixerSliders;
 
     public float SongTime => backgroundMusic.time;
-    
+
     private void Awake()
     {
         Load();
+
+        if (GameManager.Instance == null)
+            return;
+
+        GameManager.Instance.Player.OnPlayerDeath += PlayDeathSound;
     }
 
     private void Update()
@@ -93,5 +99,10 @@ public class AudioManager : MonoBehaviour
         }
         
         SaveSystem.SetString("Volumes", saveString);
+    }
+
+    private void PlayDeathSound()
+    {
+        GameManager.Instance.Player.PlayOneTimeSound(PlayerSounds.Death);
     }
 }
