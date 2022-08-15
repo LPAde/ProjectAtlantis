@@ -247,20 +247,26 @@ namespace PlayerScripts
             {
                 player.Anim.SetTrigger(AbilityWhirl);
             }
+            else if(spell.SpellName == "Scream")
+            {
+                player.Anim.SetTrigger("AbilityScream");
+            }
+            else if (spell.SpellName == "Harpoon")
+            {
+                player.Anim.SetTrigger("AbilitySpear");
+            }
             else
             {
-               
-               if (attackAnimationIndex == 0)
-               {
-                   attackAnimationIndex++; 
-               }
-               else
-               {
-                   attackAnimationIndex = 0;
-               }
-               
-               player.Anim.SetTrigger(string.Concat("PressAttack", attackAnimationIndex));
-               
+                if (attackAnimationIndex == 0)
+                {
+                    attackAnimationIndex++;
+                }
+                else
+                {
+                    attackAnimationIndex = 0;
+                }
+
+                player.Anim.SetTrigger(string.Concat("PressAttack", attackAnimationIndex));
             }
         }
 
