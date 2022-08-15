@@ -1,3 +1,4 @@
+using Gameplay.Combat.Spells;
 using UnityEngine;
 
 namespace PlayerScripts
@@ -24,6 +25,9 @@ namespace PlayerScripts
         [SerializeField] private int attackAnimationIndex;
 
         private static readonly int IsMoving = Animator.StringToHash("IsMoving");
+        private static readonly int AbilityRift = Animator.StringToHash("AbilityRift");
+        private static readonly int AbilityWhirl = Animator.StringToHash("AbilityWhirl");
+        private static readonly int PressDash = Animator.StringToHash("PressDash");
 
         #region Unity Methods
         
@@ -88,7 +92,7 @@ namespace PlayerScripts
 
                     movePos = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                     
-                    Look(); 
+                    Look();  
 
                     if (player.LoopingAudioSource.clip != swimSound)
                     {
@@ -190,7 +194,7 @@ namespace PlayerScripts
                     if (player.CombatSpells[0].Cast())
                     {
                         player.PlayOneTimeSound(PlayerSounds.Attack);
-                        DoCorrectAttackAnimation(); 
+                        DoCorrectAttackAnimation(player.CombatSpells[0]); 
                         spellIndex = 0;
                     }
                     break;
@@ -200,7 +204,7 @@ namespace PlayerScripts
                     if (player.CombatSpells[1].Cast())
                     {
                         player.PlayOneTimeSound(PlayerSounds.Attack);
-                        DoCorrectAttackAnimation();
+                        DoCorrectAttackAnimation(player.CombatSpells[1]);
                         spellIndex = 1;
                     }
                     break;
@@ -210,7 +214,7 @@ namespace PlayerScripts
                     if (player.CombatSpells[2].Cast())
                     {
                         player.PlayOneTimeSound(PlayerSounds.Attack2);
-                        DoCorrectAttackAnimation();
+                        DoCorrectAttackAnimation(player.CombatSpells[2]);
                         spellIndex = 2;
                     }
                     break;
@@ -219,7 +223,7 @@ namespace PlayerScripts
                     if (player.MovementSpell.Cast())
                     {
                         spellIndex = 3;
-                        player.Anim.SetBool(IsMoving, true);
+                        player.Anim.SetTrigger(PressDash);
                         player.PlayOneTimeSound(PlayerSounds.StartSwimming);
                     }
                     break;
@@ -233,18 +237,31 @@ namespace PlayerScripts
             }
         }
 
-        private void DoCorrectAttackAnimation()
+        private void DoCorrectAttackAnimation(CombatSpell spell)
         {
-            if (attackAnimationIndex == 0)
+            if (spell.SpellName == "Rift")
             {
-                attackAnimationIndex++;
+                player.Anim.SetTrigger(AbilityRift);
+            }
+            else if(spell.SpellName == "Whirlpool")
+            {
+                player.Anim.SetTrigger(AbilityWhirl);
             }
             else
             {
-                attackAnimationIndex = 0;
+               
+               if (attackAnimationIndex == 0)
+               {
+                   attackAnimationIndex++; 
+               }
+               else
+               {
+                   attackAnimationIndex = 0;
+               }
+               
+               player.Anim.SetTrigger(string.Concat("PressAttack", attackAnimationIndex));
+               
             }
-
-            player.Anim.SetTrigger(string.Concat("PressAttack", attackAnimationIndex));
         }
 
         #endregion
