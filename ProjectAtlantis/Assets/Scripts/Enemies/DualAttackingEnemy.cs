@@ -1,7 +1,5 @@
-using System;
 using Gameplay.Combat.Projectiles.EnemyProjectiles;
 using Unity.Mathematics;
-using UnityEditor;
 using UnityEngine;
 
 namespace Enemies

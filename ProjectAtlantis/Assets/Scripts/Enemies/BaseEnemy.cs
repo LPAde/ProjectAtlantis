@@ -31,18 +31,19 @@ namespace Enemies
         [SerializeField] private float groundDistance;
         
         private bool _wasSharked;
+        private bool _isColliding;
         
         public FiniteStateMachine FiniteStateMachine { get; private set; }
         public EnemyStats Stats => stats;
         public float CombatScore => combatScore;
         public bool IsArenaEnemy { get; private set; }
         
-        protected virtual void OnEnable()
+        protected virtual void Awake()
         {
             GameManager.Instance.EnemyManager.AddEnemy(this);
         }
 
-        protected virtual void OnDisable()
+        protected virtual void OnDestroy()
         {
             
             GameManager.Instance.EnemyManager.RemoveEnemy(this);
@@ -57,7 +58,19 @@ namespace Enemies
             
             FiniteStateMachine.Initialize(FiniteStateMachine.IdleState);
         }
-        
+
+        private void OnCollisionStay(Collision other)
+        {
+            if (other.gameObject.CompareTag("Enemy"))
+                _isColliding = true;
+        }
+
+        private void OnCollisionExit(Collision other)
+        {
+            if (other.gameObject.CompareTag("Enemy"))
+                _isColliding = false;
+        }
+
         public virtual void EnemyUpdate()
         {
             FiniteStateMachine.Update();
@@ -154,6 +167,12 @@ namespace Enemies
                 return;
             }
 
+            if (_isColliding)
+            {
+                Stop();
+                return;
+            }
+            
             agent.SetDestination(target);
         }
 
