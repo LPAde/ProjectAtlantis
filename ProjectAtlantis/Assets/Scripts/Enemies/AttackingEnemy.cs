@@ -27,6 +27,7 @@ namespace Enemies
         public override void EnemyUpdate()
         {
             FiniteAttackerStateMachine.Update();
+            stats.AttackCooldown -= Time.deltaTime;
         }
 
         public override void WalkToPlayer()
@@ -51,16 +52,12 @@ namespace Enemies
         /// </summary>
         public virtual void Attack()
         {
-            if (stats.AttackCooldown > 0)
-            {
-                stats.AttackCooldown -= Time.deltaTime;
-            }
-            else
-            {
-                stats.AttackCooldown = stats.AttackMaxCooldown;
-                source.Play();
-                anim.SetTrigger(Attack1);
-            }
+            if (!(stats.AttackCooldown < 0))
+                return;
+            
+            stats.AttackCooldown = stats.AttackMaxCooldown;
+            source.Play();
+            anim.SetTrigger(Attack1);
         }
         
         public virtual void StartAttack()
