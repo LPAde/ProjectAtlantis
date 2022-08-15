@@ -119,7 +119,10 @@ namespace Gameplay.Spawning
             {
                 while (GameManager.Instance.EnemyManager.Enemies.Count >= maxEnemyAmount)
                     yield return new WaitForSeconds(enemySpawnDelay * 3);
-                
+
+                while (GameManager.Instance.IsPaused)
+                    yield return new WaitForSeconds(1);
+
                 var spawnPoint = GetSpawnPoint();
                 var en = Instantiate(enemy,spawnPoint,quaternion.identity,transform);
                 

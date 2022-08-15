@@ -41904,7 +41904,6 @@ Transform:
   - {fileID: 758213585}
   - {fileID: 1771511857}
   - {fileID: 1086497783}
-  - {fileID: 1641598933}
   - {fileID: 1733173619}
   - {fileID: 1891937353}
   m_Father: {fileID: 1710572869}
@@ -76497,8 +76496,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 906838388}
-  m_RootOrder: 4
+  m_Father: {fileID: 2012971437}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1641598934
 MonoBehaviour:
@@ -80317,7 +80316,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 906838388}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1733173620
 MonoBehaviour:
@@ -88395,7 +88394,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 906838388}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1891937354
 MonoBehaviour:
@@ -93439,6 +93438,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 819056036}
+  - {fileID: 1641598933}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

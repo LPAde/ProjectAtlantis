@@ -23,6 +23,9 @@ namespace Gameplay.Combat.Projectiles
 
         protected virtual void Update()
         {
+            if(GameManager.Instance.IsPaused)
+                return;
+            
             lifeTime -= Time.deltaTime;
             
             if(lifeTime < 0)

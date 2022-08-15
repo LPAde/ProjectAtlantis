@@ -13,6 +13,9 @@ namespace Gameplay.Collectibles
 
         protected virtual void Update()
         {
+            if(GameManager.Instance.IsPaused)
+                return;
+            
             upTime -= Time.deltaTime;
             
             if(upTime < 0)
