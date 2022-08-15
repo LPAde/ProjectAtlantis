@@ -11,7 +11,7 @@ namespace UI
         private void Start()
         {
             // Prevent the resolution hurting the credits.
-            scrollSpeed *= Screen.currentResolution.width / 1280;
+            scrollSpeed = (finalHeight.position.y - transform.position.y) * .02f;
         }
 
         void Update()
