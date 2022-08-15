@@ -12707,6 +12707,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 4210616377279428551, guid: b4e8eab945a2c4c409e195abcd29f922, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4460151550609242074, guid: b4e8eab945a2c4c409e195abcd29f922, type: 3}
       propertyPath: m_RootOrder
       value: 49
@@ -12775,7 +12779,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4210616377279428551, guid: b4e8eab945a2c4c409e195abcd29f922, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b4e8eab945a2c4c409e195abcd29f922, type: 3}
 --- !u!1001 &301059735
 PrefabInstance:
