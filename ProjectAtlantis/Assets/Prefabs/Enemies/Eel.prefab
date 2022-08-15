@@ -1310,7 +1310,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.05621752, y: 1, z: 0.16380721}
-  m_Center: {x: -0.00045974553, y: 0.031509362, z: -0.06088276}
+  m_Center: {x: -0.00045974553, y: 0.4, z: -0.06088276}
 --- !u!114 &3732248979454678951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1326,7 +1326,7 @@ MonoBehaviour:
   stats:
     maxHealth: 80
     health: 80
-    strength: 20
+    strength: 22
     defense: 15
     speed: 3
     attackRange: 2

@@ -30,7 +30,7 @@ namespace Gameplay.Combat.Spells
                 var proj =
                 Instantiate(projectile, position, Quaternion.identity,
                     GameManager.Instance.transform).GetComponent<EnemyProjectile>();
-                proj.Initialize(GameManager.Instance.Player.PlayerController.transform.position - position);
+                proj.Initialize(GameManager.Instance.Player.PlayerController.transform.position - position,0);
             }
             else
             {
@@ -38,7 +38,7 @@ namespace Gameplay.Combat.Spells
                 var owningPlayer = (Player) owner;
                 
                 var proj = Instantiate(projectile, owningPlayer.ProjectileSpawnPosition.position, quaternion.identity, owningPlayer.transform).GetComponent<PlayerProjectile>();
-                proj.Initialize(owningPlayer.ProjectileSpawnPosition.forward,GameManager.Instance.RhythmManager.CheckTiming());
+                proj.Initialize(owningPlayer.ProjectileSpawnPosition.forward,GameManager.Instance.Player.PlayerStats.Strength,GameManager.Instance.RhythmManager.CheckTiming());
             }
             
             return true;

@@ -1281,7 +1281,7 @@ Transform:
   m_GameObject: {fileID: 2780692123426337813}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 165.48068, y: 30.600624, z: 170.227}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2401661700960088413}
@@ -1375,8 +1375,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-    maxHealth: 120
-    health: 120
+    maxHealth: 300
+    health: 300
     strength: 60
     defense: 30
     speed: 5
@@ -2028,7 +2028,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6034957751646507721, guid: 1a577192c8fcc0c428f8e5dc50119e68, type: 3}
+  - {fileID: 2100000, guid: c6fdc1ecdb4ee9e44a1512cee62ba08c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

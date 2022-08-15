@@ -71,7 +71,7 @@ namespace Enemies
                 Instantiate(attack, position, quaternion.identity,
                     GameManager.Instance.transform).GetComponent<EnemyProjectile>();
             
-            projectile.Initialize(transform.forward);
+            projectile.Initialize(transform.forward, stats.Strength);
             
             source.Play();
         }

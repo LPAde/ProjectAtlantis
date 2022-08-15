@@ -26,7 +26,7 @@ namespace Gameplay.Combat.Spells
             for (int i = 0; i < projectiles.Count; i++)
             {
                 var proj = Instantiate(projectiles[i], owningPlayer.BubblePositions[i].position, quaternion.identity, owningPlayer.transform).GetComponent<PlayerProjectile>();
-                proj.Initialize(owningPlayer.BubblePositions[i].position - owningPlayer.PlayerController.transform.position, GameManager.Instance.RhythmManager.CheckTiming());
+                proj.Initialize(owningPlayer.BubblePositions[i].position - owningPlayer.PlayerController.transform.position, 0,GameManager.Instance.RhythmManager.CheckTiming());
             }
             
             currentCoolDown = currentMaxCoolDown;

@@ -635,14 +635,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-    maxHealth: 60
-    health: 60
+    maxHealth: 120
+    health: 120
     strength: 30
     defense: 10
     speed: 6
     attackRange: 5
-    attackMaxCooldown: 5
-    attackCooldown: 5
+    attackMaxCooldown: 4
+    attackCooldown: 4
     triggerRange: 8
   difficultyModifier: 1
   combatScore: 12

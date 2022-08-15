@@ -9,9 +9,9 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
         [SerializeField] private bool isHopping;
         [SerializeField] private List<AudioSource> hitSources;
         
-        public override void Initialize(Vector3 newMovementVector, Timing timing)
+        public override void Initialize(Vector3 newMovementVector,float strength, Timing timing)
         {
-            base.Initialize(newMovementVector, timing);
+            base.Initialize(newMovementVector,strength, timing);
 
             if (timing == Timing.Bad)
                 isHopping = true;

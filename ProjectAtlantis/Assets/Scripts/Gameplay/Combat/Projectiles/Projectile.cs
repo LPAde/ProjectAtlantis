@@ -65,14 +65,15 @@ namespace Gameplay.Combat.Projectiles
             }
         }
 
-        public void Initialize(Vector3 newMovementVector)
+        public void Initialize(Vector3 newMovementVector, float strength)
         {
             movementVector = newMovementVector * projectileSpeed;
+            damage += strength;
         }
 
-        public virtual void Initialize(Vector3 newMovementVector, Timing timing)
+        public virtual void Initialize(Vector3 newMovementVector, float strength, Timing timing)
         {
-            Initialize(newMovementVector);
+            Initialize(newMovementVector, strength);
         }
     }
 }

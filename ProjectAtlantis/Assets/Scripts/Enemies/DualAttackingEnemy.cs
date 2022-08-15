@@ -37,7 +37,7 @@ namespace Enemies
             
             if (meleeDistanceSquared > (projectileSpawnPosition.position - GameManager.Instance.Player.PlayerController.transform.position).sqrMagnitude)
             {
-                GameManager.Instance.Player.TakeDamage(stats.Strength);
+                GameManager.Instance.Player.TakeDamage(stats.Strength * 2);
                 DidHit = true;
             }
         }
@@ -50,7 +50,7 @@ namespace Enemies
                 Instantiate(attack, position, quaternion.identity,
                     GameManager.Instance.transform).GetComponent<EnemyProjectile>();
             
-            projectile.Initialize(transform.forward);
+            projectile.Initialize(transform.forward, stats.Strength);
         }
     }
 }

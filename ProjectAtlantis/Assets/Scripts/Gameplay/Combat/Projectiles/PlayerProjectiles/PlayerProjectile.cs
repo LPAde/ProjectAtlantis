@@ -12,9 +12,9 @@ namespace Gameplay.Combat.Projectiles.PlayerProjectiles
         [SerializeField] private List<GameObject> spawnParticles;
         [SerializeField] private float spawnParticleUpTime;
         
-        public override void Initialize(Vector3 newMovementVector, Timing timing)
+        public override void Initialize(Vector3 newMovementVector, float strength, Timing timing)
         {
-            base.Initialize(newMovementVector, timing);
+            base.Initialize(newMovementVector,strength, timing);
 
             // Rotate in the correct direction.
             transform.LookAt(transform.position + movementVector);
