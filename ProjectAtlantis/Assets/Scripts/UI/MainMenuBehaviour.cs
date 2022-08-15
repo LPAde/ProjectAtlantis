@@ -30,6 +30,7 @@ namespace UI
         [SerializeField] private Sprite lockedSprite;
         [SerializeField] private List<Image> combatSpellImages;
         [SerializeField] private Image movementSpellImage;
+        [SerializeField] private Transform movementSpellImageBorder;
         [SerializeField] private List<BaseSpell> startingSpells;
         [SerializeField] private List<SpellChangeButton> spellChangeButtons;
         
@@ -38,6 +39,7 @@ namespace UI
         public Sprite LockedSprite => lockedSprite;
         public List<Image> CombatSpellImages => combatSpellImages;
         public Image MovementSpellImage => movementSpellImage;
+        public Transform MovementSpellImageBorder => movementSpellImageBorder;
         
         private void Awake()
         {

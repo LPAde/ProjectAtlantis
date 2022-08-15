@@ -28,8 +28,8 @@ namespace UI
         
         private void Awake()
         {
-            float res = Screen.currentResolution.width / 1280;
-            toleranceValue *= res;
+            toleranceValue = (MainMenuBehaviour.Instance.MovementSpellImage.transform.position -
+                             MainMenuBehaviour.Instance.MovementSpellImageBorder.position).sqrMagnitude;
         }
         
         public void Start()
@@ -107,7 +107,7 @@ namespace UI
             {
                 // Distance Check.
                 if ((MainMenuBehaviour.Instance.Image.transform.position -
-                     MainMenuBehaviour.Instance.MovementSpellImage.transform.position).magnitude < toleranceValue)
+                     MainMenuBehaviour.Instance.MovementSpellImage.transform.position).sqrMagnitude < toleranceValue)
                 {
                     movementSpell = moveSpell;
                     MainMenuBehaviour.Instance.MovementSpellImage.sprite = spell.SpellSprite;
@@ -120,7 +120,7 @@ namespace UI
                 for (int i = 0; i < MainMenuBehaviour.Instance.CombatSpellImages.Count; i++)
                 {
                     if ((MainMenuBehaviour.Instance.Image.transform.position -
-                         MainMenuBehaviour.Instance.CombatSpellImages[i].transform.position).magnitude < toleranceValue)
+                         MainMenuBehaviour.Instance.CombatSpellImages[i].transform.position).sqrMagnitude < toleranceValue)
                     {
                         _didDrag = false;
                         bool hasSpellAlready = false;
