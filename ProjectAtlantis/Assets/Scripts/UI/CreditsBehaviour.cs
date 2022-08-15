@@ -11,7 +11,9 @@ namespace UI
         private void Start()
         {
             // Prevent the resolution hurting the credits.
+            Debug.Log(finalHeight);
             finalHeight *= Screen.currentResolution.width / 1280;
+            Debug.Log(finalHeight);
             scrollSpeed *= Screen.currentResolution.width / 1280;
         }
 
