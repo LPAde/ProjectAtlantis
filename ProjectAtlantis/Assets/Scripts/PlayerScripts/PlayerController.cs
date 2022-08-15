@@ -34,6 +34,7 @@ namespace PlayerScripts
         private void Start()
         {
             movePos = transform.position;
+            player.OnPlayerDeath += TurnOffItself;
         }
         
         private void Update()
@@ -272,6 +273,11 @@ namespace PlayerScripts
             {
                 player.Anim.SetTrigger("Throw");
             }
+        }
+
+        private void TurnOffItself()
+        {
+            enabled = false;
         }
 
         #endregion
