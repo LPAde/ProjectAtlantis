@@ -104,6 +104,6 @@ public class AudioManager : MonoBehaviour
 
     private void PlayDeathSound()
     {
-        GameManager.Instance.Player.PlayOneTimeSound(PlayerSounds.Death);
+        GameManager.Instance.Player.PlayVoiceSound(PlayerSounds.Death);
     }
 }

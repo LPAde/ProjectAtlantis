@@ -14,6 +14,7 @@ namespace PlayerScripts
         [SerializeField] private PlayerStats stats;
         [SerializeField] private AudioSource loopingAudioSource;
         [SerializeField] private AudioSource oneTimeAudioSource;
+        [SerializeField] private AudioSource voiceAudioSource;
         [SerializeField] private List<AudioClip> audioClips;
         [SerializeField] private Animator anim;
         
@@ -175,6 +176,13 @@ namespace PlayerScripts
             oneTimeAudioSource.Stop();
             oneTimeAudioSource.clip = audioClips[(int) sound];
             oneTimeAudioSource.Play();
+        }
+
+        public void PlayVoiceSound(PlayerSounds sound)
+        {
+            voiceAudioSource.Stop();
+            voiceAudioSource.clip = audioClips[(int) sound];
+            voiceAudioSource.Play();
         }
 
         /// <summary>

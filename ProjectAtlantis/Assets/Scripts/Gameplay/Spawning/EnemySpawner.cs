@@ -153,7 +153,7 @@ namespace Gameplay.Spawning
         
         private void TurnOff()
         {
-            gameObject.SetActive(false);
+            GameManager.Instance.EnemyManager.gameObject.SetActive(false);
         }
     }
 }
