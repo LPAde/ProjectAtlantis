@@ -175,6 +175,13 @@ namespace UI
             
             audioSource.Play();
         }
+        
+        public void OnHelpClick()
+        {
+            SceneManager.LoadScene(4);
+            
+            audioSource.Play();
+        }
 
         public void OnWindowChangeClick(int activatedWindowIndex)
         {
