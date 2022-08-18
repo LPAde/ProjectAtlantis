@@ -115,6 +115,8 @@ namespace UI
             highScores[4].text = stats[5];
             highScores[5].text = stats[6];
             highScores[6].text = SaveSystem.GetInt("BestWave").ToString();
+            
+            SaveSystem.SaveToDisk();
         }
 
         public void OnStartGameClick()
@@ -202,6 +204,7 @@ namespace UI
 
         public void OnExitClick()
         {
+            SaveSystem.SaveToDisk();
             audioSource.Play();
             Application.Quit();
         }

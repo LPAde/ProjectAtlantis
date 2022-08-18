@@ -212,6 +212,7 @@ namespace PlayerScripts
         private void StartDeathAnimation()
         {
             GameManager.Instance.Save.Invoke();
+            SaveSystem.SaveToDisk();
             anim.SetTrigger(HealthZero);
         }
 
